@@ -6,6 +6,7 @@ class MyDocument extends Document {
       <Html lang='en'>
         <Head />
         <title>Siteen Agency</title>
+        <link rel='icon' href='/favicon.ico'></link>
         <meta name='description' content='Free Web tutorials' />
         <meta name='keywords' content='HTML, CSS, JavaScript' />
         <meta name='author' content='John Doe' />

@@ -238,7 +238,6 @@
 .our_cases_items {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: repeat(3, 330px);
   grid-gap: 14px 12px;
 }
 .project_case {
@@ -248,6 +247,7 @@
   background-position: center;
   border-radius: 20px;
   z-index: 5;
+  height: 330px;
   overflow: hidden;
   position: relative;
   padding: 30px 50px 50px;
@@ -447,6 +447,9 @@
   font-size: 53px;
   max-width: 370px;
   margin: 15px 0 18px;
+  max-width: 370px;
+  width: 100%;
+  text-align: left;
 }
 .form_section .form > p {
   font-size: 15px;
@@ -883,8 +886,8 @@
     font-size: 25px !important;
   }
   .project_case {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 25px;
+    padding-right: 25px;
   }
   .project_title h4 {
     font-size: 18px;

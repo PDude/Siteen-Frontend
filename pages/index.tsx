@@ -1,8 +1,8 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { ImPlay3 } from 'react-icons/im'
 import { GoTriangleRight } from 'react-icons/go'
 import { BsArrowRight } from 'react-icons/bs'
-import PromotionModal from '../components/PromotionModal'
+import PromotionModal from '../components/modals/PromotionModal'
 import webIcon from '../images/services_web.svg'
 import uiIcon from '../images/services_ui.svg'
 import marketingIcon from '../images/services_marketing.svg'
@@ -20,13 +20,31 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import style from '../styles/Home.module.css'
 import Link from 'next/link'
+import { Field, Formik } from 'formik'
+import InputField from '../components/fields/inputField'
+import axios from 'axios'
+import { toast } from 'react-toastify'
+import FormModal from '../components/modals/FormModal'
 
-const HomePage = () => {
+const HomePage = ({ projects }) => {
+  useEffect(() => {
+    console.log(projects.response)
+  }, [])
+  // const projectsArr = Array.from(projects.response)
+
+  // Promotion modal
   const [openPromotion, setPromotionOpen] = useState(false)
 
   const onOpenPromotionModal = () => setPromotionOpen(true)
   const onClosePromotionModal = () => setPromotionOpen(false)
 
+  // Form success modal
+  const [openFormModal, setFormModalOpen] = useState(false)
+
+  const onOpenFormModal = () => setFormModalOpen(true)
+  const onCloseFormModal = () => setFormModalOpen(false)
+
+  // Slider settings
   const sliderSettings = {
     dots: false,
     slidesToShow: 1,
@@ -74,67 +92,69 @@ const HomePage = () => {
   const cases = [
     {
       id: 1,
-      coverCaseBg:
+      project_photo:
         'https://images.unsplash.com/photo-1612490566980-04f7a6c64fa3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80',
-      caseDuration: '3 weeks',
-      projectTitle: 'E-wings | Прокат самокатов',
-      projectDescription:
+      term: '3 weeks',
+      project_name: 'E-wings | Прокат самокатов',
+      about_project:
         'E-wings - первый революционный проект шеринга самокатов во Львове.'
     },
     {
       id: 2,
-      coverCaseBg:
+      project_photo:
         'https://images.unsplash.com/photo-1578885136359-16c8bd4d3a8e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80',
-      caseDuration: '3 weeks',
-      projectTitle: 'E-wings | Прокат самокатов',
-      projectDescription:
+      term: '3 weeks',
+      project_name: 'E-wings | Прокат самокатов',
+      about_project:
         'E-wings - первый революционный проект шеринга самокатов во Львове.'
     },
     {
       id: 3,
-      coverCaseBg:
+      project_photo:
         'https://images.unsplash.com/photo-1540015605283-b24e303c7f6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80',
-      caseDuration: '3 weeks',
-      projectTitle: 'E-wings | Прокат самокатов',
-      projectDescription:
+      term: '3 weeks',
+      project_name: 'E-wings | Прокат самокатов',
+      about_project:
         'E-wings - первый революционный проект шеринга самокатов во Львове.'
     },
     {
       id: 4,
-      coverCaseBg:
+      project_photo:
         'https://images.unsplash.com/photo-1614642483992-74a06545c0f3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80',
-      caseDuration: '3 weeks',
-      projectTitle: 'E-wings | Прокат самокатов',
-      projectDescription:
+      term: '3 weeks',
+      project_name: 'E-wings | Прокат самокатов',
+      about_project:
         'E-wings - первый революционный проект шеринга самокатов во Львове.'
     },
     {
       id: 5,
-      coverCaseBg:
+      project_photo:
         'https://images.unsplash.com/photo-1554793000-245d3a3c2a51?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2527&q=80',
-      caseDuration: '3 weeks',
-      projectTitle: 'E-wings | Прокат самокатов',
-      projectDescription:
+      term: '3 weeks',
+      project_name: 'E-wings | Прокат самокатов',
+      about_project:
         'E-wings - первый революционный проект шеринга самокатов во Львове.'
     },
     {
       id: 6,
-      coverCaseBg:
+      project_photo:
         'https://images.unsplash.com/photo-1618271121437-c1c70b12c294?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3750&q=80',
-      caseDuration: '3 weeks',
-      projectTitle: 'E-wings | Прокат самокатов',
-      projectDescription:
+      term: '3 weeks',
+      project_name: 'E-wings | Прокат самокатов',
+      about_project:
         'E-wings - первый революционный проект шеринга самокатов во Львове.'
     }
   ]
 
-  const casesItems = cases.map((c) => (
+  const casesItems = projects.response.map((c) => (
     <ProjectCase
       key={c.id}
-      coverCaseBg={c.coverCaseBg}
-      caseDuration={c.caseDuration}
-      projectTitle={c.projectTitle}
-      projectDescription={c.projectDescription}
+      coverCaseBg={
+        'https://images.unsplash.com/photo-1620142898494-9c3c967d7c05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80'
+      }
+      caseDuration={c.term}
+      projectTitle={c.project_name}
+      projectDescription={c.about_project}
     />
   ))
 
@@ -146,6 +166,33 @@ const HomePage = () => {
       serviceDescription={s.serviceDescription}
     />
   ))
+
+  const sendForm = (values, { resetForm }) => {
+    const { name, email, phone } = values
+    axios
+      .post('http://localhost:8289/v1/consult', {
+        name,
+        email,
+        phone
+      })
+      .then((res) => {
+        if (res.data.message === 'ok') {
+          resetForm({})
+          console.log(res)
+          onOpenFormModal()
+          console.log(values)
+        }
+      })
+      .then(() => {
+        setTimeout(() => {
+          onCloseFormModal()
+        }, 3000)
+      })
+      .catch(function (error) {
+        console.log(error)
+        toast.error('Something went wrong please try later')
+      })
+  }
 
   return (
     <>
@@ -226,28 +273,51 @@ const HomePage = () => {
             <div className={style.globe_wrap}>
               <img src={globeGif} alt='globe' />
             </div>
-            <form className={style.form}>
-              <span className='title_label'>LET’S GET STARTED</span>
-              <h2 className={style.h2}>Get A Free Consultation.</h2>
-              <p>
-                The best ideas start from the brif. Let us to know what you need
-                and we will realise it in sucsessfull product.
-              </p>
-              <div className={style.form_items}>
-                <input placeholder={'Name'} type='text' className={'input'} />
-                <input placeholder={'Email'} type='email' className={'input'} />
-                <input
-                  placeholder={'Phone number'}
-                  type='tel'
-                  className={'input'}
-                />
-                <button className={'btn'}>
-                  <span>
-                    Submit <GoTriangleRight />
-                  </span>
-                </button>
-              </div>
-            </form>
+            <Formik
+              onSubmit={sendForm}
+              initialValues={{ name: '', email: '', phone: '' }}>
+              {({ handleSubmit }) => (
+                <form onSubmit={handleSubmit} className={style.form}>
+                  <span className='title_label'>LET’S GET STARTED</span>
+                  <h2 className={style.h2}>Get A Free Consultation.</h2>
+                  <p>
+                    The best ideas start from the brif. Let us to know what you
+                    need and we will realise it in sucsessfull product.
+                  </p>
+                  <div className={style.form_items}>
+                    <Field
+                      name='name'
+                      className='input'
+                      placeholder='Name'
+                      type='text'
+                      component={InputField}
+                      required
+                    />
+                    <Field
+                      name='email'
+                      className='input'
+                      placeholder='Email'
+                      type='email'
+                      component={InputField}
+                      required
+                    />
+                    <Field
+                      name='phone'
+                      className='input'
+                      placeholder='Phone Number'
+                      type='tel'
+                      component={InputField}
+                      required
+                    />
+                    <button type='submit' className={'btn'}>
+                      <span>
+                        Submit <GoTriangleRight />
+                      </span>
+                    </button>
+                  </div>
+                </form>
+              )}
+            </Formik>
           </div>
         </div>
       </section>
@@ -403,6 +473,10 @@ const HomePage = () => {
         onClosePromotionModal={onClosePromotionModal}
         openPromotion={openPromotion}
       />
+      <FormModal
+        onCloseFormModal={onCloseFormModal}
+        openFormModal={openFormModal}
+      />
     </>
   )
 }
@@ -455,11 +529,20 @@ const ProjectCase = ({
         <h4>{projectTitle}</h4>
         <p>{projectDescription}</p>
       </div>
-      <a href='' className={style.project_link}>
+      <a href='/' className={style.project_link}>
         View full project <GoTriangleRight />
       </a>
     </div>
   </div>
 )
+
+HomePage.getInitialProps = async () => {
+  const response = await fetch('http://localhost:8289/v1/project')
+  const projects = await response.json()
+
+  return {
+    projects: projects
+  }
+}
 
 export default HomePage
