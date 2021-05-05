@@ -27,12 +27,9 @@ import { toast } from 'react-toastify'
 import FormModal from '../components/modals/FormModal'
 
 const HomePage = ({ projects }) => {
-  useEffect(() => {
-    console.log(projects.response)
-  }, [])
-  // const projectsArr = Array.from(projects.response)
-
   // Promotion modal
+  const [filteredProjects, setFilteredProjects] = useState(projects.response)
+
   const [openPromotion, setPromotionOpen] = useState(false)
 
   const onOpenPromotionModal = () => setPromotionOpen(true)
@@ -54,6 +51,26 @@ const HomePage = ({ projects }) => {
     infinite: false,
     centerMode: true,
     centerPadding: '30px'
+  }
+
+  const [type, setType] = useState('all')
+
+  const filterProjects = async (e) => {
+    const tagValue = e.currentTarget.value
+    setType(tagValue)
+    if (tagValue === 'all') setFilteredProjects(projects.response)
+    else
+      setFilteredProjects(projects.response.filter((c) => c.type === tagValue))
+      
+    // const response = await axios.get(
+    //   'http://localhost:8289/v1/project/filtration',
+    //   {
+    //     params: { type: 'design' }
+    //   }
+    // )
+    // const projects = await response.data
+    // console.log(projects)
+    // console.log(tagValue)
   }
 
   const currentYear = new Date().getFullYear()
@@ -89,64 +106,7 @@ const HomePage = ({ projects }) => {
     }
   ]
 
-  const cases = [
-    {
-      id: 1,
-      project_photo:
-        'https://images.unsplash.com/photo-1612490566980-04f7a6c64fa3?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80',
-      term: '3 weeks',
-      project_name: 'E-wings | Прокат самокатов',
-      about_project:
-        'E-wings - первый революционный проект шеринга самокатов во Львове.'
-    },
-    {
-      id: 2,
-      project_photo:
-        'https://images.unsplash.com/photo-1578885136359-16c8bd4d3a8e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80',
-      term: '3 weeks',
-      project_name: 'E-wings | Прокат самокатов',
-      about_project:
-        'E-wings - первый революционный проект шеринга самокатов во Львове.'
-    },
-    {
-      id: 3,
-      project_photo:
-        'https://images.unsplash.com/photo-1540015605283-b24e303c7f6e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80',
-      term: '3 weeks',
-      project_name: 'E-wings | Прокат самокатов',
-      about_project:
-        'E-wings - первый революционный проект шеринга самокатов во Львове.'
-    },
-    {
-      id: 4,
-      project_photo:
-        'https://images.unsplash.com/photo-1614642483992-74a06545c0f3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2550&q=80',
-      term: '3 weeks',
-      project_name: 'E-wings | Прокат самокатов',
-      about_project:
-        'E-wings - первый революционный проект шеринга самокатов во Львове.'
-    },
-    {
-      id: 5,
-      project_photo:
-        'https://images.unsplash.com/photo-1554793000-245d3a3c2a51?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=2527&q=80',
-      term: '3 weeks',
-      project_name: 'E-wings | Прокат самокатов',
-      about_project:
-        'E-wings - первый революционный проект шеринга самокатов во Львове.'
-    },
-    {
-      id: 6,
-      project_photo:
-        'https://images.unsplash.com/photo-1618271121437-c1c70b12c294?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=3750&q=80',
-      term: '3 weeks',
-      project_name: 'E-wings | Прокат самокатов',
-      about_project:
-        'E-wings - первый революционный проект шеринга самокатов во Львове.'
-    }
-  ]
-
-  const casesItems = projects.response.map((c) => (
+  const casesItems = filteredProjects.map((c) => (
     <ProjectCase
       key={c.id}
       coverCaseBg={
@@ -248,12 +208,42 @@ const HomePage = ({ projects }) => {
             <span className='title_label'>Our portfolio</span>
             <h2 className={style.h2}>Our Latest Cases.</h2>
             <div className={style.cases_tags}>
-              <span className={style.checked}>All projects</span>
-              <span>Web-Sites</span>
-              <span>App-Dev</span>
-              <span>ONLY DEsign</span>
-              <span>Video & Animation</span>
-              <span>SEO-Cases</span>
+              <CaseTag
+                typeTag='all'
+                text='All projects'
+                typeState={type}
+                filterProjects={filterProjects}
+              />
+              <CaseTag
+                typeTag='web-sites'
+                text='Web-Sites'
+                typeState={type}
+                filterProjects={filterProjects}
+              />
+              <CaseTag
+                typeTag='app-dev'
+                text='App-Dev'
+                typeState={type}
+                filterProjects={filterProjects}
+              />
+              <CaseTag
+                typeTag='design'
+                text='Design Only'
+                typeState={type}
+                filterProjects={filterProjects}
+              />
+              <CaseTag
+                typeTag='motion-design'
+                text='Video & Animation'
+                typeState={type}
+                filterProjects={filterProjects}
+              />
+              <CaseTag
+                typeTag='seo'
+                text='SEO-Cases'
+                typeState={type}
+                filterProjects={filterProjects}
+              />
             </div>
             <div className={style.our_cases_items}>{casesItems}</div>
             <div className={style.cases_slider_wrap}>
@@ -498,6 +488,20 @@ const WorkflowElement = ({ index, title, text }) => {
         <p className={isTextVisible ? style.visible : null}>{text}</p>
       </div>
     </div>
+  )
+}
+
+const CaseTag = ({ typeTag, typeState, text, filterProjects }) => {
+  return (
+    <button
+      type='button'
+      onClick={(e) => {
+        filterProjects(e)
+      }}
+      value={typeTag}
+      className={typeTag === typeState ? style.checked : null}>
+      {text}
+    </button>
   )
 }
 

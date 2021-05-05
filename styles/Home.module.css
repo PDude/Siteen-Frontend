@@ -207,7 +207,7 @@
   flex-wrap: wrap;
   justify-content: center;
 }
-.cases_tags span {
+.cases_tags button {
   cursor: pointer;
   color: #e7e7e7;
   text-transform: uppercase;
@@ -217,15 +217,15 @@
   margin: 10px 30px;
   padding-bottom: 10px;
 }
-.cases_tags span:hover,
-.cases_tags span.checked {
+.cases_tags button:hover,
+.cases_tags button.checked {
   color: #dd4242;
 }
-.cases_tags span:hover::after,
-.cases_tags span.checked::after {
+.cases_tags button:hover::after,
+.cases_tags button.checked::after {
   background: #dd4242;
 }
-.cases_tags span::after {
+.cases_tags button::after {
   height: 1px;
   content: '';
   position: absolute;
@@ -763,7 +763,7 @@
     font-size: 50px;
     opacity: 0.15;
   }
-  .cases_tags span {
+  .cases_tags button {
     font-size: 16px;
   }
   .workflow_items {
@@ -973,7 +973,7 @@
   .service_element h3 {
     font-size: 17px;
   }
-  .cases_tags span {
+  .cases_tags button {
     font-size: 12px;
     margin: 5px 10px;
   }
