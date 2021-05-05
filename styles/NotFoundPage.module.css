@@ -58,7 +58,7 @@
 .cow_element {
   position: absolute;
   margin-top: 300px;
-  animation: levitation 1.2s alternate ease-in-out infinite;
+  animation: levitation 1s alternate ease-in-out infinite;
 }
 .to_homepage {
   display: flex;
@@ -75,7 +75,7 @@
     transform: translate(0, 0);
   }
   100% {
-    transform: translate(0, 1em);
+    transform: translate(0, 2em);
   }
 }
 

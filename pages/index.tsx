@@ -61,16 +61,6 @@ const HomePage = ({ projects }) => {
     if (tagValue === 'all') setFilteredProjects(projects.response)
     else
       setFilteredProjects(projects.response.filter((c) => c.type === tagValue))
-      
-    // const response = await axios.get(
-    //   'http://localhost:8289/v1/project/filtration',
-    //   {
-    //     params: { type: 'design' }
-    //   }
-    // )
-    // const projects = await response.data
-    // console.log(projects)
-    // console.log(tagValue)
   }
 
   const currentYear = new Date().getFullYear()
