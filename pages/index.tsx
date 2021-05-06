@@ -1,19 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { ImPlay3 } from 'react-icons/im'
 import { GoTriangleRight } from 'react-icons/go'
-import { BsArrowRight } from 'react-icons/bs'
 import PromotionModal from '../components/modals/PromotionModal'
 import webIcon from '../images/services_web.svg'
 import uiIcon from '../images/services_ui.svg'
 import marketingIcon from '../images/services_marketing.svg'
 import animIcon from '../images/services_animation.svg'
 import globeGif from '../images/globus.gif'
-import instaIcon from '../images/insta_icon.svg'
-import fbIcon from '../images/fb_icon.svg'
-import linkedIcon from '../images/linked_icon.svg'
-import tIcon from '../images/t_icon.svg'
-import youTubeIcon from '../images/youtube_icon.svg'
-import logoNav from '../images/logo_nav.svg'
 import ServicesSlider from 'react-slick'
 import CasesSlider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -25,6 +18,13 @@ import InputField from '../components/fields/inputField'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 import FormModal from '../components/modals/FormModal'
+import { BsArrowRight } from 'react-icons/bs'
+import instaIcon from '../images/insta_icon.svg'
+import fbIcon from '../images/fb_icon.svg'
+import linkedIcon from '../images/linked_icon.svg'
+import tIcon from '../images/t_icon.svg'
+import youTubeIcon from '../images/youtube_icon.svg'
+import Footer from '../components/footer'
 
 const HomePage = ({ projects }) => {
   // Promotion modal
@@ -63,8 +63,6 @@ const HomePage = ({ projects }) => {
       setFilteredProjects(projects.response.filter((c) => c.type === tagValue))
   }
 
-  const currentYear = new Date().getFullYear()
-
   const services = [
     {
       id: 1,
@@ -99,6 +97,7 @@ const HomePage = ({ projects }) => {
   const casesItems = filteredProjects.map((c) => (
     <ProjectCase
       key={c.id}
+      id={c.id}
       coverCaseBg={
         'https://images.unsplash.com/photo-1620142898494-9c3c967d7c05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80'
       }
@@ -363,92 +362,70 @@ const HomePage = ({ projects }) => {
           </div>
         </div>
       </section>
-      <footer className={style.home_footer}>
-        <div className='container'>
-          <div className={style.contacts_block}>
-            <div className={style.contacts_block_credentials_wrap}>
-              <span className='title_label'>Contacts</span>
-              <ul className={style.contacts_block_credentials}>
-                <li>
-                  <span>Address :</span>
-                  <a href='#'>
-                    230, Kulparkivska str.
-                    <br /> Lviv, Ukraine, 79031
-                  </a>
-                </li>
-                <li>
-                  <span>Phone :</span>
-                  <a href='tel:0971630202'>+38 (097) 163 0202</a>
-                </li>
-                <li>
-                  <span>Email :</span>
-                  <div className={style.mails_links}>
-                    <a href='#'>siteen.co@gmail.com</a>
-                    <a href='#'>siteencareer@gmail.com</a>
-                  </div>
-                </li>
-              </ul>
+      <section className={style.contacts_section}>
+        <div className={style.contacts_block_wrap}>
+          <div className='container'>
+            <div className={style.contacts_block}>
+              <div className={style.contacts_block_credentials_wrap}>
+                <span className='title_label'>Contacts</span>
+                <ul className={style.contacts_block_credentials}>
+                  <li>
+                    <span>Address :</span>
+                    <a href='#'>
+                      230, Kulparkivska str.
+                      <br /> Lviv, Ukraine, 79031
+                    </a>
+                  </li>
+                  <li>
+                    <span>Phone :</span>
+                    <a href='tel:0971630202'>+38 (097) 163 0202</a>
+                  </li>
+                  <li>
+                    <span>Email :</span>
+                    <div className={style.mails_links}>
+                      <a href='#'>siteen.co@gmail.com</a>
+                      <a href='#'>siteencareer@gmail.com</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div className={style.footer_links}>
+                <span>
+                  Follow Us <BsArrowRight />
+                </span>
+                <ul className={style.footer_links_elements}>
+                  <li>
+                    <a href='#'>
+                      <img src={instaIcon} alt='instaIcon' />
+                    </a>
+                  </li>
+                  <li>
+                    <a href='#'>
+                      <img src={fbIcon} alt='fbIcon' />
+                    </a>
+                  </li>
+                  <li>
+                    <a href='#'>
+                      <img src={linkedIcon} alt='linkedIcon' />
+                    </a>
+                  </li>
+                  <li>
+                    <a href='#'>
+                      <img src={tIcon} alt='tIcon' />
+                    </a>
+                  </li>
+                  <li>
+                    <a href='#'>
+                      <img src={youTubeIcon} alt='youTubeIcon' />
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div className={style.footer_links}>
-              <span>
-                Follow Us <BsArrowRight />
-              </span>
-              <ul className={style.footer_links_elements}>
-                <li>
-                  <a href='#'>
-                    <img src={instaIcon} alt='instaIcon' />
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src={fbIcon} alt='fbIcon' />
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src={linkedIcon} alt='linkedIcon' />
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src={tIcon} alt='tIcon' />
-                  </a>
-                </li>
-                <li>
-                  <a href='#'>
-                    <img src={youTubeIcon} alt='youTubeIcon' />
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div className={style.footer_nav}>
-            <Link href='/'>
-              <a>
-                <img src={logoNav} alt='' />
-              </a>
-            </Link>
-            <ul>
-              <li>
-                <a href='#'>Services</a>
-              </li>
-              <li>
-                <a href='#'>Cases</a>
-              </li>
-              <li>
-                <a href='#'>Get a Brif</a>
-              </li>
-              <li>
-                <a href='#'>About Us</a>
-              </li>
-              <li>
-                <a href='#'>Privacy Policy</a>
-              </li>
-            </ul>
-            <p>{currentYear} © All Rights Reserved</p>
           </div>
         </div>
-      </footer>
+      </section>
+      <Footer />
       <PromotionModal
         onClosePromotionModal={onClosePromotionModal}
         openPromotion={openPromotion}
@@ -506,6 +483,7 @@ const ServiceItem = ({ serviceLogo, serviceTitle, serviceDescription }) => (
 )
 
 const ProjectCase = ({
+  id,
   coverCaseBg,
   caseDuration,
   projectTitle,
@@ -523,9 +501,11 @@ const ProjectCase = ({
         <h4>{projectTitle}</h4>
         <p>{projectDescription}</p>
       </div>
-      <a href='/' className={style.project_link}>
-        View full project <GoTriangleRight />
-      </a>
+      <Link href={'/project/[id]'} as={`/project/${id}`}>
+        <a className={style.project_link}>
+          View full project <GoTriangleRight />
+        </a>
+      </Link>
     </div>
   </div>
 )

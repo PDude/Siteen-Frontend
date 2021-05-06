@@ -74,7 +74,6 @@
   opacity: 0
   visibility: hidden
   transition: all 0.3s ease
-  padding-left: 145px
   bottom: 0
   overflow: auto
 
@@ -128,6 +127,7 @@
   grid-template-columns: repeat(4, max-content)
   align-items: center
   grid-gap: 46px
+  padding-left: 145px
 
   &::before
     content: ''
@@ -198,6 +198,7 @@
   margin: 20px 0 60px
   display: flex
   align-items: center
+  padding-left: 145px
 
 .nav_menus_opened ul
   &:first-child
@@ -276,7 +277,7 @@
   .nav_menus_opened_wrap
     margin: 20px 0
 
-  .menu_opened
+  .nav_menus_opened_wrap, .social_link_aside_bar_opened
     padding-left: 0
 
 @media only screen and (max-width: 576px)

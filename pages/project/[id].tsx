@@ -3,28 +3,18 @@ import style from '../../styles/ProjectPage.module.sass'
 import projectBg from '../../images/wings_bg.jpg'
 import projectLogo from '../../images/wings_logo.svg'
 import projecCheckDown from '../../images/project_check_down.svg'
-import { useRef } from 'react'
+import projecCheckDownSmall from '../../images/project_check_down_small.svg'
+import { useEffect, useRef } from 'react'
+import Footer from '../../components/footer'
 
-const ProjectPage = () => {
+const ProjectPage = ({ projects, id }) => {
+  const singleProject = projects.response.filter((p) => p.id == id)[0]
+
   const myRef = useRef()
 
   const scroll = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' })
   }
-
-  const tasks = [
-    'Розробити дизайн сайту.',
-    'Підтримувати позиціонування і фірмовий стиль.',
-    'Ознайомити потенційних клієнтів із проектом.',
-    "Ненав'язливо стимулювати відвідувачів на завантаження додатку.",
-    'Реалізувати зручну інструктію користування сервісом.',
-    'Показати технологічність компанії.',
-    "Налагодити зворотний зв'язок з клієнтами.",
-    'Реалізувати функціонал сайту на ...',
-    'Відфотографувати продукцію для подальшого упакування проекту.',
-    'Відзняти промо-відео проекту.',
-    'Створити контент-план просування Instagram сторінки.'
-  ]
 
   return (
     <>
@@ -35,18 +25,24 @@ const ProjectPage = () => {
           <div className={style.project_info}>
             <img src={projectLogo} alt={'Brand logo'} />
             <div className={style.project_type}>
-              <h3>Упаковка бізнесу</h3>
-              <p>
-                Landing Page проекту. Фотозйомка. Промо-відео. Ведення
-                соц-мереж.
-              </p>
+              <h3>{singleProject.ordering_type}</h3>
+              <p>{singleProject.project_tags.join(' ')}</p>
             </div>
           </div>
           <button
             onClick={() => {
               scroll(myRef)
             }}>
-            <img src={projecCheckDown} alt='projecCheckDown' />
+            <img
+              className={style.for_big_device}
+              src={projecCheckDown}
+              alt='projecCheckDown'
+            />
+            <img
+              className={style.for_small_device}
+              src={projecCheckDownSmall}
+              alt='projecCheckDown'
+            />
           </button>
         </div>
       </header>
@@ -54,17 +50,12 @@ const ProjectPage = () => {
         <div className='container'>
           <div className={style.about}>
             <h3>Про компанію</h3>
-            <p>
-              Студія артіхектури і дизайну інтер’єру Наталії Губиш у Львові.
-              Компанія розробляє і реалізовує дизайн житлових та інших
-              просторів, широко спеціалізується на функціональному інтер’єрі і
-              надає свої послуги не лише у Львові, а у будь яку точку світу.
-            </p>
+            <p>{singleProject.about_project}</p>
           </div>
           <div className={style.tasks}>
             <h3>Задачі</h3>
             <ul>
-              {tasks.map((t) => (
+              {singleProject.project_tasks.map((t) => (
                 <li key={t}>· {t}</li>
               ))}
             </ul>
@@ -73,26 +64,55 @@ const ProjectPage = () => {
             <h3>Результати</h3>
             <ul>
               <li>
-                <a href='#'>hubysh.com</a>
+                <a href='#'>{singleProject.result_link[0]}</a>
               </li>
               <li>
-                <a href='#'>@natalihubysh</a>
+                <a href='#'>{singleProject.result_link[1]}</a>
               </li>
             </ul>
           </div>
           <div className={style.project_reference}>
-            <h1>Сайт</h1>
-            <iframe
-              src='https://www.behance.net/gallery/101714883/Umami-Delivery-Service?iframe=1&amp;ilo0=1'
-              allowFullScreen
-              frameBorder='false'
-              //   sandbox='allow-same-origin allow-scripts allow-popups allow-forms'
-            />
+            <h1>{singleProject.project_name}</h1>
+            <div className={style.iframe_container}>
+              {/* <iframe
+                src='https://www.behance.net/gallery/101714883/Umami-Delivery-Service?iframe=1&amp;ilo0=1'
+                allowFullScreen
+                frameBorder='false'
+                sandbox=''
+              /> */}
+            </div>
           </div>
         </div>
       </section>
+      <section className={style.cta_section}>
+        <div className={style.container}>
+          <div className={style.cta_section_offer}>
+            <h2>Did you like the project?</h2>
+            <p>
+              Fill out the application and we will contact you to discuss
+              cooperation
+            </p>
+            <div className='btn'>
+              <span>Consultation</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <Footer />
     </>
   )
+}
+
+ProjectPage.getInitialProps = async ({ query }) => {
+  const id = query.id
+
+  const response = await fetch('http://localhost:8289/v1/project')
+  const projects = await response.json()
+
+  return {
+    id: id,
+    projects: projects
+  }
 }
 
 export default ProjectPage

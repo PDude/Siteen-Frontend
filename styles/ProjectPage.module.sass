@@ -16,6 +16,8 @@
         animation: levitation 1s alternate ease-in-out infinite
         z-index: 30
         padding: 0 5px
+        img
+            cursor: pointer
 
 .project_page_header
     min-height: calc(100% + 120px)
@@ -105,6 +107,7 @@
             display: flex
             align-items: center
             max-width: max-content
+            word-break: break-all
             &:hover
                 color: #faaa4c
             &::before
@@ -139,6 +142,130 @@
             margin-right: 25px
         &::after
             margin-left: 25px
-    iframe
+    .iframe_container
+        background: #fff
         width: 100%
         height: 90vh
+        overflow: hidden
+        border-radius: 5px
+        iframe
+            width: 100%
+            height: 100%
+
+.cta_section
+    padding: 165px 0
+    background: url('../images/cta_section_bg.png') no-repeat center / cover
+    .cta_section_offer
+        display: flex
+        flex-direction: column
+        align-items: center
+        text-align: center
+        h2
+            font-size: 55px
+        p
+            margin: 15px 0 45px
+            font-size: 22px
+            font-weight: 300
+            max-width: 460px
+
+.for_small_device
+    display: none
+
+@media only screen and (max-width: 1200px)
+    .project_info
+        img
+            max-width: 300px
+        p
+            font-size: 20px !important
+
+    .project_data
+        h3
+            font-size: 35px
+        .about p, .tasks li
+            font-size: 18px !important
+
+    .results li a
+        font-size: 21px !important
+
+    .project_reference h1
+        font-size: 35px
+
+    .cta_section_offer
+        h2
+            font-size: 40px !important
+        p
+            font-size: 20px !important
+
+@media only screen and (max-width: 992px)
+    .project_info
+        img
+            max-width: 260px
+        p
+            font-size: 18px !important
+
+    .project_data
+        h3
+            font-size: 30px
+        .about
+            margin-bottom: 50px
+            p
+                font-size: 16px !important
+        .tasks
+            margin-bottom: 50px
+            li
+                font-size: 16px !important
+        .results li a
+            font-size: 18px !important
+
+    .project_reference h1
+        font-size: 30px
+
+    .cta_section
+        padding: 105px 0
+        h2
+            font-size: 35px !important
+        p
+            font-size: 18px !important
+            margin-bottom: 30px !important
+
+@media only screen and (max-width: 768px)
+    .project_info
+        img
+            max-width: 220px
+        p
+            font-size: 16px !important
+
+    .project_data h3, .project_reference h1
+        font-size: 25px
+
+    .cta_section
+        padding: 80px 0
+        h2
+            font-size: 30px !important
+        p
+            font-size: 16px !important
+
+@media only screen and (max-width: 576px)
+    .for_small_device
+        display: block
+
+    .for_big_device
+        display: none
+
+    .project_info
+        img
+            max-width: 200px
+        .project_type
+            margin-top: 110px
+            &::before
+                top: -85px
+                height: 60px
+            h3
+                font-size: 20px
+
+    .cta_section
+        padding-top: 60px
+        h2
+            font-size: 25px !important
+        p
+            font-size: 16px !important

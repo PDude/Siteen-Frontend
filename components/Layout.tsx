@@ -7,6 +7,7 @@ import { FaFacebookSquare } from 'react-icons/fa'
 import { FaLinkedin } from 'react-icons/fa'
 import { FaTelegram } from 'react-icons/fa'
 import { FaYoutube } from 'react-icons/fa'
+import Link from 'next/link'
 
 const Layout = ({ children }) => {
   const [isHamburgerOpen, setHamburgerOpen] = useState(false)
@@ -27,9 +28,11 @@ const Layout = ({ children }) => {
       <nav className={style.navigation_bar}>
         <div className='container'>
           <div className={style.navigation_bar_wrap}>
-            <a className={style.logo_link} href='#'>
-              <img src={logoNav} alt='Siteen' />
-            </a>
+            <Link href='/'>
+              <a className={style.logo_link}>
+                <img src={logoNav} alt='Siteen' />
+              </a>
+            </Link>
             <ul className={style.nav_menu}>
               <li>
                 <a href='#'>Services</a>
@@ -95,9 +98,11 @@ const Layout = ({ children }) => {
         <div className='container'>
           <div className={style.content_opened_wrap}>
             <div className={style.navigation_bar_wrap_opened}>
-              <a className={style.logo_link_opened} href='#'>
-                <img src={logoNav} alt='Siteen' />
-              </a>
+              <Link href='/'>
+                <a className={style.logo_link_opened}>
+                  <img src={logoNav} alt='Siteen' />
+                </a>
+              </Link>
               <a className={style.nav_tel} href='tel:0971630202'>
                 +38 (097) 163 02 02
               </a>
