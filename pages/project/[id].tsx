@@ -85,7 +85,7 @@ const ProjectPage = ({ projects, id }) => {
         </div>
       </section>
       <section className={style.cta_section}>
-        <div className={style.container}>
+        <div className='container'>
           <div className={style.cta_section_offer}>
             <h2>Did you like the project?</h2>
             <p>
