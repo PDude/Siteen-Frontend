@@ -76,6 +76,7 @@
   transition: all 0.3s ease
   bottom: 0
   overflow: auto
+  padding-left: 145px
 
 .content_opened_wrap
   min-height: 100vh
@@ -127,7 +128,7 @@
   grid-template-columns: repeat(4, max-content)
   align-items: center
   grid-gap: 46px
-  padding-left: 145px
+  // padding-left: 145px
 
   &::before
     content: ''
@@ -198,7 +199,7 @@
   margin: 20px 0 60px
   display: flex
   align-items: center
-  padding-left: 145px
+  // padding-left: 145px
 
 .nav_menus_opened ul
   &:first-child
@@ -238,6 +239,9 @@
     margin-left: auto
 
 @media only screen and (max-width: 992px)
+  .menu_opened
+    padding-left: 0
+
   .layout_wrap
     grid-template-areas: 'navigation_bar navigation_bar' 'main_wrap_content main_wrap_content'
 
@@ -247,6 +251,9 @@
   .hamburger_wrap_hamburger
     display: block
     margin-left: 30px
+
+  .nav_menus_opened_wrap, .social_link_aside_bar_opened
+    padding-left: 145px
 
 @media only screen and (max-width: 768px)
   .nav_tel, .get_brif

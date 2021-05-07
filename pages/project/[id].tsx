@@ -5,7 +5,7 @@ import projectLogo from '../../images/wings_logo.svg'
 import projecCheckDown from '../../images/project_check_down.svg'
 import projecCheckDownSmall from '../../images/project_check_down_small.svg'
 import { useEffect, useRef } from 'react'
-import Footer from '../../components/footer'
+import Footer from '../../components/Footer'
 
 const ProjectPage = ({ projects, id }) => {
   const singleProject = projects.response.filter((p) => p.id == id)[0]
@@ -75,11 +75,12 @@ const ProjectPage = ({ projects, id }) => {
             <h1>{singleProject.project_name}</h1>
             <div className={style.iframe_container}>
               {/* <iframe
-                src='https://www.behance.net/gallery/101714883/Umami-Delivery-Service?iframe=1&amp;ilo0=1'
-                allowFullScreen
-                frameBorder='false'
-                sandbox=''
+                src='https://www.instagram.com/p/Btg1jd_HJsT/'
+                frameBorder={0}
               /> */}
+              <h1>
+                  Coming soon ...
+              </h1>
             </div>
           </div>
         </div>

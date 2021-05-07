@@ -70,6 +70,7 @@ a
   text-decoration: none
   transition: all 0.3s ease !important
   color: #fff
+  font-weight: 300
 
 input, textarea, button, select
   font-family: 'Montserrat', sans-serif !important
@@ -81,11 +82,15 @@ input, textarea, button, select
 button, select
   cursor: pointer
 
+p, span, li
+  font-weight: 300
+
 .btn
   padding: 12px 35px
   border-radius: 50px
   position: relative
   z-index: 20
+  cursor: pointer
 
   span
     font-weight: 700
@@ -94,6 +99,7 @@ button, select
     color: #fff
     display: flex
     align-items: center
+    cursor: pointer
 
     svg
       margin-left: 1px
@@ -170,6 +176,37 @@ li
   margin: 0 auto
   padding: 0 15px
 
+.pulse
+  position: relative
+  &::before, &::after
+    content: ''
+    position: absolute
+    left: -20px
+    right: -20px
+    top: -20px
+    bottom: -20px
+    border-radius: 50%
+    opacity: 0
+    animation: pulse 1.7s linear infinite
+    z-index: 200
+  &::before
+    border: 6px solid rgba(221, 66, 66, 0.2)
+    animation-delay: 0.5s
+  &::after
+    border: 3px solid rgba(221, 66, 66, 0.6)
+
+@keyframes pulse
+  0%
+    transform: scale(0.5)
+    opacity: 0
+
+  50%
+    opacity: 1
+
+  100%
+    transform: scale(1.1)
+    opacity: 0
+
 @media only screen and (max-width: 1200px)
   .container
     max-width: 1140px
@@ -186,45 +223,15 @@ li
   .container
     max-width: 540px
 
-.pulse
-  position: relative
-
-  &::before, &::after
-    content: ''
-    position: absolute
-    left: -20px
-    right: -20px
-    top: -20px
-    bottom: -20px
-    border-radius: 50%
-    opacity: 0
-    animation: pulse 1.7s linear infinite
-    z-index: 200
-
-  &::before
-    border: 6px solid rgba(221, 66, 66, 0.2)
-    animation-delay: 0.5s
-
-  &::after
-    border: 3px solid rgba(221, 66, 66, 0.6)
-
-@keyframes pulse
-  0%
-    transform: scale(0.5)
-    opacity: 0
-
-  50%
-    opacity: 1
-
-  100%
-    transform: scale(1.1)
-    opacity: 0
-
 /* ***
 
-.slick-slideimg
-  filter: brightness(0.7)
+.slick-slide
+  filter: brightness(0.2)
+  transform: scale(0.95)
   transition: all 0.5s ease
+  height: inherit !important
+  &>div
+    height: 100%
 
 .slick-active, .slick-current
   filter: brightness(1)
@@ -253,6 +260,13 @@ li
 
 .slick-active .icon_wrap_global, .slick-current .icon_wrap_global
   background: #fff
+
+.slick-track
+  display: flex !important
+
+.team_slider_global
+  .slick-slide
+    // transform: scale(1) !important
 
 @media only screen and (max-width: 1200px)
 

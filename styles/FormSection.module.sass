@@ -1,0 +1,92 @@
+.form
+    padding: 60px 0 130px 80px
+    background: #191c26
+    border-radius: 40px 0 0 0
+    position: relative
+    & *
+        z-index: 15
+        position: relative
+    &::after
+        content: ''
+        position: absolute
+        background: #191c26
+        height: 100%
+        z-index: 5
+        left: 0
+        border-radius: 40px 0 0 0
+        width: 55vw
+        top: 0
+    .h2
+        font-size: 53px
+        max-width: 370px
+        margin: 15px 0 18px
+        max-width: 370px
+        width: 100%
+        text-align: left
+    & > p
+        font-size: 15px
+        max-width: 400px
+        letter-spacing: -0.01em
+
+.form_items
+    max-width: 370px
+    margin-top: 55px
+    & input
+        margin-bottom: 30px
+    & input:last-child
+        margin-bottom: 0 !important
+    & button
+        margin-top: 30px
+    & button::before
+        background: #191c26
+    & button span
+        right: -5px
+    & button svg
+        transform: scaleY(0.65)
+
+@media only screen and (max-width: 1200px)
+    .h2
+        font-size: 40px !important
+
+@media only screen and (max-width: 992px)
+    .form
+        overflow: hidden
+        border-radius: 30px
+        padding: 60px 15px 130px
+        display: flex
+        flex-direction: column
+        align-items: center
+        & > p
+            max-width: 370px
+
+        & > span
+            max-width: 370px
+        &::after
+            display: none
+
+    .h2
+        font-size: 35px !important
+
+@media only screen and (max-width: 768px)
+    .h2
+        font-size: 25px !important
+
+@media only screen and (max-width: 576px)
+    .form
+        padding-bottom: 80px
+        padding-top: 80px
+        border-radius: 20px
+        span
+            margin-right: auto
+        .h2
+            margin-top: 5px
+            font-size: 20px
+        & > p
+            opacity: 0.9
+            font-size: 14px
+
+.form_items
+    margin-top: 40px
+    & input
+        font-size: 14px
+        margin-bottom: 20px

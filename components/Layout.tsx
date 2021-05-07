@@ -19,6 +19,10 @@ const Layout = ({ children }) => {
       : (document.body.style.overflowY = 'auto')
   }
 
+  const closeHamburger = () => {
+    setHamburgerOpen(false)
+  }
+
   useEffect(() => {
     hamburgerDependencies()
   }, [hamburgerDependencies])
@@ -120,21 +124,31 @@ const Layout = ({ children }) => {
               <div className={style.nav_menus_opened}>
                 <ul>
                   <li>
-                    <a href='#'>Our Services</a>
+                    <a onClick={closeHamburger} href='#'>
+                      Our Services
+                    </a>
                   </li>
                   <li>
-                    <a href='#'>Portfolio</a>
+                    <a onClick={closeHamburger} href='#'>
+                      Portfolio
+                    </a>
                   </li>
                   <li>
-                    <a href='#'>About Us</a>
+                    <Link href='/about'>
+                      <a onClick={closeHamburger}>About Us</a>
+                    </Link>
                   </li>
                 </ul>
                 <ul>
                   <li>
-                    <a href='#'>Contacts</a>
+                    <a onClick={closeHamburger} href='#'>
+                      Contacts
+                    </a>
                   </li>
                   <li>
-                    <a href='#'>Our Projects</a>
+                    <a onClick={closeHamburger} href='#'>
+                      Our Projects
+                    </a>
                   </li>
                 </ul>
               </div>

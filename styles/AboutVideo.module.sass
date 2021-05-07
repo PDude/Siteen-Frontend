@@ -1,0 +1,43 @@
+.about_us_video
+    display: flex
+    align-items: center
+    & button
+        width: 64px
+        height: 64px
+        display: flex
+        align-items: center
+        justify-content: center
+        padding: 0
+        padding-left: 5px
+        z-index: 300
+    & button > span
+        display: flex
+        align-items: center
+    & button svg
+        color: #fff
+        font-size: 24px
+
+.about_us_text
+    margin-left: 35px
+    & span
+        text-transform: uppercase
+        font-size: 13px
+        position: relative
+    & span::after
+        content: ''
+        width: 140px
+        height: 1px
+        background: #fff
+        display: block
+        margin: 11px 0 5px
+    & p
+        font-size: 15px
+        color: #dd4242
+
+@media only screen and (max-width: 576px)
+    .about_us_video button
+        width: 44px
+        height: 44px
+
+    .about_us_text
+        margin-left: 25px

@@ -1,7 +1,5 @@
 import { useState } from 'react'
-import { ImPlay3 } from 'react-icons/im'
 import { GoTriangleRight } from 'react-icons/go'
-import PromotionModal from '../components/modals/PromotionModal'
 import webIcon from '../images/services_web.svg'
 import uiIcon from '../images/services_ui.svg'
 import marketingIcon from '../images/services_marketing.svg'
@@ -13,33 +11,18 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import style from '../styles/Home.module.css'
 import Link from 'next/link'
-import { Field, Formik } from 'formik'
-import InputField from '../components/fields/inputField'
-import axios from 'axios'
-import { toast } from 'react-toastify'
-import FormModal from '../components/modals/FormModal'
 import { BsArrowRight } from 'react-icons/bs'
 import instaIcon from '../images/insta_icon.svg'
 import fbIcon from '../images/fb_icon.svg'
 import linkedIcon from '../images/linked_icon.svg'
 import tIcon from '../images/t_icon.svg'
 import youTubeIcon from '../images/youtube_icon.svg'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
+import AboutVideo from '../components/AboutVideo'
+import FormSection from '../components/FormSection'
 
 const HomePage = ({ projects }) => {
-  // Promotion modal
   const [filteredProjects, setFilteredProjects] = useState(projects.response)
-
-  const [openPromotion, setPromotionOpen] = useState(false)
-
-  const onOpenPromotionModal = () => setPromotionOpen(true)
-  const onClosePromotionModal = () => setPromotionOpen(false)
-
-  // Form success modal
-  const [openFormModal, setFormModalOpen] = useState(false)
-
-  const onOpenFormModal = () => setFormModalOpen(true)
-  const onCloseFormModal = () => setFormModalOpen(false)
 
   // Slider settings
   const sliderSettings = {
@@ -116,33 +99,6 @@ const HomePage = ({ projects }) => {
     />
   ))
 
-  const sendForm = (values, { resetForm }) => {
-    const { name, email, phone } = values
-    axios
-      .post('http://localhost:8289/v1/consult', {
-        name,
-        email,
-        phone
-      })
-      .then((res) => {
-        if (res.data.message === 'ok') {
-          resetForm({})
-          console.log(res)
-          onOpenFormModal()
-          console.log(values)
-        }
-      })
-      .then(() => {
-        setTimeout(() => {
-          onCloseFormModal()
-        }, 3000)
-      })
-      .catch(function (error) {
-        console.log(error)
-        toast.error('Something went wrong please try later')
-      })
-  }
-
   return (
     <>
       <header className={style.main_header}>
@@ -154,18 +110,8 @@ const HomePage = ({ projects }) => {
               We bring your business online and raise the income thanks to our
               wonderful team of professionals.
             </p>
-            <div className={style.about_us_video}>
-              <div className='pulse'>
-                <button onClick={onOpenPromotionModal} className='btn'>
-                  <span>
-                    <ImPlay3 />
-                  </span>
-                </button>
-              </div>
-              <div className={style.about_us_text}>
-                <span>About Us</span>
-                <p>Promotion video</p>
-              </div>
+            <div className={style.about_us_video_wrap}>
+              <AboutVideo videoLabel='About Us' />
             </div>
           </div>
           <div className={style.lang_toggler_mobile}>
@@ -210,12 +156,6 @@ const HomePage = ({ projects }) => {
                 filterProjects={filterProjects}
               />
               <CaseTag
-                typeTag='app-dev'
-                text='App-Dev'
-                typeState={type}
-                filterProjects={filterProjects}
-              />
-              <CaseTag
                 typeTag='design'
                 text='Design Only'
                 typeState={type}
@@ -227,12 +167,24 @@ const HomePage = ({ projects }) => {
                 typeState={type}
                 filterProjects={filterProjects}
               />
+              <button type='button' className={style.inaccessible}>
+                App-Dev
+              </button>
+              <button type='button' className={style.inaccessible}>
+                SEO-Cases
+              </button>
+              {/* <CaseTag
+                typeTag='app-dev'
+                text='App-Dev'
+                typeState={type}
+                filterProjects={filterProjects}
+              />
               <CaseTag
                 typeTag='seo'
                 text='SEO-Cases'
                 typeState={type}
                 filterProjects={filterProjects}
-              />
+              /> */}
             </div>
             <div className={style.our_cases_items}>{casesItems}</div>
             <div className={style.cases_slider_wrap}>
@@ -252,51 +204,7 @@ const HomePage = ({ projects }) => {
             <div className={style.globe_wrap}>
               <img src={globeGif} alt='globe' />
             </div>
-            <Formik
-              onSubmit={sendForm}
-              initialValues={{ name: '', email: '', phone: '' }}>
-              {({ handleSubmit }) => (
-                <form onSubmit={handleSubmit} className={style.form}>
-                  <span className='title_label'>LET’S GET STARTED</span>
-                  <h2 className={style.h2}>Get A Free Consultation.</h2>
-                  <p>
-                    The best ideas start from the brif. Let us to know what you
-                    need and we will realise it in sucsessfull product.
-                  </p>
-                  <div className={style.form_items}>
-                    <Field
-                      name='name'
-                      className='input'
-                      placeholder='Name'
-                      type='text'
-                      component={InputField}
-                      required
-                    />
-                    <Field
-                      name='email'
-                      className='input'
-                      placeholder='Email'
-                      type='email'
-                      component={InputField}
-                      required
-                    />
-                    <Field
-                      name='phone'
-                      className='input'
-                      placeholder='Phone Number'
-                      type='tel'
-                      component={InputField}
-                      required
-                    />
-                    <button type='submit' className={'btn'}>
-                      <span>
-                        Submit <GoTriangleRight />
-                      </span>
-                    </button>
-                  </div>
-                </form>
-              )}
-            </Formik>
+            <FormSection />
           </div>
         </div>
       </section>
@@ -426,14 +334,6 @@ const HomePage = ({ projects }) => {
         </div>
       </section>
       <Footer />
-      <PromotionModal
-        onClosePromotionModal={onClosePromotionModal}
-        openPromotion={openPromotion}
-      />
-      <FormModal
-        onCloseFormModal={onCloseFormModal}
-        openFormModal={openFormModal}
-      />
     </>
   )
 }
