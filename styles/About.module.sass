@@ -92,9 +92,10 @@
             .figmaIcon
                 width: 66px
     .frontend_icons, .backend_icons, .art_icons
-        display: flex
-        flex-wrap: wrap
+        display: grid
         align-items: center
+        grid-template-columns: repeat(4, 1fr)
+        justify-items: center
     .frontend_icons a, .backend_icons a, .art_icons a
         margin: 15px
         width: 100px
