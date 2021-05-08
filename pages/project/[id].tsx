@@ -4,16 +4,42 @@ import projectBg from '../../images/wings_bg.jpg'
 import projectLogo from '../../images/wings_logo.svg'
 import projecCheckDown from '../../images/project_check_down.svg'
 import projecCheckDownSmall from '../../images/project_check_down_small.svg'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Footer from '../../components/Footer'
+import { useRouter } from 'next/router'
 
-const ProjectPage = ({ projects, id }) => {
-  const singleProject = projects.response.filter((p) => p.id == id)[0]
-
+const ProjectPage = ({ project: serverProject }) => {
   const myRef = useRef()
+
+  const [project, setProject] = useState(serverProject)
+  const router = useRouter()
+
+  useEffect(() => {
+    const loadProject = async () => {
+      const response = await fetch(
+        `http://localhost:8289/v1/project/${router.query.id}`
+      )
+      const projectData = await response.json()
+      setProject(projectData.response[0])
+    }
+
+    if (!serverProject) {
+      loadProject()
+    }
+  }, [])
 
   const scroll = (ref) => {
     ref.current.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  if (!project) {
+    return (
+      <div className='container'>
+        <div className={style.loading_wrap}>
+          <p>Loading ...</p>
+        </div>
+      </div>
+    )
   }
 
   return (
@@ -25,8 +51,8 @@ const ProjectPage = ({ projects, id }) => {
           <div className={style.project_info}>
             <img src={projectLogo} alt={'Brand logo'} />
             <div className={style.project_type}>
-              <h3>{singleProject.ordering_type}</h3>
-              <p>{singleProject.project_tags.join(' ')}</p>
+              <h3>{project.ordering_type}</h3>
+              <p>{project.project_tags.join(' ')}</p>
             </div>
           </div>
           <button
@@ -50,12 +76,12 @@ const ProjectPage = ({ projects, id }) => {
         <div className='container'>
           <div className={style.about}>
             <h3>Про компанію</h3>
-            <p>{singleProject.about_project}</p>
+            <p>{project.about_project}</p>
           </div>
           <div className={style.tasks}>
             <h3>Задачі</h3>
             <ul>
-              {singleProject.project_tasks.map((t) => (
+              {project.project_tasks.map((t) => (
                 <li key={t}>· {t}</li>
               ))}
             </ul>
@@ -64,23 +90,21 @@ const ProjectPage = ({ projects, id }) => {
             <h3>Результати</h3>
             <ul>
               <li>
-                <a href='#'>{singleProject.result_link[0]}</a>
+                <a href='#'>{project.result_link[0]}</a>
               </li>
               <li>
-                <a href='#'>{singleProject.result_link[1]}</a>
+                <a href='#'>{project.result_link[1]}</a>
               </li>
             </ul>
           </div>
           <div className={style.project_reference}>
-            <h1>{singleProject.project_name}</h1>
+            <h1>{project.project_name}</h1>
             <div className={style.iframe_container}>
               {/* <iframe
                 src='https://www.instagram.com/p/Btg1jd_HJsT/'
                 frameBorder={0}
               /> */}
-              <h1>
-                  Coming soon ...
-              </h1>
+              <h1>Coming soon ...</h1>
             </div>
           </div>
         </div>
@@ -104,15 +128,18 @@ const ProjectPage = ({ projects, id }) => {
   )
 }
 
-ProjectPage.getInitialProps = async ({ query }) => {
-  const id = query.id
+ProjectPage.getInitialProps = async ({ query, req }) => {
+  if (!req) {
+    return {
+      project: null
+    }
+  }
 
-  const response = await fetch('http://localhost:8289/v1/project')
-  const projects = await response.json()
+  const response = await fetch(`http://localhost:8289/v1/project/${query.id}`)
+  const project = await response.json()
 
   return {
-    id: id,
-    projects: projects
+    project: project.response[0]
   }
 }
 
