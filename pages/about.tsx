@@ -9,8 +9,8 @@ import vueIcon from '../images/brands/vue.svg'
 import angularIcon from '../images/brands/angular.svg'
 import tsIcon from '../images/brands/typescript.svg'
 import webpackIcon from '../images/brands/webpack.svg'
-import htmlIcon from '../images/brands/html.svg'
-import cssIcon from '../images/brands/css.svg'
+import htmlIcon from '../images/brands/html_2.svg'
+import cssIcon from '../images/brands/css_2.svg'
 import sassIcon from '../images/brands/sass.svg'
 // Backend icons
 import nodeJs from '../images/brands/node_js.svg'
@@ -40,7 +40,7 @@ import member4 from '../images/member_4.jpg'
 // Arows
 import arrowBack from '../images/arrow_team_back.svg'
 import arrowNext from '../images/arrow_team_next.svg'
-import { Component } from 'react'
+import { Component, useEffect } from 'react'
 import FormSection from '../components/FormSection'
 import Footer from '../components/Footer'
 // Social links
@@ -51,6 +51,8 @@ import tIcon from '../images/t_icon.svg'
 import youTubeIcon from '../images/youtube_icon.svg'
 
 const about = () => {
+  useEffect(() => {}, [])
+
   return (
     <>
       <header className={style.about_header}>
@@ -278,57 +280,77 @@ class PreviousNextMethodsTeamSection extends Component {
       slidesToScroll: 1,
       arrows: false,
       speed: 500,
-      infinite: false
+      infinite: false,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 1,
+            centerMode: true,
+            centerPadding: '30px'
+          }
+        }
+      ]
       // centerPadding: '30px'
     }
 
     return (
       <section className={style.team_section}>
         <div className='container'>
-          <span className='title_label'>Our Exress</span>
-          <h1>Team - the main thing.</h1>
-          <div className={style.team_desk_and_arrows}>
-            <p>
-              Our digital company develops projects and has been on the market
-              for 15 years.
-            </p>
-            <div className={style.arrows}>
-              <button onClick={this.previous} className={style.team_back_arrow}>
-                Back <img src={arrowBack} alt='<-' />
-              </button>
-              <button onClick={this.next} className={style.team_next_arrow}>
-                Next <img src={arrowNext} alt='->' />
-              </button>
+          <div className={style.team_section_wrap}>
+            <span className='title_label'>Our Exress</span>
+            <h1>Team - the main thing.</h1>
+            <div className={style.team_desk_and_arrows}>
+              <p>
+                Our digital company develops projects and has been on the market
+                for 15 years.
+              </p>
+              <div className={style.arrows}>
+                <button
+                  onClick={this.previous}
+                  className={style.team_back_arrow}>
+                  Back <img src={arrowBack} alt='<-' />
+                </button>
+                <button onClick={this.next} className={style.team_next_arrow}>
+                  Next <img src={arrowNext} alt='->' />
+                </button>
+              </div>
             </div>
-          </div>
-          <div className={`${style.team_slider} team_slider_global`}>
-            <TeamSlider ref={(c) => (this.slider = c)} {...sliderSettings}>
-              <TeamSliderItem
-                name={'Paul Dudich'}
-                position={'Web-Developer'}
-                imgPath={member1}
-              />
-              <TeamSliderItem
-                name={'Paul Dudich'}
-                position={'Web-Developer'}
-                imgPath={member2}
-              />
-              <TeamSliderItem
-                name={'Paul Dudich'}
-                position={'Web-Developer'}
-                imgPath={member3}
-              />
-              <TeamSliderItem
-                name={'Paul Dudich'}
-                position={'Web-Developer'}
-                imgPath={member4}
-              />
-              <TeamSliderItem
-                name={'Paul Dudich'}
-                position={'Web-Developer'}
-                imgPath={member1}
-              />
-            </TeamSlider>
+            <div className={`${style.team_slider} team_slider_global`}>
+              <TeamSlider ref={(c) => (this.slider = c)} {...sliderSettings}>
+                <TeamSliderItem
+                  name={'Paul Dudich'}
+                  position={'Web-Developer'}
+                  imgPath={member1}
+                />
+                <TeamSliderItem
+                  name={'Paul Dudich'}
+                  position={'Web-Developer'}
+                  imgPath={member2}
+                />
+                <TeamSliderItem
+                  name={'Paul Dudich'}
+                  position={'Web-Developer'}
+                  imgPath={member3}
+                />
+                <TeamSliderItem
+                  name={'Paul Dudich'}
+                  position={'Web-Developer'}
+                  imgPath={member4}
+                />
+                <TeamSliderItem
+                  name={'Paul Dudich'}
+                  position={'Web-Developer'}
+                  imgPath={member1}
+                />
+              </TeamSlider>
+            </div>
           </div>
         </div>
       </section>
@@ -341,7 +363,7 @@ const TeamSliderItem = ({ name, position, imgPath }) => {
     <div
       className={style.slider_item}
       style={{ backgroundImage: `url(${imgPath})` }}>
-      <div className={style.slider_item_inner}>
+      <div className={`${style.slider_item_inner} slider_item_inner_global`}>
         <p>{name}</p>
         <span>{position}</span>
       </div>

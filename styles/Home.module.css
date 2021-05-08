@@ -54,6 +54,7 @@
   letter-spacing: -0.01em;
   font-size: 20px;
   max-width: 540px;
+  color: #E4E4E4;
   width: 100%;
   margin-top: 27px;
 }
@@ -694,6 +695,7 @@
   .we_are_pro_content {
     border-radius: 30px;
     padding-left: 15px;
+    padding-right: 15px;
     background: #191c26;
   }
   .we_are_pro_content::after {

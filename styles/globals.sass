@@ -41,6 +41,8 @@
   margin: 0
   padding: 0
   box-sizing: border-box
+  min-width: 0
+  min-height: 0
 
   &:focus, &:hover, &:active
     outline: none
@@ -225,6 +227,7 @@ li
 
 /* ***
 
+// Styles for all non-active slides
 .slick-slide
   filter: brightness(0.2)
   transform: scale(0.95)
@@ -233,40 +236,56 @@ li
   &>div
     height: 100%
 
+// Styles for one active center slide
 .slick-active, .slick-current
   filter: brightness(1)
   transition: all 0.5s ease
 
+// Slides for projects passive slides
 .slick-slide .project_case_global::before
   opacity: 0 !important
   transition: all 0.5s ease
 
+// Styles for one active projects slide
 .slick-active .project_case_global::before, .slick-current .project_case_global::before
   opacity: 0.6 !important
   transition: all 0.5s ease
 
+// Slides for projects passive slides
 .slick-slide .project_case_wrap_global
   opacity: 0 !important
   transition: all 0.5s ease
 
+// Styles for one active projects slide
 .slick-active .project_case_wrap_global, .slick-current .project_case_wrap_global
   opacity: 1 !important
   transition: all 0.5s ease
 
+// Slides for services passive slides  
 .slick-slide .icon_wrap_global
   background: #000
   animation: none
   transition: all 0.5s ease
 
+// Styles for one active services slide
 .slick-active .icon_wrap_global, .slick-current .icon_wrap_global
   background: #fff
 
+// Slides for team members passive slides 
+.slick-slide .slider_item_inner_global
+  opacity: 0 !important
+  top: 100% !important
+  transition: all 0.5s ease
+
+// Styles for one active team members slide
+.slick-current .slider_item_inner_global, .slick-active .slider_item_inner_global
+  opacity: 1 !important
+  top: 1px !important
+  transition: all 0.5s ease
+
+// Styles for track of all slides  
 .slick-track
   display: flex !important
-
-.team_slider_global
-  .slick-slide
-    // transform: scale(1) !important
 
 @media only screen and (max-width: 1200px)
 
