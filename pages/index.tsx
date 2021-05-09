@@ -17,7 +17,7 @@ import fbIcon from '../images/fb_icon.svg'
 import linkedIcon from '../images/linked_icon.svg'
 import tIcon from '../images/t_icon.svg'
 import youTubeIcon from '../images/youtube_icon.svg'
-import Footer from '../components/Footer'
+import Footer from '../components/footer'
 import AboutVideo from '../components/AboutVideo'
 import FormSection from '../components/FormSection'
 
