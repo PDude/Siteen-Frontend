@@ -50,7 +50,7 @@ import linkedIcon from '../images/linked_icon.svg'
 import tIcon from '../images/t_icon.svg'
 import youTubeIcon from '../images/youtube_icon.svg'
 
-const about = () => {
+const About = () => {
   useEffect(() => {}, [])
 
   return (
@@ -371,4 +371,4 @@ const TeamSliderItem = ({ name, position, imgPath }) => {
   )
 }
 
-export default about
+export default About

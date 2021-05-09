@@ -22,7 +22,7 @@ import AboutVideo from '../components/AboutVideo'
 import FormSection from '../components/FormSection'
 
 const HomePage = ({ projects }) => {
-  const [filteredProjects, setFilteredProjects] = useState(projects.response)
+  const [filteredProjects, setFilteredProjects] = useState(projects)
 
   // Slider settings
   const sliderSettings = {
@@ -38,12 +38,12 @@ const HomePage = ({ projects }) => {
 
   const [type, setType] = useState('all')
 
-  const filterProjects = async (e) => {
+  const filterProjects = (e) => {
     const tagValue = e.currentTarget.value
     setType(tagValue)
-    if (tagValue === 'all') setFilteredProjects(projects.response)
+    if (tagValue === 'all') setFilteredProjects(projects)
     else
-      setFilteredProjects(projects.response.filter((c) => c.type === tagValue))
+      setFilteredProjects(projects.filter((c) => c.type === tagValue))
   }
 
   const services = [
@@ -415,7 +415,7 @@ HomePage.getInitialProps = async () => {
   const projects = await response.json()
 
   return {
-    projects: projects
+    projects: projects.response
   }
 }
 

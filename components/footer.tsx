@@ -28,7 +28,9 @@ const Footer = () => {
               <a href='#'>About Us</a>
             </li>
             <li>
-              <a href='#'>Privacy Policy</a>
+              <Link href='/privacy-policy'>
+                <a>Privacy Policy</a>
+              </Link>
             </li>
           </ul>
           <p>{currentYear} © All Rights Reserved</p>
