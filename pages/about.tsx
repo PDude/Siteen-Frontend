@@ -55,33 +55,35 @@ const About = () => {
 
   return (
     <>
-      <header className={style.about_header}>
-        <div className='container'>
-          <div className={style.about_offer}>
-            <div className={style.about_offer_text}>
-              <span className='title_label'>About us</span>
-              <h1>We are professionals in our field.</h1>
-              <p>
-                Our digital company develops projects and has been on the market
-                for 15 years.
-              </p>
-              <span className={style.offer_description}>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                blanditiis praesentium voluptatum deleniti atque corrupti quos
-                dolores et quas molestias excepturi sint occaecati cupiditate
-                non provident, similique sunt in culpa qui officia deserunt
-                mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-                rerum facilis est et expedita distinctio. Nam libero tempore,
-                cum soluta nobis est eligendi optio cumque nihil impedit quo
-                minus id quod maxime placeat facere possimus.
-              </span>
-            </div>
-            <div className={style.about_video_wrap}>
-              <AboutVideo videoLabel='Play' />
+      <div className={style.about_header_wrap}>
+        <header className={style.about_header}>
+          <div className='container'>
+            <div className={style.about_offer}>
+              <div className={style.about_offer_text}>
+                <span className='title_label'>About us</span>
+                <h1>We are professionals in our field.</h1>
+                <p>
+                  Our digital company develops projects and has been on the
+                  market for 15 years.
+                </p>
+                <span className={style.offer_description}>
+                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
+                  blanditiis praesentium voluptatum deleniti atque corrupti quos
+                  dolores et quas molestias excepturi sint occaecati cupiditate
+                  non provident, similique sunt in culpa qui officia deserunt
+                  mollitia animi, id est laborum et dolorum fuga. Et harum
+                  quidem rerum facilis est et expedita distinctio. Nam libero
+                  tempore, cum soluta nobis est eligendi optio cumque nihil
+                  impedit quo minus id quod maxime placeat facere possimus.
+                </span>
+              </div>
+              <div className={style.about_video_wrap}>
+                <AboutVideo videoLabel='Play' />
+              </div>
             </div>
           </div>
-        </div>
-      </header>
+        </header>
+      </div>
       <section className={style.technologies_section}>
         <div className='container'>
           <div className={style.frontend_and_description}>
@@ -366,14 +368,15 @@ class PreviousNextMethodsTeamSection extends Component {
 
 const TeamSliderItem = ({ name, position, imgPath }) => {
   return (
-    <div
+    <a
+      href='#'
       className={style.slider_item}
       style={{ backgroundImage: `url(${imgPath})` }}>
       <div className={`${style.slider_item_inner} slider_item_inner_global`}>
         <p>{name}</p>
         <span>{position}</span>
       </div>
-    </div>
+    </a>
   )
 }
 

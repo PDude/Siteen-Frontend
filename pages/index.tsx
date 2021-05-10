@@ -190,11 +190,11 @@ const HomePage = ({ projects }) => {
             <div className={style.cases_slider_wrap}>
               <CasesSlider {...sliderSettings}>{casesItems}</CasesSlider>
             </div>
-            <Link href='/'>
+            {/* <Link href='/'>
               <a className={style.more_projects_btn}>
                 <span>View More</span>
               </a>
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>

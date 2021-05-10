@@ -62,7 +62,7 @@
 .to_homepage {
   display: flex;
   align-items: center;
-  height: 45px;
+  height: 52px;
   max-width: max-content;
 }
 .to_homepage span {
