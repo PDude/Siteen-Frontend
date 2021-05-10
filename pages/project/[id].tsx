@@ -8,6 +8,24 @@ import { useEffect, useRef, useState } from 'react'
 import Footer from '../../components/Footer'
 import { useRouter } from 'next/router'
 
+// type projectType = {
+//   id: number
+//   uuid: string
+//   type: string
+//   project_photo: string
+//   project_name: string
+//   project_logo: Array<string>
+//   term: string
+//   project_subtitle: string
+//   ordering_type: string
+//   project_tags: Array<string>
+//   about_project: string
+//   project_tasks: Array<string>
+//   result_link: Array<string>
+//   updatedAt: string
+//   createdAt: string
+// }
+
 const ProjectPage = ({ project: serverProject }) => {
   const myRef = useRef()
 

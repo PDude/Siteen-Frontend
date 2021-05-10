@@ -10,7 +10,7 @@ import { FaYoutube } from 'react-icons/fa'
 import Link from 'next/link'
 
 const Layout = ({ children }) => {
-  const [isHamburgerOpen, setHamburgerOpen] = useState(false)
+  const [isHamburgerOpen, setHamburgerOpen] = useState<boolean>(false)
 
   const hamburgerDependencies = () => {
     isHamburgerOpen && window.scrollTo(0, 0)

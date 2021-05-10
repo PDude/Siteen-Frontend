@@ -5,7 +5,7 @@ import PromotionModal from './modals/PromotionModal'
 
 const AboutVideo = ({ videoLabel }) => {
   // Promotion modal
-  const [openPromotion, setPromotionOpen] = useState(false)
+  const [openPromotion, setPromotionOpen] = useState<boolean>(false)
 
   const onOpenPromotionModal = () => setPromotionOpen(true)
   const onClosePromotionModal = () => setPromotionOpen(false)

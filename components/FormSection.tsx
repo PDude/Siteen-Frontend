@@ -9,7 +9,7 @@ import FormModal from './modals/FormModal'
 
 const FormSection = () => {
   // Form success modal
-  const [openFormModal, setFormModalOpen] = useState(false)
+  const [openFormModal, setFormModalOpen] = useState<boolean>(false)
 
   const onOpenFormModal = () => setFormModalOpen(true)
   const onCloseFormModal = () => setFormModalOpen(false)

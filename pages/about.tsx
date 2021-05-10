@@ -283,9 +283,15 @@ class PreviousNextMethodsTeamSection extends Component {
       infinite: false,
       responsive: [
         {
-          breakpoint: 768,
+          breakpoint: 992,
           settings: {
             slidesToShow: 3
+          }
+        },
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 2
           }
         },
         {

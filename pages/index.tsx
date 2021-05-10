@@ -339,7 +339,7 @@ const HomePage = ({ projects }) => {
 }
 
 const WorkflowElement = ({ index, title, text }) => {
-  const [isTextVisible, setTextVisible] = useState(false)
+  const [isTextVisible, setTextVisible] = useState<boolean>(false)
 
   return (
     <div className={style.workflow_element}>
