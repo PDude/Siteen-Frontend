@@ -42,7 +42,7 @@ import arrowBack from '../images/arrow_team_back.svg'
 import arrowNext from '../images/arrow_team_next.svg'
 import { Component, useEffect } from 'react'
 import FormSection from '../components/FormSection'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 // Social links
 import instaIcon from '../images/insta_icon.svg'
 import fbIcon from '../images/fb_icon.svg'
