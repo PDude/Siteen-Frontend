@@ -1,4 +1,5 @@
 {
+  "proxy": "http://localhost:8289/",
   "name": "siteen-next",
   "version": "0.1.0",
   "private": true,
