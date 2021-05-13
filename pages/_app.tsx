@@ -3,8 +3,13 @@ import Layout from '../components/Layout'
 import '../styles/globals.sass'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { useEffect } from 'react'
 
 function MyApp({ Component, pageProps }) {
+  useEffect(() => {
+    window.history.scrollRestoration = 'manual'
+  }, [])
+
   return (
     <>
       <ToastContainer />

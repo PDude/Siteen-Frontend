@@ -40,7 +40,7 @@ import member4 from '../images/member_4.jpg'
 // Arows
 import arrowBack from '../images/arrow_team_back.svg'
 import arrowNext from '../images/arrow_team_next.svg'
-import { Component, useEffect } from 'react'
+import { Component, useEffect, useRef } from 'react'
 import FormSection from '../components/FormSection'
 import Footer from '../components/Footer'
 // Social links
@@ -51,9 +51,19 @@ import tIcon from '../images/t_icon.svg'
 import youTubeIcon from '../images/youtube_icon.svg'
 
 const About = () => {
+  const ref = useRef()
+
+  const scroll = (ref) => {
+    ref.current.scrollIntoView()
+  }
+
+  useEffect(() => {
+    scroll(ref)
+  }, [])
+
   return (
     <>
-      <div className={style.about_header_wrap}>
+      <div ref={ref} className={style.about_header_wrap}>
         <header className={style.about_header}>
           <div className='container'>
             <div className={style.about_offer}>
