@@ -1,12 +1,8 @@
 import { FC, useEffect } from 'react'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 import style from '../styles/PrivacyPolicy.module.sass'
 
 const PrivacyPolicy: FC = () => {
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [])
-
   return (
     <section className={style.privacy_policy}>
       <div className='container'>

@@ -5,7 +5,7 @@ import projectLogo from '../../images/wings_logo.svg'
 import projecCheckDown from '../../images/project_check_down.svg'
 import projecCheckDownSmall from '../../images/project_check_down_small.svg'
 import { useEffect, useRef, useState } from 'react'
-import Footer from '../../components/footer'
+import Footer from '../../components/Footer'
 import { useRouter } from 'next/router'
 
 // type projectType = {

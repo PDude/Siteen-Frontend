@@ -42,7 +42,7 @@ import arrowBack from '../images/arrow_team_back.svg'
 import arrowNext from '../images/arrow_team_next.svg'
 import { Component, useEffect } from 'react'
 import FormSection from '../components/FormSection'
-import Footer from '../components/footer'
+import Footer from '../components/Footer'
 // Social links
 import instaIcon from '../images/insta_icon.svg'
 import fbIcon from '../images/fb_icon.svg'
@@ -51,8 +51,6 @@ import tIcon from '../images/t_icon.svg'
 import youTubeIcon from '../images/youtube_icon.svg'
 
 const About = () => {
-  useEffect(() => {}, [])
-
   return (
     <>
       <div className={style.about_header_wrap}>
@@ -351,11 +349,6 @@ class PreviousNextMethodsTeamSection extends Component {
                   name={'Paul Dudich'}
                   position={'Web-Developer'}
                   imgPath={member4}
-                />
-                <TeamSliderItem
-                  name={'Paul Dudich'}
-                  position={'Web-Developer'}
-                  imgPath={member1}
                 />
               </TeamSlider>
             </div>
