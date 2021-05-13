@@ -17,11 +17,19 @@ const FormSection = () => {
   const sendForm = (values, { resetForm }) => {
     const { name, email, phone } = values
     axios
-      .post('http://localhost:8289/v1/consult', {
-        name,
-        email,
-        phone
-      })
+      .post(
+        'http://localhost:8289/v1/consult',
+        {
+          name,
+          email,
+          phone,
+        },
+        {
+          headers: {
+            'Content-Type': 'application-json',
+          },
+        }
+      )
       .then((res) => {
         if (res.data.message === 'ok') {
           resetForm({})
@@ -45,10 +53,11 @@ const FormSection = () => {
     <>
       <Formik
         onSubmit={sendForm}
-        initialValues={{ name: '', email: '', phone: '' }}>
+        initialValues={{ name: '', email: '', phone: '' }}
+      >
         {({ handleSubmit }) => (
           <form onSubmit={handleSubmit} className={style.form}>
-            <span className='title_label'>LET’S GET STARTED</span>
+            <span className="title_label">LET’S GET STARTED</span>
             <h2 className={style.h2}>Get A Free Consultation.</h2>
             <p>
               The best ideas start from the brif. Let us to know what you need
@@ -56,30 +65,30 @@ const FormSection = () => {
             </p>
             <div className={style.form_items}>
               <Field
-                name='name'
-                className='input'
-                placeholder='Name'
-                type='text'
+                name="name"
+                className="input"
+                placeholder="Name"
+                type="text"
                 component={InputField}
                 required
               />
               <Field
-                name='email'
-                className='input'
-                placeholder='Email'
-                type='email'
+                name="email"
+                className="input"
+                placeholder="Email"
+                type="email"
                 component={InputField}
                 required
               />
               <Field
-                name='phone'
-                className='input'
-                placeholder='Phone Number'
-                type='tel'
+                name="phone"
+                className="input"
+                placeholder="Phone Number"
+                type="tel"
                 component={InputField}
                 required
               />
-              <button type='submit' className={'btn'}>
+              <button type="submit" className={'btn'}>
                 <span>
                   Submit <GoTriangleRight />
                 </span>
