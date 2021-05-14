@@ -16,17 +16,17 @@ class MyDocument extends Document {
         <meta name="keywords" content="HTML, CSS, JavaScript, NodeJS, React" />
         <meta name="author" content="siteen.co@gmail.com" /> */}
 
-        <meta
+        {/* <meta
           name="description"
-          content="✅Заказать разработку веб-дизайн и seo-продвижение ⚡️SITEEN⚡️➤Корпоративный сайт ➤Интернет-магазин ➤Лендинг ➤Сайт-визитка. Львов, ☎️ +380 97 163 02 02"
-        />
+          content="✅➤Лендинг ➤Сайт-визитка. Львов, ☎️ +380 97 163 02 02"
+        /> */}
         <meta name="author" content="Siteen" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
+        {/* <meta
           name="Keywords"
           content="корпоративний сайт, cfqnby, розробка сайта, siteen, веб дизайн, сайтин, замовити сайт Львів, разработка сайта, разработка web сайта, seo просування, motion design, smm, seo"
-        />
+        /> */}
         <meta name="og:site_name" content="Siteen | Digital Agency" />
         <meta property="og:title" content="Siteen | Digital Agency" />
         <meta property="og:type" content="article" />
