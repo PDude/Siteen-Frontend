@@ -7,28 +7,30 @@ const Footer = () => {
 
   return (
     <footer className={style.home_footer}>
-      <div className='container'>
+      <div className="container">
         <div className={style.footer_nav}>
-          <Link href='/'>
+          <Link href="/">
             <a>
-              <img src={logoNav} alt='Siteen' />
+              <img src={logoNav} alt="Siteen" />
             </a>
           </Link>
           <ul>
             <li>
-              <a href='#'>Services</a>
+              <a href="#">Services</a>
             </li>
             <li>
-              <a href='#'>Cases</a>
+              <a href="#">Cases</a>
             </li>
             <li>
-              <a href='#'>Get a Brif</a>
+              <a href="#">Get a Brif</a>
             </li>
             <li>
-              <a href='#'>About Us</a>
+              <Link href="/about">
+                <a>About Us</a>
+              </Link>
             </li>
             <li>
-              <Link href='/privacy-policy'>
+              <Link href="/privacy-policy">
                 <a>Privacy Policy</a>
               </Link>
             </li>
