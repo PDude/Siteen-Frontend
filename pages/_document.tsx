@@ -12,36 +12,23 @@ class MyDocument extends Document {
           href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
           rel="stylesheet"
         />
-        {/* <meta name="description" content="Solutions for Digital Business." />
-        <meta name="keywords" content="HTML, CSS, JavaScript, NodeJS, React" />
-        <meta name="author" content="siteen.co@gmail.com" /> */}
-
-        {/* <meta
-          name="description"
-          content="✅➤Лендинг ➤Сайт-визитка. Львов, ☎️ +380 97 163 02 02"
-        /> */}
-        <meta name="author" content="Siteen" />
-
+        <meta name="description" content="Solutions for Digital Business." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* <meta
-          name="Keywords"
-          content="корпоративний сайт, cfqnby, розробка сайта, siteen, веб дизайн, сайтин, замовити сайт Львів, разработка сайта, разработка web сайта, seo просування, motion design, smm, seo"
-        /> */}
+        <meta
+          name="keywords"
+          content="Web-Application, CRM-System, IOS/Android App, Motion Design, Graphics, siteen, develop web-site, develop mobile app"
+        />
         <meta name="og:site_name" content="Siteen | Digital Agency" />
         <meta property="og:title" content="Siteen | Digital Agency" />
         <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://siteen.co/about/" />
-        <meta
-          property="og:image"
-          content="https://siteen.co/wp-content/uploads/2020/08/LogoSiteen.jpg"
-        />
+        <meta property="og:url" content="https://siteen.co/" />
+        <meta property="og:image" content="https://siteen.co/logo.svg" />
         <meta
           property="og:description"
-          content="✅Заказать разработку web-дизайна и seo-продвижение ⚡️SITEEN⚡️➤Корпоративный сайт ➤Интернет-магазин ➤Лендинг ➤Сайт-визитка. Львов, Киев ☎️ +380 97 163 02 02"
+          content="⚡SITEEN | Digital Agency⚡ ➤ Automation your business ➤ Create Web-Application ➤ CRM-System ➤ IOS/Android App 📥 siteen.co@gmail.com"
         />
+        <meta name="author" content="Siteen" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-
-        {/* Global Site Tag (gtag.js) - Google Analytics */}
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-VWFTD9KMMY"
