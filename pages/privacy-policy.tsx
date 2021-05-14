@@ -1,10 +1,20 @@
-import { FC, useEffect } from 'react'
+import { FC, useEffect, useRef } from 'react'
 import Footer from '../components/Footer'
 import style from '../styles/PrivacyPolicy.module.sass'
 
 const PrivacyPolicy: FC = () => {
+  const ref = useRef()
+
+  const scroll = (ref) => {
+    ref.current.scrollIntoView()
+  }
+
+  useEffect(() => {
+    scroll(ref)
+  }, [])
+
   return (
-    <section className={style.privacy_policy}>
+    <section ref={ref} className={style.privacy_policy}>
       <div className='container'>
         <div className={style.privacy_policy_inner}>
           <h1>Privacy Policy</h1>
