@@ -319,7 +319,7 @@ const HomePage = ({ projects }) => {
                   </li>
                   <li>
                     <a
-                      href="https://www.instagram.com/siteen.co/"
+                      href="https://www.linkedin.com/company/siteen/"
                       target="_blank"
                     >
                       <img src={linkedIcon} alt="linkedIcon" />

@@ -16,7 +16,7 @@ class MyDocument extends Document {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="keywords"
-          content="Web-Application, CRM-System, IOS/Android App, Motion Design, Graphics, siteen, develop web-site, develop mobile app"
+          content="Web-Application, CRM-System, iOS/Android App, Motion Design, Graphics, siteen, develop web-site, develop mobile app"
         />
         <meta name="og:site_name" content="Siteen | Digital Agency" />
         <meta property="og:title" content="Siteen | Digital Agency" />
@@ -25,10 +25,10 @@ class MyDocument extends Document {
         <meta property="og:image" content="https://siteen.co/logo.svg" />
         <meta
           property="og:description"
-          content="⚡SITEEN | Digital Agency⚡ ➤ Automation your business ➤ Create Web-Application ➤ CRM-System ➤ IOS/Android App 📥 siteen.co@gmail.com"
+          content="⚡SITEEN | Digital Agency⚡ ➤ Automation your business ➤ Create Web-Application ➤ CRM-System ➤ iOS/Android App 📥 siteen.co@gmail.com"
         />
         <meta name="author" content="Siteen" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-VWFTD9KMMY"

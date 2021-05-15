@@ -221,7 +221,7 @@ const About = () => {
                 </div>
                 <div className={style.phone}>
                   <p>Phone :</p>
-                  <a href="#">+38 (097) 163 0202</a>
+                  <a href="tel:0971630202">+38 (097) 163 0202</a>
                 </div>
                 <div className={style.email}>
                   <p>Email :</p>
@@ -247,7 +247,7 @@ const About = () => {
                 </li>
                 <li>
                   <a
-                    href="https://www.instagram.com/siteen.co/"
+                    href="https://www.linkedin.com/company/siteen/"
                     target="_blank"
                   >
                     <img src={linkedIcon} alt="linkedIcon" />

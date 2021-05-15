@@ -83,7 +83,7 @@ const Layout = ({ children }) => {
           <a href="https://www.instagram.com/siteen.co/" target="_blank">
             Instagram
           </a>
-          <a href="https://www.instagram.com/siteen.co/" target="_blank">
+          <a href="https://www.linkedin.com/company/siteen/" target="_blank">
             Linkedin
           </a>
         </div>
