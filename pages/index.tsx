@@ -425,7 +425,7 @@ const ProjectCase = ({
 )
 
 HomePage.getInitialProps = async () => {
-  const response = await fetch('http://localhost:8289/v1/project')
+  const response = await fetch('http://siteen.co/api/v1/project')
   const projects = await response.json()
 
   return {
