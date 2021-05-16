@@ -215,17 +215,17 @@ const HomePage = ({ projects }) => {
               <h2 className={style.h2}>We Are Experts In Our Field.</h2>
               <span>
                 Our digital company of professionals has been developing
-                products for 15 years.
+                products for 3 years.
               </span>
               <p>
-                At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                blanditiis praesentium voluptatum deleniti atque corrupti quos
-                dolores et quas molestias excepturi sint occaecati cupiditate
-                non provident, similique sunt in culpa qui officia deserunt
-                mollitia animi, id est laborum et dolorum fuga. Et harum quidem
-                rerum facilis est et expedita distinctio. Nam libero tempore,
-                cum soluta nobis est eligendi optio cumque nihil impedit quo
-                minus id quod maxime placeat facere possimus.
+                We are a modern digital company that creates and develops your
+                projects. Our 3-year experience of developing various
+                web-projects grows only upwards thanks to the refresher courses
+                our employees attend annually. Since 2018 we have completed more
+                than 20 projects that are currently developing and expanding
+                successfully in their areas of specialization. We do not chase
+                the number of clients, as it is a way more exciting to
+                accomplish the work for a full due and to your delight.
               </p>
               <Link href="/about">
                 <a className={style.about_us_link}>
@@ -247,21 +247,21 @@ const HomePage = ({ projects }) => {
                   index={'02.'}
                   title={'Research'}
                   text={
-                    'The fundamental step in creating an effective web product. We synchronize with your vision and goals.'
+                    'We research your niche and define the main points for development and promotion on the Internet.'
                   }
                 />
                 <WorkflowElement
                   index={'03.'}
                   title={'Project development'}
                   text={
-                    'The fundamental step in creating an effective web product. We synchronize with your vision and goals.'
+                    'The most important stage in the process of creating your masterpiece.'
                   }
                 />
                 <WorkflowElement
                   index={'04.'}
                   title={'Launch and support'}
                   text={
-                    'The fundamental step in creating an effective web product. We synchronize with your vision and goals.'
+                    'The final stage of the project. We launch your site and provide support throughout its existence.'
                   }
                 />
               </div>

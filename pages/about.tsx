@@ -72,17 +72,18 @@ const About = () => {
                 <h1>We are professionals in our field.</h1>
                 <p>
                   Our digital company develops projects and has been on the
-                  market for 15 years.
+                  market for 3 years.
                 </p>
                 <span className={style.offer_description}>
-                  At vero eos et accusamus et iusto odio dignissimos ducimus qui
-                  blanditiis praesentium voluptatum deleniti atque corrupti quos
-                  dolores et quas molestias excepturi sint occaecati cupiditate
-                  non provident, similique sunt in culpa qui officia deserunt
-                  mollitia animi, id est laborum et dolorum fuga. Et harum
-                  quidem rerum facilis est et expedita distinctio. Nam libero
-                  tempore, cum soluta nobis est eligendi optio cumque nihil
-                  impedit quo minus id quod maxime placeat facere possimus.
+                  We are a modern digital company that creates and develops your
+                  projects. Our 3-year experience of developing various
+                  web-projects grows only upwards thanks to the refresher
+                  courses our employees attend annually. Since 2018 we have
+                  completed more than 20 projects that are currently developing
+                  and expanding successfully in their areas of specialization.
+                  We do not chase the number of clients, as it is a way more
+                  exciting to accomplish the work for a full due and to your
+                  delight.
                 </span>
               </div>
               <div className={style.about_video_wrap}>
@@ -226,8 +227,10 @@ const About = () => {
                 <div className={style.email}>
                   <p>Email :</p>
                   <div className={style.links}>
-                    <a href="#">siteen.co@gmail.com</a>
-                    <a href="#">siteencareer@gmail.com</a>
+                    <a href="mailto:siteen.co@gmail.com">siteen.co@gmail.com</a>
+                    <a href="mailto:siteencareer@gmail.com">
+                      siteencareer@gmail.com
+                    </a>
                   </div>
                 </div>
               </div>
