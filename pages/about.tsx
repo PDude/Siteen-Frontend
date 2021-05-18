@@ -217,15 +217,10 @@ const About = () => {
                 <div className={style.email}>
                   <p>Email :</p>
                   <div className={style.links}>
-<<<<<<< HEAD
-                    <a href='#'>siteen.co@gmail.com</a>
-                    <a href='#'>siteencareer@gmail.com</a>
-=======
                     <a href="mailto:siteen.co@gmail.com">siteen.co@gmail.com</a>
                     <a href="mailto:siteencareer@gmail.com">
                       siteencareer@gmail.com
                     </a>
->>>>>>> 2a97aeb39d383714b17facbbe66368828c618350
                   </div>
                 </div>
               </div>

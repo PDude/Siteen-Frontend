@@ -172,15 +172,9 @@ const Layout = ({ children }) => {
               </a>
             </div>
             <div className={style.social_link_aside_bar_opened}>
-<<<<<<< HEAD
-              <a href='#'>Facebook</a>
-              <a href='#'>Instagram</a>
-              <a href='#'>Linkedin</a>
-=======
               <a href="https://www.facebook.com/siteen.co/">Facebook</a>
               <a href="https://www.instagram.com/siteen.co/">Instagram</a>
               <a href="https://www.linkedin.com/company/siteen/">Linkedin</a>
->>>>>>> 2a97aeb39d383714b17facbbe66368828c618350
             </div>
           </div>
         </div>
