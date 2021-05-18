@@ -13,7 +13,6 @@ const Layout = ({ children }) => {
   const [isHamburgerOpen, setHamburgerOpen] = useState<boolean>(false)
 
   const hamburgerDependencies = () => {
-    isHamburgerOpen && window.scrollTo(0, 0)
     isHamburgerOpen
       ? (document.body.style.overflowY = 'hidden')
       : (document.body.style.overflowY = 'auto')
@@ -30,28 +29,28 @@ const Layout = ({ children }) => {
   return (
     <div className={style.layout_wrap}>
       <nav className={style.navigation_bar}>
-        <div className="container">
+        <div className='container'>
           <div className={style.navigation_bar_wrap}>
-            <Link href="/">
+            <Link href='/'>
               <a className={style.logo_link}>
-                <img src={logoNav} alt="Siteen" />
+                <img src={logoNav} alt='Siteen' />
               </a>
             </Link>
             <ul className={style.nav_menu}>
               <li>
-                <a href="#">Services</a>
+                <a href='#'>Services</a>
               </li>
               <li>
-                <a href="#">Cases</a>
+                <a href='#'>Cases</a>
               </li>
               <li>
-                <a href="#">Contact us</a>
+                <a href='#'>Contact us</a>
               </li>
             </ul>
-            <a className={style.nav_tel} href="tel:0971630202">
+            <a className={style.nav_tel} href='tel:0971630202'>
               +38 (097) 163 02 02
             </a>
-            <a className={`${style.get_brif} btn`} href="#">
+            <a className={`${style.get_brif} btn`} href='#'>
               <span>Get a Brif</span>
             </a>
             <div className={style.hamburger_wrap_hamburger}>
@@ -65,8 +64,7 @@ const Layout = ({ children }) => {
           isHamburgerOpen
             ? `${style.aside_bar} ${style.aside_bar_transparent}`
             : style.aside_bar
-        }
-      >
+        }>
         <div className={style.hamburger_wrap}>
           <Hamburger toggled={isHamburgerOpen} toggle={setHamburgerOpen} />
         </div>
@@ -75,31 +73,19 @@ const Layout = ({ children }) => {
             isHamburgerOpen
               ? `${style.social_link_aside_bar} ${style.element_hidden}`
               : style.social_link_aside_bar
-          }
-        >
-          <a href="https://www.facebook.com/siteen.co/" target="_blank">
+          }>
+          <a href='https://www.facebook.com/siteen.co/' target='_blank'>
             Facebook
           </a>
-          <a href="https://www.instagram.com/siteen.co/" target="_blank">
+          <a href='https://www.instagram.com/siteen.co/' target='_blank'>
             Instagram
           </a>
-          <a href="https://www.linkedin.com/company/siteen/" target="_blank">
+          <a href='https://www.linkedin.com/company/siteen/' target='_blank'>
             Linkedin
           </a>
         </div>
-        <div
-          className={
-            isHamburgerOpen
-              ? `${style.lang_toggler} ${style.element_hidden}`
-              : style.lang_toggler
-          }
-        >
-          <select>
-            <option value="">UA</option>
-            <option value="">RU</option>
-            <option value="">EN</option>
-          </select>
-        </div>
+        {/* Empty block */}
+        <div />
       </aside>
       <article className={style.main_wrap_content}>{children}</article>
       <div
@@ -107,20 +93,19 @@ const Layout = ({ children }) => {
           isHamburgerOpen
             ? `${style.menu_opened} ${style.menu_opened_visible}`
             : style.menu_opened
-        }
-      >
-        <div className="container">
+        }>
+        <div className='container'>
           <div className={style.content_opened_wrap}>
             <div className={style.navigation_bar_wrap_opened}>
-              <Link href="/">
+              <Link href='/'>
                 <a className={style.logo_link_opened}>
-                  <img src={logoNav} alt="Siteen" />
+                  <img src={logoNav} alt='Siteen' />
                 </a>
               </Link>
-              <a className={style.nav_tel} href="tel:0971630202">
+              <a className={style.nav_tel} href='tel:0971630202'>
                 +38 (097) 163 02 02
               </a>
-              <a className={`${style.get_brif} btn`} href="#">
+              <a className={`${style.get_brif} btn`} href='#'>
                 <span>Get a Brif</span>
               </a>
               <div className={style.hamburger_wrap_hamburger}>
@@ -134,62 +119,62 @@ const Layout = ({ children }) => {
               <div className={style.nav_menus_opened}>
                 <ul>
                   <li>
-                    <a onClick={closeHamburger} href="#">
+                    <a onClick={closeHamburger} href='#'>
                       Our Services
                     </a>
                   </li>
                   <li>
-                    <a onClick={closeHamburger} href="#">
+                    <a onClick={closeHamburger} href='#'>
                       Portfolio
                     </a>
                   </li>
                   <li>
-                    <Link href="/about">
+                    <Link href='/about'>
                       <a onClick={closeHamburger}>About Us</a>
                     </Link>
                   </li>
                 </ul>
                 <ul>
                   <li>
-                    <a onClick={closeHamburger} href="#">
+                    <a onClick={closeHamburger} href='#'>
                       Contacts
                     </a>
                   </li>
                   <li>
-                    <a onClick={closeHamburger} href="#">
+                    <a onClick={closeHamburger} href='#'>
                       Our Projects
                     </a>
                   </li>
                 </ul>
               </div>
             </div>
-            <a className={`${style.get_brif_hamburger} btn`} href="#">
+            <a className={`${style.get_brif_hamburger} btn`} href='#'>
               <span>Get a Brif</span>
             </a>
-            <a className={style.nav_tel_hamburger} href="tel:0971630202">
+            <a className={style.nav_tel_hamburger} href='tel:0971630202'>
               +38 (097) 163 02 02
             </a>
             <div className={style.social_link_mobile}>
-              <a href="#">
+              <a href='#'>
                 <FaInstagram />
               </a>
-              <a href="#">
+              <a href='#'>
                 <FaFacebookSquare />
               </a>
-              <a href="#">
+              <a href='#'>
                 <FaLinkedin />
               </a>
-              <a href="#">
+              <a href='#'>
                 <FaTelegram />
               </a>
-              <a href="#">
+              <a href='#'>
                 <FaYoutube />
               </a>
             </div>
             <div className={style.social_link_aside_bar_opened}>
-              <a href="#">Facebook</a>
-              <a href="#">Instagram</a>
-              <a href="#">Linkedin</a>
+              <a href='#'>Facebook</a>
+              <a href='#'>Instagram</a>
+              <a href='#'>Linkedin</a>
             </div>
           </div>
         </div>

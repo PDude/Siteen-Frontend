@@ -44,6 +44,8 @@ const ProjectPage = ({ project: serverProject }) => {
     if (!serverProject) {
       loadProject()
     }
+
+    document.body.scrollTop = 0
   }, [])
 
   const scroll = (ref) => {
@@ -117,12 +119,8 @@ const ProjectPage = ({ project: serverProject }) => {
           </div>
           <div className={style.project_reference}>
             <h1>{project.project_name}</h1>
-            <div className={style.iframe_container}>
-              {/* <iframe
-                src='https://www.instagram.com/p/Btg1jd_HJsT/'
-                frameBorder={0}
-              /> */}
-              <h1>Coming soon ...</h1>
+            <div className={style.project_main_img_wrap}>
+              <img src={projectBg} alt='' />
             </div>
           </div>
         </div>

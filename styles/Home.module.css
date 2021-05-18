@@ -61,17 +61,6 @@
 .about_us_video_wrap {
   margin-top: 65px;
 }
-.lang_toggler_mobile {
-  max-width: max-content;
-  position: absolute;
-  left: 15px;
-  bottom: 38px;
-  display: none;
-}
-.lang_toggler_mobile select {
-  color: #fff;
-  font-weight: 600;
-}
 .our_services {
   padding: 86px 0 167px;
   position: relative;
@@ -779,9 +768,6 @@
   }
   .main_offer > span::before {
     width: 30px;
-  }
-  .lang_toggler_mobile {
-    display: block;
   }
   .h2 {
     font-size: 20px !important;

@@ -6,10 +6,6 @@ import 'react-toastify/dist/ReactToastify.css'
 import { useEffect } from 'react'
 
 function MyApp({ Component, pageProps }) {
-  useEffect(() => {
-    window.history.scrollRestoration = 'manual'
-  }, [])
-
   return (
     <>
       <ToastContainer />
