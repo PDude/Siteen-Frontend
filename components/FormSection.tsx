@@ -18,7 +18,7 @@ const FormSection = () => {
     const { name, email, phone } = values
     axios
       .post(
-        'http://localhost:8289/v1/consult',
+        'https://siteen.co/api/v1/consult',
         {
           name,
           email,
