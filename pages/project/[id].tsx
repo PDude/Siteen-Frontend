@@ -119,14 +119,13 @@ const ProjectPage = ({ project: serverProject }) => {
           </div>
           <div className={style.project_reference}>
             <h1>{project.project_name}</h1>
-            <a
-              href='#'
+            <div
               className={style.project_main_img_wrap}
               style={{ backgroundImage: `url(${projectBg})` }}>
               <button className='btn'>
-                <span>View More</span>
+                <span>View More On ...</span>
               </button>
-            </a>
+            </div>
           </div>
         </div>
       </section>
