@@ -199,7 +199,7 @@
 .project_case {
   background-color: #000;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   background-position: center;
   border-radius: 20px;
   z-index: 5;
@@ -211,9 +211,6 @@
   flex-direction: column;
   transition: all 0.3s ease;
   justify-content: space-between;
-}
-.project_case:hover {
-  background-size: 103%;
 }
 .project_case::before {
   content: '';
@@ -258,6 +255,7 @@
 .project_duration {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
 }
 .project_duration p {
   font-size: 15px;
@@ -651,9 +649,6 @@
   .services_items {
     grid-template-columns: repeat(2, 1fr);
   }
-  .project_case {
-    background-size: cover;
-  }
   .form_section_wrap {
     grid-template-columns: 1fr;
   }
@@ -737,9 +732,6 @@
   .we_are_pro_content {
     padding-top: 100px;
     padding-bottom: 100px;
-  }
-  .project_case:hover {
-    background-size: cover;
   }
   .we_are_pro {
     background-repeat: repeat;

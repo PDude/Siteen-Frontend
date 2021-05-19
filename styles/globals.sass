@@ -261,6 +261,8 @@ li
 .slick-active .project_case_wrap_global, .slick-current .project_case_wrap_global
   opacity: 1 !important
   transition: all 0.5s ease
+  p::before
+    width: 100%
 
 // Slides for services passive slides  
 .slick-slide .icon_wrap_global
@@ -294,3 +296,25 @@ li
     opacity: 1 !important
     top: 1px !important
     transition: all 0.5s ease
+
+  // Slides for projects recomendations passive slides
+  .slick-slide .slider_item_global::before
+    opacity: 0 !important
+    transition: all 0.5s ease
+
+  // Styles for one active projects recomendations slide
+  .slick-active .slider_item_global::before, .slick-current .slider_item_global::before
+    opacity: 0.6 !important
+    transition: all 0.5s ease
+
+  // Slides for projects passive slides
+  .slick-slide .slider_item_wrap_global
+    opacity: 0 !important
+    transition: all 0.5s ease
+
+  // Styles for one active projects slide
+  .slick-active .slider_item_wrap_global, .slick-current .slider_item_wrap_global
+    opacity: 1 !important
+    transition: all 0.5s ease
+    p::before
+      width: 100%

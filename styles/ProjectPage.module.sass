@@ -143,7 +143,7 @@
         overflow: hidden
         border-radius: 20px
         position: relative
-        height: 650px
+        padding-top: 60%
         background-size: cover
         background-position: center
         background-repeat: no-repeat
@@ -158,7 +158,7 @@
             opacity: 0
             transition: all 0.3s ease
             visibility: hidden
-        &:hover button 
+        &:hover button
             opacity: 1
             visibility: visible
         &:hover::before
@@ -193,6 +193,148 @@
 .for_small_device
     display: none
 
+.projects_section
+    padding: 115px 0 120px
+    h1
+        font-size: 50px
+        margin: 15px 0
+        text-transform: capitalize
+    .projects_desk_and_arrows
+        display: flex
+        justify-content: space-between
+        align-items: center
+        p
+            letter-spacing: -0.01em
+            font-size: 22px
+            max-width: 465px
+        .arrows
+            display: flex
+            .team_back_arrow
+                margin-right: 55px
+            button
+                font-size: 16px
+                text-transform: uppercase
+                color: #fff
+                display: flex
+                align-items: center
+                flex-direction: column
+                &:hover
+                    color: #DD4242
+                img
+                    padding-top: 6px
+
+.projects_slider
+    margin-top: 45px
+
+.slider_item
+    padding: 30px 50px 50px
+    background-size: cover
+    background-position: center
+    background: #fff
+    height: 350px
+    display: flex
+    flex-direction: column
+    transition: all 0.3s ease
+    justify-content: space-between
+    overflow: hidden
+    border-radius: 20px
+    position: relative
+    .slider_item_wrap
+        height: 100%
+        opacity: 0
+        transition: all 0.3s ease
+        display: flex
+        flex-direction: column
+        justify-content: space-between
+        transform: scale(1.03)
+    &:hover .slider_item_wrap
+        opacity: 1
+        transform: initial
+    &::before
+        content: ''
+        position: absolute
+        left: 0
+        top: 0
+        z-index: 10
+        transition: all 0.3s ease
+        opacity: 0
+        width: 100%
+        height: 100%
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),linear-gradient(71.35deg,rgba(250, 68, 110, 0.8) 40.22%,rgba(250, 190, 68, 0.8) 100%)
+    &:hover::before
+        opacity: 0.6
+    & *
+        position: relative
+        z-index: 15
+    img
+        width: 200px
+        z-index: 5
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+.project_title
+    margin: 30px 0px
+
+.project_duration
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    & p
+        font-size: 15px
+        font-weight: 700
+        margin-right: 7px
+    & span
+        font-size: 15px
+    & span::first-letter
+        font-size: 20px
+
+.project_title h4
+    font-weight: 600
+    font-size: 25px
+    margin-bottom: 1px
+    text-transform: uppercase
+    margin-bottom: 10px
+
+.project_title p
+    font-weight: 600
+
+.project_link
+    color: #dd4242
+    font-size: 16px
+    display: flex
+    position: relative
+    align-items: center
+    padding-bottom: 7px
+
+.project_link::after,
+.project_link::before
+    content: ''
+    position: absolute
+    left: 0
+    bottom: 0
+
+.project_link::after
+    background: #dadada80
+    z-index: 11
+    height: 1px
+    width: 100%
+
+.project_link::before
+    background: #dd4242
+    z-index: 12
+    width: 80px
+    height: 2px
+    transition: all 1s ease
+
+.slider_item:hover .project_link::before
+    width: 100%
+
+.project_link svg
+    margin-left: 5px
+    transform: scaleY(0.65)
+
 @media only screen and (max-width: 1200px)
     .project_info
         img
@@ -217,6 +359,16 @@
             font-size: 40px !important
         p
             font-size: 20px !important
+
+    .projects_section h1
+        font-size: 40px
+
+    .projects_section
+        padding: 40px 0
+
+    .slider_item
+        padding-left: 25px
+        padding-right: 25px
 
 @media only screen and (max-width: 992px)
     .project_info
@@ -250,6 +402,15 @@
             font-size: 18px !important
             margin-bottom: 30px !important
 
+    .projects_section h1
+        font-size: 30px
+
+    .projects_desk_and_arrows p
+        font-size: 20px !important
+
+    .projects_section
+        padding: 30px 0
+
 @media only screen and (max-width: 768px)
     .project_info
         img
@@ -266,6 +427,22 @@
             font-size: 30px !important
         p
             font-size: 16px !important
+
+    .projects_desk_and_arrows
+        align-items: flex-start !important
+        flex-direction: column
+        gap: 40px
+        .arrows
+            width: 100%
+            justify-content: space-between
+            button
+                margin: 0 !important
+
+    .projects_slider
+        margin-top: 20px
+
+    .project_title h4
+        font-size: 18px
 
 @media only screen and (max-width: 576px)
     .for_small_device
@@ -300,6 +477,19 @@
                 margin-right: 15px
                 &::after
                     margin-left: 15px
+
+    .project_data
+        padding-bottom: 50px
+
+    .projects_section h1
+        font-size: 20px
+        margin: 5px 0 15px !important
+
+    .projects_desk_and_arrows p
+        font-size: 14px !important
+
+    .arrows
+        display: none !important
 
 // Loading
 .loading_wrap

@@ -83,13 +83,11 @@ const HomePage = ({ projects }) => {
   const casesItems = filteredProjects.map((c) => (
     <ProjectCase
       key={c.id}
-      id={c.id}
-      coverCaseBg={
-        'https://images.unsplash.com/photo-1620142898494-9c3c967d7c05?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1234&q=80'
-      }
+      original_name={c.original_name}
+      project_photo={c.project_photo}
       caseDuration={c.term}
       projectTitle={c.project_name}
-      projectDescription={c.about_project}
+      project_subtitle={c.project_subtitle}
     />
   ))
 
@@ -394,15 +392,15 @@ const ServiceItem = ({ serviceLogo, serviceTitle, serviceDescription }) => (
 )
 
 const ProjectCase = ({
-  id,
-  coverCaseBg,
+  original_name,
+  project_photo,
   caseDuration,
   projectTitle,
-  projectDescription
+  project_subtitle
 }) => (
-  <Link href={'/project/[id]'} as={`/project/${id}`}>
+  <Link href={'/project/[original_name]'} as={`/project/${original_name}`}>
     <a
-      style={{ backgroundImage: `url(${coverCaseBg})` }}
+      style={{ backgroundImage: `url(${project_photo})` }}
       className={`${style.project_case} project_case_global`}>
       <div className={`${style.project_case_wrap} project_case_wrap_global`}>
         <div className={style.project_duration}>
@@ -411,7 +409,7 @@ const ProjectCase = ({
         </div>
         <div className={style.project_title}>
           <h4>{projectTitle}</h4>
-          <p>{projectDescription}</p>
+          <p>{project_subtitle}</p>
         </div>
         <p className={style.project_link}>
           View full project <GoTriangleRight />

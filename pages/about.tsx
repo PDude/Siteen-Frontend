@@ -40,6 +40,7 @@ import member4 from '../images/member_4.jpg'
 // Arows
 import arrowBack from '../images/arrow_team_back.svg'
 import arrowNext from '../images/arrow_team_next.svg'
+
 import { Component, useEffect } from 'react'
 import FormSection from '../components/FormSection'
 import Footer from '../components/Footer'
@@ -312,7 +313,6 @@ class PreviousNextMethodsTeamSection extends Component {
           }
         }
       ]
-      // centerPadding: '30px'
     }
 
     return (
@@ -326,7 +326,7 @@ class PreviousNextMethodsTeamSection extends Component {
                 Our digital company develops projects and has been on the market
                 for 15 years.
               </p>
-              {/* <div className={style.arrows}>
+              <div className={style.arrows}>
                 <button
                   onClick={this.previous}
                   className={style.team_back_arrow}>
@@ -335,7 +335,7 @@ class PreviousNextMethodsTeamSection extends Component {
                 <button onClick={this.next} className={style.team_next_arrow}>
                   Next <img src={arrowNext} alt='->' />
                 </button>
-              </div> */}
+              </div>
             </div>
             <div className={`${style.team_slider} team_slider_global`}>
               <TeamSlider ref={(c) => (this.slider = c)} {...sliderSettings}>
@@ -369,10 +369,6 @@ class PreviousNextMethodsTeamSection extends Component {
 }
 
 const TeamSliderItem = ({ name, position, imgPath }) => {
-  useEffect(() => {
-    document.body.scrollTop = 0
-  }, [])
-
   return (
     <a
       href='#'
