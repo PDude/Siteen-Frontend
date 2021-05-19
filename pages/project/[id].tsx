@@ -54,7 +54,7 @@ const ProjectPage = ({ project: serverProject }) => {
 
   if (!project) {
     return (
-      <div className="container">
+      <div className='container'>
         <div className={style.loading_wrap}>
           <p>Loading ...</p>
         </div>
@@ -66,9 +66,8 @@ const ProjectPage = ({ project: serverProject }) => {
     <>
       <header
         style={{ backgroundImage: `url(${projectBg})` }}
-        className={style.project_page_header}
-      >
-        <div className="container">
+        className={style.project_page_header}>
+        <div className='container'>
           <div className={style.project_info}>
             <img src={projectLogo} alt={'Brand logo'} />
             <div className={style.project_type}>
@@ -79,23 +78,22 @@ const ProjectPage = ({ project: serverProject }) => {
           <button
             onClick={() => {
               scroll(myRef)
-            }}
-          >
+            }}>
             <img
               className={style.for_big_device}
               src={projecCheckDown}
-              alt="projecCheckDown"
+              alt='projecCheckDown'
             />
             <img
               className={style.for_small_device}
               src={projecCheckDownSmall}
-              alt="projecCheckDown"
+              alt='projecCheckDown'
             />
           </button>
         </div>
       </header>
       <section ref={myRef} className={style.project_data}>
-        <div className="container">
+        <div className='container'>
           <div className={style.about}>
             <h3>Про компанію</h3>
             <p>{project.about_project}</p>
@@ -112,30 +110,35 @@ const ProjectPage = ({ project: serverProject }) => {
             <h3>Результати</h3>
             <ul>
               <li>
-                <a href="#">{project.result_link[0]}</a>
+                <a href='#'>{project.result_link[0]}</a>
               </li>
               <li>
-                <a href="#">{project.result_link[1]}</a>
+                <a href='#'>{project.result_link[1]}</a>
               </li>
             </ul>
           </div>
           <div className={style.project_reference}>
             <h1>{project.project_name}</h1>
-            <div className={style.project_main_img_wrap}>
-              <img src={projectBg} alt='' />
-            </div>
+            <a
+              href='#'
+              className={style.project_main_img_wrap}
+              style={{ backgroundImage: `url(${projectBg})` }}>
+              <button className='btn'>
+                <span>View More</span>
+              </button>
+            </a>
           </div>
         </div>
       </section>
       <section className={style.cta_section}>
-        <div className="container">
+        <div className='container'>
           <div className={style.cta_section_offer}>
             <h2>Did you like the project?</h2>
             <p>
               Fill out the application and we will contact you to discuss
               cooperation
             </p>
-            <div className="btn">
+            <div className='btn'>
               <span>Consultation</span>
             </div>
           </div>
@@ -149,7 +152,7 @@ const ProjectPage = ({ project: serverProject }) => {
 ProjectPage.getInitialProps = async ({ query, req }) => {
   if (!req) {
     return {
-      project: null,
+      project: null
     }
   }
 
@@ -157,7 +160,7 @@ ProjectPage.getInitialProps = async ({ query, req }) => {
   const project = await response.json()
 
   return {
-    project: project.response[0],
+    project: project.response[0]
   }
 }
 

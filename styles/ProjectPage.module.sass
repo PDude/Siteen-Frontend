@@ -140,7 +140,41 @@
             margin-left: 25px
     .project_main_img_wrap
         width: 100%
-
+        overflow: hidden
+        border-radius: 20px
+        position: relative
+        display: block
+        height: 70vh
+        background-size: cover
+        background-position: center
+        background-repeat: no-repeat
+        background-color: #fff
+        display: flex
+        align-items: center
+        justify-content: center
+        & *
+            position: relative
+            z-index: 15
+        button
+            opacity: 0
+            transition: all 0.3s ease
+            visibility: hidden
+        &:hover button 
+            opacity: 1
+            visibility: visible
+        &:hover::before
+            opacity: 1
+        &::before
+            content: ''
+            position: absolute
+            left: 0
+            top: 0
+            z-index: 10
+            transition: all 0.3s ease
+            opacity: 0
+            width: 100%
+            height: 100%
+            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),linear-gradient(71.35deg,rgba(250, 68, 110, 0.8) 40.22%,rgba(250, 190, 68, 0.8) 100%)
 
 .cta_section
     padding: 165px 0

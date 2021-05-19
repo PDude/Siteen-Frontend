@@ -326,7 +326,7 @@ class PreviousNextMethodsTeamSection extends Component {
                 Our digital company develops projects and has been on the market
                 for 15 years.
               </p>
-              <div className={style.arrows}>
+              {/* <div className={style.arrows}>
                 <button
                   onClick={this.previous}
                   className={style.team_back_arrow}>
@@ -335,7 +335,7 @@ class PreviousNextMethodsTeamSection extends Component {
                 <button onClick={this.next} className={style.team_next_arrow}>
                   Next <img src={arrowNext} alt='->' />
                 </button>
-              </div>
+              </div> */}
             </div>
             <div className={`${style.team_slider} team_slider_global`}>
               <TeamSlider ref={(c) => (this.slider = c)} {...sliderSettings}>
