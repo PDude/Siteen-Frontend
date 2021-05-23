@@ -60,9 +60,11 @@ const Layout = ({ children }) => {
             <a className={style.nav_tel} href='tel:0971630202'>
               +38 (097) 163 02 02
             </a>
-            <a className={`${style.get_brif} btn`} href='#'>
-              <span>Get a Brif</span>
-            </a>
+            <Link href='/#contact_us'>
+              <a className={`${style.get_brif} btn`}>
+                <span>Get a Brif</span>
+              </a>
+            </Link>
             <div className={style.hamburger_wrap_hamburger}>
               <Hamburger toggled={isHamburgerOpen} toggle={setHamburgerOpen} />
             </div>
