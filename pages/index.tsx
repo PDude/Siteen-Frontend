@@ -124,7 +124,7 @@ const HomePage = ({ projects }) => {
           </div>
         </div>
       </header>
-      <section className={style.our_services}>
+      <section id={'our_services'} className={style.our_services}>
         <div className='container'>
           <span className='title_label'>Our Services</span>
           <h2 className={style.h2}>We Do Everything.</h2>
@@ -138,7 +138,7 @@ const HomePage = ({ projects }) => {
           </div>
         </div>
       </section>
-      <section className={style.our_cases}>
+      <section id={'cases_section'} className={style.our_cases}>
         <div className='container'>
           <div className={style.our_cases_wrap}>
             <span className='title_label'>Our portfolio</span>
@@ -199,7 +199,7 @@ const HomePage = ({ projects }) => {
           </div>
         </div>
       </section>
-      <section className={style.form_section}>
+      <section id={'contact_us'} className={style.form_section}>
         <div className='container'>
           <div className={style.form_section_wrap}>
             <div className={style.globe_wrap}>
@@ -271,7 +271,7 @@ const HomePage = ({ projects }) => {
           </div>
         </div>
       </section>
-      <section className={style.contacts_section}>
+      <section id={'contacts_section'} className={style.contacts_section}>
         <div className={style.contacts_block_wrap}>
           <div className='container'>
             <div className={style.contacts_block}>

@@ -52,6 +52,10 @@ import tIcon from '../images/t_icon.svg'
 import youTubeIcon from '../images/youtube_icon.svg'
 
 const About = () => {
+  useEffect(() => {
+    document.body.scrollTop = 0
+  }, [])
+
   return (
     <>
       <div className={style.about_header_wrap}>
@@ -191,7 +195,7 @@ const About = () => {
         </div>
       </section>
       <PreviousNextMethodsTeamSection />
-      <section className={style.form_section}>
+      <section id={'contact_us'} className={style.form_section}>
         <div className='container'>
           <div className={style.form_wrap_outter}>
             <div className={style.form_wrap_inner}>
@@ -218,8 +222,8 @@ const About = () => {
                 <div className={style.email}>
                   <p>Email :</p>
                   <div className={style.links}>
-                    <a href="mailto:siteen.co@gmail.com">siteen.co@gmail.com</a>
-                    <a href="mailto:siteencareer@gmail.com">
+                    <a href='mailto:siteen.co@gmail.com'>siteen.co@gmail.com</a>
+                    <a href='mailto:siteencareer@gmail.com'>
                       siteencareer@gmail.com
                     </a>
                   </div>

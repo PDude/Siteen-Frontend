@@ -32,19 +32,29 @@ const Layout = ({ children }) => {
         <div className='container'>
           <div className={style.navigation_bar_wrap}>
             <Link href='/'>
-              <a className={style.logo_link}>
+              <a
+                onClick={() => {
+                  document.body.scrollTop = 0
+                }}
+                className={style.logo_link}>
                 <img src={logoNav} alt='Siteen' />
               </a>
             </Link>
             <ul className={style.nav_menu}>
               <li>
-                <a href='#'>Services</a>
+                <Link href='/#our_services'>
+                  <a>Services</a>
+                </Link>
               </li>
               <li>
-                <a href='#'>Cases</a>
+                <Link href='/#cases_section'>
+                  <a>Cases</a>
+                </Link>
               </li>
               <li>
-                <a href='#'>Contact us</a>
+                <Link href='/#contact_us'>
+                  <a>Contact us</a>
+                </Link>
               </li>
             </ul>
             <a className={style.nav_tel} href='tel:0971630202'>
@@ -119,31 +129,29 @@ const Layout = ({ children }) => {
               <div className={style.nav_menus_opened}>
                 <ul>
                   <li>
-                    <a onClick={closeHamburger} href='#'>
-                      Our Services
-                    </a>
+                    <Link href='/#our_services'>
+                      <a onClick={closeHamburger}>Our Services</a>
+                    </Link>
                   </li>
-                  <li>
+                  {/* <li>
                     <a onClick={closeHamburger} href='#'>
                       Portfolio
                     </a>
-                  </li>
+                  </li> */}
                   <li>
                     <Link href='/about'>
                       <a onClick={closeHamburger}>About Us</a>
                     </Link>
                   </li>
-                </ul>
-                <ul>
                   <li>
-                    <a onClick={closeHamburger} href='#'>
-                      Contacts
-                    </a>
+                    <Link href='/#contacts_section'>
+                      <a onClick={closeHamburger}>Contacts</a>
+                    </Link>
                   </li>
                   <li>
-                    <a onClick={closeHamburger} href='#'>
-                      Our Projects
-                    </a>
+                    <Link href='/#cases_section'>
+                      <a onClick={closeHamburger}>Our Projects</a>
+                    </Link>
                   </li>
                 </ul>
               </div>
@@ -172,9 +180,9 @@ const Layout = ({ children }) => {
               </a>
             </div>
             <div className={style.social_link_aside_bar_opened}>
-              <a href="https://www.facebook.com/siteen.co/">Facebook</a>
-              <a href="https://www.instagram.com/siteen.co/">Instagram</a>
-              <a href="https://www.linkedin.com/company/siteen/">Linkedin</a>
+              <a href='https://www.facebook.com/siteen.co/'>Facebook</a>
+              <a href='https://www.instagram.com/siteen.co/'>Instagram</a>
+              <a href='https://www.linkedin.com/company/siteen/'>Linkedin</a>
             </div>
           </div>
         </div>

@@ -7,31 +7,50 @@ const Footer = () => {
 
   return (
     <footer className={style.home_footer}>
-      <div className="container">
+      <div className='container'>
         <div className={style.footer_nav}>
-          <Link href="/">
-            <a>
-              <img src={logoNav} alt="Siteen" />
+          <Link href='/'>
+            <a
+              onClick={() => {
+                document.body.scrollTop = 0
+              }}>
+              <img src={logoNav} alt='Siteen' />
             </a>
           </Link>
           <ul>
             <li>
-              <a href="#">Services</a>
-            </li>
-            <li>
-              <a href="#">Cases</a>
-            </li>
-            <li>
-              <a href="#">Get a Brif</a>
-            </li>
-            <li>
-              <Link href="/about">
-                <a>About Us</a>
+              <Link href='/#our_services'>
+                <a>Services</a>
               </Link>
             </li>
             <li>
-              <Link href="/privacy-policy">
-                <a>Privacy Policy</a>
+              <Link href='/#cases_section'>
+                <a>Cases</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/#contact_us'>
+                <a>Get a Brif</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/about'>
+                <a
+                  onClick={() => {
+                    document.body.scrollTop = 0
+                  }}>
+                  About Us
+                </a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/privacy-policy'>
+                <a
+                  onClick={() => {
+                    document.body.scrollTop = 0
+                  }}>
+                  Privacy Policy
+                </a>
               </Link>
             </li>
           </ul>
