@@ -212,6 +212,14 @@
   transition: all 0.3s ease;
   justify-content: space-between;
 }
+.project_case img {
+  width: 140px;
+  z-index: 5;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 .project_case::before {
   content: '';
   position: absolute;

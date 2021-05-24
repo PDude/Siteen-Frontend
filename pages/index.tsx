@@ -85,6 +85,7 @@ const HomePage = ({ projects }) => {
       key={c.id}
       original_name={c.original_name}
       project_photo={c.project_photo}
+      project_logo={c.project_logo}
       caseDuration={c.term}
       projectTitle={c.project_name}
       project_subtitle={c.project_subtitle}
@@ -396,12 +397,14 @@ const ProjectCase = ({
   project_photo,
   caseDuration,
   projectTitle,
-  project_subtitle
+  project_subtitle,
+  project_logo
 }) => (
   <Link href={'/project/[original_name]'} as={`/project/${original_name}`}>
     <a
       style={{ backgroundImage: `url(${project_photo})` }}
       className={`${style.project_case} project_case_global`}>
+      <img src={project_logo} alt='logo' />
       <div className={`${style.project_case_wrap} project_case_wrap_global`}>
         <div className={style.project_duration}>
           <p>Creation Term: </p>

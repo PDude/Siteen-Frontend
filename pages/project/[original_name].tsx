@@ -105,11 +105,11 @@ const ProjectPage = ({ project: serverProject }) => {
       <section ref={myRef} className={style.project_data}>
         <div className='container'>
           <div className={style.about}>
-            <h3>Про компанію</h3>
+            <h3>About</h3>
             <p>{project.about_project}</p>
           </div>
           <div className={style.tasks}>
-            <h3>Задачі</h3>
+            <h3>Tasks</h3>
             <ul>
               {project.project_tasks.map((t) => (
                 <li key={t}>· {t}</li>
@@ -117,7 +117,7 @@ const ProjectPage = ({ project: serverProject }) => {
             </ul>
           </div>
           <div className={style.results}>
-            <h3>Результати</h3>
+            <h3>Results</h3>
             <ul>
               <li>
                 <a href='#'>{project.result_link[0]}</a>
@@ -139,7 +139,7 @@ const ProjectPage = ({ project: serverProject }) => {
           </div>
         </div>
       </section>
-      <PreviousNextMethodsProjectsSection />
+      {/* <PreviousNextMethodsProjectsSection /> */}
       <section className={style.cta_section}>
         <div className='container'>
           <div className={style.cta_section_offer}>
