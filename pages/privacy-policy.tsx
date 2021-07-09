@@ -1,15 +1,15 @@
-import { FC, useEffect } from 'react'
-import Footer from '../components/Footer'
-import style from '../styles/PrivacyPolicy.module.sass'
+import { FC, useEffect } from 'react';
+import Footer from '../components/Footer';
+import style from '../styles/PrivacyPolicy.module.sass';
 
 const PrivacyPolicy: FC = () => {
   useEffect(() => {
-    document.body.scrollTop = 0
-  }, [])
+    document.body.scrollTop = 0;
+  }, []);
 
   return (
     <section className={style.privacy_policy}>
-      <div className='container'>
+      <div className="container">
         <div className={style.privacy_policy_inner}>
           <h1>Privacy Policy</h1>
           <span>Діє з 01.07.2020 року</span>
@@ -149,7 +149,7 @@ const PrivacyPolicy: FC = () => {
       </div>
       <Footer />
     </section>
-  )
-}
+  );
+};
 
-export default PrivacyPolicy
+export default PrivacyPolicy;

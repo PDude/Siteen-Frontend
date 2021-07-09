@@ -1,32 +1,32 @@
-import { useEffect, useState } from 'react'
-import { GoTriangleRight } from 'react-icons/go'
-import webIcon from '../images/services_web.svg'
-import uiIcon from '../images/services_ui.svg'
-import marketingIcon from '../images/services_marketing.svg'
-import animIcon from '../images/services_animation.svg'
-import globeGif from '../images/globus.gif'
-import ServicesSlider from 'react-slick'
-import CasesSlider from 'react-slick'
-import 'slick-carousel/slick/slick.css'
-import 'slick-carousel/slick/slick-theme.css'
-import style from '../styles/Home.module.css'
-import Link from 'next/link'
-import { BsArrowRight } from 'react-icons/bs'
-import instaIcon from '../images/insta_icon.svg'
-import fbIcon from '../images/fb_icon.svg'
-import linkedIcon from '../images/linked_icon.svg'
-import tIcon from '../images/t_icon.svg'
-import youTubeIcon from '../images/youtube_icon.svg'
-import Footer from '../components/Footer'
-import AboutVideo from '../components/AboutVideo'
-import FormSection from '../components/FormSection'
+import { useEffect, useState } from 'react';
+import { GoTriangleRight } from 'react-icons/go';
+import webIcon from '../images/services_web.svg';
+import uiIcon from '../images/services_ui.svg';
+import marketingIcon from '../images/services_marketing.svg';
+import animIcon from '../images/services_animation.svg';
+import globeGif from '../images/globus.gif';
+import ServicesSlider from 'react-slick';
+import CasesSlider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import style from '../styles/Home.module.css';
+import Link from 'next/link';
+import { BsArrowRight } from 'react-icons/bs';
+import instaIcon from '../images/insta_icon.svg';
+import fbIcon from '../images/fb_icon.svg';
+import linkedIcon from '../images/linked_icon.svg';
+import tIcon from '../images/t_icon.svg';
+import youTubeIcon from '../images/youtube_icon.svg';
+import Footer from '../components/Footer';
+import AboutVideo from '../components/AboutVideo';
+import FormSection from '../components/FormSection';
 
 const HomePage = ({ projects }) => {
   useEffect(() => {
-    document.body.scrollTop = 0
-  }, [])
+    document.body.scrollTop = 0;
+  }, []);
 
-  const [filteredProjects, setFilteredProjects] = useState(projects)
+  const [filteredProjects, setFilteredProjects] = useState(projects);
 
   // Slider settings
   const sliderSettings = {
@@ -37,17 +37,17 @@ const HomePage = ({ projects }) => {
     speed: 500,
     infinite: false,
     centerMode: true,
-    centerPadding: '30px'
-  }
+    centerPadding: '30px',
+  };
 
-  const [type, setType] = useState('all')
+  const [type, setType] = useState('all');
 
   const filterProjects = (e) => {
-    const tagValue = e.currentTarget.value
-    setType(tagValue)
-    if (tagValue === 'all') setFilteredProjects(projects)
-    else setFilteredProjects(projects.filter((c) => c.type === tagValue))
-  }
+    const tagValue = e.currentTarget.value;
+    setType(tagValue);
+    if (tagValue === 'all') setFilteredProjects(projects);
+    else setFilteredProjects(projects.filter((c) => c.type === tagValue));
+  };
 
   const services = [
     {
@@ -55,30 +55,30 @@ const HomePage = ({ projects }) => {
       serviceLogo: webIcon,
       serviceTitle: 'Web Development',
       serviceDescription:
-        'FrontEnd (HTML / CSS / Java Script). WordPress / Shopify / Opencart / Others. BackEnd(PHPCake / Laravel). API integration'
+        'FrontEnd (HTML / CSS / Java Script). WordPress / Shopify / Opencart / Others. BackEnd(PHPCake / Laravel). API integration',
     },
     {
       id: 2,
       serviceLogo: uiIcon,
       serviceTitle: 'UX/UI Brand Identity',
       serviceDescription:
-        'User Expirience & Interface Design. Landing page / E-shop / Business Site. Design Logo / Branding. Photo / Video content'
+        'User Expirience & Interface Design. Landing page / E-shop / Business Site. Design Logo / Branding. Photo / Video content',
     },
     {
       id: 3,
       serviceLogo: marketingIcon,
       serviceTitle: 'Digital Marketing',
       serviceDescription:
-        'Search Engine Optimization (SEO). Social Media Marketing (SMM). Content Marketing. Native Advertisign'
+        'Search Engine Optimization (SEO). Social Media Marketing (SMM). Content Marketing. Native Advertisign',
     },
     {
       id: 4,
       serviceLogo: animIcon,
       serviceTitle: 'Animation Production',
       serviceDescription:
-        'Search Engine Optimization (SEO). Social Media Marketing (SMM). Content Marketing. Native Advertisign'
-    }
-  ]
+        'Search Engine Optimization (SEO). Social Media Marketing (SMM). Content Marketing. Native Advertisign',
+    },
+  ];
 
   const casesItems = filteredProjects.map((c) => (
     <ProjectCase
@@ -90,7 +90,7 @@ const HomePage = ({ projects }) => {
       projectTitle={c.project_name}
       project_subtitle={c.project_subtitle}
     />
-  ))
+  ));
 
   const servicesItems = services.map((s) => (
     <ServiceItem
@@ -99,35 +99,35 @@ const HomePage = ({ projects }) => {
       serviceTitle={s.serviceTitle}
       serviceDescription={s.serviceDescription}
     />
-  ))
+  ));
 
   return (
     <>
       <header className={style.main_header}>
-        <div className='container'>
+        <div className="container">
           <div className={style.main_offer}>
-            <span className='title_label'>Digital Agency</span>
+            <span className="title_label">Digital Agency</span>
             <h1>Solutions for Digital Business.</h1>
             <p>
               We bring your business online and raise the income thanks to our
               wonderful team of professionals.
             </p>
             <div className={style.about_us_video_wrap}>
-              <AboutVideo videoLabel='About Us' />
+              <AboutVideo videoLabel="About Us" />
             </div>
           </div>
           <div className={style.lang_toggler_mobile}>
             <select>
-              <option value=''>UA</option>
-              <option value=''>RU</option>
-              <option value=''>EN</option>
+              <option value="">UA</option>
+              <option value="">RU</option>
+              <option value="">EN</option>
             </select>
           </div>
         </div>
       </header>
       <section id={'our_services'} className={style.our_services}>
-        <div className='container'>
-          <span className='title_label'>Our Services</span>
+        <div className="container">
+          <span className="title_label">Our Services</span>
           <h2 className={style.h2}>We Do Everything.</h2>
           <div className={style.services_items_wrap}>
             <div className={style.services_items}>{servicesItems}</div>
@@ -140,39 +140,39 @@ const HomePage = ({ projects }) => {
         </div>
       </section>
       <section id={'cases_section'} className={style.our_cases}>
-        <div className='container'>
+        <div className="container">
           <div className={style.our_cases_wrap}>
-            <span className='title_label'>Our portfolio</span>
+            <span className="title_label">Our portfolio</span>
             <h2 className={style.h2}>Our Latest Cases.</h2>
             <div className={style.cases_tags}>
               <CaseTag
-                typeTag='all'
-                text='All projects'
+                typeTag="all"
+                text="All projects"
                 typeState={type}
                 filterProjects={filterProjects}
               />
               <CaseTag
-                typeTag='web-sites'
-                text='Web-Sites'
+                typeTag="web-sites"
+                text="Web-Sites"
                 typeState={type}
                 filterProjects={filterProjects}
               />
               <CaseTag
-                typeTag='design'
-                text='Design Only'
+                typeTag="design"
+                text="Design Only"
                 typeState={type}
                 filterProjects={filterProjects}
               />
               <CaseTag
-                typeTag='motion-design'
-                text='Video & Animation'
+                typeTag="motion-design"
+                text="Video & Animation"
                 typeState={type}
                 filterProjects={filterProjects}
               />
-              <button type='button' className={style.inaccessible}>
+              <button type="button" className={style.inaccessible}>
                 App-Dev
               </button>
-              <button type='button' className={style.inaccessible}>
+              <button type="button" className={style.inaccessible}>
                 SEO-Cases
               </button>
               {/* <CaseTag
@@ -201,20 +201,20 @@ const HomePage = ({ projects }) => {
         </div>
       </section>
       <section id={'contact_us'} className={style.form_section}>
-        <div className='container'>
+        <div className="container">
           <div className={style.form_section_wrap}>
             <div className={style.globe_wrap}>
-              <img src={globeGif} alt='globe' />
+              <img src={globeGif} alt="globe" />
             </div>
             <FormSection />
           </div>
         </div>
       </section>
       <section className={style.we_are_pro}>
-        <div className='container'>
+        <div className="container">
           <div className={style.we_are_pro_wrap}>
             <div className={style.we_are_pro_content}>
-              <div className='title_label'>About Us</div>
+              <div className="title_label">About Us</div>
               <h2 className={style.h2}>We Are Experts In Our Field.</h2>
               <span>
                 Our digital company of professionals has been developing
@@ -230,7 +230,7 @@ const HomePage = ({ projects }) => {
                 the number of clients, as it is a way more exciting to
                 accomplish the work for a full due and to your delight.
               </p>
-              <Link href='/about'>
+              <Link href="/about">
                 <a className={style.about_us_link}>
                   READ MORE <GoTriangleRight />
                 </a>
@@ -274,27 +274,27 @@ const HomePage = ({ projects }) => {
       </section>
       <section id={'contacts_section'} className={style.contacts_section}>
         <div className={style.contacts_block_wrap}>
-          <div className='container'>
+          <div className="container">
             <div className={style.contacts_block}>
               <div className={style.contacts_block_credentials_wrap}>
-                <span className='title_label'>Contacts</span>
+                <span className="title_label">Contacts</span>
                 <ul className={style.contacts_block_credentials}>
                   <li>
                     <span>Address :</span>
-                    <a href='#'>
+                    <a href="#">
                       230, Kulparkivska str.
                       <br /> Lviv, Ukraine, 79031
                     </a>
                   </li>
                   <li>
                     <span>Phone :</span>
-                    <a href='tel:0971630202'>+38 (097) 163 0202</a>
+                    <a href="tel:0971630202">+38 (097) 163 0202</a>
                   </li>
                   <li>
                     <span>Email :</span>
                     <div className={style.mails_links}>
-                      <a href='#'>siteen.co@gmail.com</a>
-                      <a href='#'>siteencareer@gmail.com</a>
+                      <a href="#">siteen.co@gmail.com</a>
+                      <a href="#">siteencareer@gmail.com</a>
                     </div>
                   </li>
                 </ul>
@@ -306,35 +306,39 @@ const HomePage = ({ projects }) => {
                 <ul className={style.footer_links_elements}>
                   <li>
                     <a
-                      href='https://www.instagram.com/siteen.co/'
-                      target='_blank'>
-                      <img src={instaIcon} alt='instaIcon' />
+                      href="https://www.instagram.com/siteen.co/"
+                      target="_blank"
+                    >
+                      <img src={instaIcon} alt="instaIcon" />
                     </a>
                   </li>
                   <li>
                     <a
-                      href='https://www.facebook.com/siteen.co'
-                      target='_blank'>
-                      <img src={fbIcon} alt='fbIcon' />
+                      href="https://www.facebook.com/siteen.co"
+                      target="_blank"
+                    >
+                      <img src={fbIcon} alt="fbIcon" />
                     </a>
                   </li>
                   <li>
                     <a
-                      href='https://www.linkedin.com/company/siteen/'
-                      target='_blank'>
-                      <img src={linkedIcon} alt='linkedIcon' />
+                      href="https://www.linkedin.com/company/siteen/"
+                      target="_blank"
+                    >
+                      <img src={linkedIcon} alt="linkedIcon" />
                     </a>
                   </li>
                   <li>
-                    <a href='https://t.me/siteen/' target='_blank'>
-                      <img src={tIcon} alt='tIcon' />
+                    <a href="https://t.me/siteen/" target="_blank">
+                      <img src={tIcon} alt="tIcon" />
                     </a>
                   </li>
                   <li>
                     <a
-                      href='https://www.youtube.com/channel/UCATwpqig9rIT7u1dm4f7blQ'
-                      target='_blank'>
-                      <img src={youTubeIcon} alt='youTubeIcon' />
+                      href="https://www.youtube.com/channel/UCATwpqig9rIT7u1dm4f7blQ"
+                      target="_blank"
+                    >
+                      <img src={youTubeIcon} alt="youTubeIcon" />
                     </a>
                   </li>
                 </ul>
@@ -345,11 +349,11 @@ const HomePage = ({ projects }) => {
       </section>
       <Footer />
     </>
-  )
-}
+  );
+};
 
 const WorkflowElement = ({ index, title, text }) => {
-  const [isTextVisible, setTextVisible] = useState<boolean>(false)
+  const [isTextVisible, setTextVisible] = useState<boolean>(false);
 
   return (
     <div className={style.workflow_element}>
@@ -358,39 +362,41 @@ const WorkflowElement = ({ index, title, text }) => {
         <h3
           className={isTextVisible ? style.opened : null}
           onClick={() => {
-            setTextVisible(!isTextVisible)
-          }}>
+            setTextVisible(!isTextVisible);
+          }}
+        >
           {title}
         </h3>
         <p className={isTextVisible ? style.visible : null}>{text}</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 const CaseTag = ({ typeTag, typeState, text, filterProjects }) => {
   return (
     <button
-      type='button'
+      type="button"
       onClick={(e) => {
-        filterProjects(e)
+        filterProjects(e);
       }}
       value={typeTag}
-      className={typeTag === typeState ? style.checked : null}>
+      className={typeTag === typeState ? style.checked : null}
+    >
       {text}
     </button>
-  )
-}
+  );
+};
 
 const ServiceItem = ({ serviceLogo, serviceTitle, serviceDescription }) => (
-  <a href='#' className={style.service_element}>
+  <a href="#" className={style.service_element}>
     <div className={`${style.icon_wrap} icon_wrap_global`}>
-      <img src={serviceLogo} alt='web' />
+      <img src={serviceLogo} alt="web" />
     </div>
     <h3>{serviceTitle}</h3>
     <p>{serviceDescription}</p>
   </a>
-)
+);
 
 const ProjectCase = ({
   original_name,
@@ -398,13 +404,14 @@ const ProjectCase = ({
   caseDuration,
   projectTitle,
   project_subtitle,
-  project_logo
+  project_logo,
 }) => (
   <Link href={'/project/[original_name]'} as={`/project/${original_name}`}>
     <a
       style={{ backgroundImage: `url(${project_photo})` }}
-      className={`${style.project_case} project_case_global`}>
-      <img src={project_logo} alt='logo' />
+      className={`${style.project_case} project_case_global`}
+    >
+      <img src={project_logo} alt="logo" />
       <div className={`${style.project_case_wrap} project_case_wrap_global`}>
         <div className={style.project_duration}>
           <p>Creation Term: </p>
@@ -420,15 +427,15 @@ const ProjectCase = ({
       </div>
     </a>
   </Link>
-)
+);
 
 HomePage.getInitialProps = async () => {
-  const response = await fetch('https://siteen.co/api/v1/project')
-  const projects = await response.json()
+  const response = await fetch('https://siteen.co/api/v1/project');
+  const projects = await response.json();
 
   return {
-    projects: projects.response
-  }
-}
+    projects: projects.response,
+  };
+};
 
-export default HomePage
+export default HomePage;

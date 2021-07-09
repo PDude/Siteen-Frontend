@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "format": "prettier --write \"components/**/*.tsx\" \"interfaces/**/*.ts\" \"pages/**/*.tsx\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@types/react-slick": "^0.23.4",
@@ -31,6 +33,8 @@
   "devDependencies": {
     "@types/react": "^17.0.4",
     "@types/react-scroll": "^1.8.2",
+    "husky": "^7.0.1",
+    "prettier": "^2.3.2",
     "typescript": "^4.2.4"
   }
 }

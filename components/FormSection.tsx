@@ -1,21 +1,21 @@
-import axios from 'axios'
-import { Field, Formik } from 'formik'
-import { useState } from 'react'
-import { GoTriangleRight } from 'react-icons/go'
-import { toast } from 'react-toastify'
-import style from '../styles/FormSection.module.sass'
-import InputField from './fields/inputField'
-import FormModal from './modals/FormModal'
+import axios from 'axios';
+import { Field, Formik } from 'formik';
+import { useState } from 'react';
+import { GoTriangleRight } from 'react-icons/go';
+import { toast } from 'react-toastify';
+import style from '../styles/FormSection.module.sass';
+import InputField from './fields/inputField';
+import FormModal from './modals/FormModal';
 
 const FormSection = () => {
   // Form success modal
-  const [openFormModal, setFormModalOpen] = useState<boolean>(false)
+  const [openFormModal, setFormModalOpen] = useState<boolean>(false);
 
-  const onOpenFormModal = () => setFormModalOpen(true)
-  const onCloseFormModal = () => setFormModalOpen(false)
+  const onOpenFormModal = () => setFormModalOpen(true);
+  const onCloseFormModal = () => setFormModalOpen(false);
 
   const sendForm = (values, { resetForm }) => {
-    const { name, email, phone } = values
+    const { name, email, phone } = values;
     axios
       .post(
         'https://siteen.co/api/v1/consult',
@@ -28,26 +28,26 @@ const FormSection = () => {
           headers: {
             'Content-Type': 'application/json',
           },
-        }
+        },
       )
       .then((res) => {
         if (res.data.message === 'ok') {
-          resetForm({})
-          console.log(res)
-          onOpenFormModal()
-          console.log(values)
+          resetForm({});
+          console.log(res);
+          onOpenFormModal();
+          console.log(values);
         }
       })
       .then(() => {
         setTimeout(() => {
-          onCloseFormModal()
-        }, 3000)
+          onCloseFormModal();
+        }, 3000);
       })
       .catch(function (error) {
-        console.log(error)
-        toast.error('Something went wrong please try later')
-      })
-  }
+        console.log(error);
+        toast.error('Something went wrong please try later');
+      });
+  };
 
   return (
     <>
@@ -102,7 +102,7 @@ const FormSection = () => {
         openFormModal={openFormModal}
       />
     </>
-  )
-}
+  );
+};
 
-export default FormSection
+export default FormSection;
