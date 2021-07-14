@@ -134,13 +134,6 @@ const HomePage = ({ projects }) => {
               <AboutVideo videoLabel="About Us" />
             </div>
           </div>
-          <div className={style.lang_toggler_mobile}>
-            <select>
-              <option value="">UA</option>
-              <option value="">RU</option>
-              <option value="">EN</option>
-            </select>
-          </div>
         </div>
       </header>
       <section id={"our_services"} className={style.our_services}>

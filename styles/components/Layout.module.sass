@@ -21,6 +21,7 @@
   grid-area: aside_bar
   display: flex
   flex-direction: column
+  transition: all 0.3s ease
   justify-content: space-between
   align-items: center
   grid-gap: 40px
@@ -165,7 +166,7 @@
   align-items: center
   grid-gap: 40px
   margin-left: auto
-  margin-right: 145px
+  margin-right: auto
 
   a
     color: #faa94c
@@ -249,7 +250,7 @@
 
 @media only screen and (max-width: 768px)
   .nav_tel, .get_brif
-    display: none
+    display: none !important
 
   .nav_menus_opened ul
     grid-gap: 10px
@@ -292,7 +293,7 @@
     margin-left: initial
 
   .navigation_bar_wrap_opened
-    margin-top: 25px
+    margin-top: 45px
 
   .logo_link img, .logo_link_opened img
     width: 100px
