@@ -66,7 +66,7 @@ const ProjectPage = ({ project: serverProject }) => {
   }
 
   if (!project) {
-    // return <Preloader />
+    return <Preloader />
   }
 
   return (
