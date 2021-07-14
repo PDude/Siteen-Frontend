@@ -446,7 +446,7 @@ HomePage.getInitialProps = async () => {
   const projects = await response.json()
 
   return {
-    projects: projects.response
+    projects: projects.data.response
   }
 }
 

@@ -104,11 +104,14 @@
 .service_element:hover .icon_wrap {
   background: #fff;
 }
+.our_services,
+.our_cases {
+  padding: 50px 0 100px !important;
+}
 .service_element h3 {
   font-weight: 800;
   font-size: 20px;
-  margin: 20px 0 25px;
-  text-align: center;
+  margin: 20px 0;
   max-width: 165px;
   text-align: center;
 }
@@ -141,7 +144,7 @@
   position: absolute;
   right: 0;
   bottom: -60px;
-  z-index: 30;
+  z-index: 10;
 }
 .our_cases_wrap .h2 {
   font-size: 45px;
@@ -192,7 +195,7 @@
 .our_cases_items {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap: 14px 12px;
+  grid-gap: 10px;
 }
 .project_case {
   background-color: #000;
@@ -211,7 +214,7 @@
   justify-content: space-between;
 }
 .project_case img {
-  width: 140px;
+  width: 110px;
   z-index: 5;
   position: absolute;
   top: 50%;
@@ -570,37 +573,61 @@
 
 @media only screen and (max-width: 1200px) {
   .main_offer > h1 {
-    font-size: 50px;
+    font-size: 45px;
+    margin-top: 10px;
   }
   .about_us_video_wrap {
     margin-left: 20px;
+    margin-top: 50px;
   }
   .h2 {
     font-size: 40px !important;
+    margin-top: 10px !important;
+  }
+  .main_offer > p {
+    margin-top: 20px;
+    font-size: 18px;
   }
   .main_header:after,
   .our_services::after,
   .our_cases::after,
   .form_section::after,
   .we_are_pro::after {
-    font-size: 50px;
-    opacity: 0.15;
+    font-size: 40px;
+    bottom: 50px;
+  }
+  .our_cases::after {
+    top: 50px;
+  }
+  .services_items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cases_tags {
+    margin: 40px 0;
   }
   .cases_tags button {
-    font-size: 16px;
+    font-size: 14px;
+  }
+  .project_case {
+    height: 250px;
   }
   .workflow_items {
     margin-left: 0;
   }
   .we_are_pro::after {
     top: initial;
-    bottom: 75px;
   }
   .project_case {
     z-index: 50;
   }
   .our_cases_items {
     grid-template-rows: auto;
+  }
+  .we_are_pro_content {
+    padding: 100px 30px 100px 0;
+  }
+  .workflow {
+    padding: 100px 0 100px 60px;
   }
 }
 @media only screen and (max-width: 992px) {

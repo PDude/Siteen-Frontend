@@ -49,10 +49,11 @@ const ProjectPage = ({ project: serverProject }) => {
       const response = await fetch(
         `https://siteen.co/api/v1/project/${router.query.original_name}`
       )
-      const projectData = await response.json()
-      setProject(projectData.response)
-    }
 
+      const projectData = await response.json()
+      setProject(projectData.data.response)
+    }
+    
     if (!serverProject) {
       loadProject()
     }
@@ -65,7 +66,7 @@ const ProjectPage = ({ project: serverProject }) => {
   }
 
   if (!project) {
-    return <Preloader />
+    // return <Preloader />
   }
 
   return (
@@ -268,7 +269,7 @@ ProjectPage.getInitialProps = async ({ query, req }) => {
   const project = await response.json()
 
   return {
-    project: project.response
+    project: project.data.response
   }
 }
 
