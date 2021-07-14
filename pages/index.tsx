@@ -61,7 +61,7 @@ const HomePage = ({ projects }) => {
       serviceLogo: webIcon,
       serviceTitle: 'Web Development',
       serviceDescription: [
-        'FrontEnd (HTML / CSS / Java Script)',
+        'FrontEnd (HTML / CSS / JavaScript)',
         'WordPress / Shopify / Opencart / Others',
         'BackEnd(PHPCake / Laravel)',
         'API integration'

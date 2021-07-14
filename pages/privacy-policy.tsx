@@ -1,10 +1,10 @@
-import { FC, useEffect } from 'react'
-import Footer from '../components/Footer'
-import style from '../styles/pages/PrivacyPolicy.module.sass'
+import { FC, useEffect } from "react";
+import Footer from "../components/Footer";
+import style from "../styles/pages/PrivacyPolicy.module.sass";
 
 const PrivacyPolicy: FC = () => (
   <section className={style.privacy_policy}>
-    <div className='container'>
+    <div className="container">
       <div className={style.privacy_policy_inner}>
         <h1>Privacy Policy</h1>
         <span>Діє з 01.07.2020 року</span>
@@ -114,7 +114,7 @@ const PrivacyPolicy: FC = () => (
             зовнішні сайти нами не керуються. Тому ми наполегливо радимо
             переглянути політику конфіденційності цих веб-сайтів. Ми не
             контролюємо і не несемо відповідальності за вміст, політику
-            конфіденційності та наповнення будь-яких сторонніх сайтів чи служб.{' '}
+            конфіденційності та наповнення будь-яких сторонніх сайтів чи служб.{" "}
             <br />
             <br />
             <b>Захист персональних даних дітей:</b> <br />
@@ -141,6 +141,6 @@ const PrivacyPolicy: FC = () => (
     </div>
     <Footer />
   </section>
-)
+);
 
-export default PrivacyPolicy
+export default PrivacyPolicy;
