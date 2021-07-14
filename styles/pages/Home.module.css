@@ -81,7 +81,7 @@
   margin-top: 15px;
 }
 .services_items_wrap {
-  margin-top: 60px;
+  margin-top: 50px;
 }
 .services_items {
   display: grid;
@@ -114,11 +114,15 @@
   margin: 20px 0;
   max-width: 165px;
   text-align: center;
+  line-height: 110%;
 }
-.service_element p {
-  line-height: 220%;
+.service_element ul {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  white-space: pre-line;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 15px;
 }
 .icon_wrap {
   width: 85px;
@@ -164,7 +168,7 @@
   font-size: 16px;
   transition: all 0.3s ease;
   position: relative;
-  padding-bottom: 10px;
+  padding-bottom: 5px;
 }
 .cases_tags button:hover {
   color: #fff;
@@ -265,14 +269,11 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  font-size: 15px;
+  grid-gap: 8px;
 }
 .project_duration p {
-  font-size: 15px;
   font-weight: 700;
-  margin-right: 7px;
-}
-.project_duration span {
-  font-size: 15px;
 }
 .project_duration span::first-letter {
   font-size: 20px;
@@ -626,16 +627,57 @@
   .we_are_pro_content {
     padding: 100px 30px 100px 0;
   }
+  .we_are_pro_content h2 {
+    margin: 10px 0 20px !important;
+  }
+  .we_are_pro_content span {
+    font-size: 18px !important;
+  }
+  .we_are_pro_content p {
+    margin-top: 20px;
+  }
   .workflow {
     padding: 100px 0 100px 60px;
+  }
+  .contacts_block_credentials {
+    margin: 10px 0 30px;
   }
 }
 @media only screen and (max-width: 992px) {
   .main_offer > h1 {
     font-size: 40px;
+    margin-top: 5px;
   }
-  .services_items {
-    grid-template-columns: repeat(2, 1fr);
+  .main_offer > p {
+    margin-top: 10px;
+  }
+  .about_us_video_wrap {
+    margin-left: 0;
+    margin-top: 40px;
+  }
+  .our_services::before {
+    width: 100%;
+    left: initial;
+  }
+  .main_header:after,
+  .our_services::after,
+  .our_cases::after,
+  .form_section::after,
+  .we_are_pro::after {
+    font-size: 30px;
+  }
+  .project_case {
+    height: 220px;
+    padding: 20px 30px 30px;
+  }
+  .project_title h4 {
+    font-size: 16px;
+  }
+  .project_title p {
+    font-size: 14px;
+  }
+  .project_duration {
+    font-size: 14px;
   }
   .form_section_wrap {
     grid-template-columns: 1fr;
@@ -650,73 +692,97 @@
   }
   .h2 {
     font-size: 35px !important;
-  }
-  .we_are_pro_content {
-    border-radius: 0 30px 30px 0;
-  }
-  .we_are_pro_content::after {
-    border-radius: 0 30px 30px 0;
-  }
-  .workflow {
-    padding-left: 40px;
-  }
-  .our_services::before {
-    width: 100%;
-    left: initial;
+    margin-top: 5px !important;
   }
   .we_are_pro_wrap {
-    grid-template-columns: 1fr 1fr;
+    align-items: start;
   }
   .we_are_pro_content {
     border-radius: 30px;
-    padding-left: 15px;
-    padding-right: 15px;
-    background: #191c26;
+    padding: 50px 15px 80px 15px;
+    background: #191c26;;
   }
   .we_are_pro_content::after {
     display: none;
   }
+  .we_are_pro_content h2 {
+    margin: 5px 0 10px !important;
+  }
+  .workflow {
+    padding-left: 40px;
+    padding: 50px 0 50px 30px;
+  }
+  .we_are_pro_wrap {
+    grid-template-columns: 1fr 1fr;
+  }
   .workflow_text h3 {
-    font-size: 22px;
+    font-size: 20px;
   }
   .contacts_block_credentials li span {
-    font-size: 22px;
-    min-width: 110px;
+    font-size: 20px;
+    min-width: 95px;
+  }
+  .contacts_block_credentials {
+    margin-top: 5px;
   }
   .contacts_block_credentials li p,
   .contacts_block_credentials li a {
     margin-top: 4px;
-    font-size: 18px;
+    font-size: 16px;
   }
   .contacts_block_credentials_wrap {
-    max-width: 380px;
-    margin-left: auto;
+    max-width: 330px;
+  }
+  .footer_links {
+    justify-content: flex-end;
+  }
+  .footer_links_elements {
+    grid-gap: 20px;
+  }
+  .footer_links_elements a {
+    width: 30px;
   }
   .footer_links > span {
     color: #777879;
+    font-size: 20px;
+  }
+  .contacts_block_wrap {
+    padding: 80px 0;
   }
 }
 @media only screen and (max-width: 768px) {
+  .main_offer > h1 {
+    font-size: 35px;
+  }
+  .main_offer > p {
+    font-size: 16px;
+  }
   .h2 {
-    font-size: 25px !important;
+    font-size: 30px !important;
   }
   .project_case {
-    padding-left: 25px;
-    padding-right: 25px;
-  }
-  .project_title h4 {
-    font-size: 18px;
+    padding: 20px;
+    height: 190px;
   }
   .we_are_pro_wrap {
     grid-template-columns: 1fr;
   }
+  .workflow {
+    padding-bottom: 80px;
+  }
   .we_are_pro_content {
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding: 50px 15px 80px;
+  }
+  .we_are_pro_content_inner {
+    max-width: 370px;
+    margin: 0 auto;
   }
   .we_are_pro {
     background-repeat: repeat;
     background-position: center;
+  }
+  .contacts_block_wrap {
+    padding: 50px 0;
   }
 }
 @media only screen and (max-width: 576px) {
@@ -751,9 +817,6 @@
   .our_services .h2,
   .our_cases_wrap .h2 {
     margin-top: 5px;
-  }
-  .services_items_wrap {
-    margin-top: 60px;
   }
   .services_items {
     grid-template-columns: 1fr;
@@ -831,9 +894,6 @@
   }
   .workflow_element > span {
     font-size: 35px;
-  }
-  .contacts_block_wrap {
-    padding-top: 80px;
   }
   .contacts_block_credentials li {
     flex-direction: column;

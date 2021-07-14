@@ -31,6 +31,7 @@
 .form_items
     max-width: 370px
     margin-top: 55px
+    width: 100%
     .fields_wrap
         display: flex
         flex-direction: column
@@ -45,29 +46,44 @@
 
     .form
         padding: 50px 0 100px 60px
+        & > p
+            font-size: 18px
 
 @media only screen and (max-width: 992px)
     .form
         overflow: hidden
         border-radius: 30px
-        padding: 60px 15px 130px
+        padding: 50px 15px 80px
         display: flex
         flex-direction: column
         align-items: center
         & > p
             max-width: 370px
+            width: 100%
 
         & > span
             max-width: 370px
+            width: 100%
         &::after
             display: none
 
     .h2
         font-size: 35px !important
+        margin: 5px 0 10px !important
+
+    .form_items
+        margin-top: 30px !important
+        .fields_wrap
+            grid-gap: 20px
+        button
+            margin-top: 40px
 
 @media only screen and (max-width: 768px)
-    .h2
-        font-size: 25px !important
+    .form
+        p
+            font-size: 16px
+        .h2
+            font-size: 30px !important
 
 @media only screen and (max-width: 576px)
     .form

@@ -56,29 +56,45 @@ const HomePage = ({ projects }) => {
       id: 1,
       serviceLogo: webIcon,
       serviceTitle: 'Web Development',
-      serviceDescription:
-        'FrontEnd (HTML / CSS / Java Script). WordPress / Shopify / Opencart / Others. BackEnd(PHPCake / Laravel). API integration'
+      serviceDescription: [
+        'FrontEnd (HTML / CSS / Java Script)',
+        'WordPress / Shopify / Opencart / Others',
+        'BackEnd(PHPCake / Laravel)',
+        'API integration'
+      ]
     },
     {
       id: 2,
       serviceLogo: uiIcon,
       serviceTitle: 'UX/UI Brand Identity',
-      serviceDescription:
-        'User Expirience & Interface Design. Landing page / E-shop / Business Site. Design Logo / Branding. Photo / Video content'
+      serviceDescription: [
+        'User Expirience & Interface Design',
+        'Landing page / E-shop / Business Site',
+        'Design Logo / Branding',
+        'Photo / Video content'
+      ]
     },
     {
       id: 3,
       serviceLogo: marketingIcon,
       serviceTitle: 'Digital Marketing',
-      serviceDescription:
-        'Search Engine Optimization (SEO). Social Media Marketing (SMM). Content Marketing. Native Advertisign'
+      serviceDescription: [
+        'Search Engine Optimization (SEO)',
+        'Social Media Marketing (SMM)',
+        'Content Marketing',
+        'Native Advertisign'
+      ]
     },
     {
       id: 4,
       serviceLogo: animIcon,
       serviceTitle: 'Animation Production',
-      serviceDescription:
-        'Search Engine Optimization (SEO). Social Media Marketing (SMM). Content Marketing. Native Advertisign'
+      serviceDescription: [
+        'Search Engine Optimization (SEO)',
+        'Social Media Marketing (SMM)',
+        'Content Marketing',
+        'Native Advertisign'
+      ]
     }
   ]
 
@@ -222,27 +238,30 @@ const HomePage = ({ projects }) => {
         <div className='container'>
           <div className={style.we_are_pro_wrap}>
             <div className={style.we_are_pro_content}>
-              <div className='title_label'>About Us</div>
-              <h2 className={style.h2}>We Are Experts In Our Field.</h2>
-              <span>
-                Our digital company of professionals has been developing
-                products for 3 years.
-              </span>
-              <p>
-                We are a modern digital company that creates and develops your
-                projects. Our 3-year experience of developing various
-                web-projects grows only upwards thanks to the refresher courses
-                our employees attend annually. Since 2018 we have completed more
-                than 20 projects that are currently developing and expanding
-                successfully in their areas of specialization. We do not chase
-                the number of clients, as it is a way more exciting to
-                accomplish the work for a full due and to your delight.
-              </p>
-              <Link href='/about'>
-                <a className={style.about_us_link}>
-                  READ MORE <GoTriangleRight />
-                </a>
-              </Link>
+              <div className={style.we_are_pro_content_inner}>
+                <div className='title_label'>About Us</div>
+                <h2 className={style.h2}>We Are Experts In Our Field.</h2>
+                <span>
+                  Our digital company of professionals has been developing
+                  products for 3 years.
+                </span>
+                <p>
+                  We are a modern digital company that creates and develops your
+                  projects. Our 3-year experience of developing various
+                  web-projects grows only upwards thanks to the refresher
+                  courses our employees attend annually. Since 2018 we have
+                  completed more than 20 projects that are currently developing
+                  and expanding successfully in their areas of specialization.
+                  We do not chase the number of clients, as it is a way more
+                  exciting to accomplish the work for a full due and to your
+                  delight.
+                </p>
+                <Link href='/about'>
+                  <a className={style.about_us_link}>
+                    READ MORE <GoTriangleRight />
+                  </a>
+                </Link>
+              </div>
             </div>
             <div className={style.workflow}>
               <h2 className={style.h2}>How We Work?</h2>
@@ -361,7 +380,12 @@ const WorkflowElement = ({ index, title, text }) => {
 
   return (
     <div className={style.workflow_element}>
-      <span>{index}</span>
+      <span
+        onClick={() => {
+          setTextVisible(!isTextVisible)
+        }}>
+        {index}
+      </span>
       <div className={style.workflow_text}>
         <h3
           className={
@@ -407,7 +431,11 @@ const ServiceItem = ({ serviceLogo, serviceTitle, serviceDescription }) => (
       <img src={serviceLogo} alt='web' />
     </div>
     <h3>{serviceTitle}</h3>
-    <p>{serviceDescription}</p>
+    <ul>
+      {serviceDescription.map((service) => (
+        <li>{service}</li>
+      ))}
+    </ul>
   </a>
 )
 
