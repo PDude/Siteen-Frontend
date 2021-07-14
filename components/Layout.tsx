@@ -21,6 +21,7 @@ const Layout = ({ children }) => {
 
   const closeHamburger = () => {
     setHamburgerOpen(false)
+    document.body.scrollTop = 0
   }
 
   useEffect(() => {
@@ -144,7 +145,7 @@ const Layout = ({ children }) => {
                     </a>
                   </li> */}
                   <li>
-                    <Link href='/about'>
+                    <Link href='/about' scroll={true}>
                       <a onClick={closeHamburger}>About Us</a>
                     </Link>
                   </li>
