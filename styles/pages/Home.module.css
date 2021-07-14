@@ -816,7 +816,8 @@
     top: 30px;
     font-size: 30px;
   }
-  .our_services, .our_cases {
+  .our_services,
+  .our_cases {
     padding: 50px 0 !important;
   }
   .services_items_wrap {

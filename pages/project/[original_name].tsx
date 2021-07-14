@@ -1,24 +1,24 @@
-import Button from "../../components/formElements/Button";
-import style from "../../styles/pages/ProjectPage.module.sass";
+import Button from '../../components/formElements/Button'
+import style from '../../styles/pages/ProjectPage.module.sass'
 // temp project bg
-import projecCheckDown from "../../images/project_check_down.svg";
-import projecCheckDownSmall from "../../images/project_check_down_small.svg";
-import { Component, useEffect, useRef, useState } from "react";
-import Footer from "../../components/Footer";
-import { useRouter } from "next/router";
+import projecCheckDown from '../../images/project_check_down.svg'
+import projecCheckDownSmall from '../../images/project_check_down_small.svg'
+import { Component, useEffect, useRef, useState } from 'react'
+import Footer from '../../components/Footer'
+import { useRouter } from 'next/router'
 // Slider
-import ProjectsSlider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
+import ProjectsSlider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 // Arows
-import arrowBack from "../../images/arrow_team_back.svg";
-import arrowNext from "../../images/arrow_team_next.svg";
+import arrowBack from '../../images/arrow_team_back.svg'
+import arrowNext from '../../images/arrow_team_next.svg'
 // Temp files for projects slider items
-import hubyshLogo from "../../images/hubysh_logo.svg";
-import hubyshPhoto from "../../images/hubysh_photo.jpg";
+import hubyshLogo from '../../images/hubysh_logo.svg'
+import hubyshPhoto from '../../images/hubysh_photo.jpg'
 
-import { GoTriangleRight } from "react-icons/go";
-import Preloader from "../../components/common/Preloader";
+import { GoTriangleRight } from 'react-icons/go'
+import Preloader from '../../components/common/Preloader'
 
 // type projectType = {
 //   id: number
@@ -39,32 +39,32 @@ import Preloader from "../../components/common/Preloader";
 // }
 
 const ProjectPage = ({ project: serverProject }) => {
-  const myRef = useRef();
+  const myRef = useRef()
 
-  const [project, setProject] = useState(serverProject);
-  const router = useRouter();
+  const [project, setProject] = useState(serverProject)
+  const router = useRouter()
 
   useEffect(() => {
     const loadProject = async () => {
       const response = await fetch(
         `https://siteen.co/api/v1/project/${router.query.original_name}`
-      );
+      )
 
-      const projectData = await response.json();
-      setProject(projectData.data.response);
-    };
+      const projectData = await response.json()
+      setProject(projectData.data.response)
+    }
 
     if (!serverProject) {
-      loadProject();
+      loadProject()
     }
-  }, []);
+  }, [])
 
   const scroll = (ref) => {
-    ref.current.scrollIntoView({ behavior: "smooth" });
-  };
+    ref.current.scrollIntoView({ behavior: 'smooth' })
+  }
 
   if (!project) {
-    return <Preloader />;
+    return <Preloader />
   }
 
   return (
@@ -73,34 +73,34 @@ const ProjectPage = ({ project: serverProject }) => {
         style={{ backgroundImage: `url(${project.project_photo})` }}
         className={style.project_page_header}
       >
-        <div className="container">
+        <div className='container'>
           <div className={style.project_info}>
-            <img src={project.project_logo} alt={"Brand logo"} />
+            <img src={project.project_logo} alt={'Brand logo'} />
             <div className={style.project_type}>
               <h3>{project.ordering_type}</h3>
-              <p>{project.project_tags.join(" ")}</p>
+              <p>{project.project_tags.join(' ')}</p>
             </div>
           </div>
           <button
             onClick={() => {
-              scroll(myRef);
+              scroll(myRef)
             }}
           >
             <img
               className={style.for_big_device}
               src={projecCheckDown}
-              alt="projecCheckDown"
+              alt='projecCheckDown'
             />
             <img
               className={style.for_small_device}
               src={projecCheckDownSmall}
-              alt="projecCheckDown"
+              alt='projecCheckDown'
             />
           </button>
         </div>
       </header>
       <section ref={myRef} className={style.project_data}>
-        <div className="container">
+        <div className='container'>
           <div className={style.about}>
             <h3>About</h3>
             <p>{project.about_project}</p>
@@ -117,10 +117,10 @@ const ProjectPage = ({ project: serverProject }) => {
             <h3>Results</h3>
             <ul>
               <li>
-                <a href="#">{project.result_link[0]}</a>
+                <a href='#'>{project.result_link[0]}</a>
               </li>
               <li>
-                <a href="#">{project.result_link[1]}</a>
+                <a href='#'>{project.result_link[1]}</a>
               </li>
             </ul>
           </div>
@@ -137,7 +137,7 @@ const ProjectPage = ({ project: serverProject }) => {
       </section>
       {/* <PreviousNextMethodsProjectsSection /> */}
       <section className={style.cta_section}>
-        <div className="container">
+        <div className='container'>
           <div className={style.cta_section_offer}>
             <h2>Did you like the project?</h2>
             <p>
@@ -150,21 +150,21 @@ const ProjectPage = ({ project: serverProject }) => {
       </section>
       <Footer />
     </>
-  );
-};
+  )
+}
 
 class PreviousNextMethodsProjectsSection extends Component {
-  slider: any;
+  slider: any
   constructor(props) {
-    super(props);
-    this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this);
+    super(props)
+    this.next = this.next.bind(this)
+    this.previous = this.previous.bind(this)
   }
   previous() {
-    this.slider.slickPrev();
+    this.slider.slickPrev()
   }
   next() {
-    this.slider.slickNext();
+    this.slider.slickNext()
   }
 
   render() {
@@ -179,25 +179,25 @@ class PreviousNextMethodsProjectsSection extends Component {
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 2,
-          },
+            slidesToShow: 2
+          }
         },
         {
           breakpoint: 576,
           settings: {
             slidesToShow: 1,
             centerMode: true,
-            centerPadding: "30px",
-          },
-        },
-      ],
-    };
+            centerPadding: '30px'
+          }
+        }
+      ]
+    }
 
     return (
       <section className={style.projects_section}>
-        <div className="container">
+        <div className='container'>
           <div className={style.projects_section_wrap}>
-            <span className="title_label">Our Recomendations</span>
+            <span className='title_label'>Our Recomendations</span>
             <h1>Also check it out.</h1>
             <div className={style.projects_desk_and_arrows}>
               <p>
@@ -209,10 +209,10 @@ class PreviousNextMethodsProjectsSection extends Component {
                   onClick={this.previous}
                   className={style.team_back_arrow}
                 >
-                  Back <img src={arrowBack} alt="<-" />
+                  Back <img src={arrowBack} alt='<-' />
                 </button>
                 <button onClick={this.next} className={style.team_next_arrow}>
-                  Next <img src={arrowNext} alt="->" />
+                  Next <img src={arrowNext} alt='->' />
                 </button>
               </div>
             </div>
@@ -231,14 +231,14 @@ class PreviousNextMethodsProjectsSection extends Component {
           </div>
         </div>
       </section>
-    );
+    )
   }
 }
 
 const ProjectsSliderItem = () => {
   return (
     <a
-      href="#"
+      href='#'
       className={`${style.slider_item} slider_item_global`}
       // style={{ backgroundImage: `url(${hubyshPhoto})` }}
     >
@@ -257,24 +257,24 @@ const ProjectsSliderItem = () => {
         </p>
       </div>
     </a>
-  );
-};
+  )
+}
 
 ProjectPage.getInitialProps = async ({ query, req }) => {
   if (!req) {
     return {
-      project: null,
-    };
+      project: null
+    }
   }
 
   const response = await fetch(
     `https://siteen.co/api/v1/project/${query.original_name}`
-  );
-  const project = await response.json();
+  )
+  const project = await response.json()
 
   return {
-    project: project.data.response,
-  };
-};
+    project: project.data.response
+  }
+}
 
-export default ProjectPage;
+export default ProjectPage

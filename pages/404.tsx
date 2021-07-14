@@ -1,8 +1,8 @@
-import Button from "../components/formElements/Button";
-import style from "../styles/pages/NotFoundPage.module.css";
-import cowLight from "../images/cow_light.svg";
-import cowElement from "../images/cow_element.svg";
-import Link from "next/link";
+import Button from '../components/formElements/Button';
+import style from '../styles/pages/NotFoundPage.module.css';
+import cowLight from '../images/cow_light.svg';
+import cowElement from '../images/cow_element.svg';
+import Link from 'next/link';
 
 const NotFoundPage = () => (
   <header className={style.not_found_header}>
@@ -10,9 +10,7 @@ const NotFoundPage = () => (
       <div className={style.main_offer}>
         <h1>404</h1>
         <p>Oops ... something went wrong</p>
-        <span className={style.not_found_span}>
-          Page not found. Try to go back and repeat the request
-        </span>
+        <span className={style.not_found_span}>Page not found. Try to go back and repeat the request</span>
         <Link href="/">
           <a>
             <Button>To Homepage</Button>

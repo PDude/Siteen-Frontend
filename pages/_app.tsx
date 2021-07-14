@@ -1,11 +1,11 @@
-import NextNprogress from 'nextjs-progressbar'
-import Layout from '../components/Layout'
-import '../styles/globals.sass'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-import { useEffect } from 'react'
-import { Router } from 'next/router'
-import { SmoothScroll } from '../utils/SmoothScroll'
+import NextNprogress from 'nextjs-progressbar';
+import Layout from '../components/Layout';
+import '../styles/globals.sass';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useEffect } from 'react';
+import { Router } from 'next/router';
+import { SmoothScroll } from '../utils/SmoothScroll';
 
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
@@ -13,27 +13,22 @@ function MyApp({ Component, pageProps }) {
       window.scroll({
         top: 0,
         left: 0,
-        behavior: 'smooth'
-      })
-    })
-  }, [])
+        behavior: 'smooth',
+      });
+    });
+  }, []);
 
   return (
     <>
       <ToastContainer />
-      <NextNprogress
-        color='#FAAA4C'
-        startPosition={0.3}
-        stopDelayMs={200}
-        height={3}
-      />
+      <NextNprogress color="#FAAA4C" startPosition={0.3} stopDelayMs={200} height={3} />
       <SmoothScroll>
         <Layout>
           <Component {...pageProps} />
         </Layout>
       </SmoothScroll>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

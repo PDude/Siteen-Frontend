@@ -1,6 +1,6 @@
-import style from "../styles/components/Footer.module.css";
-import logoNav from "../images/logo_nav.svg";
-import Link from "next/link";
+import style from '../styles/components/Footer.module.css';
+import logoNav from '../images/logo_nav.svg';
+import Link from 'next/link';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

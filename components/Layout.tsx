@@ -1,22 +1,20 @@
-import { useState, useEffect } from "react";
-import Button from "../components/formElements/Button";
-import style from "../styles/components/Layout.module.sass";
-import Hamburger from "hamburger-react";
-import logoNav from "../images/logo_nav.svg";
-import { FaInstagram } from "react-icons/fa";
-import { FaFacebookSquare } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
-import { FaTelegram } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
-import Link from "next/link";
+import { useState, useEffect } from 'react';
+import Button from '../components/formElements/Button';
+import style from '../styles/components/Layout.module.sass';
+import Hamburger from 'hamburger-react';
+import logoNav from '../images/logo_nav.svg';
+import { FaInstagram } from 'react-icons/fa';
+import { FaFacebookSquare } from 'react-icons/fa';
+import { FaLinkedin } from 'react-icons/fa';
+import { FaTelegram } from 'react-icons/fa';
+import { FaYoutube } from 'react-icons/fa';
+import Link from 'next/link';
 
 const Layout = ({ children }) => {
   const [isHamburgerOpen, setHamburgerOpen] = useState<boolean>(false);
 
   const hamburgerDependencies = () => {
-    isHamburgerOpen
-      ? (document.body.style.overflowY = "hidden")
-      : (document.body.style.overflowY = "auto");
+    isHamburgerOpen ? (document.body.style.overflowY = 'hidden') : (document.body.style.overflowY = 'auto');
   };
 
   const closeHamburger = () => {
@@ -74,22 +72,12 @@ const Layout = ({ children }) => {
           </div>
         </div>
       </nav>
-      <aside
-        className={
-          isHamburgerOpen
-            ? `${style.aside_bar} ${style.aside_bar_transparent}`
-            : style.aside_bar
-        }
-      >
+      <aside className={isHamburgerOpen ? `${style.aside_bar} ${style.aside_bar_transparent}` : style.aside_bar}>
         <div className={style.hamburger_wrap}>
           <Hamburger toggled={isHamburgerOpen} toggle={setHamburgerOpen} />
         </div>
         <div
-          className={
-            isHamburgerOpen
-              ? `${style.social_link_aside_bar} ${style.element_hidden}`
-              : style.social_link_aside_bar
-          }
+          className={isHamburgerOpen ? `${style.social_link_aside_bar} ${style.element_hidden}` : style.social_link_aside_bar}
         >
           <a href="https://www.facebook.com/siteen.co/" target="_blank">
             Facebook
@@ -105,13 +93,7 @@ const Layout = ({ children }) => {
         <div />
       </aside>
       <article className={style.main_wrap_content}>{children}</article>
-      <div
-        className={
-          isHamburgerOpen
-            ? `${style.menu_opened} ${style.menu_opened_visible}`
-            : style.menu_opened
-        }
-      >
+      <div className={isHamburgerOpen ? `${style.menu_opened} ${style.menu_opened_visible}` : style.menu_opened}>
         <div className="container">
           <div className={style.content_opened_wrap}>
             <div className={style.navigation_bar_wrap_opened}>
@@ -129,10 +111,7 @@ const Layout = ({ children }) => {
                 </a>
               </Link>
               <div className={style.hamburger_wrap_hamburger}>
-                <Hamburger
-                  toggled={isHamburgerOpen}
-                  toggle={setHamburgerOpen}
-                />
+                <Hamburger toggled={isHamburgerOpen} toggle={setHamburgerOpen} />
               </div>
             </div>
             <div className={style.nav_menus_opened_wrap}>
@@ -198,10 +177,7 @@ const Layout = ({ children }) => {
               <a href="https://www.instagram.com/siteen.co/" target="_blank">
                 Instagram
               </a>
-              <a
-                href="https://www.linkedin.com/company/siteen/"
-                target="_blank"
-              >
+              <a href="https://www.linkedin.com/company/siteen/" target="_blank">
                 Linkedin
               </a>
             </div>

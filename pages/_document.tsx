@@ -1,4 +1,4 @@
-import Document, { Html, Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from 'next/document';
 
 class MyDocument extends Document {
   render() {
@@ -33,10 +33,7 @@ class MyDocument extends Document {
           />
           <meta name="author" content="Siteen" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-          <script
-            async
-            src="https://www.googletagmanager.com/gtag/js?id=G-VWFTD9KMMY"
-          ></script>
+          <script async src="https://www.googletagmanager.com/gtag/js?id=G-VWFTD9KMMY"></script>
           <script
             dangerouslySetInnerHTML={{
               __html: `

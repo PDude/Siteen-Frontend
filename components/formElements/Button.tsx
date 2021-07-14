@@ -1,6 +1,6 @@
-import classnames from "classnames";
-import { FC } from "react";
-import style from "../../styles/components/formElements/Button.module.sass";
+import classnames from 'classnames';
+import { FC } from 'react';
+import style from '../../styles/components/formElements/Button.module.sass';
 
 type PropsType = {
   max?: string;
@@ -9,13 +9,7 @@ type PropsType = {
   onClick?: () => void;
 };
 
-const Button: FC<PropsType> = ({
-  max = "max-content",
-  Icon = null,
-  className,
-  children = null,
-  ...props
-}) => {
+const Button: FC<PropsType> = ({ max = 'max-content', Icon = null, className, children = null, ...props }) => {
   const classNames = classnames(style.btn, className);
 
   return (

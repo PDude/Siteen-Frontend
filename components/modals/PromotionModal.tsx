@@ -1,6 +1,6 @@
-import "react-responsive-modal/styles.css";
-import { Modal } from "react-responsive-modal";
-import style from "../../styles/components/modals/PromotionModal.module.sass";
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
+import style from '../../styles/components/modals/PromotionModal.module.sass';
 
 const PromotionModal = ({ onClosePromotionModal, openPromotion }) => {
   return (
