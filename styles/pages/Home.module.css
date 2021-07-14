@@ -452,6 +452,7 @@
   font-size: 45px;
   position: relative;
   z-index: 15;
+  cursor: pointer;
 }
 .workflow_element > span::after {
   position: absolute;
