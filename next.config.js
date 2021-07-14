@@ -3,6 +3,6 @@ const withVideos = require('next-videos')
 
 module.exports = withImages(
   withVideos({
-    distDir: 'build'
+    // distDir: 'build'
   })
 )

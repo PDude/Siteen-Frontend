@@ -1,25 +1,27 @@
-import style from '../styles/AboutVideo.module.sass';
-import { ImPlay3 } from 'react-icons/im';
-import { useState } from 'react';
-import PromotionModal from './modals/PromotionModal';
+import style from '../styles/components/AboutVideo.module.sass'
+import Pulse from '../components/common/Pulse'
+import { ImPlay3 } from 'react-icons/im'
+import { useState } from 'react'
+import PromotionModal from './modals/PromotionModal'
+import Button from './formElements/Button'
 
 const AboutVideo = ({ videoLabel }) => {
   // Promotion modal
-  const [openPromotion, setPromotionOpen] = useState<boolean>(false);
+  const [openPromotion, setPromotionOpen] = useState<boolean>(false)
 
-  const onOpenPromotionModal = () => setPromotionOpen(true);
-  const onClosePromotionModal = () => setPromotionOpen(false);
+  const onOpenPromotionModal = () => setPromotionOpen(true)
+  const onClosePromotionModal = () => setPromotionOpen(false)
 
   return (
     <>
       <div className={style.about_us_video}>
-        <div className="pulse">
-          <button onClick={onOpenPromotionModal} className="btn">
-            <span>
-              <ImPlay3 />
-            </span>
-          </button>
-        </div>
+        <Pulse>
+          <Button
+            Icon={<ImPlay3 />}
+            max='100%'
+            onClick={onOpenPromotionModal}
+          />
+        </Pulse>
         <div className={style.about_us_text}>
           <span>{videoLabel}</span>
           <p>Promotion video</p>
@@ -30,7 +32,7 @@ const AboutVideo = ({ videoLabel }) => {
         openPromotion={openPromotion}
       />
     </>
-  );
-};
+  )
+}
 
-export default AboutVideo;
+export default AboutVideo

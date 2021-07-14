@@ -1,6 +1,6 @@
 import { FC, useEffect } from 'react';
 import Footer from '../components/Footer';
-import style from '../styles/PrivacyPolicy.module.sass';
+import style from '../styles/pages/PrivacyPolicy.module.sass';
 
 const PrivacyPolicy: FC = () => {
   useEffect(() => {

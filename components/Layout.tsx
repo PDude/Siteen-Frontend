@@ -1,69 +1,69 @@
-import { useState, useEffect } from 'react';
-import style from '../styles/Layout.module.sass';
-import Hamburger from 'hamburger-react';
-import logoNav from '../images/logo_nav.svg';
-import { FaInstagram } from 'react-icons/fa';
-import { FaFacebookSquare } from 'react-icons/fa';
-import { FaLinkedin } from 'react-icons/fa';
-import { FaTelegram } from 'react-icons/fa';
-import { FaYoutube } from 'react-icons/fa';
-import Link from 'next/link';
+import { useState, useEffect } from 'react'
+import Button from '../components/formElements/Button'
+import style from '../styles/components/Layout.module.sass'
+import Hamburger from 'hamburger-react'
+import logoNav from '../images/logo_nav.svg'
+import { FaInstagram } from 'react-icons/fa'
+import { FaFacebookSquare } from 'react-icons/fa'
+import { FaLinkedin } from 'react-icons/fa'
+import { FaTelegram } from 'react-icons/fa'
+import { FaYoutube } from 'react-icons/fa'
+import Link from 'next/link'
 
 const Layout = ({ children }) => {
-  const [isHamburgerOpen, setHamburgerOpen] = useState<boolean>(false);
+  const [isHamburgerOpen, setHamburgerOpen] = useState<boolean>(false)
 
   const hamburgerDependencies = () => {
     isHamburgerOpen
       ? (document.body.style.overflowY = 'hidden')
-      : (document.body.style.overflowY = 'auto');
-  };
+      : (document.body.style.overflowY = 'auto')
+  }
 
   const closeHamburger = () => {
-    setHamburgerOpen(false);
-  };
+    setHamburgerOpen(false)
+  }
 
   useEffect(() => {
-    hamburgerDependencies();
-  }, [hamburgerDependencies]);
+    hamburgerDependencies()
+  }, [hamburgerDependencies])
 
   return (
     <div className={style.layout_wrap}>
       <nav className={style.navigation_bar}>
-        <div className="container">
+        <div className='container'>
           <div className={style.navigation_bar_wrap}>
-            <Link href="/">
+            <Link href='/'>
               <a
                 onClick={() => {
-                  document.body.scrollTop = 0;
+                  document.body.scrollTop = 0
                 }}
-                className={style.logo_link}
-              >
-                <img src={logoNav} alt="Siteen" />
+                className={style.logo_link}>
+                <img src={logoNav} alt='Siteen' />
               </a>
             </Link>
             <ul className={style.nav_menu}>
               <li>
-                <Link href="/#our_services">
+                <Link href='/#our_services'>
                   <a>Services</a>
                 </Link>
               </li>
               <li>
-                <Link href="/#cases_section">
+                <Link href='/#cases_section'>
                   <a>Cases</a>
                 </Link>
               </li>
               <li>
-                <Link href="/#contact_us">
+                <Link href='/#contact_us'>
                   <a>Contact us</a>
                 </Link>
               </li>
             </ul>
-            <a className={style.nav_tel} href="tel:0971630202">
+            <a className={style.nav_tel} href='tel:0971630202'>
               +38 (097) 163 02 02
             </a>
-            <Link href="/#contact_us">
-              <a className={`${style.get_brif} btn`}>
-                <span>Get a Brif</span>
+            <Link href='/#contact_us'>
+              <a>
+                <Button className={style.get_brif}>Get a Brif</Button>
               </a>
             </Link>
             <div className={style.hamburger_wrap_hamburger}>
@@ -77,8 +77,7 @@ const Layout = ({ children }) => {
           isHamburgerOpen
             ? `${style.aside_bar} ${style.aside_bar_transparent}`
             : style.aside_bar
-        }
-      >
+        }>
         <div className={style.hamburger_wrap}>
           <Hamburger toggled={isHamburgerOpen} toggle={setHamburgerOpen} />
         </div>
@@ -87,15 +86,14 @@ const Layout = ({ children }) => {
             isHamburgerOpen
               ? `${style.social_link_aside_bar} ${style.element_hidden}`
               : style.social_link_aside_bar
-          }
-        >
-          <a href="https://www.facebook.com/siteen.co/" target="_blank">
+          }>
+          <a href='https://www.facebook.com/siteen.co/' target='_blank'>
             Facebook
           </a>
-          <a href="https://www.instagram.com/siteen.co/" target="_blank">
+          <a href='https://www.instagram.com/siteen.co/' target='_blank'>
             Instagram
           </a>
-          <a href="https://www.linkedin.com/company/siteen/" target="_blank">
+          <a href='https://www.linkedin.com/company/siteen/' target='_blank'>
             Linkedin
           </a>
         </div>
@@ -108,22 +106,19 @@ const Layout = ({ children }) => {
           isHamburgerOpen
             ? `${style.menu_opened} ${style.menu_opened_visible}`
             : style.menu_opened
-        }
-      >
-        <div className="container">
+        }>
+        <div className='container'>
           <div className={style.content_opened_wrap}>
             <div className={style.navigation_bar_wrap_opened}>
-              <Link href="/">
+              <Link href='/'>
                 <a className={style.logo_link_opened}>
-                  <img src={logoNav} alt="Siteen" />
+                  <img src={logoNav} alt='Siteen' />
                 </a>
               </Link>
-              <a className={style.nav_tel} href="tel:0971630202">
+              <a className={style.nav_tel} href='tel:0971630202'>
                 +38 (097) 163 02 02
               </a>
-              <a className={`${style.get_brif} btn`} href="#">
-                <span>Get a Brif</span>
-              </a>
+              <Button className={style.get_brif}>Get a Brif</Button>
               <div className={style.hamburger_wrap_hamburger}>
                 <Hamburger
                   toggled={isHamburgerOpen}
@@ -135,7 +130,7 @@ const Layout = ({ children }) => {
               <div className={style.nav_menus_opened}>
                 <ul>
                   <li>
-                    <Link href="/#our_services">
+                    <Link href='/#our_services'>
                       <a onClick={closeHamburger}>Our Services</a>
                     </Link>
                   </li>
@@ -145,57 +140,54 @@ const Layout = ({ children }) => {
                     </a>
                   </li> */}
                   <li>
-                    <Link href="/about">
+                    <Link href='/about'>
                       <a onClick={closeHamburger}>About Us</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#contacts_section">
+                    <Link href='/#contacts_section'>
                       <a onClick={closeHamburger}>Contacts</a>
                     </Link>
                   </li>
                   <li>
-                    <Link href="/#cases_section">
+                    <Link href='/#cases_section'>
                       <a onClick={closeHamburger}>Our Projects</a>
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
-            <a className={`${style.get_brif_hamburger} btn`} href="#">
-              <span>Get a Brif</span>
-            </a>
-            <a className={style.nav_tel_hamburger} href="tel:0971630202">
+            <Button className={style.get_brif_hamburger}>Get a Brif</Button>
+            <a className={style.nav_tel_hamburger} href='tel:0971630202'>
               +38 (097) 163 02 02
             </a>
             <div className={style.social_link_mobile}>
-              <a href="#">
+              <a href='#'>
                 <FaInstagram />
               </a>
-              <a href="#">
+              <a href='#'>
                 <FaFacebookSquare />
               </a>
-              <a href="#">
+              <a href='#'>
                 <FaLinkedin />
               </a>
-              <a href="#">
+              <a href='#'>
                 <FaTelegram />
               </a>
-              <a href="#">
+              <a href='#'>
                 <FaYoutube />
               </a>
             </div>
             <div className={style.social_link_aside_bar_opened}>
-              <a href="https://www.facebook.com/siteen.co/" target="_blank">
+              <a href='https://www.facebook.com/siteen.co/' target='_blank'>
                 Facebook
               </a>
-              <a href="https://www.instagram.com/siteen.co/" target="_blank">
+              <a href='https://www.instagram.com/siteen.co/' target='_blank'>
                 Instagram
               </a>
               <a
-                href="https://www.linkedin.com/company/siteen/"
-                target="_blank"
-              >
+                href='https://www.linkedin.com/company/siteen/'
+                target='_blank'>
                 Linkedin
               </a>
             </div>
@@ -203,7 +195,7 @@ const Layout = ({ children }) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Layout;
+export default Layout

@@ -1,0 +1,33 @@
+.about_us_video
+    display: flex
+    align-items: center
+    & button
+        width: 64px
+        height: 64px
+        padding: 0 0 0 5px
+        z-index: 300
+
+.about_us_text
+    margin-left: 35px
+    & span
+        text-transform: uppercase
+        font-size: 14px
+        position: relative
+    & span::after
+        content: ''
+        width: 140px
+        height: 1px
+        background: #fff
+        display: block
+        margin: 10px 0
+    & p
+        font-size: 15px
+        color: #dd4242
+
+@media only screen and (max-width: 576px)
+    .about_us_video button
+        width: 44px
+        height: 44px
+
+    .about_us_text
+        margin-left: 25px
