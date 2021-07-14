@@ -1,8 +1,8 @@
-const withImages = require('next-images')
-const withVideos = require('next-videos')
+const withImages = require('next-images');
+const withVideos = require('next-videos');
 
 module.exports = withImages(
   withVideos({
-    // distDir: 'build'
+    distDir: 'build',
   })
-)
+);

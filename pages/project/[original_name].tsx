@@ -240,9 +240,9 @@ const ProjectsSliderItem = () => {
     <a
       href="#"
       className={`${style.slider_item} slider_item_global`}
-      style={{ backgroundImage: `url(${hubyshPhoto})` }}
+      // style={{ backgroundImage: `url(${hubyshPhoto})` }}
     >
-      <img src={hubyshLogo} alt="logo" />
+      {/* <img src={hubyshLogo} alt="logo" /> */}
       <div className={`${style.slider_item_wrap} slider_item_wrap_global`}>
         <div className={style.project_duration}>
           <p>Creation Term: </p>
