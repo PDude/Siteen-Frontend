@@ -150,6 +150,10 @@
   bottom: -60px;
   z-index: 10;
 }
+.our_cases * {
+  position: relative;
+  z-index: 25;
+}
 .our_cases_wrap .h2 {
   font-size: 45px;
   margin-top: 15px;
@@ -357,7 +361,7 @@
   max-width: 530px;
 }
 .we_are_pro_content * {
-  z-index: 15;
+  z-index: 35;
   position: relative;
 }
 .form_section .h2 {
@@ -605,6 +609,7 @@
   }
   .cases_tags {
     margin: 40px 0;
+    grid-gap: 10px 20px;
   }
   .cases_tags button {
     font-size: 14px;
@@ -700,7 +705,7 @@
   .we_are_pro_content {
     border-radius: 30px;
     padding: 50px 15px 80px 15px;
-    background: #191c26;;
+    background: #191c26;
   }
   .we_are_pro_content::after {
     display: none;
@@ -787,11 +792,13 @@
 }
 @media only screen and (max-width: 576px) {
   .main_offer > h1 {
-    font-size: 25px;
+    font-size: 30px;
   }
   .main_offer > p {
-    font-size: 12px;
-    margin-top: 15px;
+    font-size: 14px;
+  }
+  .about_us_video_wrap {
+    margin-top: 20px;
   }
   .main_header:after,
   .our_cases::after,
@@ -800,7 +807,6 @@
     font-size: 30px;
     bottom: 30px;
   }
-
   .our_services::after,
   .we_are_pro::after {
     right: 30px;
@@ -808,15 +814,17 @@
     top: 30px;
     font-size: 30px;
   }
+  .our_services, .our_cases {
+    padding: 50px 0 !important;
+  }
+  .services_items_wrap {
+    margin-top: 30px;
+  }
   .main_offer > span::before {
-    width: 30px;
+    width: 25px;
   }
   .h2 {
-    font-size: 20px !important;
-  }
-  .our_services .h2,
-  .our_cases_wrap .h2 {
-    margin-top: 5px;
+    font-size: 25px !important;
   }
   .services_items {
     grid-template-columns: 1fr;
@@ -829,44 +837,28 @@
   }
   .cases_tags button {
     font-size: 12px;
-    margin: 5px 10px;
   }
-  .cases_tags {
-    margin-left: 0;
-    margin-right: 0;
-    position: relative;
-    z-index: 30;
-  }
-  .our_cases_items {
-    grid-template-columns: 1fr;
+  .project_case {
+    height: 300px;
   }
   .we_are_pro_content {
-    padding-bottom: 80px;
-    padding-top: 80px;
+    padding-bottom: 60px;
+    padding-top: 60px;
     border-radius: 20px;
   }
-  .form_section .h2 {
-    margin-top: 5px;
-  }
-  .we_are_pro_content .h2 {
-    margin-top: 5px;
-    margin-bottom: 18px;
-  }
   .we_are_pro_content span {
-    font-size: 16px;
+    font-size: 14px !important;
   }
   .we_are_pro_content p {
-    opacity: 0.9;
+    opacity: 0.85;
     font-size: 14px;
+    margin-top: 15px;
   }
-  .we_are_pro_content p {
-    margin-top: 18px;
+  .about_us_link {
+    margin-top: 25px;
   }
   .workflow {
-    padding: 80px 0;
-  }
-  .workflow_text h3 {
-    font-size: 20px;
+    padding: 50px 0 90px;
   }
   .workflow_text p {
     font-size: 14px;
@@ -895,40 +887,31 @@
   .workflow_element > span {
     font-size: 35px;
   }
+  .contacts_block_credentials_wrap {
+    margin-left: initial;
+  }
+  .contacts_block_credentials {
+    grid-gap: 20px;
+  }
   .contacts_block_credentials li {
     flex-direction: column;
   }
   .contacts_block_credentials li span {
-    font-size: 20px;
     min-width: max-content;
     margin-right: initial;
   }
   .contacts_block_credentials li p,
   .contacts_block_credentials li a {
     margin-top: 5px;
-    font-size: 16px;
   }
   .footer_links {
     flex-direction: column;
+    grid-gap: 15px;
   }
   .footer_links span {
-    margin-right: auto;
+    margin: 0 auto;
   }
-  .footer_links_elements {
-    margin-top: 10px;
+  .footer_links span svg {
+    transform: rotate(90deg);
   }
-}
-
-/* Loading */
-.loading_wrap {
-  height: calc(100vh - 120px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 20px;
-  padding-bottom: 120px;
-}
-.loading_wrap p {
-  padding: 15px 35px;
-  background: rgba(255, 255, 255, 0.2);
 }
