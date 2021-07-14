@@ -7,7 +7,7 @@ import style from '../styles/pages/Home.module.css'
 import { GoTriangleRight } from 'react-icons/go'
 import { BsArrowRight } from 'react-icons/bs'
 // Globe
-import globeGif from '../images/globus.gif'
+// import globeGif from '../images/globus.gif'
 // Images
 import webIcon from '../images/services_web.svg'
 import uiIcon from '../images/services_ui.svg'
@@ -229,7 +229,13 @@ const HomePage = ({ projects }) => {
         <div className='container'>
           <div className={style.form_section_wrap}>
             <div className={style.globe_wrap}>
-              <img src={globeGif} alt='globe' />
+              {/* <img src={globeGif} alt='globe' /> */}
+              <img
+                src={
+                  'https://img.icons8.com/emoji/452/globe-with-meridians-emoji.png'
+                }
+                alt='globe'
+              />
             </div>
             <FormSection />
           </div>

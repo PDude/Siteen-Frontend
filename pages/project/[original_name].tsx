@@ -14,8 +14,8 @@ import 'slick-carousel/slick/slick-theme.css'
 import arrowBack from '../../images/arrow_team_back.svg'
 import arrowNext from '../../images/arrow_team_next.svg'
 // Temp files for projects slider items
-import hubyshLogo from '../../images/hubysh_logo.svg'
-import hubyshPhoto from '../../images/hubysh_photo.jpg'
+// import hubyshLogo from '../../images/hubysh_logo.svg'
+// import hubyshPhoto from '../../images/hubysh_photo.jpg'
 
 import { GoTriangleRight } from 'react-icons/go'
 import Preloader from '../../components/common/Preloader'

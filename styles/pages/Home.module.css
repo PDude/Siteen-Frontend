@@ -73,7 +73,7 @@
   width: calc(100% + 145px);
   height: 100%;
   position: absolute;
-  background: url('../../images/our_services_bg.png') no-repeat center / cover;
+  background: url('../../images/our_services_bg.webp') no-repeat center / cover;
   z-index: -1;
   height: 100vh;
 }
@@ -375,7 +375,7 @@
 }
 .we_are_pro {
   position: relative;
-  background: #000 url('../../images/our_workflow.png') no-repeat
+  background: #000 url('../../images/our_workflow.webp') no-repeat
     calc(50% + 300px);
 }
 .we_are_pro_content {
@@ -505,7 +505,7 @@
 }
 .contacts_block_wrap {
   padding: 100px 0;
-  background: url('../../images/footer_bg.png') no-repeat center / cover;
+  background: url('../../images/footer_bg.webp') no-repeat center / cover;
 }
 .contacts_block {
   margin-left: auto;

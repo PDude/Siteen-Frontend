@@ -1,5 +1,5 @@
 .bg {
-  background: #000 url('../../../images/header_main_bg.png') no-repeat center top /
+  background: #000 url('../../../images/header_main_bg.webp') no-repeat center top /
     cover !important;
   position: fixed;
   z-index: 999;

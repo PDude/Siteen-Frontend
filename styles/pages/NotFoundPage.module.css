@@ -13,7 +13,7 @@
 }
 .not_found_header::after {
   content: '';
-  background: url('../../images/404_bg.jpg') no-repeat center / cover;
+  background: url('../../images/404_bg.webp') no-repeat center / cover;
   position: fixed;
   left: 0;
   top: -120px;
