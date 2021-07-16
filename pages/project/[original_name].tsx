@@ -1,3 +1,4 @@
+import React from 'react'
 import Button from '../../components/formElements/Button'
 import style from '../../styles/pages/ProjectPage.module.sass'
 // temp project bg
@@ -20,26 +21,15 @@ import arrowNext from '../../images/arrow_team_next.svg'
 import { GoTriangleRight } from 'react-icons/go'
 import Preloader from '../../components/common/Preloader'
 
-// type projectType = {
-//   id: number
-//   uuid: string
-//   type: string
-//   project_photo: string
-//   project_name: string
-//   project_logo: Array<string>
-//   term: string
-//   project_subtitle: string
-//   ordering_type: string
-//   project_tags: Array<string>
-//   about_project: string
-//   project_tasks: Array<string>
-//   result_link: Array<string>
-//   updatedAt: string
-//   createdAt: string
-// }
+import { NextPageContext } from 'next'
+import { projectType } from '../../types/project'
 
-const ProjectPage = ({ project: serverProject }) => {
-  const myRef = useRef()
+type Props = {
+  project: projectType
+}
+
+const ProjectPage = ({ project: serverProject }: Props) => {
+  const myRef = useRef<HTMLDivElement>(null)
 
   const [project, setProject] = useState(serverProject)
   const router = useRouter()
@@ -59,7 +49,7 @@ const ProjectPage = ({ project: serverProject }) => {
     }
   }, [])
 
-  const scroll = (ref) => {
+  const scroll = (ref: any) => {
     ref.current.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -153,9 +143,12 @@ const ProjectPage = ({ project: serverProject }) => {
   )
 }
 
+/**
+ * A projects slider class with custom arrows
+ */
 class PreviousNextMethodsProjectsSection extends Component {
   slider: any
-  constructor(props) {
+  constructor(props: {} | Readonly<{}>) {
     super(props)
     this.next = this.next.bind(this)
     this.previous = this.previous.bind(this)
@@ -260,7 +253,7 @@ const ProjectsSliderItem = () => {
   )
 }
 
-ProjectPage.getInitialProps = async ({ query, req }) => {
+ProjectPage.getInitialProps = async ({ query, req }: NextPageContext) => {
   if (!req) {
     return {
       project: null

@@ -1,3 +1,4 @@
+import React, { Component, useEffect } from 'react'
 import AboutVideo from '../components/AboutVideo'
 import style from '../styles/pages/About.module.sass'
 // Frontend icons
@@ -40,8 +41,7 @@ import member4 from '../images/member_4.webp'
 // Arows
 import arrowBack from '../images/arrow_team_back.svg'
 import arrowNext from '../images/arrow_team_next.svg'
-
-import { Component, useEffect } from 'react'
+// Components
 import FormSection from '../components/FormSection'
 import Footer from '../components/Footer'
 // Social links
@@ -233,32 +233,43 @@ const About = () => {
                 <li>
                   <a
                     href='https://www.instagram.com/siteen.co/'
+                    rel='noreferrer'
                     target='_blank'
                   >
                     <img src={instaIcon} alt='instaIcon' />
                   </a>
                 </li>
                 <li>
-                  <a href='https://www.facebook.com/siteen.co' target='_blank'>
+                  <a
+                    href='https://www.facebook.com/siteen.co'
+                    rel='noreferrer'
+                    target='_blank'
+                  >
                     <img src={fbIcon} alt='fbIcon' />
                   </a>
                 </li>
                 <li>
                   <a
                     href='https://www.linkedin.com/company/siteen/'
+                    rel='noreferrer'
                     target='_blank'
                   >
                     <img src={linkedIcon} alt='linkedIcon' />
                   </a>
                 </li>
                 <li>
-                  <a href='https://t.me/siteen/' target='_blank'>
+                  <a
+                    href='https://t.me/siteen/'
+                    rel='noreferrer'
+                    target='_blank'
+                  >
                     <img src={tIcon} alt='tIcon' />
                   </a>
                 </li>
                 <li>
                   <a
                     href='https://www.youtube.com/channel/UCATwpqig9rIT7u1dm4f7blQ'
+                    rel='noreferrer'
                     target='_blank'
                   >
                     <img src={youTubeIcon} alt='youTubeIcon' />
@@ -276,9 +287,12 @@ const About = () => {
   )
 }
 
+/**
+ * A team slider class with custom arrows
+ */
 class PreviousNextMethodsTeamSection extends Component {
   slider: any
-  constructor(props) {
+  constructor(props: {} | Readonly<{}>) {
     super(props)
     this.next = this.next.bind(this)
     this.previous = this.previous.bind(this)
@@ -300,7 +314,7 @@ class PreviousNextMethodsTeamSection extends Component {
       infinite: false,
       responsive: [
         {
-          breakpoint: 992,
+          breakpoint: 1200,
           settings: {
             slidesToShow: 3
           }
@@ -376,7 +390,13 @@ class PreviousNextMethodsTeamSection extends Component {
   }
 }
 
-const TeamSliderItem = ({ name, position, imgPath }) => {
+type TeamSliderItemProps = {
+  name: string
+  position: string
+  imgPath: string
+}
+
+const TeamSliderItem = ({ name, position, imgPath }: TeamSliderItemProps) => {
   return (
     <a
       href='#'

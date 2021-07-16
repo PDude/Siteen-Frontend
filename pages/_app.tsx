@@ -1,3 +1,5 @@
+import React from 'react'
+import { AppProps } from 'next/app'
 import NextNprogress from 'nextjs-progressbar'
 import Layout from '../components/Layout'
 import '../styles/globals.sass'
@@ -8,7 +10,7 @@ import { Router } from 'next/router'
 import { SmoothScroll } from '../utils/SmoothScroll'
 import Head from 'next/head'
 
-function MyApp({ Component, pageProps }) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
   useEffect(() => {
     Router.events.on('routeChangeComplete', () => {
       window.scroll({

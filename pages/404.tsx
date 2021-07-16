@@ -1,3 +1,4 @@
+import React from 'react'
 import Button from '../components/formElements/Button'
 import style from '../styles/pages/NotFoundPage.module.css'
 import cowLight from '../images/cow_light.svg'

@@ -1,3 +1,4 @@
+import React from 'react'
 import axios from 'axios'
 import { Field, Formik } from 'formik'
 import { useState } from 'react'
@@ -8,6 +9,12 @@ import Button from './formElements/Button'
 import InputField from './formElements/inputField'
 import FormModal from './modals/FormModal'
 
+type FormValues = {
+  name: string
+  email: string
+  phone: string
+}
+
 const FormSection = () => {
   // Form success modal
   const [openFormModal, setFormModalOpen] = useState<boolean>(false)
@@ -15,7 +22,7 @@ const FormSection = () => {
   const onOpenFormModal = () => setFormModalOpen(true)
   const onCloseFormModal = () => setFormModalOpen(false)
 
-  const sendForm = (values, { resetForm }) => {
+  const sendForm = (values: FormValues, { resetForm }: any) => {
     const { name, email, phone } = values
     axios
       .post(

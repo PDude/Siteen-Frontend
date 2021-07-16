@@ -1,9 +1,15 @@
+import React from 'react'
 import 'react-responsive-modal/styles.css'
 import { Modal } from 'react-responsive-modal'
 import style from '../../styles/components/modals/FormModal.module.sass'
 import checkModal from '../../images/check_modal_form.svg'
 
-const FormModal = ({ onCloseFormModal, openFormModal }) => {
+type Props = {
+  onCloseFormModal: () => void
+  openFormModal: boolean
+}
+
+const FormModal = ({ onCloseFormModal, openFormModal }: Props) => {
   return (
     <Modal
       classNames={{

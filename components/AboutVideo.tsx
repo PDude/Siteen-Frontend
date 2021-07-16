@@ -1,3 +1,4 @@
+import React from 'react'
 import style from '../styles/components/AboutVideo.module.sass'
 import Pulse from '../components/common/Pulse'
 import { ImPlay3 } from 'react-icons/im'
@@ -5,7 +6,11 @@ import { useState } from 'react'
 import PromotionModal from './modals/PromotionModal'
 import Button from './formElements/Button'
 
-const AboutVideo = ({ videoLabel }) => {
+type Props = {
+  videoLabel: string
+}
+
+const AboutVideo = ({ videoLabel }: Props) => {
   // Promotion modal
   const [openPromotion, setPromotionOpen] = useState<boolean>(false)
 

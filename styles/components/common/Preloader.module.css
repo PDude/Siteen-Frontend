@@ -1,6 +1,6 @@
 .bg {
-  background: #000 url('../../../images/header_main_bg.webp') no-repeat center top /
-    cover !important;
+  background: #000 url('../../../images/header_main_bg.webp') no-repeat center
+    top / cover !important;
   position: fixed;
   z-index: 999;
   left: 0;

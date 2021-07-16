@@ -1012,10 +1012,12 @@ module.exports = require("nextjs-progressbar");
 "use strict";
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__("F5FC");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("K2gz");
-/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _styles_components_formElements_Button_module_sass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("G4Q/");
-/* harmony import */ var _styles_components_formElements_Button_module_sass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_components_formElements_Button_module_sass__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__("cDcd");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__("K2gz");
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _styles_components_formElements_Button_module_sass__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__("G4Q/");
+/* harmony import */ var _styles_components_formElements_Button_module_sass__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_styles_components_formElements_Button_module_sass__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
@@ -1032,6 +1034,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
 
 
 
+
 const Button = (_ref) => {
   let {
     max = 'max-content',
@@ -1041,7 +1044,7 @@ const Button = (_ref) => {
   } = _ref,
       props = _objectWithoutProperties(_ref, ["max", "Icon", "className", "children"]);
 
-  const classNames = classnames__WEBPACK_IMPORTED_MODULE_1___default()(_styles_components_formElements_Button_module_sass__WEBPACK_IMPORTED_MODULE_2___default.a.btn, className);
+  const classNames = classnames__WEBPACK_IMPORTED_MODULE_2___default()(_styles_components_formElements_Button_module_sass__WEBPACK_IMPORTED_MODULE_3___default.a.btn, className);
   return /*#__PURE__*/Object(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxs"])("button", _objectSpread(_objectSpread({
     style: {
       maxWidth: max
@@ -1168,7 +1171,7 @@ function Link(props) {
 
   const p = props.prefetch !== false;
   const router = (0, _router2.useRouter)();
-  const pathname = router && router.pathname || '/';
+  const pathname = router && router.asPath || '/';
 
   const {
     href,
@@ -1275,12 +1278,12 @@ __webpack_require__.r(__webpack_exports__);
 // EXTERNAL MODULE: external "react/jsx-runtime"
 var jsx_runtime_ = __webpack_require__("F5FC");
 
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__("cDcd");
+
 // EXTERNAL MODULE: external "nextjs-progressbar"
 var external_nextjs_progressbar_ = __webpack_require__("YVQ8");
 var external_nextjs_progressbar_default = /*#__PURE__*/__webpack_require__.n(external_nextjs_progressbar_);
-
-// EXTERNAL MODULE: external "react"
-var external_react_ = __webpack_require__("cDcd");
 
 // EXTERNAL MODULE: ./components/formElements/Button.tsx
 var Button = __webpack_require__("aZcP");
@@ -1305,6 +1308,7 @@ var next_link = __webpack_require__("YFqc");
 var link_default = /*#__PURE__*/__webpack_require__.n(next_link);
 
 // CONCATENATED MODULE: ./components/Layout.tsx
+
 
 
 
@@ -1416,14 +1420,17 @@ const Layout = ({
         className: isHamburgerOpen ? `${Layout_module_default.a.social_link_aside_bar} ${Layout_module_default.a.element_hidden}` : Layout_module_default.a.social_link_aside_bar,
         children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
           href: "https://www.facebook.com/siteen.co/",
+          rel: "noreferrer",
           target: "_blank",
           children: "Facebook"
         }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
           href: "https://www.instagram.com/siteen.co/",
+          rel: "noreferrer",
           target: "_blank",
           children: "Instagram"
         }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
           href: "https://www.linkedin.com/company/siteen/",
+          rel: "noreferrer",
           target: "_blank",
           children: "Linkedin"
         })]
@@ -1542,14 +1549,17 @@ const Layout = ({
             className: Layout_module_default.a.social_link_aside_bar_opened,
             children: [/*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
               href: "https://www.facebook.com/siteen.co/",
+              rel: "noreferrer",
               target: "_blank",
               children: "Facebook"
             }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
               href: "https://www.instagram.com/siteen.co/",
+              rel: "noreferrer",
               target: "_blank",
               children: "Instagram"
             }), /*#__PURE__*/Object(jsx_runtime_["jsx"])("a", {
               href: "https://www.linkedin.com/company/siteen/",
+              rel: "noreferrer",
               target: "_blank",
               children: "Linkedin"
             })]
@@ -1648,10 +1658,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
-function MyApp({
+
+const MyApp = ({
   Component,
   pageProps
-}) {
+}) => {
   Object(external_react_["useEffect"])(() => {
     router_["Router"].events.on('routeChangeComplete', () => {
       window.scroll({
@@ -1710,7 +1721,7 @@ function MyApp({
       })
     })]
   });
-}
+};
 
 /* harmony default export */ var _app = __webpack_exports__["default"] = (MyApp);
 
@@ -1951,7 +1962,15 @@ function omitParmsFromQuery(query, params) {
 
 function resolveHref(currentPath, href, resolveAs) {
   // we use a dummy base url for relative urls
-  const base = new URL(currentPath, 'http://n');
+  let base;
+
+  try {
+    base = new URL(currentPath, 'http://n');
+  } catch (_) {
+    // fallback to / for invalid asPath values e.g. //
+    base = new URL('/', 'http://n');
+  }
+
   const urlAsString = typeof href === 'string' ? href : (0, _utils.formatWithValidation)(href); // Return because it cannot be routed by the Next.js router
 
   if (!isLocalURL(urlAsString)) {
@@ -1995,14 +2014,14 @@ function stripOrigin(url) {
 function prepareUrlAs(router, url, as) {
   // If url and as provided as an object representation,
   // we'll format them into the string version here.
-  let [resolvedHref, resolvedAs] = resolveHref(router.pathname, url, true);
+  let [resolvedHref, resolvedAs] = resolveHref(router.asPath, url, true);
   const origin = (0, _utils.getLocationOrigin)();
   const hrefHadOrigin = resolvedHref.startsWith(origin);
   const asHadOrigin = resolvedAs && resolvedAs.startsWith(origin);
   resolvedHref = stripOrigin(resolvedHref);
   resolvedAs = resolvedAs ? stripOrigin(resolvedAs) : resolvedAs;
   const preparedUrl = hrefHadOrigin ? resolvedHref : addBasePath(resolvedHref);
-  const preparedAs = as ? stripOrigin(resolveHref(router.pathname, as)) : resolvedAs || resolvedHref;
+  const preparedAs = as ? stripOrigin(resolveHref(router.asPath, as)) : resolvedAs || resolvedHref;
   return {
     url: preparedUrl,
     as: asHadOrigin ? preparedAs : addBasePath(preparedAs)
@@ -2297,9 +2316,10 @@ class Router {
     if (!isLocalURL(url)) {
       window.location.href = url;
       return false;
-    } // for static pages with query params in the URL we delay
-    // marking the router ready until after the query is updated
+    }
 
+    const shouldResolveHref = url === as || options._h; // for static pages with query params in the URL we delay
+    // marking the router ready until after the query is updated
 
     if (options._h) {
       this.isReady = true;
@@ -2391,7 +2411,7 @@ class Router {
 
     pathname = pathname ? (0, _normalizeTrailingSlash.removePathTrailingSlash)(delBasePath(pathname)) : pathname;
 
-    if (pathname !== '/_error') {
+    if (shouldResolveHref && pathname !== '/_error') {
       if (false) {} else {
         parsed.pathname = resolveDynamicRoute(pathname, pages);
 
@@ -2646,7 +2666,10 @@ class Router {
       {
         pathname,
         query,
-        asPath: as
+        asPath: as,
+        locale: this.locale,
+        locales: this.locales,
+        defaultLocale: this.defaultLocale
       }));
       routeInfo.props = props;
       this.components[route] = routeInfo;

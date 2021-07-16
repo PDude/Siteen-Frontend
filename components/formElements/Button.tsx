@@ -1,21 +1,22 @@
+import React from 'react'
 import classnames from 'classnames'
-import { FC } from 'react'
 import style from '../../styles/components/formElements/Button.module.sass'
 
-type PropsType = {
+type Props = {
   max?: string
   Icon?: unknown
   className?: string
+  children?: React.ReactNode
   onClick?: () => void
 }
 
-const Button: FC<PropsType> = ({
+const Button = ({
   max = 'max-content',
   Icon = null,
   className,
   children = null,
   ...props
-}) => {
+}: Props) => {
   const classNames = classnames(style.btn, className)
 
   return (

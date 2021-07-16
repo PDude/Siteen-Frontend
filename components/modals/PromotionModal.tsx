@@ -1,8 +1,14 @@
+import React from 'react'
 import 'react-responsive-modal/styles.css'
 import { Modal } from 'react-responsive-modal'
 import style from '../../styles/components/modals/PromotionModal.module.sass'
 
-const PromotionModal = ({ onClosePromotionModal, openPromotion }) => {
+type Props = {
+  onClosePromotionModal: () => void
+  openPromotion: boolean
+}
+
+const PromotionModal = ({ onClosePromotionModal, openPromotion }: Props) => {
   return (
     <Modal
       classNames={{

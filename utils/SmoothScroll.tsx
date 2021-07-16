@@ -1,7 +1,11 @@
-import React, { FC, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-export const SmoothScroll: FC = ({ children }) => {
+type Props = {
+  children: React.ReactNode
+}
+
+export const SmoothScroll = ({ children }: Props) => {
   const router = useRouter()
 
   useEffect(() => {

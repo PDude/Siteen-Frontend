@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState, useEffect } from 'react'
 import Button from '../components/formElements/Button'
 import style from '../styles/components/Layout.module.sass'
@@ -10,7 +11,11 @@ import { FaTelegram } from 'react-icons/fa'
 import { FaYoutube } from 'react-icons/fa'
 import Link from 'next/link'
 
-const Layout = ({ children }) => {
+type Props = {
+  children: React.ReactNode
+}
+
+const Layout = ({ children }: Props) => {
   const [isHamburgerOpen, setHamburgerOpen] = useState<boolean>(false)
 
   const hamburgerDependencies = () => {
@@ -91,13 +96,25 @@ const Layout = ({ children }) => {
               : style.social_link_aside_bar
           }
         >
-          <a href='https://www.facebook.com/siteen.co/' target='_blank'>
+          <a
+            href='https://www.facebook.com/siteen.co/'
+            rel='noreferrer'
+            target='_blank'
+          >
             Facebook
           </a>
-          <a href='https://www.instagram.com/siteen.co/' target='_blank'>
+          <a
+            href='https://www.instagram.com/siteen.co/'
+            rel='noreferrer'
+            target='_blank'
+          >
             Instagram
           </a>
-          <a href='https://www.linkedin.com/company/siteen/' target='_blank'>
+          <a
+            href='https://www.linkedin.com/company/siteen/'
+            rel='noreferrer'
+            target='_blank'
+          >
             Linkedin
           </a>
         </div>
@@ -192,14 +209,23 @@ const Layout = ({ children }) => {
               </a>
             </div>
             <div className={style.social_link_aside_bar_opened}>
-              <a href='https://www.facebook.com/siteen.co/' target='_blank'>
+              <a
+                href='https://www.facebook.com/siteen.co/'
+                rel='noreferrer'
+                target='_blank'
+              >
                 Facebook
               </a>
-              <a href='https://www.instagram.com/siteen.co/' target='_blank'>
+              <a
+                href='https://www.instagram.com/siteen.co/'
+                rel='noreferrer'
+                target='_blank'
+              >
                 Instagram
               </a>
               <a
                 href='https://www.linkedin.com/company/siteen/'
+                rel='noreferrer'
                 target='_blank'
               >
                 Linkedin

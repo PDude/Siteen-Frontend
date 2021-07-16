@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 // Styles
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -7,7 +7,7 @@ import style from '../styles/pages/Home.module.css'
 import { GoTriangleRight } from 'react-icons/go'
 import { BsArrowRight } from 'react-icons/bs'
 // Globe
-// import globeGif from '../images/globus.gif'
+import globeGif from '../images/globus.webp'
 // Images
 import webIcon from '../images/services_web.svg'
 import uiIcon from '../images/services_ui.svg'
@@ -29,10 +29,14 @@ import Link from 'next/link'
 // Sliders
 import ServicesSlider from 'react-slick'
 import CasesSlider from 'react-slick'
+import { projectType } from '../types/project'
 
-const HomePage = ({ projects }) => {
+type Props = {
+  projects: Array<projectType>
+}
+
+const HomePage = ({ projects }: Props) => {
   const [filteredProjects, setFilteredProjects] = useState(projects)
-
   // Slider settings
   const sliderSettings = {
     dots: false,
@@ -47,7 +51,7 @@ const HomePage = ({ projects }) => {
 
   // Projects filtration
   const [type, setType] = useState('all')
-  const filterProjects = (e) => {
+  const filterProjects = (e: { currentTarget: { value: string } }) => {
     const tagValue = e.currentTarget.value
     setType(tagValue)
     if (tagValue === 'all') setFilteredProjects(projects)
@@ -105,12 +109,12 @@ const HomePage = ({ projects }) => {
   const casesItems = filteredProjects?.map((c) => (
     <ProjectCase
       key={c.id}
-      original_name={c.original_name}
-      project_photo={c.project_photo}
-      project_logo={c.project_logo}
+      originalName={c.original_name}
+      projectPhoto={c.project_photo}
+      projectLogo={c.project_logo}
       caseDuration={c.term}
       projectTitle={c.project_name}
-      project_subtitle={c.project_subtitle}
+      projectSubtitle={c.project_subtitle}
     />
   ))
 
@@ -229,13 +233,7 @@ const HomePage = ({ projects }) => {
         <div className='container'>
           <div className={style.form_section_wrap}>
             <div className={style.globe_wrap}>
-              {/* <img src={globeGif} alt='globe' /> */}
-              <img
-                src={
-                  'https://img.icons8.com/emoji/452/globe-with-meridians-emoji.png'
-                }
-                alt='globe'
-              />
+              <img src={globeGif} alt='globe' />
             </div>
             <FormSection />
           </div>
@@ -341,6 +339,7 @@ const HomePage = ({ projects }) => {
                   <li>
                     <a
                       href='https://www.instagram.com/siteen.co/'
+                      rel='noreferrer'
                       target='_blank'
                     >
                       <img src={instaIcon} alt='instaIcon' />
@@ -349,6 +348,7 @@ const HomePage = ({ projects }) => {
                   <li>
                     <a
                       href='https://www.facebook.com/siteen.co'
+                      rel='noreferrer'
                       target='_blank'
                     >
                       <img src={fbIcon} alt='fbIcon' />
@@ -357,19 +357,25 @@ const HomePage = ({ projects }) => {
                   <li>
                     <a
                       href='https://www.linkedin.com/company/siteen/'
+                      rel='noreferrer'
                       target='_blank'
                     >
                       <img src={linkedIcon} alt='linkedIcon' />
                     </a>
                   </li>
                   <li>
-                    <a href='https://t.me/siteen/' target='_blank'>
+                    <a
+                      href='https://t.me/siteen/'
+                      rel='noreferrer'
+                      target='_blank'
+                    >
                       <img src={tIcon} alt='tIcon' />
                     </a>
                   </li>
                   <li>
                     <a
                       href='https://www.youtube.com/channel/UCATwpqig9rIT7u1dm4f7blQ'
+                      rel='noreferrer'
                       target='_blank'
                     >
                       <img src={youTubeIcon} alt='youTubeIcon' />
@@ -386,7 +392,13 @@ const HomePage = ({ projects }) => {
   )
 }
 
-const WorkflowElement = ({ index, title, text }) => {
+type WorkflowElementType = {
+  index: string
+  title: string
+  text: string
+}
+
+const WorkflowElement = ({ index, title, text }: WorkflowElementType) => {
   const [isTextVisible, setTextVisible] = useState<boolean>(false)
 
   return (
@@ -425,22 +437,39 @@ const WorkflowElement = ({ index, title, text }) => {
   )
 }
 
-const CaseTag = ({ typeTag, typeState, text, filterProjects }) => {
+type CaseTagType = {
+  typeTag: string
+  typeState: string
+  text: string
+  filterProjects: (e: { currentTarget: { value: string } }) => void
+}
+
+const CaseTag = ({ typeTag, typeState, text, filterProjects }: CaseTagType) => {
   return (
     <button
       type='button'
-      onClick={(e) => {
+      onClick={(e: { currentTarget: { value: string } }) => {
         filterProjects(e)
       }}
       value={typeTag}
-      className={typeTag === typeState ? style.checked : null}
+      className={cn({ [style.checked]: typeTag === typeState })}
     >
       {text}
     </button>
   )
 }
 
-const ServiceItem = ({ serviceLogo, serviceTitle, serviceDescription }) => (
+type ServiceItemType = {
+  serviceLogo: string
+  serviceTitle: string
+  serviceDescription: Array<string>
+}
+
+const ServiceItem = ({
+  serviceLogo,
+  serviceTitle,
+  serviceDescription
+}: ServiceItemType) => (
   <a href='#' className={style.service_element}>
     <div className={`${style.icon_wrap} icon_wrap_global`}>
       <img src={serviceLogo} alt='web' />
@@ -454,20 +483,29 @@ const ServiceItem = ({ serviceLogo, serviceTitle, serviceDescription }) => (
   </a>
 )
 
+type ProjectCaseType = {
+  originalName: string
+  projectPhoto: string
+  caseDuration: string
+  projectTitle: string
+  projectSubtitle: string
+  projectLogo: string
+}
+
 const ProjectCase = ({
-  original_name,
-  project_photo,
+  originalName,
+  projectPhoto,
   caseDuration,
   projectTitle,
-  project_subtitle,
-  project_logo
-}) => (
-  <Link href={'/project/[original_name]'} as={`/project/${original_name}`}>
+  projectSubtitle,
+  projectLogo
+}: ProjectCaseType) => (
+  <Link href={'/project/[originalName]'} as={`/project/${originalName}`}>
     <a
-      style={{ backgroundImage: `url(${project_photo})` }}
+      style={{ backgroundImage: `url(${projectPhoto})` }}
       className={`${style.project_case} project_case_global`}
     >
-      <img src={project_logo} alt='logo' />
+      <img src={projectLogo} alt='logo' />
       <div className={`${style.project_case_wrap} project_case_wrap_global`}>
         <div className={style.project_duration}>
           <p>Creation Term: </p>
@@ -475,7 +513,7 @@ const ProjectCase = ({
         </div>
         <div className={style.project_title}>
           <h4>{projectTitle}</h4>
-          <p>{project_subtitle}</p>
+          <p>{projectSubtitle}</p>
         </div>
         <p className={style.project_link}>
           View full project <GoTriangleRight />
