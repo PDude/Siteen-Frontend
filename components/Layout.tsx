@@ -24,11 +24,6 @@ const Layout = ({ children }: Props) => {
       : (document.body.style.overflowY = 'auto')
   }
 
-  const closeHamburger = () => {
-    setHamburgerOpen(false)
-    document.body.scrollTop = 0
-  }
-
   useEffect(() => {
     hamburgerDependencies()
   }, [hamburgerDependencies])
@@ -41,7 +36,7 @@ const Layout = ({ children }: Props) => {
             <Link href='/'>
               <a
                 onClick={() => {
-                  document.body.scrollTop = 0
+                  setHamburgerOpen(false)
                 }}
                 className={style.logo_link}
               >
@@ -133,7 +128,12 @@ const Layout = ({ children }: Props) => {
           <div className={style.content_opened_wrap}>
             <div className={style.navigation_bar_wrap_opened}>
               <Link href='/'>
-                <a className={style.logo_link_opened}>
+                <a
+                  onClick={() => {
+                    setHamburgerOpen(false)
+                  }}
+                  className={style.logo_link_opened}
+                >
                   <img src={logoNav} alt='Siteen' />
                 </a>
               </Link>
@@ -142,7 +142,14 @@ const Layout = ({ children }: Props) => {
               </a>
               <Link href='/#contact_us'>
                 <a>
-                  <Button className={style.get_brif}>Get a Brif</Button>
+                  <Button
+                    onClick={() => {
+                      setHamburgerOpen(false)
+                    }}
+                    className={style.get_brif}
+                  >
+                    Get a Brif
+                  </Button>
                 </a>
               </Link>
               <div className={style.hamburger_wrap_hamburger}>
@@ -157,35 +164,61 @@ const Layout = ({ children }: Props) => {
                 <ul>
                   <li>
                     <Link href='/#our_services'>
-                      <a onClick={closeHamburger}>Our Services</a>
+                      <a
+                        onClick={() => {
+                          setHamburgerOpen(false)
+                        }}
+                      >
+                        Our Services
+                      </a>
                     </Link>
                   </li>
-                  {/* <li>
-                    <a onClick={closeHamburger} href='#'>
-                      Portfolio
-                    </a>
-                  </li> */}
                   <li>
                     <Link href='/about' scroll={true}>
-                      <a onClick={closeHamburger}>About Us</a>
+                      <a
+                        onClick={() => {
+                          setHamburgerOpen(false)
+                        }}
+                      >
+                        About Us
+                      </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/#contacts_section'>
-                      <a onClick={closeHamburger}>Contacts</a>
+                      <a
+                        onClick={() => {
+                          setHamburgerOpen(false)
+                        }}
+                      >
+                        Contacts
+                      </a>
                     </Link>
                   </li>
                   <li>
                     <Link href='/#cases_section'>
-                      <a onClick={closeHamburger}>Our Projects</a>
+                      <a
+                        onClick={() => {
+                          setHamburgerOpen(false)
+                        }}
+                      >
+                        Our Projects
+                      </a>
                     </Link>
                   </li>
                 </ul>
               </div>
             </div>
             <Link href='/#contact_us'>
-              <a>
-                <Button className={style.get_brif_hamburger}>Get a Brif</Button>
+              <a className={style.get_brif_hamburger_link}>
+                <Button
+                  onClick={() => {
+                    setHamburgerOpen(false)
+                  }}
+                  className={style.get_brif_hamburger}
+                >
+                  Get a Brif
+                </Button>
               </a>
             </Link>
             <a className={style.nav_tel_hamburger} href='tel:0971630202'>

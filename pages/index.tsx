@@ -101,7 +101,7 @@ const HomePage = ({
           </div>
         </div>
       </header>
-      <section id={'our_services'} className={style.our_services}>
+      <section id='our_services' className={style.our_services}>
         <div className='container'>
           <span className='title_label'>Our Services</span>
           <h2 className={style.h2}>We Do Everything.</h2>
@@ -115,7 +115,7 @@ const HomePage = ({
           </div>
         </div>
       </section>
-      <section id={'cases_section'} className={style.our_cases}>
+      <section id='cases_section' className={style.our_cases}>
         <div className='container'>
           <div className={style.our_cases_wrap}>
             <span className='title_label'>Our portfolio</span>

@@ -143,6 +143,7 @@
   padding: 80px 0 160px;
   background: #000 url('../../images/cases_bg.svg') no-repeat center top / cover;
   position: relative;
+  overflow: hidden;
 }
 .our_cases::before {
   content: url('../../images/cases_item_bg.svg');
@@ -345,6 +346,7 @@
 .form_section {
   background: #000;
   position: relative;
+  overflow: hidden;
 }
 .form_section_wrap,
 .we_are_pro_wrap {

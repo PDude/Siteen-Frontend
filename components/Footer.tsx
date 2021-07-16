@@ -11,12 +11,7 @@ const Footer = () => {
       <div className='container'>
         <div className={style.footer_nav}>
           <Link href='/'>
-            <a
-              className={style.footer_logo}
-              onClick={() => {
-                document.body.scrollTop = 0
-              }}
-            >
+            <a className={style.footer_logo}>
               <img src={logoNav} alt='Siteen' />
             </a>
           </Link>
@@ -38,24 +33,12 @@ const Footer = () => {
             </li>
             <li>
               <Link href='/about'>
-                <a
-                  onClick={() => {
-                    document.body.scrollTop = 0
-                  }}
-                >
-                  About Us
-                </a>
+                <a>About Us</a>
               </Link>
             </li>
             <li>
               <Link href='/privacy-policy'>
-                <a
-                  onClick={() => {
-                    document.body.scrollTop = 0
-                  }}
-                >
-                  Privacy Policy
-                </a>
+                <a>Privacy Policy</a>
               </Link>
             </li>
           </ul>

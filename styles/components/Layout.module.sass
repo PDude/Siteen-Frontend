@@ -80,7 +80,7 @@
 
 .content_opened_wrap
   min-height: 100vh
-  padding-bottom: 65px
+  padding-bottom: 120px
   display: flex
   flex-direction: column
   justify-content: space-between
@@ -103,7 +103,8 @@
 
 .navigation_bar_wrap_opened
   display: flex
-  margin-top: 45px
+  padding: 45px 0 19px
+  max-height: 120px
   grid-gap: 30px
   justify-content: flex-end
   align-items: center
@@ -112,9 +113,9 @@
   width: 100px
 
 .logo_link_opened
-  opacity: 0
+  // opacity: 0
   width: 100px
-  visibility: hidden
+  // visibility: hidden
   margin-right: auto
 
 .main_wrap_content
@@ -213,7 +214,7 @@
     &:hover
       color: #be76d7
 
-.get_brif_hamburger, .nav_tel_hamburger, .social_link_mobile, .hamburger_wrap_hamburger
+.get_brif_hamburger, .nav_tel_hamburger, .social_link_mobile, .hamburger_wrap_hamburger, .get_brif_hamburger_link
   display: none
 
 @media only screen and (max-width: 1200px)
@@ -266,7 +267,7 @@
     li a
       font-size: 45px
 
-  .get_brif_hamburger
+  .get_brif_hamburger, .get_brif_hamburger_link
     display: block
 
   .nav_tel_hamburger
@@ -297,9 +298,6 @@
 
   .logo_link
     margin-left: initial
-
-  .navigation_bar_wrap_opened
-    margin-top: 45px
 
   .logo_link img, .logo_link_opened img
     width: 100px
