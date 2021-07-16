@@ -30,6 +30,7 @@ import Link from 'next/link'
 import ServicesSlider from 'react-slick'
 import CasesSlider from 'react-slick'
 import { projectType } from '../types/project'
+import { useEffect } from 'react'
 
 type Props = {
   projects: Array<projectType>
@@ -524,7 +525,7 @@ const ProjectCase = ({
 )
 
 HomePage.getInitialProps = async () => {
-  const response = await fetch('https://siteen.co/api/v1/project')
+  const response = await fetch(`${process.env.NEXT_API_URL}project`)
   const projects = await response.json()
 
   return {

@@ -37,7 +37,7 @@ const ProjectPage = ({ project: serverProject }: Props) => {
   useEffect(() => {
     const loadProject = async () => {
       const response = await fetch(
-        `https://siteen.co/api/v1/project/${router.query.original_name}`
+        `${process.env.NEXT_API_URL}project/${router.query.original_name}`
       )
 
       const projectData = await response.json()
@@ -261,7 +261,7 @@ ProjectPage.getInitialProps = async ({ query, req }: NextPageContext) => {
   }
 
   const response = await fetch(
-    `https://siteen.co/api/v1/project/${query.original_name}`
+    `${process.env.NEXT_API_URL}project/${query.original_name}`
   )
   const project = await response.json()
 
