@@ -1,10 +1,5 @@
 {
-  "/404": "pages/404.html",
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
-  "/about": "pages/about.html",
-  "/": "pages/index.js",
-  "/privacy-policy": "pages/privacy-policy.html",
-  "/project/[original_name]": "pages/project/[original_name].js",
   "/_error": "pages/_error.js"
 }

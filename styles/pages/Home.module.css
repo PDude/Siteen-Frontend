@@ -1,9 +1,9 @@
 .main_header {
-  min-height: calc(100vh - 120px);
+  position: relative;
   display: flex;
   align-items: center;
-  position: relative;
   padding-bottom: 120px;
+  min-height: calc(100vh - 120px);
 }
 .main_header:after,
 .our_services::after,

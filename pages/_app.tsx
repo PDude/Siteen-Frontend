@@ -5,22 +5,9 @@ import Layout from '../components/Layout'
 import '../styles/globals.sass'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { useEffect } from 'react'
-import { Router } from 'next/router'
-import { SmoothScroll } from '../utils/SmoothScroll'
 import Head from 'next/head'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  useEffect(() => {
-    Router.events.on('routeChangeComplete', () => {
-      window.scroll({
-        top: 0,
-        left: 0,
-        behavior: 'smooth'
-      })
-    })
-  }, [])
-
   return (
     <>
       <Head>
@@ -50,11 +37,9 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         stopDelayMs={200}
         height={3}
       />
-      <SmoothScroll>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </SmoothScroll>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
     </>
   )
 }
