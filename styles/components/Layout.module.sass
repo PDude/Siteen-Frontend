@@ -84,6 +84,7 @@
   display: flex
   flex-direction: column
   justify-content: space-between
+  grid-gap: 30px
 
 .menu_opened_visible
   opacity: 1
@@ -235,7 +236,15 @@
     grid-template-areas: 'navigation_bar navigation_bar' 'main_wrap_content main_wrap_content'
 
   .aside_bar
-    display: none
+    display: none !important
+    position: absolute !important
+    z-index: -999 !important
+    width: 1 !important
+    height: 0 !important
+    padding: 0 !important
+    opacity: 0 !important
+    visibility: hidden !important
+    max-height: 0 !important
 
   .hamburger_wrap_hamburger
     display: block
@@ -259,17 +268,15 @@
 
   .get_brif_hamburger
     display: block
-    margin: 27px 0
 
   .nav_tel_hamburger
     display: block
     background: rgba(0, 0, 0, 0.5)
     max-width: max-content
     padding: 10px 20px
-    margin-bottom: 30px
 
   .nav_menus_opened_wrap
-    margin: 20px 0
+    margin: auto 0
 
   .nav_menus_opened_wrap, .social_link_aside_bar_opened
     padding-left: 0
@@ -308,8 +315,8 @@
 
   .social_link_mobile
     display: flex
-    justify-content: space-evenly
-    padding: 0 20px
+    justify-content: center
+    grid-gap: 30px
 
     a
       font-size: 20px
@@ -319,9 +326,10 @@
         opacity: 0.7
 
   .nav_tel_hamburger
-    max-width: 100%
+    max-width: 230px
+    width: 100%
+    margin: 0 auto
     text-align: center
-    margin-bottom: 20px
 
 @media only screen and (max-height: 500px)
   .aside_bar

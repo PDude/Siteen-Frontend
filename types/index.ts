@@ -1,4 +1,4 @@
-export type projectType = {
+export type ProjectType = {
   id: number
   uuid: string
   type: string

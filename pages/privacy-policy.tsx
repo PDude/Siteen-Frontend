@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from '../components/Footer'
 import style from '../styles/pages/PrivacyPolicy.module.sass'
 
-const PrivacyPolicy: React.FC = () => (
+const PrivacyPolicy = () => (
   <section className={style.privacy_policy}>
     <div className='container'>
       <div className={style.privacy_policy_inner}>

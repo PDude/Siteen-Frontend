@@ -22,16 +22,16 @@ import { GoTriangleRight } from 'react-icons/go'
 import Preloader from '../../components/common/Preloader'
 
 import { NextPageContext } from 'next'
-import { projectType } from '../../types/project'
+import { ProjectType } from '../../types'
 
 type Props = {
-  project: projectType
+  project: ProjectType
 }
 
 const ProjectPage = ({ project: serverProject }: Props) => {
   const myRef = useRef<HTMLDivElement>(null)
 
-  const [project, setProject] = useState(serverProject)
+  const [project, setProject] = useState<ProjectType>(serverProject)
   const router = useRouter()
 
   useEffect(() => {

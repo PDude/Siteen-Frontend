@@ -579,6 +579,9 @@
 }
 
 @media only screen and (max-width: 1200px) {
+  .our_cases::before {
+    transform: scale(0.9) translate(10%, 10%);
+  }
   .main_offer > h1 {
     font-size: 45px;
     margin-top: 10px;
@@ -651,6 +654,9 @@
   }
 }
 @media only screen and (max-width: 992px) {
+  .our_cases::before {
+    transform: scale(0.8) translate(20%, 20%);
+  }
   .main_offer > h1 {
     font-size: 40px;
     margin-top: 5px;
@@ -758,6 +764,9 @@
   }
 }
 @media only screen and (max-width: 768px) {
+  .our_cases::before {
+    transform: scale(0.7) translate(30%, 30%);
+  }
   .main_offer > h1 {
     font-size: 35px;
   }
@@ -793,6 +802,9 @@
   }
 }
 @media only screen and (max-width: 576px) {
+  .our_cases::before {
+    transform: scale(0.7) translate(30%, 30%);
+  }
   .main_offer > h1 {
     font-size: 30px;
   }

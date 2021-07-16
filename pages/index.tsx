@@ -9,10 +9,6 @@ import { BsArrowRight } from 'react-icons/bs'
 // Globe
 import globeGif from '../images/globus.webp'
 // Images
-import webIcon from '../images/services_web.svg'
-import uiIcon from '../images/services_ui.svg'
-import marketingIcon from '../images/services_marketing.svg'
-import animIcon from '../images/services_animation.svg'
 import instaIcon from '../images/insta_icon.svg'
 import fbIcon from '../images/fb_icon.svg'
 import linkedIcon from '../images/linked_icon.svg'
@@ -29,14 +25,16 @@ import Link from 'next/link'
 // Sliders
 import ServicesSlider from 'react-slick'
 import CasesSlider from 'react-slick'
-import { projectType } from '../types/project'
+// Types
+import { ProjectType } from '../types'
+import { InferGetStaticPropsType } from 'next'
+import { services } from '../JSON'
 
-type Props = {
-  projects: Array<projectType>
-}
-
-const HomePage = ({ projects }: Props) => {
-  const [filteredProjects, setFilteredProjects] = useState(projects)
+const HomePage = ({
+  projects
+}: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const [filteredProjects, setFilteredProjects] =
+    useState<Array<ProjectType>>(projects)
   // Slider settings
   const sliderSettings = {
     dots: false,
@@ -55,56 +53,11 @@ const HomePage = ({ projects }: Props) => {
     const tagValue = e.currentTarget.value
     setType(tagValue)
     if (tagValue === 'all') setFilteredProjects(projects)
-    else setFilteredProjects(projects.filter((c) => c.type === tagValue))
+    else
+      setFilteredProjects(
+        projects.filter((c: ProjectType) => c.type === tagValue)
+      )
   }
-
-  // Services JSON
-  const services = [
-    {
-      id: 1,
-      serviceLogo: webIcon,
-      serviceTitle: 'Web Development',
-      serviceDescription: [
-        'FrontEnd (HTML / CSS / JavaScript)',
-        'WordPress / Shopify / Opencart / Others',
-        'BackEnd(PHPCake / Laravel)',
-        'API integration'
-      ]
-    },
-    {
-      id: 2,
-      serviceLogo: uiIcon,
-      serviceTitle: 'UX/UI Brand Identity',
-      serviceDescription: [
-        'User Expirience & Interface Design',
-        'Landing page / E-shop / Business Site',
-        'Design Logo / Branding',
-        'Photo / Video content'
-      ]
-    },
-    {
-      id: 3,
-      serviceLogo: marketingIcon,
-      serviceTitle: 'Digital Marketing',
-      serviceDescription: [
-        'Search Engine Optimization (SEO)',
-        'Social Media Marketing (SMM)',
-        'Content Marketing',
-        'Native Advertisign'
-      ]
-    },
-    {
-      id: 4,
-      serviceLogo: animIcon,
-      serviceTitle: 'Animation Production',
-      serviceDescription: [
-        'Search Engine Optimization (SEO)',
-        'Social Media Marketing (SMM)',
-        'Content Marketing',
-        'Native Advertisign'
-      ]
-    }
-  ]
 
   const casesItems = filteredProjects?.map((c) => (
     <ProjectCase
@@ -118,7 +71,7 @@ const HomePage = ({ projects }: Props) => {
     />
   ))
 
-  const servicesItems = services?.map((s) => (
+  const servicesItems = services.map((s) => (
     <ServiceItem
       key={s.id}
       serviceLogo={s.serviceLogo}
@@ -219,7 +172,7 @@ const HomePage = ({ projects }: Props) => {
                 </div>
               </>
             ) : (
-              <p className='plug'>Скоро здесь будут примеры работ</p>
+              <p className='plug'>The projects will be here soon</p>
             )}
             {/* <Link href='/'>
               <a>
@@ -523,12 +476,35 @@ const ProjectCase = ({
   </Link>
 )
 
-HomePage.getInitialProps = async () => {
-  const response = await fetch(`${process.env.NEXT_API_URL}project`)
-  const projects = await response.json()
+// HomePage.getInitialProps = async () => {
+//   const response = await fetch(`${process.env.NEXT_API_URL}project`)
+//   const projects = await response.json()
+
+//   return {
+//     projects: projects.data.response
+//   }
+// }
+
+type ProjectsResponseDataType = {
+  response: Array<ProjectType>
+}
+
+type ProjectsResponseType = {
+  message: string
+  status: number
+  code: number
+  data: ProjectsResponseDataType
+}
+
+export async function getStaticProps() {
+  const res = await fetch(`${process.env.NEXT_API_URL}project`)
+  const data: ProjectsResponseType = await res.json()
+  const projects: Array<ProjectType> = data.data.response
 
   return {
-    projects: projects.data.response
+    props: {
+      projects
+    }
   }
 }
 
