@@ -30,7 +30,6 @@ import Link from 'next/link'
 import ServicesSlider from 'react-slick'
 import CasesSlider from 'react-slick'
 import { projectType } from '../types/project'
-import { useEffect } from 'react'
 
 type Props = {
   projects: Array<projectType>
