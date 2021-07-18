@@ -10,6 +10,7 @@ import { FaLinkedin } from 'react-icons/fa'
 import { FaTelegram } from 'react-icons/fa'
 import { FaYoutube } from 'react-icons/fa'
 import Link from 'next/link'
+import cn from 'classnames'
 
 type Props = {
   children: React.ReactNode
@@ -75,11 +76,9 @@ const Layout = ({ children }: Props) => {
         </div>
       </nav>
       <aside
-        className={
-          isHamburgerOpen
-            ? `${style.aside_bar} ${style.aside_bar_transparent}`
-            : style.aside_bar
-        }
+        className={cn(style.aside_bar, {
+          [(style.aside_bar_transparent, style.scroll_hidden)]: isHamburgerOpen
+        })}
       >
         <div className={style.hamburger_wrap}>
           <Hamburger toggled={isHamburgerOpen} toggle={setHamburgerOpen} />

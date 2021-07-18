@@ -4,9 +4,8 @@ import style from '../../styles/pages/ProjectPage.module.sass'
 // temp project bg
 import projecCheckDown from '../../images/project_check_down.svg'
 import projecCheckDownSmall from '../../images/project_check_down_small.svg'
-import { Component, useEffect, useRef, useState } from 'react'
+import { Component, useRef } from 'react'
 import Footer from '../../components/Footer'
-import { useRouter } from 'next/router'
 // Slider
 import ProjectsSlider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -18,36 +17,19 @@ import arrowNext from '../../images/arrow_team_next.svg'
 // import hubyshLogo from '../../images/hubysh_logo.svg'
 // import hubyshPhoto from '../../images/hubysh_photo.jpg'
 
+// Icons
 import { GoTriangleRight } from 'react-icons/go'
+// Components
 import Preloader from '../../components/common/Preloader'
-
-import { NextPageContext } from 'next'
+// Types
 import { ProjectType } from '../../types'
+import { GetServerSideProps } from 'next'
+import { InferGetServerSidePropsType } from 'next'
 
-type Props = {
-  project: ProjectType
-}
-
-const ProjectPage = ({ project: serverProject }: Props) => {
+const ProjectPage = ({
+  project
+}: InferGetServerSidePropsType<GetServerSideProps>): JSX.Element => {
   const myRef = useRef<HTMLDivElement>(null)
-
-  const [project, setProject] = useState<ProjectType>(serverProject)
-  const router = useRouter()
-
-  useEffect(() => {
-    const loadProject = async () => {
-      const response = await fetch(
-        `${process.env.NEXT_API_URL}project/${router.query.original_name}`
-      )
-
-      const projectData = await response.json()
-      setProject(projectData.data.response)
-    }
-
-    if (!serverProject) {
-      loadProject()
-    }
-  }, [])
 
   const scroll = (ref: any) => {
     ref.current.scrollIntoView({ behavior: 'smooth' })
@@ -70,23 +52,23 @@ const ProjectPage = ({ project: serverProject }: Props) => {
               <h3>{project.ordering_type}</h3>
               <p>{project.project_tags.join(' ')}</p>
             </div>
+            <button
+              onClick={() => {
+                scroll(myRef)
+              }}
+            >
+              <img
+                className={style.for_big_device}
+                src={projecCheckDown}
+                alt='projecCheckDown'
+              />
+              <img
+                className={style.for_small_device}
+                src={projecCheckDownSmall}
+                alt='projecCheckDown'
+              />
+            </button>
           </div>
-          <button
-            onClick={() => {
-              scroll(myRef)
-            }}
-          >
-            <img
-              className={style.for_big_device}
-              src={projecCheckDown}
-              alt='projecCheckDown'
-            />
-            <img
-              className={style.for_small_device}
-              src={projecCheckDownSmall}
-              alt='projecCheckDown'
-            />
-          </button>
         </div>
       </header>
       <section ref={myRef} className={style.project_data}>
@@ -98,8 +80,8 @@ const ProjectPage = ({ project: serverProject }: Props) => {
           <div className={style.tasks}>
             <h3>Tasks</h3>
             <ul>
-              {project.project_tasks?.map((t) => (
-                <li key={t}>· {t}</li>
+              {project.project_tasks?.map((t: Array<string>) => (
+                <li key={Math.random()}>· {t}</li>
               ))}
             </ul>
           </div>
@@ -210,10 +192,7 @@ class PreviousNextMethodsProjectsSection extends Component {
               </div>
             </div>
             <div className={`${style.projects_slider} projects_slider_global`}>
-              <ProjectsSlider
-                ref={(c) => (this.slider = c)}
-                {...sliderSettings}
-              >
+              <ProjectsSlider ref={c => (this.slider = c)} {...sliderSettings}>
                 <ProjectsSliderItem />
                 <ProjectsSliderItem />
                 <ProjectsSliderItem />
@@ -228,7 +207,7 @@ class PreviousNextMethodsProjectsSection extends Component {
   }
 }
 
-const ProjectsSliderItem = () => {
+const ProjectsSliderItem = (): JSX.Element => {
   return (
     <a
       href='#'
@@ -253,20 +232,28 @@ const ProjectsSliderItem = () => {
   )
 }
 
-ProjectPage.getInitialProps = async ({ query, req }: NextPageContext) => {
-  if (!req) {
-    return {
-      project: null
-    }
-  }
+type ProjectResponseDataType = {
+  response: ProjectType
+}
 
-  const response = await fetch(
+type ProjectResponseType = {
+  message: string
+  status: number
+  code: number
+  data: ProjectResponseDataType
+}
+
+export const getServerSideProps: GetServerSideProps = async ({ query }) => {
+  const res = await fetch(
     `${process.env.NEXT_API_URL}project/${query.original_name}`
   )
-  const project = await response.json()
+  const data: ProjectResponseType = await res.json()
+  const project: ProjectType = data.data.response
 
   return {
-    project: project.data.response
+    props: {
+      project
+    }
   }
 }
 

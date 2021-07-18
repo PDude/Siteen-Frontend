@@ -38,7 +38,7 @@ const FormSection = () => {
           }
         }
       )
-      .then((res) => {
+      .then(res => {
         if (res.data.message === 'ok') {
           resetForm({})
           console.log(res)

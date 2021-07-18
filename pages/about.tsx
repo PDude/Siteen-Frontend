@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from 'react'
+import React, { Component } from 'react'
 import AboutVideo from '../components/AboutVideo'
 import style from '../styles/pages/About.module.sass'
 // Frontend icons
@@ -33,11 +33,6 @@ import xd from '../images/brands/xd.svg'
 import TeamSlider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-// Team members
-import member1 from '../images/member_1.webp'
-import member2 from '../images/member_2.webp'
-import member3 from '../images/member_3.webp'
-import member4 from '../images/member_4.webp'
 // Arows
 import arrowBack from '../images/arrow_team_back.svg'
 import arrowNext from '../images/arrow_team_next.svg'
@@ -50,6 +45,9 @@ import fbIcon from '../images/fb_icon.svg'
 import linkedIcon from '../images/linked_icon.svg'
 import tIcon from '../images/t_icon.svg'
 import youTubeIcon from '../images/youtube_icon.svg'
+import { team } from '../JSON'
+// Packages
+import cn from 'classnames'
 
 const About = () => (
   <>
@@ -336,7 +334,11 @@ class PreviousNextMethodsTeamSection extends Component {
                 Our digital company develops projects and has been on the market
                 for 15 years.
               </p>
-              <div className={style.arrows}>
+              <div
+                className={cn(style.arrows, {
+                  [style.disabled]: team.length <= 4
+                })}
+              >
                 <button
                   onClick={this.previous}
                   className={style.team_back_arrow}
@@ -349,27 +351,15 @@ class PreviousNextMethodsTeamSection extends Component {
               </div>
             </div>
             <div className={`${style.team_slider} team_slider_global`}>
-              <TeamSlider ref={(c) => (this.slider = c)} {...sliderSettings}>
-                <TeamSliderItem
-                  name={'Yurii Siryi'}
-                  position={'Motion Designer'}
-                  imgPath={member1}
-                />
-                <TeamSliderItem
-                  name={'Alexandr Zabrodskyi'}
-                  position={'Back-End Dev'}
-                  imgPath={member2}
-                />
-                <TeamSliderItem
-                  name={'Paul Dudich'}
-                  position={'Front-End Dev'}
-                  imgPath={member3}
-                />
-                <TeamSliderItem
-                  name={'Kateryna Lekhner'}
-                  position={'UX/UI Designer'}
-                  imgPath={member4}
-                />
+              <TeamSlider ref={c => (this.slider = c)} {...sliderSettings}>
+                {team.map((t: TeamSliderItemProps) => (
+                  <TeamSliderItem
+                    key={t.name}
+                    name={t.name}
+                    position={t.position}
+                    imgPath={t.imgPath}
+                  />
+                ))}
               </TeamSlider>
             </div>
           </div>

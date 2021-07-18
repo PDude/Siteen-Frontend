@@ -23,14 +23,14 @@
   flex-direction: column
   transition: all 0.3s ease
   justify-content: space-between
-  align-items: center
+  // align-items: center
   grid-gap: 40px
   max-width: 145px
   width: 100%
   min-height: 100vh
   left: 0
   top: 0
-  padding: 45px 48px
+  padding: 45px 48px 95px
   position: fixed
   z-index: 400
   overflow: auto
@@ -46,7 +46,8 @@
   background: transparent
 
 .hamburger_wrap
-  height: 48px
+  min-height: 48px
+  max-width: 48px
   &::before
     content: ''
     background: #000
@@ -124,6 +125,7 @@
 
 .social_link_aside_bar
   display: flex
+  align-items: center
   grid-gap: 46px
   transform: rotate(180deg)
   writing-mode: tb
@@ -333,6 +335,9 @@
   .aside_bar
     display: block
     max-height: 100%
+    &.scroll_hidden
+      overflow: hidden
+      max-height: max-content
 
   .social_link_aside_bar
-    margin: 40px 17px 0
+    margin: 40px auto 0

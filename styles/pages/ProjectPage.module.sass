@@ -23,7 +23,7 @@
         justify-content: center
         align-items: center
     button
-        align-self: flex-end
+        margin-top: 40px
         animation: levitation 1s alternate ease-in-out infinite
         z-index: 30
         padding: 0 5px
@@ -97,7 +97,7 @@
         ul
             display: flex
             flex-direction: column
-            gap: 10px
+            grid-gap: 10px
         li a
             font-size: 25px
             display: flex
@@ -213,7 +213,7 @@
             .team_back_arrow
                 margin-right: 55px
             button
-                font-size: 16px
+                font-size: 14px
                 text-transform: uppercase
                 color: #fff
                 display: flex
@@ -432,7 +432,7 @@
     .projects_desk_and_arrows
         align-items: flex-start !important
         flex-direction: column
-        gap: 40px
+        grid-gap: 40px
         .arrows
             width: 100%
             justify-content: space-between
@@ -487,7 +487,17 @@
         margin: 5px 0 15px !important
 
     .projects_desk_and_arrows p
-        font-size: 14px !important
+        font-size: 16px !important
 
     .arrows
         display: none !important
+
+@media only screen and (max-height: 550px)
+    .project_page_header > div
+        align-items: flex-start
+
+    .for_small_device
+        display: block
+
+    .for_big_device
+        display: none

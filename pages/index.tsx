@@ -27,12 +27,13 @@ import ServicesSlider from 'react-slick'
 import CasesSlider from 'react-slick'
 // Types
 import { ProjectType } from '../types'
+import { GetStaticProps } from 'next'
 import { InferGetStaticPropsType } from 'next'
 import { services } from '../JSON'
 
 const HomePage = ({
   projects
-}: InferGetStaticPropsType<typeof getStaticProps>) => {
+}: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
   const [filteredProjects, setFilteredProjects] =
     useState<Array<ProjectType>>(projects)
   // Slider settings
@@ -59,7 +60,7 @@ const HomePage = ({
       )
   }
 
-  const casesItems = filteredProjects?.map((c) => (
+  const casesItems = filteredProjects?.map(c => (
     <ProjectCase
       key={c.id}
       originalName={c.original_name}
@@ -71,7 +72,7 @@ const HomePage = ({
     />
   ))
 
-  const servicesItems = services.map((s) => (
+  const servicesItems = services.map(s => (
     <ServiceItem
       key={s.id}
       serviceLogo={s.serviceLogo}
@@ -429,7 +430,7 @@ const ServiceItem = ({
     </div>
     <h3>{serviceTitle}</h3>
     <ul>
-      {serviceDescription.map((service) => (
+      {serviceDescription.map(service => (
         <li key={service}>{service}</li>
       ))}
     </ul>
@@ -476,15 +477,6 @@ const ProjectCase = ({
   </Link>
 )
 
-// HomePage.getInitialProps = async () => {
-//   const response = await fetch(`${process.env.NEXT_API_URL}project`)
-//   const projects = await response.json()
-
-//   return {
-//     projects: projects.data.response
-//   }
-// }
-
 type ProjectsResponseDataType = {
   response: Array<ProjectType>
 }
@@ -496,7 +488,7 @@ type ProjectsResponseType = {
   data: ProjectsResponseDataType
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(`${process.env.NEXT_API_URL}project`)
   const data: ProjectsResponseType = await res.json()
   const projects: Array<ProjectType> = data.data.response
