@@ -15,7 +15,7 @@ type FormValues = {
   phone: string
 }
 
-const FormSection = () => {
+const FormSection = (): JSX.Element => {
   // Form success modal
   const [openFormModal, setFormModalOpen] = useState<boolean>(false)
 

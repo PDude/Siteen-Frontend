@@ -932,3 +932,21 @@
     transform: rotate(90deg);
   }
 }
+
+@media only screen and (max-height: 550px) {
+  .about_us_video_wrap {
+    display: none;
+  }
+  .main_offer {
+    margin: 60px 0 0;
+  }
+  .main_offer h1 {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-height: 700px) {
+  .main_header {
+    height: 100%;
+  }
+}

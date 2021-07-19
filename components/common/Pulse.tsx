@@ -1,6 +1,11 @@
+import React from 'react'
 import style from '../../styles/components/common/Pulse.module.sass'
 
-const Pulse = ({ children }) => {
+type Props = {
+  children: React.ReactNode
+}
+
+const Pulse = ({ children }: Props): JSX.Element => {
   return <div className={style.pulse}>{children}</div>
 }
 

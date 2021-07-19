@@ -9,7 +9,7 @@ type Props = {
   openFormModal: boolean
 }
 
-const FormModal = ({ onCloseFormModal, openFormModal }: Props) => {
+const FormModal = ({ onCloseFormModal, openFormModal }: Props): JSX.Element => {
   return (
     <Modal
       classNames={{

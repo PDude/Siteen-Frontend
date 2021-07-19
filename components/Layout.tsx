@@ -16,7 +16,7 @@ type Props = {
   children: React.ReactNode
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children }: Props): JSX.Element => {
   const [isHamburgerOpen, setHamburgerOpen] = useState<boolean>(false)
 
   const hamburgerDependencies = () => {

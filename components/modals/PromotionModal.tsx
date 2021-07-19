@@ -8,7 +8,10 @@ type Props = {
   openPromotion: boolean
 }
 
-const PromotionModal = ({ onClosePromotionModal, openPromotion }: Props) => {
+const PromotionModal = ({
+  onClosePromotionModal,
+  openPromotion
+}: Props): JSX.Element => {
   return (
     <Modal
       classNames={{

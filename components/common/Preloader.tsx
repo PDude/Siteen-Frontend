@@ -1,6 +1,7 @@
+import React from 'react'
 import style from '../../styles/components/common/Preloader.module.css'
 
-const Preloader = () => (
+const Preloader = (): JSX.Element => (
   <div className={style.bg}>
     <div className={style.body}>
       <span>

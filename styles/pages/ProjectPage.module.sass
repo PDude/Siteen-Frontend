@@ -52,7 +52,7 @@
     .project_type
         position: relative
         text-align: center
-        margin-top: 135px
+        margin-top: 105px
         display: flex
         flex-direction: column
         align-items: center
@@ -61,16 +61,17 @@
             content: ''
             position: absolute
             width: 2px
-            height: 80px
+            height: 60px
             background: #fff
-            top: -107px
+            top: -86px
+            opacity: .85
         h3
             font-weight: 600
             font-size: 25px
             text-transform: uppercase
             margin-bottom: 15px
         p
-            font-size: 22px
+            font-size: 20px
             max-width: 415px
             font-weight: 100
             color: #EDEDED
@@ -81,25 +82,24 @@
         margin-bottom: 15px
         font-size: 40px
     .about
-        margin-bottom: 80px
+        margin-bottom: 50px
         p
-            font-size: 21px
+            font-size: 20px
     .tasks
-        margin-bottom: 105px
+        margin-bottom: 50px
         ul li
-            letter-spacing: -1%
-            font-size: 21px
+            font-size: 20px
             line-height: 120%
             color: #DBDBDB
     .results
         h3
-            margin-bottom: 22px
+            margin-bottom: 15px
         ul
             display: flex
             flex-direction: column
             grid-gap: 10px
         li a
-            font-size: 25px
+            font-size: 20px
             display: flex
             align-items: center
             max-width: max-content
@@ -117,8 +117,8 @@
 
 .project_reference
     h1
-        margin: 65px 0 40px
-        font-size: 40px
+        margin: 50px 0 40px
+        font-size: 30px
         font-weight: 500
         text-transform: uppercase
         text-align: center
@@ -130,7 +130,7 @@
         -webkit-text-fill-color: transparent
         &::before, &::after
             content: ''
-            width: 120px
+            width: 80px
             height: 1px
             background: rgb(250,76,108)
             background: linear-gradient(90deg, rgba(250,76,108,1) 0%, rgba(250,169,76,1) 100%)
@@ -143,8 +143,8 @@
         overflow: hidden
         border-radius: 20px
         position: relative
-        padding-top: 30%
-        padding-bottom: 30%
+        padding-top: 25%
+        padding-bottom: 25%
         background-size: cover
         background-position: center
         background-repeat: no-repeat
@@ -177,7 +177,7 @@
             background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),linear-gradient(71.35deg,rgba(250, 68, 110, 0.8) 40.22%,rgba(250, 190, 68, 0.8) 100%)
 
 .cta_section
-    padding: 165px 0
+    padding: 100px 0
     background: url('../../images/cta_section_bg.webp') no-repeat center / cover
     .cta_section_offer
         display: flex
@@ -339,27 +339,26 @@
 @media only screen and (max-width: 1200px)
     .project_info
         img
-            max-width: 180px
+            max-width: 150px
         p
-            font-size: 20px !important
+            font-size: 18px !important
 
     .project_data
         h3
             font-size: 35px
+            margin-bottom: 10px !important
         .about p, .tasks li
             font-size: 18px !important
 
-    .results li a
-        font-size: 21px !important
-
     .project_reference h1
-        font-size: 35px
+        font-size: 25px
 
     .cta_section_offer
         h2
             font-size: 40px !important
         p
             font-size: 20px !important
+            margin-top: 10px !important
 
     .projects_section h1
         font-size: 40px
@@ -372,9 +371,12 @@
         padding-right: 25px
 
 @media only screen and (max-width: 992px)
+    .project_type h3
+        margin-bottom: 5px !important
+
     .project_info
         img
-            max-width: 150px
+            max-width: 150px !important
         p
             font-size: 18px !important
 
@@ -382,21 +384,18 @@
         h3
             font-size: 30px
         .about
-            margin-bottom: 50px
-            p
-                font-size: 16px !important
+            margin-bottom: 40px
         .tasks
-            margin-bottom: 50px
-            li
-                font-size: 16px !important
+            margin-bottom: 40px
         .results li a
             font-size: 18px !important
 
     .project_reference h1
-        font-size: 30px
+        font-size: 20px
+        margin: 40px 0 30px
 
     .cta_section
-        padding: 105px 0
+        padding: 80px 0
         h2
             font-size: 35px !important
         p
@@ -413,15 +412,26 @@
         padding: 30px 0
 
 @media only screen and (max-width: 768px)
+    .project_data
+        .about p, .tasks li
+            font-size: 16px !important
+
+    .project_data .results li a
+        font-size: 16px !important
+
     .project_info
         img
             max-width: 220px
         p
             font-size: 16px !important
 
-    .project_data h3, .project_reference h1
+    .project_data h3
         font-size: 25px
+        &::before, &::after
+            width: 50px
 
+    .project_reference h1
+        margin-bottom: 20px
     .cta_section
         padding: 80px 0
         h2
@@ -445,6 +455,12 @@
     .project_title h4
         font-size: 18px
 
+    .cta_section
+        padding: 50px 0
+
+    .project_data
+        padding-bottom: 50px
+
 @media only screen and (max-width: 576px)
     .for_small_device
         display: block
@@ -454,7 +470,7 @@
 
     .project_info
         img
-            max-width: 120px
+            max-width: 120px !important
         .project_type
             margin-top: 110px
             &::before
@@ -464,23 +480,18 @@
                 font-size: 20px
 
     .cta_section
-        padding-top: 60px
         h2
             font-size: 25px !important
         p
             font-size: 16px !important
     .project_reference
         h1
-            font-size: 20px
-        &::before, &::after
-            width: 80px
-            &::before
-                margin-right: 15px
-                &::after
-                    margin-left: 15px
+            font-size: 16px
+            &::before, &::after
+                width: 40px !important
 
     .project_data
-        padding-bottom: 50px
+        border-bottom: 1px solid #FAAA4C
 
     .projects_section h1
         font-size: 20px
@@ -493,6 +504,9 @@
         display: none !important
 
 @media only screen and (max-height: 550px)
+    .project_page_header
+        min-height: calc(100vh + 70px)
+
     .project_page_header > div
         align-items: flex-start
 

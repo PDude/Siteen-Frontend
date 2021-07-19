@@ -10,7 +10,7 @@ type Props = {
   videoLabel: string
 }
 
-const AboutVideo = ({ videoLabel }: Props) => {
+const AboutVideo = ({ videoLabel }: Props): JSX.Element => {
   // Promotion modal
   const [openPromotion, setPromotionOpen] = useState<boolean>(false)
 

@@ -89,10 +89,14 @@ const ProjectPage = ({
             <h3>Results</h3>
             <ul>
               <li>
-                <a href='#'>{project.result_link[0]}</a>
+                <a href={project.result_link[0]}>
+                  {new URL(project.result_link[0]).hostname}
+                </a>
               </li>
               <li>
-                <a href='#'>{project.result_link[1]}</a>
+                <a href={project.result_link[1]}>{`@${new URL(
+                  project.result_link[1]
+                ).pathname.replace(/\//g, '')}`}</a>
               </li>
             </ul>
           </div>

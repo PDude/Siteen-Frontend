@@ -3,7 +3,7 @@ import style from '../styles/components/Footer.module.css'
 import logoNav from '../images/logo_nav.svg'
 import Link from 'next/link'
 
-const Footer = () => {
+const Footer = (): JSX.Element => {
   const currentYear = new Date().getFullYear()
 
   return (
