@@ -21,11 +21,11 @@ const FormSection = (): JSX.Element => {
   const validate = Yup.object({
     name: Yup.string()
       .min(2, 'Must be 2 characters or more')
-      .required('Name is Required'),
+      .required('Name is required'),
     email: Yup.string().email('Email is invalid').required('Email is required'),
     phone: Yup.string()
       .matches(phoneRegExp, 'Phone number is not valid')
-      .required('Phone is Required')
+      .required('Phone number is required')
   })
 
   // Form success modal
