@@ -1,6 +1,5 @@
 import React from 'react'
-import axios from 'axios'
-import { Field, Formik } from 'formik'
+import { Formik } from 'formik'
 import { useState } from 'react'
 import { GoTriangleRight } from 'react-icons/go'
 import { toast } from 'react-toastify'
@@ -8,6 +7,7 @@ import style from '../styles/components/FormSection.module.sass'
 import Button from './formElements/Button'
 import InputField from './formElements/inputField'
 import FormModal from './modals/FormModal'
+import * as Yup from 'yup'
 
 type FormValues = {
   name: string
@@ -16,51 +16,60 @@ type FormValues = {
 }
 
 const FormSection = (): JSX.Element => {
+  const phoneRegExp = /^[0-9 ()+-]+$/
+
+  const validate = Yup.object({
+    name: Yup.string()
+      .min(2, 'Must be 2 characters or more')
+      .required('Name is Required'),
+    email: Yup.string().email('Email is invalid').required('Email is required'),
+    phone: Yup.string()
+      .matches(phoneRegExp, 'Phone number is not valid')
+      .required('Phone is Required')
+  })
+
   // Form success modal
   const [openFormModal, setFormModalOpen] = useState<boolean>(false)
 
   const onOpenFormModal = () => setFormModalOpen(true)
   const onCloseFormModal = () => setFormModalOpen(false)
 
-  const sendForm = (values: FormValues, { resetForm }: any) => {
-    const { name, email, phone } = values
-    axios
-      .post(
-        `${process.env.NEXT_API_URL}consult`,
-        {
-          name,
-          email,
-          phone
-        },
-        {
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        }
-      )
-      .then(res => {
-        if (res.data.message === 'ok') {
-          resetForm({})
-          console.log(res)
-          onOpenFormModal()
-          console.log(values)
-        }
+  const sendForm = async (values: FormValues, { resetForm }: any) => {
+    const headers = {
+      'Content-Type': 'application/json'
+    }
+    const body = JSON.stringify(values)
+    const method = 'POST'
+
+    try {
+      const res = await fetch(`${process.env.NEXT_API_URL}consult`, {
+        method,
+        body,
+        headers
       })
-      .then(() => {
+
+      const { status } = res
+
+      if (status === 200 || status === 201) {
+        resetForm({})
+        onOpenFormModal()
+
         setTimeout(() => {
           onCloseFormModal()
         }, 3000)
-      })
-      .catch(function (error) {
-        console.log(error)
-        toast.error('Something went wrong please try later')
-      })
+      }
+    } catch (err) {
+      const msg = err.res.message
+      console.log(msg)
+      toast.error(msg)
+    }
   }
 
   return (
     <>
       <Formik
         onSubmit={sendForm}
+        validationSchema={validate}
         initialValues={{ name: '', email: '', phone: '' }}
       >
         {({ handleSubmit }) => (
@@ -73,26 +82,12 @@ const FormSection = (): JSX.Element => {
             </p>
             <div className={style.form_items}>
               <div className={style.fields_wrap}>
-                <Field
-                  name='name'
-                  placeholder='Name'
-                  type='text'
-                  component={InputField}
-                  required
-                />
-                <Field
-                  name='email'
-                  placeholder='Email'
-                  type='email'
-                  component={InputField}
-                  required
-                />
-                <Field
+                <InputField name='name' placeholder='Name' type='text' />
+                <InputField name='email' placeholder='Email' type='email' />
+                <InputField
                   name='phone'
                   placeholder='Phone Number'
                   type='tel'
-                  component={InputField}
-                  required
                 />
               </div>
               <Button Icon={<GoTriangleRight />}>Submit</Button>

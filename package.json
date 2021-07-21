@@ -16,7 +16,6 @@
   },
   "dependencies": {
     "@types/react-slick": "^0.23.4",
-    "axios": "^0.21.1",
     "classnames": "^2.2.6",
     "formik": "^2.2.6",
     "hamburger-react": "^2.4.0",
@@ -31,7 +30,8 @@
     "react-slick": "^0.28.1",
     "react-toastify": "^7.0.4",
     "sass": "^1.32.11",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "yup": "^0.32.9"
   },
   "devDependencies": {
     "@types/node": "^16.3.2",

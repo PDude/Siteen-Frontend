@@ -45,7 +45,7 @@ import fbIcon from '../images/fb_icon.svg'
 import linkedIcon from '../images/linked_icon.svg'
 import tIcon from '../images/t_icon.svg'
 import youTubeIcon from '../images/youtube_icon.svg'
-import { team } from '../JSON'
+import { team } from '../Data'
 // Packages
 import cn from 'classnames'
 

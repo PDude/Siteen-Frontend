@@ -29,7 +29,7 @@ import CasesSlider from 'react-slick'
 import { ProjectType } from '../types'
 import { GetStaticProps } from 'next'
 import { InferGetStaticPropsType } from 'next'
-import { services } from '../JSON'
+import { services } from '../Data'
 
 const HomePage = ({
   projects
