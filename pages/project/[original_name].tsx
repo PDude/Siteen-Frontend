@@ -23,6 +23,7 @@ import Preloader from '../../components/common/Preloader'
 import { ProjectType } from '../../types'
 import { GetServerSideProps } from 'next'
 import { InferGetServerSidePropsType } from 'next'
+import Link from 'next/link'
 
 const ProjectPage = ({
   project,
@@ -216,6 +217,7 @@ class PreviousNextMethodsProjectsSection extends Component<SliderProps> {
                     term={p.term}
                     project_logo={p.project_logo}
                     project_photo={p.project_photo}
+                    original_name={p.original_name}
                     key={p.id}
                   />
                 ))}
@@ -233,6 +235,7 @@ type SLiderItemType = {
   project_subtitle: string
   term: string
   project_logo: string
+  original_name: string
   project_photo: string
 }
 
@@ -241,29 +244,32 @@ const ProjectsSliderItem = ({
   project_subtitle,
   term,
   project_logo,
-  project_photo
+  project_photo,
+  original_name
 }: SLiderItemType): JSX.Element => {
   return (
-    <a
-      href='#'
-      className={`${style.slider_item} slider_item_global`}
-      style={{ backgroundImage: `url(${project_photo})` }}
-    >
-      <img src={project_logo} alt='logo' />
-      <div className={`${style.slider_item_wrap} slider_item_wrap_global`}>
-        <div className={style.project_duration}>
-          <p>Creation Term: </p>
-          <span>{term}</span>
+    <Link href={`/project/${original_name}`}>
+      <a
+        href='#'
+        className={`${style.slider_item} slider_item_global`}
+        style={{ backgroundImage: `url(${project_photo})` }}
+      >
+        <img src={project_logo} alt='logo' />
+        <div className={`${style.slider_item_wrap} slider_item_wrap_global`}>
+          <div className={style.project_duration}>
+            <p>Creation Term: </p>
+            <span>{term}</span>
+          </div>
+          <div className={style.project_title}>
+            <h4>{project_name}</h4>
+            <p>{project_subtitle}</p>
+          </div>
+          <p className={style.project_link}>
+            View full project <GoTriangleRight />
+          </p>
         </div>
-        <div className={style.project_title}>
-          <h4>{project_name}</h4>
-          <p>{project_subtitle}</p>
-        </div>
-        <p className={style.project_link}>
-          View full project <GoTriangleRight />
-        </p>
-      </div>
-    </a>
+      </a>
+    </Link>
   )
 }
 

@@ -454,7 +454,8 @@ const ProjectCase = ({
   projectSubtitle,
   projectLogo
 }: ProjectCaseType) => (
-  <Link href={'/project/[originalName]'} as={`/project/${originalName}`}>
+  // <Link href={'/project/[originalName]'} as={`/project/${originalName}`}>
+  <Link href={`/project/${originalName}`}>
     <a
       style={{ backgroundImage: `url(${projectPhoto})` }}
       className={`${style.project_case} project_case_global`}
