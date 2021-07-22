@@ -13,10 +13,8 @@ import 'slick-carousel/slick/slick-theme.css'
 // Arows
 import arrowBack from '../../images/arrow_team_back.svg'
 import arrowNext from '../../images/arrow_team_next.svg'
-// Temp files for projects slider items
-// import hubyshLogo from '../../images/hubysh_logo.svg'
-// import hubyshPhoto from '../../images/hubysh_photo.jpg'
-
+// Packages
+import cn from 'classnames'
 // Icons
 import { GoTriangleRight } from 'react-icons/go'
 // Components
@@ -27,7 +25,8 @@ import { GetServerSideProps } from 'next'
 import { InferGetServerSidePropsType } from 'next'
 
 const ProjectPage = ({
-  project
+  project,
+  rec
 }: InferGetServerSidePropsType<GetServerSideProps>): JSX.Element => {
   const myRef = useRef<HTMLDivElement>(null)
 
@@ -85,21 +84,25 @@ const ProjectPage = ({
               ))}
             </ul>
           </div>
-          <div className={style.results}>
-            <h3>Results</h3>
-            <ul>
-              <li>
-                <a href={project.result_link[0]}>
-                  {new URL(project.result_link[0]).hostname}
-                </a>
-              </li>
-              <li>
-                <a href={project.result_link[1]}>{`@${new URL(
-                  project.result_link[1]
-                ).pathname.replace(/\//g, '')}`}</a>
-              </li>
-            </ul>
-          </div>
+          {project.result_link.length > 0 ? (
+            <div className={style.results}>
+              <h3>Results</h3>
+              <ul>
+                <li>
+                  <a href={project.result_link[0]}>
+                    {new URL(project.result_link[0]).hostname}
+                  </a>
+                </li>
+                {project.result_link.length > 1 ? (
+                  <li>
+                    <a href={project.result_link[1]}>{`@${new URL(
+                      project.result_link[1]
+                    ).pathname.replace(/\//g, '')}`}</a>
+                  </li>
+                ) : null}
+              </ul>
+            </div>
+          ) : null}
           <div className={style.project_reference}>
             <h1>{project.project_name}</h1>
             <div
@@ -111,7 +114,7 @@ const ProjectPage = ({
           </div>
         </div>
       </section>
-      {/* <PreviousNextMethodsProjectsSection /> */}
+      <PreviousNextMethodsProjectsSection rec={rec} />
       <section className={style.cta_section}>
         <div className='container'>
           <div className={style.cta_section_offer}>
@@ -129,16 +132,21 @@ const ProjectPage = ({
   )
 }
 
+type SliderProps = {
+  rec: Array<ProjectType>
+}
+
 /**
  * A projects slider class with custom arrows
  */
-class PreviousNextMethodsProjectsSection extends Component {
+class PreviousNextMethodsProjectsSection extends Component<SliderProps> {
   slider: any
-  constructor(props: {} | Readonly<{}>) {
+  constructor(props: SliderProps) {
     super(props)
     this.next = this.next.bind(this)
     this.previous = this.previous.bind(this)
   }
+
   previous() {
     this.slider.slickPrev()
   }
@@ -176,14 +184,18 @@ class PreviousNextMethodsProjectsSection extends Component {
       <section className={style.projects_section}>
         <div className='container'>
           <div className={style.projects_section_wrap}>
-            <span className='title_label'>Our Recomendations</span>
+            <span className='title_label'>Our Recommendations</span>
             <h1>Also check it out.</h1>
             <div className={style.projects_desk_and_arrows}>
               <p>
                 Our digital company develops projects and has been on the market
                 for 15 years.
               </p>
-              <div className={style.arrows}>
+              <div
+                className={cn(style.arrows, {
+                  [style.disabled]: this.props.rec.length <= 3
+                })}
+              >
                 <button
                   onClick={this.previous}
                   className={style.team_back_arrow}
@@ -197,11 +209,16 @@ class PreviousNextMethodsProjectsSection extends Component {
             </div>
             <div className={`${style.projects_slider} projects_slider_global`}>
               <ProjectsSlider ref={c => (this.slider = c)} {...sliderSettings}>
-                <ProjectsSliderItem />
-                <ProjectsSliderItem />
-                <ProjectsSliderItem />
-                <ProjectsSliderItem />
-                <ProjectsSliderItem />
+                {this.props.rec.map(p => (
+                  <ProjectsSliderItem
+                    project_name={p.project_name}
+                    project_subtitle={p.project_subtitle}
+                    term={p.term}
+                    project_logo={p.project_logo}
+                    project_photo={p.project_photo}
+                    key={p.id}
+                  />
+                ))}
               </ProjectsSlider>
             </div>
           </div>
@@ -211,22 +228,36 @@ class PreviousNextMethodsProjectsSection extends Component {
   }
 }
 
-const ProjectsSliderItem = (): JSX.Element => {
+type SLiderItemType = {
+  project_name: string
+  project_subtitle: string
+  term: string
+  project_logo: string
+  project_photo: string
+}
+
+const ProjectsSliderItem = ({
+  project_name,
+  project_subtitle,
+  term,
+  project_logo,
+  project_photo
+}: SLiderItemType): JSX.Element => {
   return (
     <a
       href='#'
       className={`${style.slider_item} slider_item_global`}
-      // style={{ backgroundImage: `url(${hubyshPhoto})` }}
+      style={{ backgroundImage: `url(${project_photo})` }}
     >
-      {/* <img src={hubyshLogo} alt="logo" /> */}
+      <img src={project_logo} alt='logo' />
       <div className={`${style.slider_item_wrap} slider_item_wrap_global`}>
         <div className={style.project_duration}>
           <p>Creation Term: </p>
-          <span>4 weeks</span>
+          <span>{term}</span>
         </div>
         <div className={style.project_title}>
-          <h4>Natali Hubysh</h4>
-          <p>Studio of art and design «Natalia Hubysh» in Lviv.</p>
+          <h4>{project_name}</h4>
+          <p>{project_subtitle}</p>
         </div>
         <p className={style.project_link}>
           View full project <GoTriangleRight />
@@ -236,27 +267,26 @@ const ProjectsSliderItem = (): JSX.Element => {
   )
 }
 
-type ProjectResponseDataType = {
-  response: ProjectType
-}
-
-type ProjectResponseType = {
-  message: string
-  status: number
-  code: number
-  data: ProjectResponseDataType
-}
-
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {
-  const res = await fetch(
-    `${process.env.NEXT_API_URL}project/${query.original_name}`
-  )
-  const data: ProjectResponseType = await res.json()
-  const project: ProjectType = data.data.response
+  const [projectRes, recRes] = await Promise.all([
+    fetch(`${process.env.NEXT_API_URL}project/${query.original_name}`),
+    fetch(
+      `${process.env.NEXT_API_URL}project/recommendation/${query.original_name}`
+    )
+  ])
+
+  const [projectData, recData] = await Promise.all([
+    projectRes.json(),
+    recRes.json()
+  ])
+
+  const project: ProjectType = projectData.data.response
+  const rec: Array<ProjectType> = recData.data
 
   return {
     props: {
-      project
+      project,
+      rec
     }
   }
 }

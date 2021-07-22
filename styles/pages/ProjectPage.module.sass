@@ -185,20 +185,21 @@
         align-items: center
         text-align: center
         h2
-            font-size: 55px
+            font-size: 45px
+            text-transform: capitalize
         p
             margin: 15px 0 45px
-            font-size: 22px
+            font-size: 20px
             max-width: 460px
 
 .for_small_device
     display: none
 
 .projects_section
-    padding: 115px 0 120px
+    padding: 50px 0
     h1
-        font-size: 50px
-        margin: 15px 0
+        font-size: 45px
+        margin: 15px 0 25px
         text-transform: capitalize
     .projects_desk_and_arrows
         display: flex
@@ -206,7 +207,7 @@
         align-items: center
         p
             letter-spacing: -0.01em
-            font-size: 22px
+            font-size: 20px
             max-width: 465px
         .arrows
             display: flex
@@ -232,7 +233,8 @@
     background-size: cover
     background-position: center
     background: #fff
-    height: 350px
+    height: 100%
+    min-height: 280px
     display: flex
     flex-direction: column
     transition: all 0.3s ease
@@ -282,24 +284,28 @@
     display: flex
     align-items: center
     flex-wrap: wrap
+    font-size: 16px
+    grid-gap: 8px
     & p
-        font-size: 15px
         font-weight: 700
-        margin-right: 7px
-    & span
-        font-size: 15px
     & span::first-letter
         font-size: 20px
 
 .project_title h4
     font-weight: 600
-    font-size: 25px
+    font-size: 20px
     margin-bottom: 1px
     text-transform: uppercase
-    margin-bottom: 10px
+    margin-bottom: 5px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
 
 .project_title p
-    font-weight: 600
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    opacity: 0.9
 
 .project_link
     color: #dd4242
@@ -358,15 +364,16 @@
             font-size: 40px !important
         p
             font-size: 20px !important
-            margin-top: 10px !important
 
     .projects_section h1
         font-size: 40px
+        margin: 10px 0 20px
 
     .projects_section
         padding: 40px 0
 
     .slider_item
+        min-height: 250px
         padding-left: 25px
         padding-right: 25px
 
@@ -400,16 +407,30 @@
             font-size: 35px !important
         p
             font-size: 18px !important
-            margin-bottom: 30px !important
+            margin: 10px 0 30px!important
 
     .projects_section h1
-        font-size: 30px
+        font-size: 35px
+        margin: 5px 0 10px
 
     .projects_desk_and_arrows p
-        font-size: 20px !important
+        font-size: 18px !important
 
     .projects_section
         padding: 30px 0
+
+    .slider_item
+        min-height: 220px
+        padding: 20px 25px 30px
+
+    .project_title h4
+        font-size: 16px
+
+@media only screen and (min-width: 768px)
+    .arrows.disabled
+        button
+            pointer-events: none !important
+            opacity: 0.3 !important
 
 @media only screen and (max-width: 768px)
     .project_data
@@ -452,14 +473,21 @@
     .projects_slider
         margin-top: 20px
 
-    .project_title h4
-        font-size: 18px
-
     .cta_section
         padding: 50px 0
 
     .project_data
         padding-bottom: 50px
+
+    .projects_section h1
+        font-size: 30px
+
+    .projects_desk_and_arrows p
+        font-size: 16px !important
+        max-width: 325px !important
+
+    .slider_item
+        padding: 20px
 
 @media only screen and (max-width: 576px)
     .for_small_device
@@ -490,15 +518,8 @@
             &::before, &::after
                 width: 40px !important
 
-    .project_data
-        border-bottom: 1px solid #FAAA4C
-
     .projects_section h1
-        font-size: 20px
-        margin: 5px 0 15px !important
-
-    .projects_desk_and_arrows p
-        font-size: 16px !important
+        font-size: 25px
 
     .arrows
         display: none !important

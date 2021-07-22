@@ -276,7 +276,7 @@
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  font-size: 15px;
+  font-size: 16px;
   grid-gap: 8px;
 }
 .project_duration p {
@@ -684,9 +684,6 @@
     padding: 20px 30px 30px;
   }
   .project_title h4 {
-    font-size: 16px;
-  }
-  .project_title p {
     font-size: 16px;
   }
   .project_duration {
