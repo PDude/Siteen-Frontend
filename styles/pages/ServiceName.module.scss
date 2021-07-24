@@ -1,0 +1,135 @@
+.service_item {
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 15px;
+  span {
+    font-weight: 300;
+    font-size: 30px;
+    background: -webkit-linear-gradient(
+      rgba(250, 76, 108, 1),
+      rgba(250, 169, 76, 1) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.05em;
+  }
+  h4 {
+    text-transform: uppercase;
+    font-size: 25px;
+    letter-spacing: 0.005em;
+    line-height: 96.5%;
+    font-weight: 500;
+  }
+  p {
+    font-size: 18px;
+    line-height: 120%;
+    letter-spacing: 0.005em;
+    color: #dbdbdb;
+  }
+}
+
+.servies_accordion {
+  display: none;
+}
+
+.services_items_wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 60px 15px;
+  justify-content: space-between;
+  justify-items: center;
+}
+
+@media only screen and (max-width: 1200px) {
+  .services_items_wrap {
+    grid-gap: 50px 15px;
+  }
+  .service_item {
+    grid-gap: 10px;
+    span {
+      font-size: 25px;
+    }
+    h4 {
+      font-size: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  .service_item {
+    grid-gap: 10px;
+    h4 {
+      font-size: 18px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .services_items_wrap {
+    grid-gap: 40px 15px;
+  }
+  .services_items_wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .service_item p {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .services_items_wrap {
+    display: none;
+  }
+  .servies_accordion {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 30px;
+    background-color: rgba(0, 0, 0, 0.3);
+    .panel {
+      line-height: 120%;
+      color: #e7e7e7;
+      font-weight: 300;
+      padding: 15px 0;
+      font-size: 16px;
+    }
+    .service_item_acc {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      grid-gap: 20px;
+      cursor: pointer;
+      padding: 15px 0;
+      border-bottom: 2px solid #9a9a9a;
+      transition: all 0.3s ease;
+      span {
+        background: -webkit-linear-gradient(
+          rgba(250, 76, 108, 1),
+          rgba(250, 169, 76, 1) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        letter-spacing: -0.05em;
+        font-weight: 300;
+        font-size: 25px;
+      }
+      h4 {
+        margin-right: auto;
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 1.2;
+      }
+      img {
+        max-width: 20px;
+        transition: all 0.3s ease;
+      }
+      &.opened {
+        border-color: rgba(231, 231, 231, 0.19);
+        img {
+          transform: rotateX(180deg);
+        }
+      }
+    }
+  }
+}

@@ -101,6 +101,7 @@ export const team: Array<TeamType> = [
 // services data
 export type ServiceInfoType = {
   title: string
+  services: Array<{ title: string; text: string }>
 }
 
 type ServiceDataType = {
@@ -109,15 +110,93 @@ type ServiceDataType = {
 
 export const servicesData: ServiceDataType = {
   web: <ServiceInfoType>{
-    title: 'Web-Development'
+    title: 'Web-Development',
+    services: [
+      {
+        title: 'frontend dev',
+        text: 'A web page containing information about a service or product whose task is to sell, sell and sell again'
+      },
+      {
+        title: 'backend dev',
+        text: 'We update old and create radically new modern sites that strengthen the position of companies, brands and products'
+      },
+      {
+        title: 'mobile app dev',
+        text: 'Responsive online stores, marketplaces with high loading speed, convenient admin panel, correct UX / UI'
+      },
+      {
+        title: 'domain and hosting',
+        text: 'A logo is the face of your business. A beautiful logo will help your company move in the right direction.'
+      },
+      {
+        title: 'turnkey website',
+        text: 'The collection of visual elements (from color to fonts) that create the face of the company make it individual.'
+      },
+      {
+        title: 'Support',
+        text: 'You can contact us with any question: banners, business cards, covers and posts for social networks ... We realize everything.'
+      }
+    ]
   },
   design: <ServiceInfoType>{
-    title: 'UX/UI Design & Branding Identity'
+    title: 'UX/UI Design & Branding Identity',
+    services: [
+      {
+        title: 'frontend dev',
+        text: 'A web page containing information about a service or product whose task is to sell, sell and sell again'
+      },
+      {
+        title: 'backend dev',
+        text: 'We update old and create radically new modern sites that strengthen the position of companies, brands and products'
+      },
+      {
+        title: 'mobile app dev',
+        text: 'Responsive online stores, marketplaces with high loading speed, convenient admin panel, correct UX / UI'
+      },
+      {
+        title: 'domain and hosting',
+        text: 'A logo is the face of your business. A beautiful logo will help your company move in the right direction.'
+      },
+      {
+        title: 'turnkey website',
+        text: 'The collection of visual elements (from color to fonts) that create the face of the company make it individual.'
+      },
+      {
+        title: 'Support',
+        text: 'You can contact us with any question: banners, business cards, covers and posts for social networks ... We realize everything.'
+      }
+    ]
   },
   marketing: <ServiceInfoType>{
-    title: 'Digital Marketing'
+    title: 'Digital Marketing',
+    services: [
+      {
+        title: 'frontend dev',
+        text: 'A web page containing information about a service or product whose task is to sell, sell and sell again'
+      },
+      {
+        title: 'backend dev',
+        text: 'We update old and create radically new modern sites that strengthen the position of companies, brands and products'
+      },
+      {
+        title: 'mobile app dev',
+        text: 'Responsive online stores, marketplaces with high loading speed, convenient admin panel, correct UX / UI'
+      },
+      {
+        title: 'domain and hosting',
+        text: 'A logo is the face of your business. A beautiful logo will help your company move in the right direction.'
+      },
+      {
+        title: 'turnkey website',
+        text: 'The collection of visual elements (from color to fonts) that create the face of the company make it individual.'
+      },
+      {
+        title: 'Support',
+        text: 'You can contact us with any question: banners, business cards, covers and posts for social networks ... We realize everything.'
+      }
+    ]
   },
-  animation: { title: 'Animation Production' }
+  animation: <ServiceInfoType>{ title: 'Animation Production' }
 }
 
 // faq
