@@ -1,0 +1,66 @@
+.title_wrap
+  display: flex !important
+  flex-direction: column !important
+  grid-gap: 15px !important
+  &.gap
+    margin-bottom: 40px !important
+  &.margin
+    margin-bottom: 25px !important
+
+.title
+  font-size: 45px !important
+  font-weight: 800 !important
+  line-height: 100% !important
+  letter-spacing: 0 !important
+  text-transform: capitalize !important
+.title_label
+  text-transform: uppercase !important
+  letter-spacing: -0.025em !important
+  display: flex !important
+  align-items: center !important
+  color: #fff !important
+  font-weight: 300 !important
+  font-size: 16px !important
+  &::before
+    content: '' !important
+    height: 1px !important
+    width: 50px !important
+    background: #fff !important
+    margin-right: 20px !important
+
+@media only screen and (max-width: 1200px)
+  .title_wrap
+    grid-gap: 10px !important
+    &.gap
+      margin-bottom: 35px !important
+    &.margin
+      margin-bottom: 20px !important
+  .title
+    font-size: 40px !important
+
+@media only screen and (max-width: 992px)
+  .title_wrap
+    grid-gap: 5px !important
+    &.gap
+      margin-bottom: 30px !important
+    &.margin
+      margin-bottom: 15px !important
+  .title
+    font-size: 35px !important
+
+@media only screen and (max-width: 768px)
+  .title_wrap
+    &.gap
+      margin-bottom: 25px !important
+    &.margin
+      margin-bottom: 10px !important
+  .title
+    font-size: 30px !important
+
+@media only screen and (max-width: 576px)
+  .title_wrap.gap
+    margin-bottom: 20px !important
+  .title
+    font-size: 25px !important
+  .title_label
+    font-size: 14px !important

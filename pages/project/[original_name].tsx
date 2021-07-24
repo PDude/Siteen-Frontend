@@ -24,6 +24,7 @@ import { ProjectType } from '../../types'
 import { GetServerSideProps } from 'next'
 import { InferGetServerSidePropsType } from 'next'
 import Link from 'next/link'
+import Title from '../../components/common/Title'
 
 const ProjectPage = ({
   project,
@@ -73,44 +74,46 @@ const ProjectPage = ({
       </header>
       <section ref={myRef} className={style.project_data}>
         <div className='container'>
-          <div className={style.about}>
-            <h3>About</h3>
-            <p>{project.about_project}</p>
-          </div>
-          <div className={style.tasks}>
-            <h3>Tasks</h3>
-            <ul>
-              {project.project_tasks?.map((t: Array<string>) => (
-                <li key={Math.random()}>· {t}</li>
-              ))}
-            </ul>
-          </div>
-          {project.result_link.length > 0 ? (
-            <div className={style.results}>
-              <h3>Results</h3>
+          <div className='v_cont'>
+            <div className={style.about}>
+              <h3>About</h3>
+              <p>{project.about_project}</p>
+            </div>
+            <div className={style.tasks}>
+              <h3>Tasks</h3>
               <ul>
-                <li>
-                  <a href={project.result_link[0]}>
-                    {new URL(project.result_link[0]).hostname}
-                  </a>
-                </li>
-                {project.result_link.length > 1 ? (
-                  <li>
-                    <a href={project.result_link[1]}>{`@${new URL(
-                      project.result_link[1]
-                    ).pathname.replace(/\//g, '')}`}</a>
-                  </li>
-                ) : null}
+                {project.project_tasks?.map((t: Array<string>) => (
+                  <li key={Math.random()}>· {t}</li>
+                ))}
               </ul>
             </div>
-          ) : null}
-          <div className={style.project_reference}>
-            <h1>{project.project_name}</h1>
-            <div
-              className={style.project_main_img_wrap}
-              style={{ backgroundImage: `url(${project.final_photo})` }}
-            >
-              <Button>View More On ...</Button>
+            {project.result_link.length > 0 ? (
+              <div className={style.results}>
+                <h3>Results</h3>
+                <ul>
+                  <li>
+                    <a href={project.result_link[0]}>
+                      {new URL(project.result_link[0]).hostname}
+                    </a>
+                  </li>
+                  {project.result_link.length > 1 ? (
+                    <li>
+                      <a href={project.result_link[1]}>{`@${new URL(
+                        project.result_link[1]
+                      ).pathname.replace(/\//g, '')}`}</a>
+                    </li>
+                  ) : null}
+                </ul>
+              </div>
+            ) : null}
+            <div className={style.project_reference}>
+              <h1>{project.project_name}</h1>
+              <div
+                className={style.project_main_img_wrap}
+                style={{ backgroundImage: `url(${project.final_photo})` }}
+              >
+                <Button>View More On ...</Button>
+              </div>
             </div>
           </div>
         </div>
@@ -118,13 +121,15 @@ const ProjectPage = ({
       <PreviousNextMethodsProjectsSection rec={rec} />
       <section className={style.cta_section}>
         <div className='container'>
-          <div className={style.cta_section_offer}>
-            <h2>Did you like the project?</h2>
-            <p>
-              Fill out the application and we will contact you to discuss
-              cooperation
-            </p>
-            <Button>Consultation</Button>
+          <div className='v_cont'>
+            <div className={style.cta_section_offer}>
+              <Title title='Did you like the project?' margin={true} />
+              <p>
+                Fill out the application and we will contact you to discuss
+                cooperation
+              </p>
+              <Button>Consultation</Button>
+            </div>
           </div>
         </div>
       </section>
@@ -184,44 +189,55 @@ class PreviousNextMethodsProjectsSection extends Component<SliderProps> {
     return (
       <section className={style.projects_section}>
         <div className='container'>
-          <div className={style.projects_section_wrap}>
-            <span className='title_label'>Our Recommendations</span>
-            <h1>Also check it out.</h1>
-            <div className={style.projects_desk_and_arrows}>
-              <p>
-                Our digital company develops projects and has been on the market
-                for 15 years.
-              </p>
-              <div
-                className={cn(style.arrows, {
-                  [style.disabled]: this.props.rec.length <= 3
-                })}
-              >
-                <button
-                  onClick={this.previous}
-                  className={style.team_back_arrow}
+          <div className='v_cont'>
+            <div className={style.projects_section_wrap}>
+              <Title
+                className={style.rec_heading}
+                label='Our Recommendations'
+                title='Also check it out.'
+                margin={true}
+              />
+              <div className={style.projects_desk_and_arrows}>
+                <p>
+                  Our digital company develops projects and has been on the
+                  market for 15 years.
+                </p>
+                <div
+                  className={cn(style.arrows, {
+                    [style.disabled]: this.props.rec.length <= 3
+                  })}
                 >
-                  Back <img src={arrowBack} alt='<-' />
-                </button>
-                <button onClick={this.next} className={style.team_next_arrow}>
-                  Next <img src={arrowNext} alt='->' />
-                </button>
+                  <button
+                    onClick={this.previous}
+                    className={style.team_back_arrow}
+                  >
+                    Back <img src={arrowBack} alt='<-' />
+                  </button>
+                  <button onClick={this.next} className={style.team_next_arrow}>
+                    Next <img src={arrowNext} alt='->' />
+                  </button>
+                </div>
               </div>
-            </div>
-            <div className={`${style.projects_slider} projects_slider_global`}>
-              <ProjectsSlider ref={c => (this.slider = c)} {...sliderSettings}>
-                {this.props.rec.map(p => (
-                  <ProjectsSliderItem
-                    project_name={p.project_name}
-                    project_subtitle={p.project_subtitle}
-                    term={p.term}
-                    project_logo={p.project_logo}
-                    project_photo={p.project_photo}
-                    original_name={p.original_name}
-                    key={p.id}
-                  />
-                ))}
-              </ProjectsSlider>
+              <div
+                className={`${style.projects_slider} projects_slider_global`}
+              >
+                <ProjectsSlider
+                  ref={c => (this.slider = c)}
+                  {...sliderSettings}
+                >
+                  {this.props.rec.map(p => (
+                    <ProjectsSliderItem
+                      project_name={p.project_name}
+                      project_subtitle={p.project_subtitle}
+                      term={p.term}
+                      project_logo={p.project_logo}
+                      project_photo={p.project_photo}
+                      original_name={p.original_name}
+                      key={p.id}
+                    />
+                  ))}
+                </ProjectsSlider>
+              </div>
             </div>
           </div>
         </div>

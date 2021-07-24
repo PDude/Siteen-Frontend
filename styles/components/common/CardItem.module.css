@@ -1,0 +1,62 @@
+.service_element {
+  padding: 30px 15px 40px;
+  background: linear-gradient(rgb(30 33 42 / 100%), rgb(1 1 1 / 100%));
+  border-radius: 20px;
+  z-index: 20;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease;
+  height: 100%;
+  width: 100%;
+}
+.service_element:hover .icon_wrap {
+  background: #fff;
+}
+.our_cases_outer {
+  position: relative;
+  background: #000 url('../../../images/cases_bg.svg') no-repeat center top /
+    cover;
+}
+.service_element h3 {
+  font-weight: 500;
+  font-size: 20px;
+  margin: 20px 0 18px;
+  text-align: center;
+  line-height: 110%;
+}
+.service_element ul {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+  opacity: 0.85;
+}
+.service_element ul li {
+  line-height: 1.2;
+  margin: 0 auto;
+}
+.icon_wrap {
+  width: 85px;
+  height: 85px;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+.icon_wrap img {
+  width: 40px;
+}
+
+@media only screen and (max-width: 576px) {
+  .service_element h3 {
+    font-size: 18px;
+  }
+}

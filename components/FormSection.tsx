@@ -8,6 +8,7 @@ import Button from './formElements/Button'
 import InputField from './formElements/inputField'
 import FormModal from './modals/FormModal'
 import * as Yup from 'yup'
+import Title from './common/Title'
 
 type FormValues = {
   name: string
@@ -76,8 +77,12 @@ const FormSection = (): JSX.Element => {
       >
         {({ handleSubmit }) => (
           <form onSubmit={handleSubmit} className={style.form}>
-            <span className='title_label'>LET’S GET STARTED</span>
-            <h2 className={style.h2}>Get A Free Consultation.</h2>
+            <Title
+              className={style.heading}
+              label='LET’S GET STARTED'
+              margin={true}
+              title='Get A Free Consultation.'
+            />
             <p>
               The best ideas start from the brif. Let us to know what you need
               and we will realise it in sucsessfull product.

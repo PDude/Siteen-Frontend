@@ -38,16 +38,13 @@ import arrowBack from '../images/arrow_team_back.svg'
 import arrowNext from '../images/arrow_team_next.svg'
 // Components
 import FormSection from '../components/FormSection'
+import ContactsSection from '../components/ContactsSection'
 import Footer from '../components/Footer'
-// Social links
-import instaIcon from '../images/insta_icon.svg'
-import fbIcon from '../images/fb_icon.svg'
-import linkedIcon from '../images/linked_icon.svg'
-import tIcon from '../images/t_icon.svg'
-import youTubeIcon from '../images/youtube_icon.svg'
+// Data
 import { team } from '../Data'
 // Packages
 import cn from 'classnames'
+import Title from '../components/common/Title'
 
 const About = () => (
   <>
@@ -56,7 +53,7 @@ const About = () => (
         <div className='container'>
           <div className={style.about_offer}>
             <div className={style.about_offer_text}>
-              <span className='title_label'>About us</span>
+              <Title label='About us' />
               <h1>We are professionals in our field.</h1>
               <p>
                 Our digital company develops projects and has been on the market
@@ -82,105 +79,110 @@ const About = () => (
     </div>
     <section className={style.technologies_section}>
       <div className='container'>
-        <div className={style.frontend_and_description}>
-          <div className={style.frontend}>
-            <h3>FrontEnd</h3>
-            <div className={style.frontend_icons}>
-              <a href='/'>
-                <img src={jsIcon} alt='jsIcon' />
-              </a>
-              <a href='/'>
-                <img src={reactIcon} alt='reactIcon' />
-              </a>
-              <a href='/'>
-                <img src={reduxIcon} alt='reduxIcon' />
-              </a>
-              <a href='/' className={style.next_icon}>
-                <img src={nextIcon} alt='nextIcon' />
-              </a>
-              <a href='/'>
-                <img src={vueIcon} alt='vueIcon' />
-              </a>
-              <a href='/'>
-                <img src={angularIcon} alt='angularIcon' />
-              </a>
-              <a href='/'>
-                <img src={tsIcon} alt='tsIcon' />
-              </a>
-              <a href='/'>
-                <img src={webpackIcon} alt='webpackIcon' />
-              </a>
-              <a href='/'>
-                <img src={htmlIcon} alt='htmlIcon' />
-              </a>
-              <a href='/' className={style.cssIcon}>
-                <img src={cssIcon} alt='cssIcon' />
-              </a>
-              <a href='/'>
-                <img src={sassIcon} alt='sassIcon' />
-              </a>
+        <div className='v_cont'>
+          <div className={style.frontend_and_description}>
+            <div className={style.frontend}>
+              <h3>FrontEnd</h3>
+              <div className={style.frontend_icons}>
+                <span>
+                  <img src={jsIcon} alt='jsIcon' />
+                </span>
+                <span>
+                  <img src={reactIcon} alt='reactIcon' />
+                </span>
+                <span>
+                  <img src={reduxIcon} alt='reduxIcon' />
+                </span>
+                <span className={style.next_icon}>
+                  <img src={nextIcon} alt='nextIcon' />
+                </span>
+                <span>
+                  <img src={vueIcon} alt='vueIcon' />
+                </span>
+                <span>
+                  <img src={angularIcon} alt='angularIcon' />
+                </span>
+                <span>
+                  <img src={tsIcon} alt='tsIcon' />
+                </span>
+                <span>
+                  <img src={webpackIcon} alt='webpackIcon' />
+                </span>
+                <span>
+                  <img src={htmlIcon} alt='htmlIcon' />
+                </span>
+                <span className={style.cssIcon}>
+                  <img src={cssIcon} alt='cssIcon' />
+                </span>
+                <span>
+                  <img src={sassIcon} alt='sassIcon' />
+                </span>
+              </div>
+            </div>
+            <div className={style.description_tech}>
+              <Title
+                label='Expirience'
+                title='The technologies we use.'
+                margin={true}
+              />
+              <p>
+                Our digital company develops projects and has been on the market
+                for 15 years.
+              </p>
             </div>
           </div>
-          <div className={style.description_tech}>
-            <span className='title_label'>Expirience</span>
-            <h1>The technologies we use.</h1>
-            <p>
-              Our digital company develops projects and has been on the market
-              for 15 years.
-            </p>
-          </div>
-        </div>
-        <div className={style.backend_and_art}>
-          <div className={style.backend}>
-            <h3>BackEnd</h3>
-            <div className={style.backend_icons}>
-              <a href='/'>
-                <img src={nodeJs} alt='nodeJs' />
-              </a>
-              <a href='/' className={style.expressIcon}>
-                <img src={expressIcon} alt='expressIcon' />
-              </a>
-              <a href='/'>
-                <img src={mySqlIcon} alt='mySqlIcon' />
-              </a>
-              <a href='/'>
-                <img src={nestIcon} alt='nestIcon' />
-              </a>
-              <a href='/'>
-                <img src={nginxIcon} alt='nginxIcon' />
-              </a>
-              <a href='/'>
-                <img src={postgresqlIcon} alt='postgresqlIcon' />
-              </a>
-              <a href='/'>
-                <img src={sequelizeIcon} alt='sequelize' />
-              </a>
+          <div className={style.backend_and_art}>
+            <div className={style.backend}>
+              <h3>BackEnd</h3>
+              <div className={style.backend_icons}>
+                <span>
+                  <img src={nodeJs} alt='nodeJs' />
+                </span>
+                <span className={style.expressIcon}>
+                  <img src={expressIcon} alt='expressIcon' />
+                </span>
+                <span>
+                  <img src={mySqlIcon} alt='mySqlIcon' />
+                </span>
+                <span>
+                  <img src={nestIcon} alt='nestIcon' />
+                </span>
+                <span>
+                  <img src={nginxIcon} alt='nginxIcon' />
+                </span>
+                <span>
+                  <img src={postgresqlIcon} alt='postgresqlIcon' />
+                </span>
+                <span>
+                  <img src={sequelizeIcon} alt='sequelize' />
+                </span>
+              </div>
             </div>
-          </div>
-          <div className={style.art}>
-            <h3>Art & Design</h3>
-            <div className={style.art_icons}>
-              <a href='/' className={style.figmaIcon}>
-                <img src={figmaIcon} alt='figmaIcon' />
-              </a>
-              <a href='/'>
-                <img src={aeIcon} alt='aeIcon' />
-              </a>
-              <a href='/'>
-                <img src={blenderIcon} alt='blenderIcon' />
-              </a>
-              <a href='/'>
-                <img src={cinema4d} alt='cinema4d' />
-              </a>
-              <a href='/'>
-                <img src={davinci} alt='davinci' />
-              </a>
-              <a href='/'>
-                <img src={photoshop} alt='photoshop' />
-              </a>
-              <a href='/'>
-                <img src={xd} alt='xd' />
-              </a>
+            <div className={style.art}>
+              <h3>Art & Design</h3>
+              <div className={style.art_icons}>
+                <span className={style.figmaIcon}>
+                  <img src={figmaIcon} alt='figmaIcon' />
+                </span>
+                <span>
+                  <img src={aeIcon} alt='aeIcon' />
+                </span>
+                <span>
+                  <img src={blenderIcon} alt='blenderIcon' />
+                </span>
+                <span>
+                  <img src={cinema4d} alt='cinema4d' />
+                </span>
+                <span>
+                  <img src={davinci} alt='davinci' />
+                </span>
+                <span>
+                  <img src={photoshop} alt='photoshop' />
+                </span>
+                <span>
+                  <img src={xd} alt='xd' />
+                </span>
+              </div>
             </div>
           </div>
         </div>
@@ -198,74 +200,7 @@ const About = () => (
     </section>
     <section className={style.contact_section}>
       <div className='container'>
-        <div className={style.contact_section_wrap}>
-          <div className={style.contact_block}>
-            <span className='title_label'>Contact Us</span>
-            <h2>Or contact us in a way convenient for you.</h2>
-            <div className={style.credentials_block}>
-              <div className={style.adress}>
-                <p>Address :</p>
-                <a href='#'>230, Kulparkivska str. Lviv, Ukraine, 79031</a>
-              </div>
-              <div className={style.phone}>
-                <p>Phone :</p>
-                <a href='tel:0971630202'>+38 (097) 163 0202</a>
-              </div>
-              <div className={style.email}>
-                <p>Email :</p>
-                <div className={style.links}>
-                  <a href='mailto:siteen.co@gmail.com'>siteen.co@gmail.com</a>
-                  <a href='mailto:siteencareer@gmail.com'>
-                    siteencareer@gmail.com
-                  </a>
-                </div>
-              </div>
-            </div>
-            <ul className={style.footer_links_elements}>
-              <li>
-                <a
-                  href='https://www.instagram.com/siteen.co/'
-                  rel='noreferrer'
-                  target='_blank'
-                >
-                  <img src={instaIcon} alt='instaIcon' />
-                </a>
-              </li>
-              <li>
-                <a
-                  href='https://www.facebook.com/siteen.co'
-                  rel='noreferrer'
-                  target='_blank'
-                >
-                  <img src={fbIcon} alt='fbIcon' />
-                </a>
-              </li>
-              <li>
-                <a
-                  href='https://www.linkedin.com/company/siteen/'
-                  rel='noreferrer'
-                  target='_blank'
-                >
-                  <img src={linkedIcon} alt='linkedIcon' />
-                </a>
-              </li>
-              <li>
-                <a href='https://t.me/siteen/' rel='noreferrer' target='_blank'>
-                  <img src={tIcon} alt='tIcon' />
-                </a>
-              </li>
-              <li>
-                <a
-                  href='https://www.youtube.com/channel/UCATwpqig9rIT7u1dm4f7blQ'
-                  rel='noreferrer'
-                  target='_blank'
-                >
-                  <img src={youTubeIcon} alt='youTubeIcon' />
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+        <ContactsSection />
       </div>
     </section>
     <div className={style.footer_wrap}>
@@ -326,41 +261,46 @@ class PreviousNextMethodsTeamSection extends Component {
     return (
       <section className={style.team_section}>
         <div className='container'>
-          <div className={style.team_section_wrap}>
-            <span className='title_label'>Our Exress</span>
-            <h1>Team - the main thing.</h1>
-            <div className={style.team_desk_and_arrows}>
-              <p>
-                Our digital company develops projects and has been on the market
-                for 15 years.
-              </p>
-              <div
-                className={cn(style.arrows, {
-                  [style.disabled]: team.length <= 4
-                })}
-              >
-                <button
-                  onClick={this.previous}
-                  className={style.team_back_arrow}
+          <div className='v_cont'>
+            <div className={style.team_section_wrap}>
+              <Title
+                label='Our express'
+                title='Team - the main thing.'
+                margin={true}
+              />
+              <div className={style.team_desk_and_arrows}>
+                <p>
+                  Our digital company develops projects and has been on the
+                  market for 15 years.
+                </p>
+                <div
+                  className={cn(style.arrows, {
+                    [style.disabled]: team.length <= 4
+                  })}
                 >
-                  Back <img src={arrowBack} alt='<-' />
-                </button>
-                <button onClick={this.next} className={style.team_next_arrow}>
-                  Next <img src={arrowNext} alt='->' />
-                </button>
+                  <button
+                    onClick={this.previous}
+                    className={style.team_back_arrow}
+                  >
+                    Back <img src={arrowBack} alt='<-' />
+                  </button>
+                  <button onClick={this.next} className={style.team_next_arrow}>
+                    Next <img src={arrowNext} alt='->' />
+                  </button>
+                </div>
               </div>
-            </div>
-            <div className={`${style.team_slider} team_slider_global`}>
-              <TeamSlider ref={c => (this.slider = c)} {...sliderSettings}>
-                {team.map((t: TeamSliderItemProps) => (
-                  <TeamSliderItem
-                    key={t.name}
-                    name={t.name}
-                    position={t.position}
-                    imgPath={t.imgPath}
-                  />
-                ))}
-              </TeamSlider>
+              <div className={`${style.team_slider} team_slider_global`}>
+                <TeamSlider ref={c => (this.slider = c)} {...sliderSettings}>
+                  {team.map((t: TeamSliderItemProps) => (
+                    <TeamSliderItem
+                      key={t.name}
+                      name={t.name}
+                      position={t.position}
+                      imgPath={t.imgPath}
+                    />
+                  ))}
+                </TeamSlider>
+              </div>
             </div>
           </div>
         </div>

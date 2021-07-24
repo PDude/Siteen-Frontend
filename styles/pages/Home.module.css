@@ -7,7 +7,7 @@
 }
 .main_header:after,
 .our_services::after,
-.our_cases::after,
+.our_cases_outer::after,
 .form_section::after,
 .we_are_pro::after {
   position: absolute;
@@ -25,10 +25,13 @@
 .our_services::after {
   content: '02.';
 }
-.our_cases::after {
+.our_cases_outer::after {
   content: '03.';
   top: 75px;
   bottom: initial;
+}
+.our_cases_outer {
+  position: relative;
 }
 .form_section::after {
   content: '04.';
@@ -63,7 +66,6 @@
   margin-top: 65px;
 }
 .our_services {
-  padding: 80px 0 160px;
   position: relative;
 }
 .our_services::before {
@@ -77,271 +79,10 @@
   z-index: -1;
   height: 100vh;
 }
-.our_services .h2 {
-  font-size: 45px;
-  margin-top: 15px;
-}
-.services_items_wrap {
-  margin-top: 50px;
-}
 .services_items {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 15px;
-}
-.service_element {
-  padding: 30px 20px 40px;
-  background: linear-gradient(rgb(30 33 42 / 100%), rgb(1 1 1 / 100%));
-  border-radius: 20px;
-  z-index: 20;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  transition: all 0.3s ease;
-  height: 100%;
-}
-.service_element:hover .icon_wrap {
-  background: #fff;
-}
-.our_services,
-.our_cases {
-  padding: 50px 0 100px !important;
-}
-.service_element h3 {
-  font-weight: 800;
-  font-size: 20px;
-  margin: 20px 0;
-  max-width: 165px;
-  text-align: center;
-  line-height: 110%;
-}
-.service_element ul {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  grid-gap: 15px;
-}
-.icon_wrap {
-  width: 85px;
-  height: 85px;
-  background: #000;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid transparent;
-  border-radius: 50px;
-  transition: all 0.3s ease;
-}
-.icon_wrap img {
-  width: 40px;
-}
-.our_cases {
-  padding: 80px 0 160px;
-  background: #000 url('../../images/cases_bg.svg') no-repeat center top / cover;
-  position: relative;
-  /* overflow: hidden; */
-}
-.our_cases::before {
-  content: url('../../images/cases_item_bg.svg');
-  position: absolute;
-  transform-origin: bottom right;
-  right: 0;
-  bottom: -60px;
-  z-index: 10;
-}
-.our_cases * {
-  position: relative;
-  z-index: 25;
-}
-.our_cases_wrap .h2 {
-  font-size: 45px;
-  margin-top: 15px;
-}
-.cases_tags {
-  margin: 50px 0;
-  display: flex;
-  grid-gap: 10px 30px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-.cases_tags button {
-  cursor: pointer;
-  color: #e7e7e7;
-  text-transform: uppercase;
-  font-size: 16px;
-  transition: all 0.3s ease;
-  position: relative;
-  padding-bottom: 5px;
-}
-.cases_tags button:hover {
-  color: #fff;
-}
-.cases_tags button.checked {
-  color: #dd4242;
-}
-.cases_tags button.inaccessible {
-  pointer-events: none;
-  opacity: 0.3;
-}
-.cases_tags button:hover::after {
-  background: #fff;
-}
-.cases_tags button.checked::after {
-  background: #dd4242;
-}
-.cases_tags button::after {
-  height: 1px;
-  content: '';
-  position: absolute;
-  width: 100%;
-  background: transparent;
-  transition: all 0.3s ease;
-  bottom: 0;
-  left: 0;
-}
-.our_cases_items {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 10px;
-}
-.project_case {
-  background-color: #000;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  border-radius: 20px;
-  z-index: 5;
-  height: 280px;
-  overflow: hidden;
-  position: relative;
-  padding: 30px 50px 50px;
-  display: flex;
-  flex-direction: column;
-  transition: all 0.3s ease;
-  justify-content: space-between;
-}
-.project_case img {
-  width: 110px;
-  z-index: 5;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.project_case::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  transition: all 0.3s ease;
-  opacity: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),
-    linear-gradient(
-      71.35deg,
-      rgba(250, 68, 110, 0.8) 40.22%,
-      rgba(250, 190, 68, 0.8) 100%
-    );
-}
-.project_case:hover::before {
-  opacity: 0.8;
-}
-.project_case * {
-  position: relative;
-  z-index: 15;
-}
-.project_case_wrap {
-  height: 100%;
-  opacity: 0;
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  transform: scale(1.03);
-}
-.project_case:hover .project_case_wrap {
-  opacity: 1;
-  transform: initial;
-}
-.project_title {
-  margin: 30px 0px;
-}
-.project_duration {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  font-size: 16px;
-  grid-gap: 8px;
-}
-.project_duration p {
-  font-weight: 700;
-}
-.project_duration span::first-letter {
-  font-size: 20px;
-}
-.project_title h4 {
-  font-weight: 600;
-  font-size: 20px;
-  margin-bottom: 1px;
-  text-transform: uppercase;
-  margin-bottom: 5px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.project_title p {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  opacity: 0.9;
-}
-.project_link,
-.about_us_link {
-  color: #dd4242;
-  font-size: 16px;
-  display: flex;
-  position: relative;
-  align-items: center;
-  padding-bottom: 7px;
-}
-.project_link::after,
-.project_link::before,
-.about_us_link::after,
-.about_us_link::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-}
-.project_link::after,
-.about_us_link::after {
-  background: #dadada80;
-  z-index: 11;
-  height: 1px;
-  width: 100%;
-}
-.project_link::before,
-.about_us_link::before {
-  background: #dd4242;
-  z-index: 12;
-  width: 80px;
-  height: 2px;
-  transition: all 1s ease;
-}
-.project_case:hover .project_link::before,
-.about_us_link:hover::before {
-  width: 100%;
-}
-.project_link svg,
-.about_us_link svg {
-  margin-left: 5px;
-  transform: scaleY(0.65);
 }
 .form_section {
   background: #000;
@@ -352,6 +93,9 @@
 .we_are_pro_wrap {
   display: grid;
   grid-template-columns: 5fr 7fr;
+}
+.we_are_pro_wrap {
+  align-items: start;
 }
 .form_section_wrap {
   align-items: center;
@@ -367,23 +111,14 @@
   z-index: 35;
   position: relative;
 }
-.form_section .h2 {
-  font-size: 45px;
-  max-width: 370px;
-  margin: 15px 0 18px;
-  max-width: 370px;
-  width: 100%;
-  text-align: left;
-}
 .we_are_pro {
   position: relative;
-  background: #000 url('../../images/our_workflow.webp') no-repeat
-    calc(50% + 300px);
+  background: #000 url('../../images/our_workflow.webp') repeat -130% top / 40%;
 }
 .we_are_pro_content {
   background: #12151f;
   border-radius: 0 0 40px 0;
-  padding: 120px 30px 120px 0;
+  padding: 80px 30px 80px 0;
   position: relative;
 }
 .we_are_pro_content::after {
@@ -397,29 +132,21 @@
   width: 50vw;
   top: 0;
 }
-.we_are_pro_content .h2 {
-  font-size: 45px;
-  margin: 15px 0 25px;
-}
-.we_are_pro_content span {
+.we_are_pro_content .span {
   font-size: 20px;
   letter-spacing: -0.01em;
   color: #fff;
 }
 .we_are_pro_content p {
-  font-size: 15px;
+  font-size: 16px;
   letter-spacing: -0.01em;
   opacity: 0.85;
   color: #e4e4e4;
   margin-top: 30px;
-}
-.about_us_link {
-  letter-spacing: -0.025em;
-  font-size: 16px;
-  margin-top: 37px;
+  margin-bottom: 35px;
 }
 .workflow {
-  padding: 120px 0 120px 60px;
+  padding: 80px 0 80px 60px;
 }
 .workflow .h2 {
   font-weight: 800;
@@ -477,7 +204,7 @@
   position: relative;
 }
 .workflow_text p {
-  font-size: 15px;
+  font-size: 16px;
   position: absolute;
   margin-top: 10px;
   left: 0;
@@ -502,12 +229,10 @@
 .workflow_text h3.opened {
   color: #be76d7;
 }
-.cases_slider_wrap,
 .services_slider_wrap {
   display: none;
 }
-.contacts_block_wrap {
-  padding: 100px 0;
+.contacts_section {
   background: url('../../images/footer_bg.webp') no-repeat center / cover;
 }
 .contacts_block {
@@ -582,9 +307,6 @@
 }
 
 @media only screen and (max-width: 1200px) {
-  .our_cases::before {
-    transform: scale(0.9);
-  }
   .main_offer > h1 {
     font-size: 45px;
     margin-top: 10px;
@@ -593,34 +315,23 @@
     margin-left: 20px;
     margin-top: 50px;
   }
-  .h2 {
-    font-size: 40px !important;
-    margin-top: 10px !important;
-  }
   .main_offer > p {
     margin-top: 20px;
     font-size: 18px;
   }
   .main_header:after,
   .our_services::after,
-  .our_cases::after,
+  .our_cases_outer::after,
   .form_section::after,
   .we_are_pro::after {
     font-size: 50px;
     bottom: 50px;
   }
-  .our_cases::after {
+  .our_cases_outer::after {
     top: 50px;
   }
   .services_items {
     grid-template-columns: repeat(2, 1fr);
-  }
-  .cases_tags {
-    margin: 40px 0;
-    grid-gap: 10px 20px;
-  }
-  .project_case {
-    height: 250px;
   }
   .workflow_items {
     margin-left: 0;
@@ -628,35 +339,23 @@
   .we_are_pro::after {
     top: initial;
   }
-  .project_case {
-    z-index: 50;
-  }
-  .our_cases_items {
-    grid-template-rows: auto;
-  }
   .we_are_pro_content {
-    padding: 100px 30px 100px 0;
+    padding: 70px 30px 70px 0;
   }
-  .we_are_pro_content h2 {
-    margin: 10px 0 20px !important;
-  }
-  .we_are_pro_content span {
+  .we_are_pro_content .span {
     font-size: 18px !important;
   }
   .we_are_pro_content p {
     margin-top: 20px;
   }
   .workflow {
-    padding: 100px 0 100px 60px;
+    padding: 70px 0 70px 60px;
   }
   .contacts_block_credentials {
     margin: 10px 0 30px;
   }
 }
 @media only screen and (max-width: 992px) {
-  .our_cases::before {
-    transform: scale(0.8);
-  }
   .main_offer > h1 {
     font-size: 40px;
     margin-top: 5px;
@@ -674,20 +373,10 @@
   }
   .main_header:after,
   .our_services::after,
-  .our_cases::after,
+  .our_cases_outer::after,
   .form_section::after,
   .we_are_pro::after {
     font-size: 40px;
-  }
-  .project_case {
-    height: 220px;
-    padding: 20px 30px 30px;
-  }
-  .project_title h4 {
-    font-size: 16px;
-  }
-  .project_duration {
-    font-size: 16px;
   }
   .form_section_wrap {
     grid-template-columns: 1fr;
@@ -700,27 +389,20 @@
   .globe_wrap img {
     max-width: 400px;
   }
-  .h2 {
-    font-size: 35px !important;
-    margin-top: 5px !important;
-  }
-  .we_are_pro_wrap {
+  /* .we_are_pro_wrap {
     align-items: start;
-  }
+  } */
   .we_are_pro_content {
     border-radius: 30px;
-    padding: 50px 15px 80px 15px;
+    padding: 60px 15px 60px 15px;
     background: #191c26;
   }
   .we_are_pro_content::after {
     display: none;
   }
-  .we_are_pro_content h2 {
-    margin: 5px 0 10px !important;
-  }
   .workflow {
     padding-left: 40px;
-    padding: 50px 0 50px 30px;
+    padding: 60px 0 60px 30px;
   }
   .we_are_pro_wrap {
     grid-template-columns: 1fr 1fr;
@@ -756,14 +438,8 @@
     color: #777879;
     font-size: 20px;
   }
-  .contacts_block_wrap {
-    padding: 80px 0;
-  }
 }
 @media only screen and (max-width: 768px) {
-  .our_cases::before {
-    transform: scale(0.7);
-  }
   .main_offer {
     max-width: 360px;
   }
@@ -773,23 +449,17 @@
   .main_offer > p {
     font-size: 16px;
   }
-  .h2 {
-    font-size: 30px !important;
-  }
-  .project_case {
-    padding: 20px;
-    height: 190px;
-  }
   .we_are_pro_wrap {
     grid-template-columns: 1fr;
   }
   .workflow {
+    padding-top: 50px;
     padding-bottom: 80px;
   }
   .we_are_pro_content {
-    padding: 50px 15px 80px;
+    padding: 50px 15px 50px;
   }
-  .we_are_pro_content span {
+  .we_are_pro_content .span {
     font-size: 16px !important;
   }
   .we_are_pro_content_inner {
@@ -799,15 +469,10 @@
   .we_are_pro {
     background-repeat: repeat;
     background-position: center;
-  }
-  .contacts_block_wrap {
-    padding: 50px 0;
+    background-size: 100%;
   }
 }
 @media only screen and (max-width: 576px) {
-  .our_cases::before {
-    transform: scale(0.6);
-  }
   .main_offer > h1 {
     font-size: 30px;
   }
@@ -818,7 +483,7 @@
     margin-top: 20px;
   }
   .main_header:after,
-  .our_cases::after,
+  .our_cases_outer::after,
   .form_section::after {
     right: 30px;
     font-size: 30px;
@@ -831,52 +496,27 @@
     top: 30px;
     font-size: 30px;
   }
-  .our_services,
-  .our_cases {
-    padding: 50px 0 !important;
-  }
-  .services_items_wrap {
-    margin-top: 30px;
-  }
   .main_offer > span::before {
     width: 25px;
-  }
-  .h2 {
-    font-size: 25px !important;
   }
   .services_items {
     grid-template-columns: 1fr;
   }
-  .service_element h3 {
-    font-size: 17px;
-  }
-  .cases_tags button {
-    font-size: 14px;
-  }
-  .project_case {
-    height: 300px;
-  }
   .we_are_pro_content {
-    padding-bottom: 60px;
-    padding-top: 60px;
+    padding-bottom: 40px;
+    padding-top: 40px;
     border-radius: 20px;
   }
-  .we_are_pro_content span {
+  .we_are_pro_content .span {
     font-size: 16px !important;
   }
   .we_are_pro_content p {
     font-size: 16px;
     margin-top: 15px;
-  }
-  .about_us_link {
-    margin-top: 25px;
+    margin-bottom: 25px;
   }
   .workflow {
-    padding: 50px 0 90px;
-  }
-  .workflow_text p {
-    font-size: 16px;
-    background: #00000080;
+    padding: 40px 0 80px;
   }
   .workflow_items {
     grid-gap: 100px;
@@ -885,13 +525,11 @@
     height: 40px;
     bottom: -90px;
   }
-  .cases_slider_wrap,
   .services_slider_wrap {
     display: block;
     position: relative;
     z-index: 40;
   }
-  .our_cases_items,
   .services_items {
     display: none;
   }

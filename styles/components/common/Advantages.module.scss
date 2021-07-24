@@ -1,0 +1,29 @@
+.advantages_items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 15px;
+}
+.slider_wrap {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+}
+
+@media only screen and (max-width: 992px) {
+  .advantages_items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (max-width: 768px) {
+}
+
+@media only screen and (max-width: 576px) {
+  .advantages_items {
+    display: none;
+  }
+  .slider_wrap {
+    display: block;
+  }
+}

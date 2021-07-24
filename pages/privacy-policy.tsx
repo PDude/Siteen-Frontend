@@ -1,4 +1,5 @@
 import React from 'react'
+import Title from '../components/common/Title'
 import Footer from '../components/Footer'
 import style from '../styles/pages/PrivacyPolicy.module.sass'
 
@@ -6,7 +7,7 @@ const PrivacyPolicy = () => (
   <section className={style.privacy_policy}>
     <div className='container'>
       <div className={style.privacy_policy_inner}>
-        <h1>Privacy Policy</h1>
+        <Title label='Privacy law' title='Privacy Policy' gap={true} />
         <span>Діє з 01.07.2020 року</span>
         <div className={style.all_text}>
           <p>

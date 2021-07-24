@@ -1,0 +1,39 @@
+.link {
+  color: #dd4242;
+  cursor: pointer;
+  display: flex;
+  position: relative;
+  align-items: center;
+  padding-bottom: 7px;
+  letter-spacing: -0.025em;
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: capitalize;
+}
+.link::after,
+.link::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.link::after {
+  background: #dadada80;
+  z-index: 11;
+  height: 1px;
+  width: 100%;
+}
+.link::before {
+  background: #dd4242;
+  z-index: 12;
+  width: 80px;
+  height: 2px;
+  transition: all 1s ease;
+}
+.link:hover::before {
+  width: 100%;
+}
+.link svg {
+  margin-left: 5px;
+  transform: scaleY(0.65);
+}

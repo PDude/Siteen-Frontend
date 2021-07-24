@@ -1,0 +1,113 @@
+.contact_section_wrap
+  display: grid
+  grid-template-columns: 5fr 7fr
+  .contact_block
+    padding: 80px 30px 80px 0
+    background: #12151F
+    border-radius: 0 0 40px 0
+    position: relative
+    &::after
+      position: absolute
+      content: ''
+      background: #12151F
+      height: 100%
+      z-index: 5
+      right: 0
+      border-radius: 0 0 40px 0
+      width: 50vw
+      top: 0
+    & *
+      position: relative
+      z-index: 15 !important
+
+@media only screen and (max-width: 1200px)
+  .contact_block
+    padding-top: 70px
+    padding-bottom: 70px
+@media only screen and (max-width: 992px)
+  .contact_section_wrap
+    grid-template-columns: 1fr 1fr
+  .contact_block
+    padding-top: 60px !important
+    padding-bottom: 60px !important
+    border-radius: 0 30px 30px 0 !important
+    padding-right: 15px !important
+    &::after
+      border-radius: inherit !important
+      width: 60vw !important
+@media only screen and (max-width: 768px)
+  .contact_section_wrap
+    grid-template-columns: 1fr
+  .contact_block
+    border-radius: 30px !important
+    padding: 50px 0!important
+    .heading
+      max-width: 360px
+    &::after
+      display: none
+@media only screen and (max-width: 576px)
+  .contact_block
+    padding: 40px 0 !important
+
+// ***
+.credentials_block
+  display: flex
+  flex-direction: column
+  background: url('../../images/vertical_line.webp') no-repeat 135px / contain
+  .email
+    margin-bottom: 0
+  & > div
+    display: grid
+    grid-template-columns: 125px 1fr
+    grid-gap: 30px
+    margin-bottom: 30px
+    .links
+      display: flex
+      flex-direction: column
+    p
+      font-size: 25px
+      font-weight: 700
+      white-space: nowrap
+    a
+      font-size: 20px
+      margin-top: 6px
+      &:hover
+        color: #faaa4c
+@media only screen and (max-width: 1200px)
+  .credentials_block
+    background: none
+    & > div
+      grid-template-columns: 1fr
+      grid-gap: 5px
+      a
+        margin-top: 0 !important
+@media only screen and (max-width: 992px)
+  .credentials_block
+    & > div p
+      font-size: 20px
+    & > div a
+      font-size: 18px !important
+@media only screen and (max-width: 768px)
+  .credentials_block > div a
+    font-size: 16px !important
+  .contact_block
+    background: none !important
+@media only screen and (max-width: 576px)
+  .credentials_block > div a
+    font-size: 16px !important
+// ***
+.footer_links_elements
+  display: flex
+  margin-top: 40px
+  align-items: center
+  & li
+    margin-right: 25px
+  & li a
+    display: flex
+  & li a:hover
+    filter: grayscale(1)
+  & li:last-child
+    margin-right: 0
+@media only screen and (max-width: 992px)
+  .footer_links_elements a
+    width: 30px

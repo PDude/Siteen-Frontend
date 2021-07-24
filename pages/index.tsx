@@ -4,7 +4,6 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import style from '../styles/pages/Home.module.css'
 // Icons
-import { GoTriangleRight } from 'react-icons/go'
 import { BsArrowRight } from 'react-icons/bs'
 // Globe
 import globeGif from '../images/globus.webp'
@@ -19,23 +18,25 @@ import Footer from '../components/Footer'
 import AboutVideo from '../components/AboutVideo'
 import FormSection from '../components/FormSection'
 import Preloader from '../components/common/Preloader'
+import AnimLink from '../components/common/AnimLink'
+import ProjectsSection from '../components/common/ProjectsSection'
+import Title from '../components/common/Title'
 // Packages
 import cn from 'classnames'
 import Link from 'next/link'
 // Sliders
 import ServicesSlider from 'react-slick'
-import CasesSlider from 'react-slick'
 // Types
 import { ProjectType } from '../types'
 import { GetStaticProps } from 'next'
 import { InferGetStaticPropsType } from 'next'
+// Data
 import { services } from '../Data'
+import CardItem from '../components/common/CardItem'
 
 const HomePage = ({
   projects
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element => {
-  const [filteredProjects, setFilteredProjects] =
-    useState<Array<ProjectType>>(projects)
   // Slider settings
   const sliderSettings = {
     dots: false,
@@ -48,37 +49,16 @@ const HomePage = ({
     centerPadding: '30px'
   }
 
-  // Projects filtration
-  const [type, setType] = useState('all')
-  const filterProjects = (e: { currentTarget: { value: string } }) => {
-    const tagValue = e.currentTarget.value
-    setType(tagValue)
-    if (tagValue === 'all') setFilteredProjects(projects)
-    else
-      setFilteredProjects(
-        projects.filter((c: ProjectType) => c.type === tagValue)
-      )
-  }
-
-  const casesItems = filteredProjects?.map(c => (
-    <ProjectCase
-      key={c.id}
-      originalName={c.original_name}
-      projectPhoto={c.project_photo}
-      projectLogo={c.project_logo}
-      caseDuration={c.term}
-      projectTitle={c.project_name}
-      projectSubtitle={c.project_subtitle}
-    />
-  ))
-
   const servicesItems = services.map(s => (
-    <ServiceItem
-      key={s.id}
-      serviceLogo={s.serviceLogo}
-      serviceTitle={s.serviceTitle}
-      serviceDescription={s.serviceDescription}
-    />
+    <Link key={s.serviceTitle} href={`/service/${s.serviceUrl}`}>
+      <a>
+        <CardItem
+          logo={s.serviceLogo}
+          title={s.serviceTitle}
+          text={s.serviceDescription}
+        />
+      </a>
+    </Link>
   ))
 
   if (!projects) {
@@ -90,7 +70,7 @@ const HomePage = ({
       <header className={style.main_header}>
         <div className='container'>
           <div className={style.main_offer}>
-            <span className='title_label'>Digital Agency</span>
+            <Title label='Digital Agency' />
             <h1>Solutions for Digital Business.</h1>
             <p>
               We bring your business online and raise the income thanks to our
@@ -104,83 +84,22 @@ const HomePage = ({
       </header>
       <section id='our_services' className={style.our_services}>
         <div className='container'>
-          <span className='title_label'>Our Services</span>
-          <h2 className={style.h2}>We Do Everything.</h2>
-          <div className={style.services_items_wrap}>
-            <div className={style.services_items}>{servicesItems}</div>
-            <div className={style.services_slider_wrap}>
-              <ServicesSlider {...sliderSettings}>
-                {servicesItems}
-              </ServicesSlider>
+          <div className='v_cont'>
+            <Title label='Our Services' title='We Do Everything.' gap={true} />
+            <div className={style.services_items_wrap}>
+              <div className={style.services_items}>{servicesItems}</div>
+              <div className={style.services_slider_wrap}>
+                <ServicesSlider {...sliderSettings}>
+                  {servicesItems}
+                </ServicesSlider>
+              </div>
             </div>
           </div>
         </div>
       </section>
-      <section id='cases_section' className={style.our_cases}>
-        <div className='container'>
-          <div className={style.our_cases_wrap}>
-            <span className='title_label'>Our portfolio</span>
-            <h2 className={style.h2}>Our Latest Cases.</h2>
-            <div className={style.cases_tags}>
-              <CaseTag
-                typeTag='all'
-                text='All projects'
-                typeState={type}
-                filterProjects={filterProjects}
-              />
-              <CaseTag
-                typeTag='web-sites'
-                text='Web-Sites'
-                typeState={type}
-                filterProjects={filterProjects}
-              />
-              <CaseTag
-                typeTag='design'
-                text='Design Only'
-                typeState={type}
-                filterProjects={filterProjects}
-              />
-              <CaseTag
-                typeTag='motion-design'
-                text='Video & Animation'
-                typeState={type}
-                filterProjects={filterProjects}
-              />
-              <button type='button' className={style.inaccessible}>
-                App-Dev
-              </button>
-              <button type='button' className={style.inaccessible}>
-                SEO-Cases
-              </button>
-              {/* <CaseTag
-                typeTag='app-dev'
-                text='App-Dev'
-                typeState={type}
-                filterProjects={filterProjects}
-              />
-              <CaseTag
-                typeTag='seo'
-                text='SEO-Cases'
-                typeState={type}
-                filterProjects={filterProjects}
-              /> */}
-            </div>
-            {casesItems.length > 0 ? (
-              <>
-                <div className={style.our_cases_items}>{casesItems}</div>
-                <div className={style.cases_slider_wrap}>
-                  <CasesSlider {...sliderSettings}>{casesItems}</CasesSlider>
-                </div>
-              </>
-            ) : (
-              <p className='plug'>The projects will be here soon</p>
-            )}
-            {/* <Link href='/'>
-              <a>
-                <Button>View More</Button>
-              </a>
-            </Link> */}
-          </div>
+      <section id='cases_section' className={style.our_cases_outer}>
+        <div className='v_cont'>
+          <ProjectsSection projects={projects} />
         </div>
       </section>
       <section id={'contact_us'} className={style.form_section}>
@@ -198,9 +117,12 @@ const HomePage = ({
           <div className={style.we_are_pro_wrap}>
             <div className={style.we_are_pro_content}>
               <div className={style.we_are_pro_content_inner}>
-                <div className='title_label'>About Us</div>
-                <h2 className={style.h2}>We Are Experts In Our Field.</h2>
-                <span>
+                <Title
+                  label='About Us'
+                  title='We Are Experts In Our Field.'
+                  margin={true}
+                />
+                <span className={style.span}>
                   Our digital company of professionals has been developing
                   products for 3 years.
                 </span>
@@ -215,11 +137,7 @@ const HomePage = ({
                   exciting to accomplish the work for a full due and to your
                   delight.
                 </p>
-                <Link href='/about'>
-                  <a className={style.about_us_link}>
-                    READ MORE <GoTriangleRight />
-                  </a>
-                </Link>
+                <AnimLink to='/about' text='read more' />
               </div>
             </div>
             <div className={style.workflow}>
@@ -258,12 +176,12 @@ const HomePage = ({
           </div>
         </div>
       </section>
-      <section id={'contacts_section'} className={style.contacts_section}>
-        <div className={style.contacts_block_wrap}>
-          <div className='container'>
+      <section id='contacts_section' className={style.contacts_section}>
+        <div className='container'>
+          <div className='v_cont'>
             <div className={style.contacts_block}>
               <div className={style.contacts_block_credentials_wrap}>
-                <span className='title_label'>Contacts</span>
+                <Title label='Contacts' />
                 <ul className={style.contacts_block_credentials}>
                   <li>
                     <span>Address :</span>
@@ -390,93 +308,6 @@ const WorkflowElement = ({ index, title, text }: WorkflowElementType) => {
     </div>
   )
 }
-
-type CaseTagType = {
-  typeTag: string
-  typeState: string
-  text: string
-  filterProjects: (e: { currentTarget: { value: string } }) => void
-}
-
-const CaseTag = ({ typeTag, typeState, text, filterProjects }: CaseTagType) => {
-  return (
-    <button
-      type='button'
-      onClick={(e: { currentTarget: { value: string } }) => {
-        filterProjects(e)
-      }}
-      value={typeTag}
-      className={cn({ [style.checked]: typeTag === typeState })}
-    >
-      {text}
-    </button>
-  )
-}
-
-type ServiceItemType = {
-  serviceLogo: string
-  serviceTitle: string
-  serviceDescription: Array<string>
-}
-
-const ServiceItem = ({
-  serviceLogo,
-  serviceTitle,
-  serviceDescription
-}: ServiceItemType) => (
-  <a href='#' className={style.service_element}>
-    <div className={`${style.icon_wrap} icon_wrap_global`}>
-      <img src={serviceLogo} alt='web' />
-    </div>
-    <h3>{serviceTitle}</h3>
-    <ul>
-      {serviceDescription.map(service => (
-        <li key={service}>{service}</li>
-      ))}
-    </ul>
-  </a>
-)
-
-type ProjectCaseType = {
-  originalName: string
-  projectPhoto: string
-  caseDuration: string
-  projectTitle: string
-  projectSubtitle: string
-  projectLogo: string
-}
-
-const ProjectCase = ({
-  originalName,
-  projectPhoto,
-  caseDuration,
-  projectTitle,
-  projectSubtitle,
-  projectLogo
-}: ProjectCaseType) => (
-  // <Link href={'/project/[originalName]'} as={`/project/${originalName}`}>
-  <Link href={`/project/${originalName}`}>
-    <a
-      style={{ backgroundImage: `url(${projectPhoto})` }}
-      className={`${style.project_case} project_case_global`}
-    >
-      <img src={projectLogo} alt='logo' />
-      <div className={`${style.project_case_wrap} project_case_wrap_global`}>
-        <div className={style.project_duration}>
-          <p>Creation Term: </p>
-          <span>{caseDuration}</span>
-        </div>
-        <div className={style.project_title}>
-          <h4>{projectTitle}</h4>
-          <p>{projectSubtitle}</p>
-        </div>
-        <p className={style.project_link}>
-          View full project <GoTriangleRight />
-        </p>
-      </div>
-    </a>
-  </Link>
-)
 
 type ProjectsResponseDataType = {
   response: Array<ProjectType>

@@ -11,11 +11,11 @@
     display: flex
     justify-content: center
     position: relative
-    top: -120px
+    margin-top: -120px
     background-size: cover
     background-position: center
     background-repeat: no-repeat
-    padding-bottom: 70px
+    padding-bottom: 120px
     &>div
         position: relative
         margin-top: 120px
@@ -45,7 +45,7 @@
     display: flex
     flex-direction: column
     align-items: center
-    margin: 50px 15px
+    margin: 30px 15px
     img
         max-width: 200px
         width: 100%
@@ -77,7 +77,6 @@
             color: #EDEDED
 
 .project_data
-    padding: 35px 0 100px
     h3
         margin-bottom: 15px
         font-size: 40px
@@ -112,8 +111,6 @@
                 width: 65px
                 height: 2px
                 margin-right: 20px
-            &:hover::before
-                background: #faaa4c
 
 .project_reference
     h1
@@ -177,18 +174,14 @@
             background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),linear-gradient(71.35deg,rgba(250, 68, 110, 0.8) 40.22%,rgba(250, 190, 68, 0.8) 100%)
 
 .cta_section
-    padding: 100px 0
     background: url('../../images/cta_section_bg.webp') no-repeat center / cover
     .cta_section_offer
         display: flex
         flex-direction: column
         align-items: center
         text-align: center
-        h2
-            font-size: 45px
-            text-transform: capitalize
         p
-            margin: 15px 0 45px
+            margin-bottom: 45px
             font-size: 20px
             max-width: 460px
 
@@ -196,11 +189,6 @@
     display: none
 
 .projects_section
-    padding: 50px 0
-    h1
-        font-size: 45px
-        margin: 15px 0 25px
-        text-transform: capitalize
     .projects_desk_and_arrows
         display: flex
         justify-content: space-between
@@ -359,19 +347,6 @@
     .project_reference h1
         font-size: 25px
 
-    .cta_section_offer
-        h2
-            font-size: 40px !important
-        p
-            font-size: 20px !important
-
-    .projects_section h1
-        font-size: 40px
-        margin: 10px 0 20px
-
-    .projects_section
-        padding: 40px 0
-
     .slider_item
         min-height: 250px
         padding-left: 25px
@@ -401,23 +376,12 @@
         font-size: 20px
         margin: 40px 0 30px
 
-    .cta_section
-        padding: 80px 0
-        h2
-            font-size: 35px !important
-        p
-            font-size: 18px !important
-            margin: 10px 0 30px!important
-
-    .projects_section h1
-        font-size: 35px
-        margin: 5px 0 10px
+    .cta_section p
+        font-size: 18px !important
+        margin-bottom: 20px!important
 
     .projects_desk_and_arrows p
         font-size: 18px !important
-
-    .projects_section
-        padding: 30px 0
 
     .slider_item
         min-height: 220px
@@ -453,12 +417,8 @@
 
     .project_reference h1
         margin-bottom: 20px
-    .cta_section
-        padding: 80px 0
-        h2
-            font-size: 30px !important
-        p
-            font-size: 16px !important
+    .cta_section p
+        font-size: 16px !important
 
     .projects_desk_and_arrows
         align-items: flex-start !important
@@ -472,15 +432,6 @@
 
     .projects_slider
         margin-top: 20px
-
-    .cta_section
-        padding: 50px 0
-
-    .project_data
-        padding-bottom: 50px
-
-    .projects_section h1
-        font-size: 30px
 
     .projects_desk_and_arrows p
         font-size: 16px !important
@@ -507,32 +458,32 @@
             h3
                 font-size: 20px
 
-    .cta_section
-        h2
-            font-size: 25px !important
-        p
-            font-size: 16px !important
     .project_reference
         h1
             font-size: 16px
             &::before, &::after
                 width: 40px !important
 
-    .projects_section h1
-        font-size: 25px
-
     .arrows
         display: none !important
 
-@media only screen and (max-height: 550px)
-    .project_page_header
-        min-height: calc(100vh + 70px)
-
-    .project_page_header > div
-        align-items: flex-start
-
+@media only screen and (max-height: 750px)
+    .project_type:before
+        display: none
+    .project_type
+        margin-top: 20px !important
+    .project_page_header button
+        margin-top: 20px
     .for_small_device
         display: block
-
     .for_big_device
+        display: none
+    .project_page_header
+        padding-bottom: 70px
+
+@media only screen and (max-height: 550px)
+    .project_page_header > div
+        // align-items: flex-start
+
+    .project_info > img
         display: none

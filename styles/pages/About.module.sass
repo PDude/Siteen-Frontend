@@ -64,7 +64,6 @@
 
 .technologies_section
     background: url('../../images/technologies_bg.svg') no-repeat right center / contain
-    padding: 50px 0 100px
     position: relative
     &::after
         content: '02.'
@@ -84,10 +83,6 @@
         .description_tech
             max-width: 510px
             width: 100%
-            h1
-                font-size: 45px
-                margin: 15px 0 25px
-                text-transform: capitalize
             p
                 font-size: 20px
                 letter-spacing: -0.01em
@@ -106,17 +101,17 @@
         align-items: center
         grid-gap: 15px
         max-width: 370px
-    .frontend_icons a, .backend_icons a, .art_icons a
+    .frontend_icons span, .backend_icons span, .art_icons span
         width: 80px
         filter: grayscale(1)
+        transition: all .3s ease
     .frontend_icons img, .backend_icons img, .art_icons img
         width: inherit
-    .frontend_icons a:hover, .backend_icons a:hover, .art_icons a:hover
+    .frontend_icons span:hover, .backend_icons span:hover, .art_icons span:hover
         filter: grayscale(0)
 
 .team_section
     position: relative
-    padding: 60px 0 120px
     background: #191C26
     .team_section_wrap
         width: 100%
@@ -124,10 +119,6 @@
         content: '03.'
         top: 45px
         bottom: initial
-    h1
-        font-size: 50px
-        margin: 15px 0 25px
-        text-transform: capitalize
     .team_desk_and_arrows
         display: flex
         justify-content: space-between
@@ -206,71 +197,8 @@
         bottom: initial
         top: 45px
 
-.contact_section_wrap
-    display: grid
-    grid-template-columns: 5fr 7fr
-    .contact_block
-        padding: 60px 30px 120px 0
-        backgroun: #12151F
-        border-radius: 0 0 40px 0
-        position: relative
-        &::after
-            position: absolute
-            content: ''
-            background: #12151F
-            height: 100%
-            z-index: 5
-            right: 0
-            border-radius: 0 0 40px 0
-            width: 50vw
-            top: 0
-        & *
-            position: relative
-            z-index: 15
-        h2
-            font-size: 45px
-            margin: 15px 0 50px
-            text-transform: capitalize
-
-.credentials_block
-    display: flex
-    flex-direction: column
-    background: url('../../images/vertical_line.webp') no-repeat 135px / contain
-    &>div
-        display: grid
-        grid-template-columns: 125px 1fr
-        grid-gap: 30px
-        margin-bottom: 30px
-        p
-            font-size: 25px
-            font-weight: 700
-            white-space: nowrap
-        a
-            font-size: 20px
-            margin-top: 6px
-            &:hover
-                color: #faaa4c
-        .links
-            display: flex
-            flex-direction: column
-    .email
-        margin-bottom: 0
-
 .footer_wrap
     margin-top: 85px
-
-.footer_links_elements
-    display: flex
-    margin-top: 40px
-    align-items: center
-    & li
-        margin-right: 25px
-    & li a
-        display: flex
-    & li a:hover
-        filter: grayscale(1)
-    & li:last-child
-        margin-right: 0
 
 @media only screen and (min-width: 1200px)
     .arrows.disabled
@@ -301,27 +229,9 @@
     .backend_and_art
         grid-gap: 60px !important
 
-    .description_tech h1, .team_section h1
-        font-size: 40px !important
-        margin: 10px 0 20px !important
-
     .technologies_section h3
         font-size: 40px !important
         margin-bottom: 20px !important
-
-    .contact_block h2
-        font-size: 40px !important
-        margin-top: 10px !important
-
-    .credentials_block
-        background: none
-
-    .credentials_block > div
-        grid-template-columns: 1fr
-        grid-gap: 5px
-
-    .credentials_block > div a
-        margin-top: 0 !important
 
 @media only screen and (max-width: 992px)
     .about_offer_text
@@ -338,60 +248,25 @@
         font-size: 40px
         margin: 5px 0 10px
 
-    // ***
-    .description_tech h1, .team_section h1
-        font-size: 35px !important
-        margin: 5px 0 10px !important
-
     .technologies_section h3
         font-size: 35px !important
         margin-bottom: 10px !important
 
-    .contact_block h2
-        font-size: 35px !important
-        margin-top: 5px !important
-    // ***
-
-    .credentials_block > div p
-        font-size: 20px
-
-    .description_tech p, .team_desk_and_arrows p, .credentials_block > div a
+    .description_tech p, .team_desk_and_arrows p
         font-size: 18px !important
-
-    .team_section
-        padding: 50px 0 80px
-
-    .contact_block
-        padding-top: 50px !important
-        padding-bottom: 80px !important
-        h2
-            margin-bottom: 40px !important
-
-    .footer_links_elements a
-        width: 30px
 
     .description_tech
         max-width: 360px !important
 
-    .frontend_icons a, .backend_icons a, .art_icons a
+    .frontend_icons span, .backend_icons span, .art_icons span
         width: 65px !important
 
     .form_wrap_outter
         grid-template-areas: 'form_wrap' !important
         grid-template-columns: 1fr !important
 
-    .contact_section_wrap
-        grid-template-columns: 1fr 1fr
-
     .form_section
         padding-bottom: 15px
-
-    .contact_block
-        border-radius: 0 30px 30px 0 !important
-        padding-right: 15px !important
-        &::after
-            border-radius: inherit !important
-            width: 60vw !important
 
 @media only screen and (max-width: 768px)
     .about_offer_text
@@ -405,18 +280,11 @@
         grid-gap: 40px !important
         margin-bottom: 40px !important
 
-    .description_tech h1, .team_section h1,  .technologies_section h3, .contact_block h2
+    .technologies_section h3
         font-size: 30px !important
 
-    .description_tech p, .team_desk_and_arrows p, .credentials_block > div a
+    .description_tech p, .team_desk_and_arrows p
         font-size: 16px !important
-
-    .team_desk_and_arrows p
-        max-width: 325px !important
-
-    .contact_block h2
-        max-width: 360px
-        margin-bottom: 40px !important
 
     .frontend_and_description
         flex-direction: column
@@ -439,18 +307,6 @@
 
     .team_slider
         margin-top: 20px
-
-    .team_section
-        padding: 60px 0
-
-    .contact_section_wrap
-        grid-template-columns: 1fr
-
-    .contact_block
-        border-radius: 30px !important
-        padding: 50px 0!important
-        &::after
-            display: none
 
     .about_header
         background-size: cover
@@ -476,32 +332,18 @@
     .backend_and_art
         grid-gap: 40px !important
 
-    .description_tech h1, .team_section h1
-        font-size: 25px !important
-
     .backend_and_art
         flex-wrap: wrap
 
     .backend
         margin-left: auto
 
-    .frontend_icons a, .backend_icons a, .art_icons a
+    .frontend_icons span, .backend_icons span, .art_icons span
         width: 50px !important
-
-    .technologies_section
-        padding: 50px 0
 
     .about_header::after, .technologies_section::after, .team_section::after, .form_section::after, .contact_section::after
         font-size: 30px !important
         right: 30px !important
-
-    .contact_block
-        padding: 50px 0
-        h2
-            font-size: 25px !important
-
-    .credentials_block > div a
-        font-size: 15px !important
 
     .arrows
         display: none !important
@@ -517,9 +359,6 @@
         height: auto
         .about_header
             padding-bottom: 0
-
-    .technologies_section
-        padding-top: 0 !important
 
     .about_video_wrap
         display: none
