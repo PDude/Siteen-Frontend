@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
 // stylea
-import style from '../../styles/components/common/ProjectsSection.module.css'
+import style from '../styles/components/common/ProjectsSection.module.css'
 // components
-import AnimLink from './AnimLink'
+import AnimLink from './common/AnimLink'
 // packages
 import cn from 'classnames'
 import CasesSlider from 'react-slick'
 // types
-import { ProjectType } from '../../types'
-import Title from './Title'
+import { ProjectType } from '../types'
+import Title from './common/Title'
 
 type Props = {
   projects: Array<ProjectType>

@@ -1,10 +1,3 @@
-@keyframes levitation
-    0%
-        transform: translate(0, 0)
-
-    100%
-        transform: translate(0, 1em)
-
 .project_page_header
     min-height: calc(100% + 120px)
     height: 100%
@@ -24,11 +17,6 @@
         align-items: center
     button
         margin-top: 40px
-        animation: levitation 1s alternate ease-in-out infinite
-        z-index: 30
-        padding: 0 5px
-        img
-            cursor: pointer
     &::after, &::before
         content: ''
         position: absolute
@@ -184,9 +172,6 @@
             margin-bottom: 45px
             font-size: 20px
             max-width: 460px
-
-.for_small_device
-    display: none
 
 .projects_section
     .projects_desk_and_arrows
@@ -441,12 +426,6 @@
         padding: 20px
 
 @media only screen and (max-width: 576px)
-    .for_small_device
-        display: block
-
-    .for_big_device
-        display: none
-
     .project_info
         img
             max-width: 120px !important
@@ -474,16 +453,11 @@
         margin-top: 20px !important
     .project_page_header button
         margin-top: 20px
-    .for_small_device
-        display: block
-    .for_big_device
-        display: none
     .project_page_header
         padding-bottom: 70px
 
 @media only screen and (max-height: 550px)
-    .project_page_header > div
-        // align-items: flex-start
-
     .project_info > img
         display: none
+    .project_info p 
+        font-size: 16px !important

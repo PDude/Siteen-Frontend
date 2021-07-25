@@ -1,11 +1,11 @@
 import React from 'react'
 // data
-import { advantages } from '../../Data'
+import { advantages } from '../Data'
 // styles
-import style from '../../styles/components/common/Advantages.module.scss'
+import style from '../styles/components/common/Advantages.module.scss'
 // components
-import CardItem from './CardItem'
-import Title from './Title'
+import CardItem from './common/CardItem'
+import Title from './common/Title'
 // packages
 import ServicesSlider from 'react-slick'
 
@@ -33,15 +33,17 @@ const Advantages = () => {
 
   return (
     <div className={style.advantages_wrap}>
-      <Title
-        title='Benefits of working with us.'
-        label='advantages'
-        gap={true}
-        max='430px'
-      />
-      <div className={style.advantages_items}>{advantagesItems}</div>
-      <div className={style.slider_wrap}>
-        <ServicesSlider {...sliderSettings}>{advantagesItems}</ServicesSlider>
+      <div className='container'>
+        <Title
+          title='Benefits of working with us.'
+          label='advantages'
+          gap={true}
+          max='430px'
+        />
+        <div className={style.advantages_items}>{advantagesItems}</div>
+        <div className={style.slider_wrap}>
+          <ServicesSlider {...sliderSettings}>{advantagesItems}</ServicesSlider>
+        </div>
       </div>
     </div>
   )

@@ -215,5 +215,6 @@
     display: block;
     position: relative;
     z-index: 40;
+    overflow: hidden;
   }
 }

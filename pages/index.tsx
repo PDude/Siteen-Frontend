@@ -19,7 +19,7 @@ import AboutVideo from '../components/AboutVideo'
 import FormSection from '../components/FormSection'
 import Preloader from '../components/common/Preloader'
 import AnimLink from '../components/common/AnimLink'
-import ProjectsSection from '../components/common/ProjectsSection'
+import ProjectsSection from '../components/ProjectsSection'
 import Title from '../components/common/Title'
 // Packages
 import cn from 'classnames'

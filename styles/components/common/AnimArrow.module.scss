@@ -1,0 +1,41 @@
+.arrow {
+  cursor: pointer;
+  width: 25px;
+  animation: levitation 1s alternate ease-in-out infinite;
+  z-index: 30;
+  padding: 0 5px;
+  .for_small_device {
+    display: none;
+  }
+  .for_big_device {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .for_small_device {
+    display: block !important;
+  }
+  .for_big_device {
+    display: none !important;
+  }
+}
+
+@media only screen and (max-height: 750px) {
+  .for_small_device {
+    display: block !important;
+  }
+  .for_big_device {
+    display: none !important;
+  }
+}
+
+@keyframes levitation {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  100% {
+    transform: translate(0, 1em);
+  }
+}

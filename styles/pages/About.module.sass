@@ -34,7 +34,7 @@
         bottom: initial
         top: 50vh
     .about_offer
-        margin: 60px 0
+        margin: 30px 0
 
 .about_offer
     display: flex
@@ -352,17 +352,17 @@
         max-width: 250px !important
 
 @media only screen and (max-height: 550px)
+    .about_offer_text
+        h1
+            font-size: 30px
+        p
+            font-size: 16px
     .about_offer
         margin-bottom: 0 !important
-
-    .about_header_wrap
-        height: auto
-        .about_header
-            padding-bottom: 0
 
     .about_video_wrap
         display: none
 
 @media only screen and (max-height: 750px)
-    .about_header > div
-        align-items: flex-start
+    .about_offer .offer_description
+        display: none

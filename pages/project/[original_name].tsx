@@ -2,8 +2,6 @@ import React from 'react'
 import Button from '../../components/formElements/Button'
 import style from '../../styles/pages/ProjectPage.module.sass'
 // temp project bg
-import projecCheckDown from '../../images/project_check_down.svg'
-import projecCheckDownSmall from '../../images/project_check_down_small.svg'
 import { Component, useRef } from 'react'
 import Footer from '../../components/Footer'
 // Slider
@@ -19,6 +17,7 @@ import cn from 'classnames'
 import { GoTriangleRight } from 'react-icons/go'
 // Components
 import Preloader from '../../components/common/Preloader'
+import AnimArrow from '../../components/common/AnimArrow'
 // Types
 import { ProjectType } from '../../types'
 import { GetServerSideProps } from 'next'
@@ -48,7 +47,7 @@ const ProjectPage = ({
       >
         <div className='container'>
           <div className={style.project_info}>
-            <img src={project.project_logo} alt={'Brand logo'} />
+            <img src={project.project_logo} alt='Brand logo' />
             <div className={style.project_type}>
               <h3>{project.ordering_type}</h3>
               <p>{project.project_tags.join(' ')}</p>
@@ -58,16 +57,7 @@ const ProjectPage = ({
                 scroll(myRef)
               }}
             >
-              <img
-                className={style.for_big_device}
-                src={projecCheckDown}
-                alt='projecCheckDown'
-              />
-              <img
-                className={style.for_small_device}
-                src={projecCheckDownSmall}
-                alt='projecCheckDown'
-              />
+              <AnimArrow />
             </button>
           </div>
         </div>
