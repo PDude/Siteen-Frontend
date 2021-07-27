@@ -82,15 +82,24 @@ const ProjectPage = ({
                 <h3>Results</h3>
                 <ul>
                   <li>
-                    <a href={project.result_link[0]}>
+                    <a
+                      href={project.result_link[0]}
+                      target='_blank'
+                      rel='noreferrer'
+                    >
                       {new URL(project.result_link[0]).hostname}
                     </a>
                   </li>
                   {project.result_link.length > 1 ? (
                     <li>
-                      <a href={project.result_link[1]}>{`@${new URL(
-                        project.result_link[1]
-                      ).pathname.replace(/\//g, '')}`}</a>
+                      <a
+                        href={project.result_link[1]}
+                        target='_blank'
+                        rel='noreferrer'
+                      >{`@${new URL(project.result_link[1]).pathname.replace(
+                        /\//g,
+                        ''
+                      )}`}</a>
                     </li>
                   ) : null}
                 </ul>
