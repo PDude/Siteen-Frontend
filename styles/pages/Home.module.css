@@ -136,6 +136,7 @@
   font-size: 20px;
   letter-spacing: -0.01em;
   color: #fff;
+  display: block;
 }
 .we_are_pro_content p {
   font-size: 16px;
@@ -170,11 +171,11 @@
 .workflow_element::after {
   content: '';
   position: absolute;
-  height: 40px;
+  height: 35px;
   width: 1px;
   background: #be76d7;
   left: 40px;
-  bottom: -70px;
+  bottom: -63px;
 }
 .workflow_element:last-child::after {
   display: none;

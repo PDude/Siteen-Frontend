@@ -2,6 +2,7 @@ import cn from 'classnames'
 import style from '../../styles/components/formElements/Input.module.sass'
 import React from 'react'
 import { useField } from 'formik'
+import { animated } from '../../Data'
 
 type Props = {
   [x: string]: any
@@ -15,7 +16,7 @@ const InputField = ({ className, ...props }: Props) => {
   const classNames = cn(style.input, { [style.error]: hasError }, className)
 
   return (
-    <div className={style.input_wrap}>
+    <div {...animated} className={style.input_wrap}>
       <input className={classNames} {...field} {...props} autoComplete='off' />
       {hasError && <p className={style.text_error}>{meta.error}</p>}
     </div>

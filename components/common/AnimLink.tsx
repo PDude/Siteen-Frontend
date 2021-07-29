@@ -6,12 +6,14 @@ import { GoTriangleRight } from 'react-icons/go'
 import style from '../../styles/components/common/AnimLink.module.css'
 // packages
 import cn from 'classnames'
+import { animated } from '../../Data'
 
 type Props = {
   text: string
   to: string
   max?: string
   className?: string
+  animate?: boolean
 }
 
 const AnimLink = ({
@@ -19,13 +21,19 @@ const AnimLink = ({
   to,
   max = 'auto',
   className,
+  animate = true,
   ...props
 }: Props): JSX.Element => {
   const classNames = cn(style.link, className)
 
   return (
     <Link href={to}>
-      <small style={{ maxWidth: max }} className={classNames} {...props}>
+      <small
+        {...(animate && { ...animated })}
+        style={{ maxWidth: max }}
+        className={classNames}
+        {...props}
+      >
         {text} <GoTriangleRight />
       </small>
     </Link>

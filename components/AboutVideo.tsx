@@ -22,6 +22,7 @@ const AboutVideo = ({ videoLabel }: Props): JSX.Element => {
       <div className={style.about_us_video}>
         <Pulse>
           <Button
+            animate={false}
             Icon={<ImPlay3 />}
             max='100%'
             onClick={onOpenPromotionModal}

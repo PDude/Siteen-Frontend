@@ -6,10 +6,16 @@ import '../styles/globals.sass'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Head from 'next/head'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
-    window.history.scrollRestoration = 'manual'
+    // window.history.scrollRestoration = 'manual'
+    AOS.init({
+      duration: 850,
+      delay: 100
+    })
   }, [])
 
   return (
@@ -70,6 +76,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
         stopDelayMs={200}
         height={3}
       />
+
       <Layout>
         <Component {...pageProps} />
       </Layout>

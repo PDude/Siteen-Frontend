@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@types/react-slick": "^0.23.4",
+    "aos": "^2.3.4",
     "classnames": "^2.2.6",
     "formik": "^2.2.6",
     "hamburger-react": "^2.4.0",
@@ -35,6 +36,7 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
+    "@types/aos": "^3.0.4",
     "@types/node": "^16.3.2",
     "@types/react": "^17.0.14",
     "@typescript-eslint/eslint-plugin": "^4.28.3",

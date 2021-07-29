@@ -31,7 +31,7 @@ import { ProjectType } from '../types'
 import { GetStaticProps } from 'next'
 import { InferGetStaticPropsType } from 'next'
 // Data
-import { services } from '../Data'
+import { animated, services } from '../Data'
 import CardItem from '../components/common/CardItem'
 // next
 import Head from 'next/head'
@@ -75,7 +75,7 @@ const HomePage = ({
       <header className={style.main_header}>
         <div className='container'>
           <div className={style.main_offer}>
-            <Title label='Digital Agency' />
+            <Title animate={false} label='Digital Agency' />
             <h1>Solutions for Digital Business.</h1>
             <p>
               We bring your business online and raise the income thanks to our
@@ -91,7 +91,7 @@ const HomePage = ({
         <div className='container'>
           <div className='v_cont'>
             <Title label='Our Services' title='We Do Everything.' gap={true} />
-            <div className={style.services_items_wrap}>
+            <div {...animated} className={style.services_items_wrap}>
               <div className={style.services_items}>{servicesItems}</div>
               <div className={style.services_slider_wrap}>
                 <ServicesSlider {...sliderSettings}>
@@ -110,7 +110,7 @@ const HomePage = ({
       <section id={'contact_us'} className={style.form_section}>
         <div className='container'>
           <div className={style.form_section_wrap}>
-            <div className={style.globe_wrap}>
+            <div {...animated} className={style.globe_wrap}>
               <img src={globeGif} alt='globe' />
             </div>
             <FormSection />
@@ -127,11 +127,11 @@ const HomePage = ({
                   title='We Are Experts In Our Field.'
                   margin={true}
                 />
-                <span className={style.span}>
+                <span {...animated} className={style.span}>
                   Our digital company of professionals has been developing
                   products for 3 years.
                 </span>
-                <p>
+                <p {...animated}>
                   We are a modern digital company that creates and develops your
                   projects. Our 3-year experience of developing various
                   web-projects grows only upwards thanks to the refresher
@@ -146,7 +146,9 @@ const HomePage = ({
               </div>
             </div>
             <div className={style.workflow}>
-              <h2 className={style.h2}>How We Work?</h2>
+              <h2 {...animated} className={style.h2}>
+                How We Work?
+              </h2>
               <div className={style.workflow_items}>
                 <WorkflowElement
                   index={'01.'}
@@ -188,7 +190,7 @@ const HomePage = ({
               <div className={style.contacts_block_credentials_wrap}>
                 <Title label='Contacts' />
                 <ul className={style.contacts_block_credentials}>
-                  <li>
+                  <li {...animated}>
                     <span>Address :</span>
                     <a
                       target='_blank'
@@ -199,11 +201,11 @@ const HomePage = ({
                       <br /> Lviv, Ukraine, 79031
                     </a>
                   </li>
-                  <li>
+                  <li {...animated}>
                     <span>Phone :</span>
                     <a href='tel:0971630202'>+38 (097) 163 0202</a>
                   </li>
-                  <li>
+                  <li {...animated}>
                     <span>Email :</span>
                     <div className={style.mails_links}>
                       <a href='mailto:siteen.co@gmail.com'>
@@ -217,10 +219,10 @@ const HomePage = ({
                 </ul>
               </div>
               <div className={style.footer_links}>
-                <span>
+                <span {...animated}>
                   Follow Us <BsArrowRight />
                 </span>
-                <ul className={style.footer_links_elements}>
+                <ul {...animated} className={style.footer_links_elements}>
                   <li>
                     <a
                       href='https://www.instagram.com/siteen.co/'
@@ -287,7 +289,7 @@ const WorkflowElement = ({ index, title, text }: WorkflowElementType) => {
   const [isTextVisible, setTextVisible] = useState<boolean>(false)
 
   return (
-    <div className={style.workflow_element}>
+    <div {...animated} className={style.workflow_element}>
       <span
         onClick={() => {
           setTextVisible(!isTextVisible)

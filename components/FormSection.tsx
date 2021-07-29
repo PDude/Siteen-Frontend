@@ -9,6 +9,7 @@ import InputField from './formElements/inputField'
 import FormModal from './modals/FormModal'
 import * as Yup from 'yup'
 import Title from './common/Title'
+import { animated } from '../Data'
 
 type FormValues = {
   name: string
@@ -83,7 +84,7 @@ const FormSection = (): JSX.Element => {
               margin={true}
               title='Get A Free Consultation.'
             />
-            <p>
+            <p {...animated}>
               The best ideas start from the brif. Let us to know what you need
               and we will realise it in sucsessfull product.
             </p>

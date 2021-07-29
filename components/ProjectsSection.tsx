@@ -10,6 +10,7 @@ import CasesSlider from 'react-slick'
 // types
 import { ProjectType } from '../types'
 import Title from './common/Title'
+import { animated } from '../Data'
 
 type Props = {
   projects: Array<ProjectType>
@@ -63,7 +64,7 @@ const ProjectsSection = ({ projects }: Props): JSX.Element => {
       <div className='container'>
         <div className={style.our_cases_wrap}>
           <Title label='Our portfolio' title='Our Latest Cases.' gap={true} />
-          <div className={style.cases_tags}>
+          <div {...animated} className={style.cases_tags}>
             <CaseTag
               typeTag='all'
               text='All projects'
@@ -94,8 +95,10 @@ const ProjectsSection = ({ projects }: Props): JSX.Element => {
           <div className='divider'></div>
           {casesItems.length > 0 ? (
             <>
-              <div className={style.our_cases_items}>{casesItems}</div>
-              <div className={style.cases_slider_wrap}>
+              <div {...animated} className={style.our_cases_items}>
+                {casesItems}
+              </div>
+              <div {...animated} className={style.cases_slider_wrap}>
                 <CasesSlider {...sliderSettings}>{casesItems}</CasesSlider>
               </div>
             </>

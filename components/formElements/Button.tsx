@@ -1,6 +1,7 @@
 import React from 'react'
 import classnames from 'classnames'
 import style from '../../styles/components/formElements/Button.module.sass'
+import { animated } from '../../Data'
 
 type Props = {
   max?: string
@@ -8,6 +9,7 @@ type Props = {
   className?: string
   children?: React.ReactNode
   onClick?: () => void
+  animate?: boolean
 }
 
 const Button = ({
@@ -15,12 +17,18 @@ const Button = ({
   Icon = null,
   className,
   children = null,
+  animate = true,
   ...props
 }: Props) => {
   const classNames = classnames(style.btn, className)
 
   return (
-    <button style={{ maxWidth: max }} className={classNames} {...props}>
+    <button
+      {...(animate && { ...animated })}
+      style={{ maxWidth: max }}
+      className={classNames}
+      {...props}
+    >
       {children && <span>{children}</span>}
       {Icon && Icon}
     </button>

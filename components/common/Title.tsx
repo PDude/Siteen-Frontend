@@ -1,6 +1,7 @@
 import React from 'react'
 import style from '../../styles/components/common/Title.module.sass'
 import cn from 'classnames'
+import { animated } from '../../Data'
 
 type Props = {
   label?: string
@@ -9,6 +10,7 @@ type Props = {
   gap?: boolean
   margin?: boolean
   max?: string
+  animate?: boolean
 }
 
 const Title = ({
@@ -17,7 +19,9 @@ const Title = ({
   title,
   gap = false,
   max = 'auto',
-  margin = false
+  margin = false,
+  animate = true,
+  ...props
 }: Props): JSX.Element => {
   const classNames = cn(
     style.title_wrap,
@@ -27,9 +31,17 @@ const Title = ({
   )
 
   return (
-    <div style={{ maxWidth: max }} className={classNames}>
-      {label && <small className={style.title_label}>{label}</small>}
-      {title && <h2 className={style.title}>{title}</h2>}
+    <div style={{ maxWidth: max }} className={classNames} {...props}>
+      {label && (
+        <small {...(animate && { ...animated })} className={style.title_label}>
+          {label}
+        </small>
+      )}
+      {title && (
+        <h2 {...(animate && { ...animated })} className={style.title}>
+          {title}
+        </h2>
+      )}
     </div>
   )
 }
