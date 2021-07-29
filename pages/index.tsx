@@ -33,6 +33,8 @@ import { InferGetStaticPropsType } from 'next'
 // Data
 import { services } from '../Data'
 import CardItem from '../components/common/CardItem'
+// next
+import Head from 'next/head'
 
 const HomePage = ({
   projects
@@ -67,6 +69,9 @@ const HomePage = ({
 
   return (
     <>
+      <Head>
+        <title>Siteen • Homepage</title>
+      </Head>
       <header className={style.main_header}>
         <div className='container'>
           <div className={style.main_offer}>
@@ -185,7 +190,11 @@ const HomePage = ({
                 <ul className={style.contacts_block_credentials}>
                   <li>
                     <span>Address :</span>
-                    <a href='#'>
+                    <a
+                      target='_blank'
+                      rel='noreferrer'
+                      href='https://goo.gl/maps/vBCF7NXjkLS8G8nQA'
+                    >
                       230, Kulparkivska str.
                       <br /> Lviv, Ukraine, 79031
                     </a>
@@ -197,8 +206,12 @@ const HomePage = ({
                   <li>
                     <span>Email :</span>
                     <div className={style.mails_links}>
-                      <a href='#'>siteen.co@gmail.com</a>
-                      <a href='#'>siteencareer@gmail.com</a>
+                      <a href='mailto:siteen.co@gmail.com'>
+                        siteen.co@gmail.com
+                      </a>
+                      <a href='mailto:siteencareer@gmail.com'>
+                        siteencareer@gmail.com
+                      </a>
                     </div>
                   </li>
                 </ul>

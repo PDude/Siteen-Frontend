@@ -81,28 +81,33 @@ type TeamType = {
   name: string
   position: string
   imgPath: string
+  urlPath: string
 }
 
 export const team: Array<TeamType> = [
   {
-    name: 'Yurii Siryi',
-    position: 'Motion Designer',
-    imgPath: member1
-  },
-  {
     name: 'Alexandr Zabrodskyi',
     position: 'Back-End Dev',
-    imgPath: member2
+    imgPath: member2,
+    urlPath: 'https://www.instagram.com/k.e.y.s.a.m'
   },
   {
     name: 'Paul Dudich',
     position: 'Front-End Dev',
-    imgPath: member3
+    imgPath: member3,
+    urlPath: 'https://www.instagram.com/shalldon_'
   },
   {
     name: 'Kateryna Lekhner',
     position: 'UX/UI Designer',
-    imgPath: member4
+    imgPath: member4,
+    urlPath: 'https://www.instagram.com/lekhner'
+  },
+  {
+    name: 'Yurii Siryi',
+    position: 'Motion Designer',
+    imgPath: member1,
+    urlPath: 'https://www.instagram.com/yura1337.jpg'
   }
 ]
 

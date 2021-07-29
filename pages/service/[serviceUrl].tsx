@@ -5,6 +5,7 @@ import style from '../../styles/pages/ServiceName.module.scss'
 import { ServiceInfoType, servicesData } from '../../Data'
 // next
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 // packages
 import {
   Accordion,
@@ -81,6 +82,9 @@ const ServiceName = ({
 
   return (
     <>
+      <Head>
+        <title>Siteen • {serviceInfo.offer.title}</title>
+      </Head>
       <header
         style={{ backgroundImage: `url(${serviceInfo.offer.bg})` }}
         className={style.service_header}

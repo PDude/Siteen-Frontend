@@ -45,9 +45,13 @@ import { team } from '../Data'
 // Packages
 import cn from 'classnames'
 import Title from '../components/common/Title'
+import Head from 'next/head'
 
 const About = () => (
   <>
+    <Head>
+      <title>Siteen • About</title>
+    </Head>
     <div className={style.about_header_wrap}>
       <header className={style.about_header}>
         <div className='container'>
@@ -297,6 +301,7 @@ class PreviousNextMethodsTeamSection extends Component {
                       name={t.name}
                       position={t.position}
                       imgPath={t.imgPath}
+                      urlPath={t.urlPath}
                     />
                   ))}
                 </TeamSlider>
@@ -313,12 +318,20 @@ type TeamSliderItemProps = {
   name: string
   position: string
   imgPath: string
+  urlPath: string
 }
 
-const TeamSliderItem = ({ name, position, imgPath }: TeamSliderItemProps) => {
+const TeamSliderItem = ({
+  name,
+  position,
+  imgPath,
+  urlPath
+}: TeamSliderItemProps) => {
   return (
     <a
-      href='#'
+      href={urlPath}
+      target='_blank'
+      rel='noreferrer'
       className={style.slider_item}
       style={{ backgroundImage: `url(${imgPath})` }}
     >

@@ -24,6 +24,7 @@ import { GetServerSideProps } from 'next'
 import { InferGetServerSidePropsType } from 'next'
 import Link from 'next/link'
 import Title from '../../components/common/Title'
+import Head from 'next/head'
 
 const ProjectPage = ({
   project,
@@ -41,6 +42,9 @@ const ProjectPage = ({
 
   return (
     <>
+      <Head>
+        <title>Siteen • {project.project_name}</title>
+      </Head>
       <header
         style={{ backgroundImage: `url(${project.project_photo})` }}
         className={style.project_page_header}
@@ -256,7 +260,6 @@ const ProjectsSliderItem = ({
   return (
     <Link href={`/project/${original_name}`}>
       <a
-        href='#'
         className={`${style.slider_item} slider_item_global`}
         style={{ backgroundImage: `url(${project_photo})` }}
       >

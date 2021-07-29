@@ -27,7 +27,8 @@ module.exports = {
         }
       }
     ],
-    'no-unused-vars': 'warn'
+    'no-unused-vars': 'warn',
+    'spaced-comment': 'off'
   },
   settings: {
     react: {

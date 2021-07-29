@@ -20,7 +20,13 @@ const ContactsSection = () => (
       <div className={style.credentials_block}>
         <div className={style.adress}>
           <p>Address :</p>
-          <a href='#'>230, Kulparkivska str. Lviv, Ukraine, 79031</a>
+          <a
+            target='_blank'
+            rel='noreferrer'
+            href='https://goo.gl/maps/hWmJTqarWp6eNwxs6'
+          >
+            230, Kulparkivska str. Lviv, Ukraine, 79031
+          </a>
         </div>
         <div className={style.phone}>
           <p>Phone :</p>
