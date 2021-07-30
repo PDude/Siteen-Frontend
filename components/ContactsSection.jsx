@@ -7,10 +7,11 @@ import linkedIcon from '../images/linked_icon.svg'
 import tIcon from '../images/t_icon.svg'
 import youTubeIcon from '../images/youtube_icon.svg'
 import Title from './common/Title'
+import { animated } from '../Data'
 
 const ContactsSection = () => (
   <div className={style.contact_section_wrap}>
-    <div className={style.contact_block}>
+    <div {...animated} className={style.contact_block}>
       <Title
         className={style.heading}
         label='Contact Us'
@@ -18,7 +19,7 @@ const ContactsSection = () => (
         gap={true}
       />
       <div className={style.credentials_block}>
-        <div className={style.adress}>
+        <div {...animated} className={style.adress}>
           <p>Address :</p>
           <a
             target='_blank'
@@ -28,11 +29,11 @@ const ContactsSection = () => (
             230, Kulparkivska str. Lviv, Ukraine, 79031
           </a>
         </div>
-        <div className={style.phone}>
+        <div {...animated} className={style.phone}>
           <p>Phone :</p>
           <a href='tel:0971630202'>+38 (097) 163 0202</a>
         </div>
-        <div className={style.email}>
+        <div {...animated} className={style.email}>
           <p>Email :</p>
           <div className={style.links}>
             <a href='mailto:siteen.co@gmail.com'>siteen.co@gmail.com</a>
@@ -40,7 +41,7 @@ const ContactsSection = () => (
           </div>
         </div>
       </div>
-      <ul className={style.footer_links_elements}>
+      <ul {...animated} className={style.footer_links_elements}>
         <li>
           <a
             href='https://www.instagram.com/siteen.co/'

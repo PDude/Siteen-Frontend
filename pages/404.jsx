@@ -5,6 +5,7 @@ import cowLight from '../images/cow_light.svg'
 import cowElement from '../images/cow_element.svg'
 import Link from 'next/link'
 import Head from 'next/head'
+import { animated } from '../Data'
 
 const NotFoundPage = () => (
   <>
@@ -13,7 +14,7 @@ const NotFoundPage = () => (
     </Head>
     <header className={style.not_found_header}>
       <div className='container'>
-        <div className={style.main_offer}>
+        <div {...animated} className={style.main_offer}>
           <h1>404</h1>
           <p>Oops ... something went wrong</p>
           <span className={style.not_found_span}>
@@ -21,7 +22,7 @@ const NotFoundPage = () => (
           </span>
           <Link href='/'>
             <a>
-              <Button>To Homepage</Button>
+              <Button animate={false}>To Homepage</Button>
             </a>
           </Link>
         </div>

@@ -13,7 +13,12 @@ const PrivacyPolicy = () => (
       <div className='container'>
         <div className='v_cont'>
           <div className={style.privacy_policy_inner}>
-            <Title label='Privacy law' title='Privacy Policy' gap={true} />
+            <Title
+              animate={false}
+              label='Privacy law'
+              title='Privacy Policy'
+              gap={true}
+            />
             <span>Діє з 01.07.2020 року</span>
             <div className={style.all_text}>
               <p>

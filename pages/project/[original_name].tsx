@@ -25,6 +25,7 @@ import { InferGetServerSidePropsType } from 'next'
 import Link from 'next/link'
 import Title from '../../components/common/Title'
 import Head from 'next/head'
+import { animated } from '../../Data'
 
 const ProjectPage = ({
   project,
@@ -70,12 +71,12 @@ const ProjectPage = ({
         <div className='container'>
           <div className='v_cont'>
             <div className={style.about}>
-              <h3>About</h3>
-              <p>{project.about_project}</p>
+              <h3 {...animated}>About</h3>
+              <p {...animated}>{project.about_project}</p>
             </div>
             <div className={style.tasks}>
-              <h3>Tasks</h3>
-              <ul>
+              <h3 {...animated}>Tasks</h3>
+              <ul {...animated}>
                 {project.project_tasks?.map((t: Array<string>) => (
                   <li key={Math.random()}>· {t}</li>
                 ))}
@@ -83,9 +84,9 @@ const ProjectPage = ({
             </div>
             {project.result_link.length > 0 ? (
               <div className={style.results}>
-                <h3>Results</h3>
+                <h3 {...animated}>Results</h3>
                 <ul>
-                  <li>
+                  <li {...animated}>
                     <a
                       href={project.result_link[0]}
                       target='_blank'
@@ -95,7 +96,7 @@ const ProjectPage = ({
                     </a>
                   </li>
                   {project.result_link.length > 1 ? (
-                    <li>
+                    <li {...animated}>
                       <a
                         href={project.result_link[1]}
                         target='_blank'
@@ -110,8 +111,9 @@ const ProjectPage = ({
               </div>
             ) : null}
             <div className={style.project_reference}>
-              <h1>{project.project_name}</h1>
+              <h1 {...animated}>{project.project_name}</h1>
               <div
+                {...animated}
                 className={style.project_main_img_wrap}
                 style={{ backgroundImage: `url(${project.final_photo})` }}
               >
@@ -127,7 +129,7 @@ const ProjectPage = ({
           <div className='v_cont'>
             <div className={style.cta_section_offer}>
               <Title title='Did you like the project?' margin={true} />
-              <p>
+              <p {...animated}>
                 Fill out the application and we will contact you to discuss
                 cooperation
               </p>
@@ -201,11 +203,12 @@ class PreviousNextMethodsProjectsSection extends Component<SliderProps> {
                 margin={true}
               />
               <div className={style.projects_desk_and_arrows}>
-                <p>
+                <p {...animated}>
                   Our digital company develops projects and has been on the
                   market for 15 years.
                 </p>
                 <div
+                  {...animated}
                   className={cn(style.arrows, {
                     [style.disabled]: this.props.rec.length <= 3
                   })}
@@ -222,6 +225,7 @@ class PreviousNextMethodsProjectsSection extends Component<SliderProps> {
                 </div>
               </div>
               <div
+                {...animated}
                 className={`${style.projects_slider} projects_slider_global`}
               >
                 <ProjectsSlider

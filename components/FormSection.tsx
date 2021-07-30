@@ -77,7 +77,7 @@ const FormSection = (): JSX.Element => {
         initialValues={{ name: '', email: '', phone: '' }}
       >
         {({ handleSubmit }) => (
-          <form onSubmit={handleSubmit} className={style.form}>
+          <form {...animated} onSubmit={handleSubmit} className={style.form}>
             <Title
               className={style.heading}
               label='LET’S GET STARTED'

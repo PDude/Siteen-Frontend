@@ -1,4 +1,5 @@
 import React from 'react'
+import { animated } from '../../Data'
 import style from '../../styles/components/common/CardItem.module.css'
 
 type CardItemType = {
@@ -9,7 +10,7 @@ type CardItemType = {
 }
 
 const CardItem = ({ logo, title, text, textMax }: CardItemType) => (
-  <div className={style.service_element}>
+  <div {...animated} className={style.service_element}>
     <div className={`${style.icon_wrap} icon_wrap_global`}>
       <img src={logo} alt='web' />
     </div>

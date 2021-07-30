@@ -91,7 +91,7 @@ const HomePage = ({
         <div className='container'>
           <div className='v_cont'>
             <Title label='Our Services' title='We Do Everything.' gap={true} />
-            <div {...animated} className={style.services_items_wrap}>
+            <div className={style.services_items_wrap}>
               <div className={style.services_items}>{servicesItems}</div>
               <div className={style.services_slider_wrap}>
                 <ServicesSlider {...sliderSettings}>
@@ -120,7 +120,7 @@ const HomePage = ({
       <section className={style.we_are_pro}>
         <div className='container'>
           <div className={style.we_are_pro_wrap}>
-            <div className={style.we_are_pro_content}>
+            <div {...animated} className={style.we_are_pro_content}>
               <div className={style.we_are_pro_content_inner}>
                 <Title
                   label='About Us'

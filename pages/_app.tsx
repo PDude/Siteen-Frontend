@@ -11,10 +11,11 @@ import 'aos/dist/aos.css'
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
-    // window.history.scrollRestoration = 'manual'
+    window.history.scrollRestoration = 'manual'
     AOS.init({
-      duration: 850,
-      delay: 100
+      duration: 800,
+      once: true,
+      delay: 150
     })
   }, [])
 

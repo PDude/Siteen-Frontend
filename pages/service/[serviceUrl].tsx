@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 // styles
 import style from '../../styles/pages/ServiceName.module.scss'
 // data
-import { ServiceInfoType, servicesData } from '../../Data'
+import { animated, ServiceInfoType, servicesData } from '../../Data'
 // next
 import { useRouter } from 'next/router'
 import Head from 'next/head'
@@ -129,7 +129,9 @@ const ServiceName = ({
             </div>
             <ul className={style.content_text}>
               {serviceInfo.content.text.map(p => (
-                <li key={p}>{p}</li>
+                <li {...animated} key={p}>
+                  {p}
+                </li>
               ))}
             </ul>
           </div>
@@ -161,7 +163,7 @@ const ServiceName = ({
                         </AccordionItemState>
                       </AccordionItemButton>
                     </AccordionItemHeading>
-                    <AccordionItemPanel className={style.panel}>
+                    <AccordionItemPanel {...animated} className={style.panel}>
                       {item.text}
                     </AccordionItemPanel>
                   </AccordionItem>
@@ -215,7 +217,7 @@ const ServiceItemText = ({
   title,
   text
 }: ServiceItemTextType): JSX.Element => (
-  <div className={style.service_item}>
+  <div {...animated} className={style.service_item}>
     <span>{index < 10 ? `0${index}` : index}</span>
     <h4>{title}</h4>
     <p>{text}</p>
@@ -233,7 +235,10 @@ const ServiceItemAcc = ({
   title,
   expanded
 }: ServiceItemAccType): JSX.Element => (
-  <div className={cn(style.service_item_acc, { [style.opened]: expanded })}>
+  <div
+    {...animated}
+    className={cn(style.service_item_acc, { [style.opened]: expanded })}
+  >
     <span>{index < 10 ? `0${index}` : index}</span>
     <h4>{title}</h4>
     <img src={faqArrow} alt='' />

@@ -3,7 +3,7 @@ import React from 'react'
 import faqSign from '../images/faq_sign.svg'
 import faqArrow from '../images/faq_arrow.svg'
 // data
-import { faq } from '../Data/index'
+import { animated, faq } from '../Data/index'
 // packages
 import cn from 'classnames'
 import {
@@ -39,7 +39,7 @@ const AccordionSection = (): JSX.Element => {
                   </AccordionItemState>
                 </AccordionItemButton>
               </AccordionItemHeading>
-              <AccordionItemPanel className={style.panel}>
+              <AccordionItemPanel {...animated} className={style.panel}>
                 {item.text}
               </AccordionItemPanel>
             </AccordionItem>
@@ -56,7 +56,10 @@ type AccHeadingType = {
 }
 
 const AccHeading = ({ title, expanded }: AccHeadingType): JSX.Element => (
-  <div className={cn(style.acc_heading, { [style.opened]: expanded })}>
+  <div
+    {...animated}
+    className={cn(style.acc_heading, { [style.opened]: expanded })}
+  >
     <img className={style.faq_sign} src={faqSign} alt='' />
     <h3 title={title}>{title}</h3>
     <img className={style.faq_arrow} src={faqArrow} alt='' />

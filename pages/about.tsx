@@ -41,7 +41,7 @@ import FormSection from '../components/FormSection'
 import ContactsSection from '../components/ContactsSection'
 import Footer from '../components/Footer'
 // Data
-import { team } from '../Data'
+import { animated, team } from '../Data'
 // Packages
 import cn from 'classnames'
 import Title from '../components/common/Title'
@@ -57,7 +57,7 @@ const About = () => (
         <div className='container'>
           <div className={style.about_offer}>
             <div className={style.about_offer_text}>
-              <Title label='About us' />
+              <Title animate={false} label='About us' />
               <h1>We are professionals in our field.</h1>
               <p>
                 Our digital company develops projects and has been on the market
@@ -86,41 +86,19 @@ const About = () => (
         <div className='v_cont'>
           <div className={style.frontend_and_description}>
             <div className={style.frontend}>
-              <h3>FrontEnd</h3>
-              <div className={style.frontend_icons}>
-                <span>
-                  <img src={jsIcon} alt='jsIcon' />
-                </span>
-                <span>
-                  <img src={reactIcon} alt='reactIcon' />
-                </span>
-                <span>
-                  <img src={reduxIcon} alt='reduxIcon' />
-                </span>
-                <span className={style.next_icon}>
-                  <img src={nextIcon} alt='nextIcon' />
-                </span>
-                <span>
-                  <img src={vueIcon} alt='vueIcon' />
-                </span>
-                <span>
-                  <img src={angularIcon} alt='angularIcon' />
-                </span>
-                <span>
-                  <img src={tsIcon} alt='tsIcon' />
-                </span>
-                <span>
-                  <img src={webpackIcon} alt='webpackIcon' />
-                </span>
-                <span>
-                  <img src={htmlIcon} alt='htmlIcon' />
-                </span>
-                <span className={style.cssIcon}>
-                  <img src={cssIcon} alt='cssIcon' />
-                </span>
-                <span>
-                  <img src={sassIcon} alt='sassIcon' />
-                </span>
+              <h3 {...animated}>FrontEnd</h3>
+              <div {...animated} className={style.frontend_icons}>
+                <TechIcon src={jsIcon} />
+                <TechIcon src={reactIcon} />
+                <TechIcon src={reduxIcon} />
+                <TechIcon src={nextIcon} className={style.next_icon} />
+                <TechIcon src={vueIcon} />
+                <TechIcon src={angularIcon} />
+                <TechIcon src={tsIcon} />
+                <TechIcon src={webpackIcon} />
+                <TechIcon src={htmlIcon} />
+                <TechIcon src={cssIcon} className={style.cssIcon} />
+                <TechIcon src={sassIcon} />
               </div>
             </div>
             <div className={style.description_tech}>
@@ -129,7 +107,7 @@ const About = () => (
                 title='The technologies we use.'
                 margin={true}
               />
-              <p>
+              <p {...animated}>
                 Our digital company develops projects and has been on the market
                 for 15 years.
               </p>
@@ -137,55 +115,27 @@ const About = () => (
           </div>
           <div className={style.backend_and_art}>
             <div className={style.backend}>
-              <h3>BackEnd</h3>
-              <div className={style.backend_icons}>
-                <span>
-                  <img src={nodeJs} alt='nodeJs' />
-                </span>
-                <span className={style.expressIcon}>
-                  <img src={expressIcon} alt='expressIcon' />
-                </span>
-                <span>
-                  <img src={mySqlIcon} alt='mySqlIcon' />
-                </span>
-                <span>
-                  <img src={nestIcon} alt='nestIcon' />
-                </span>
-                <span>
-                  <img src={nginxIcon} alt='nginxIcon' />
-                </span>
-                <span>
-                  <img src={postgresqlIcon} alt='postgresqlIcon' />
-                </span>
-                <span>
-                  <img src={sequelizeIcon} alt='sequelize' />
-                </span>
+              <h3 {...animated}>BackEnd</h3>
+              <div {...animated} className={style.backend_icons}>
+                <TechIcon src={nodeJs} />
+                <TechIcon src={expressIcon} className={style.expressIcon} />
+                <TechIcon src={mySqlIcon} />
+                <TechIcon src={nestIcon} />
+                <TechIcon src={nginxIcon} />
+                <TechIcon src={postgresqlIcon} />
+                <TechIcon src={sequelizeIcon} />
               </div>
             </div>
             <div className={style.art}>
-              <h3>Art & Design</h3>
-              <div className={style.art_icons}>
-                <span className={style.figmaIcon}>
-                  <img src={figmaIcon} alt='figmaIcon' />
-                </span>
-                <span>
-                  <img src={aeIcon} alt='aeIcon' />
-                </span>
-                <span>
-                  <img src={blenderIcon} alt='blenderIcon' />
-                </span>
-                <span>
-                  <img src={cinema4d} alt='cinema4d' />
-                </span>
-                <span>
-                  <img src={davinci} alt='davinci' />
-                </span>
-                <span>
-                  <img src={photoshop} alt='photoshop' />
-                </span>
-                <span>
-                  <img src={xd} alt='xd' />
-                </span>
+              <h3 {...animated}>Art & Design</h3>
+              <div {...animated} className={style.art_icons}>
+                <TechIcon src={figmaIcon} className={figmaIcon} />
+                <TechIcon src={aeIcon} />
+                <TechIcon src={blenderIcon} />
+                <TechIcon src={cinema4d} />
+                <TechIcon src={davinci} />
+                <TechIcon src={photoshop} />
+                <TechIcon src={xd} />
               </div>
             </div>
           </div>
@@ -273,11 +223,13 @@ class PreviousNextMethodsTeamSection extends Component {
                 margin={true}
               />
               <div className={style.team_desk_and_arrows}>
-                <p>
+                <p {...animated}>
                   Our digital company develops projects and has been on the
                   market for 15 years.
                 </p>
                 <div
+                  {...animated}
+                  {...animated}
                   className={cn(style.arrows, {
                     [style.disabled]: team.length <= 4
                   })}
@@ -293,7 +245,10 @@ class PreviousNextMethodsTeamSection extends Component {
                   </button>
                 </div>
               </div>
-              <div className={`${style.team_slider} team_slider_global`}>
+              <div
+                {...animated}
+                className={`${style.team_slider} team_slider_global`}
+              >
                 <TeamSlider ref={c => (this.slider = c)} {...sliderSettings}>
                   {team.map((t: TeamSliderItemProps) => (
                     <TeamSliderItem
@@ -313,6 +268,17 @@ class PreviousNextMethodsTeamSection extends Component {
     )
   }
 }
+
+type TechIconProps = {
+  src: string
+  className?: string
+}
+
+const TechIcon = ({ src, className }: TechIconProps): JSX.Element => (
+  <span className={className}>
+    <img src={src} alt={src} />
+  </span>
+)
 
 type TeamSliderItemProps = {
   name: string
