@@ -32,7 +32,7 @@ import { GetStaticProps } from 'next'
 import { InferGetStaticPropsType } from 'next'
 // Data
 import { animated, services } from '../Data'
-import CardItem from '../components/common/CardItem'
+import InfoCard from '../components/common/InfoCard'
 // next
 import Head from 'next/head'
 
@@ -54,7 +54,7 @@ const HomePage = ({
   const servicesItems = services.map(s => (
     <Link key={s.serviceTitle} href={`/service/${s.serviceUrl}`}>
       <a>
-        <CardItem
+        <InfoCard
           logo={s.serviceLogo}
           title={s.serviceTitle}
           text={s.serviceDescription}
@@ -289,8 +289,9 @@ const WorkflowElement = ({ index, title, text }: WorkflowElementType) => {
   const [isTextVisible, setTextVisible] = useState<boolean>(false)
 
   return (
-    <div {...animated} className={style.workflow_element}>
+    <div className={style.workflow_element}>
       <span
+        {...animated}
         onClick={() => {
           setTextVisible(!isTextVisible)
         }}
@@ -298,27 +299,31 @@ const WorkflowElement = ({ index, title, text }: WorkflowElementType) => {
         {index}
       </span>
       <div className={style.workflow_text}>
-        <h3
-          className={
-            index !== '01.'
-              ? cn({ [style.opened]: isTextVisible })
-              : cn({ [style.opened]: !isTextVisible })
-          }
-          onClick={() => {
-            setTextVisible(!isTextVisible)
-          }}
-        >
-          {title}
-        </h3>
-        <p
-          className={
-            index !== '01.'
-              ? cn({ [style.visible]: isTextVisible })
-              : cn({ [style.visible]: !isTextVisible })
-          }
-        >
-          {text}
-        </p>
+        <div {...animated}>
+          <h3
+            className={
+              index !== '01.'
+                ? cn({ [style.opened]: isTextVisible })
+                : cn({ [style.opened]: !isTextVisible })
+            }
+            onClick={() => {
+              setTextVisible(!isTextVisible)
+            }}
+          >
+            {title}
+          </h3>
+        </div>
+        <div {...animated}>
+          <p
+            className={
+              index !== '01.'
+                ? cn({ [style.visible]: isTextVisible })
+                : cn({ [style.visible]: !isTextVisible })
+            }
+          >
+            {text}
+          </p>
+        </div>
       </div>
     </div>
   )

@@ -11,7 +11,7 @@ const PrivacyPolicy = () => (
     </Head>
     <section className={style.privacy_policy}>
       <div className='container'>
-        <div className='v_cont'>
+        <div className='v_cont border_top'>
           <div className={style.privacy_policy_inner}>
             <Title
               animate={false}

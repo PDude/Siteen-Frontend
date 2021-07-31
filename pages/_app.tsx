@@ -15,7 +15,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
     AOS.init({
       duration: 800,
       once: true,
-      delay: 150
+      delay: 50
     })
   }, [])
 

@@ -352,6 +352,10 @@
     .frontend_icons, .backend_icons, .art_icons
         max-width: 250px !important
 
+@media only screen and (max-height: 750px)
+    .about_offer .offer_description
+        display: none
+
 @media only screen and (max-height: 550px)
     .about_offer_text
         h1
@@ -364,6 +368,8 @@
     .about_video_wrap
         display: none
 
-@media only screen and (max-height: 750px)
-    .about_offer .offer_description
+@media only screen and (max-height: 300px)
+    .about_header
+        padding-bottom: 70px
+    .about_offer_text p 
         display: none

@@ -123,43 +123,6 @@
             margin-right: 25px
         &::after
             margin-left: 25px
-    .project_main_img_wrap
-        width: 100%
-        overflow: hidden
-        border-radius: 20px
-        position: relative
-        padding-top: 25%
-        padding-bottom: 25%
-        background-size: cover
-        background-position: center
-        background-repeat: no-repeat
-        background-color: #fff
-        display: flex
-        align-items: center
-        justify-content: center
-        & *
-            position: relative
-            z-index: 15
-        button
-            opacity: 0
-            transition: all 0.3s ease
-            visibility: hidden
-        &:hover button
-            opacity: 1
-            visibility: visible
-        &:hover::before
-            opacity: 1
-        &::before
-            content: ''
-            position: absolute
-            left: 0
-            top: 0
-            z-index: 10
-            transition: all 0.3s ease
-            opacity: 0
-            width: 100%
-            height: 100%
-            background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),linear-gradient(71.35deg,rgba(250, 68, 110, 0.8) 40.22%,rgba(250, 190, 68, 0.8) 100%)
 
 .cta_section
     background: url('../../images/cta_section_bg.webp') no-repeat center / cover
@@ -201,120 +164,6 @@
 .projects_slider
     margin-top: 45px
 
-.slider_item
-    padding: 30px 50px 50px
-    background-size: cover
-    background-position: center
-    background-color: #fff
-    height: 100%
-    min-height: 280px
-    display: flex
-    flex-direction: column
-    transition: all 0.3s ease
-    justify-content: space-between
-    overflow: hidden
-    border-radius: 20px
-    position: relative
-    .slider_item_wrap
-        height: 100%
-        opacity: 0
-        transition: all 0.3s ease
-        display: flex
-        flex-direction: column
-        justify-content: space-between
-        transform: scale(1.03)
-    &:hover .slider_item_wrap
-        opacity: 1
-        transform: initial
-    &::before
-        content: ''
-        position: absolute
-        left: 0
-        top: 0
-        z-index: 10
-        transition: all 0.3s ease
-        opacity: 0
-        width: 100%
-        height: 100%
-        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 100%),linear-gradient(71.35deg,rgba(250, 68, 110, 0.8) 40.22%,rgba(250, 190, 68, 0.8) 100%)
-    &:hover::before
-        opacity: 0.6
-    & *
-        position: relative
-        z-index: 15
-    img
-        width: 140px
-        z-index: 5
-        position: absolute
-        top: 50%
-        left: 50%
-        transform: translate(-50%, -50%)
-
-.project_title
-    margin: 30px 0px
-
-.project_duration
-    display: flex
-    align-items: center
-    flex-wrap: wrap
-    font-size: 16px
-    grid-gap: 8px
-    & p
-        font-weight: 700
-    & span::first-letter
-        font-size: 20px
-
-.project_title h4
-    font-weight: 600
-    font-size: 20px
-    margin-bottom: 1px
-    text-transform: uppercase
-    margin-bottom: 5px
-    white-space: nowrap
-    overflow: hidden
-    text-overflow: ellipsis
-
-.project_title p
-    white-space: nowrap
-    overflow: hidden
-    text-overflow: ellipsis
-    opacity: 0.9
-
-.project_link
-    color: #dd4242
-    font-size: 16px
-    display: flex
-    position: relative
-    align-items: center
-    padding-bottom: 7px
-
-.project_link::after,
-.project_link::before
-    content: ''
-    position: absolute
-    left: 0
-    bottom: 0
-
-.project_link::after
-    background: #dadada80
-    z-index: 11
-    height: 1px
-    width: 100%
-
-.project_link::before
-    background: #dd4242
-    z-index: 12
-    width: 80px
-    height: 2px
-    transition: all 1s ease
-
-.slider_item:hover .project_link::before
-    width: 100%
-
-.project_link svg
-    margin-left: 5px
-    transform: scaleY(0.65)
-
 @media only screen and (max-width: 1200px)
     .project_info
         img
@@ -331,11 +180,6 @@
 
     .project_reference h1
         font-size: 25px
-
-    .slider_item
-        min-height: 250px
-        padding-left: 25px
-        padding-right: 25px
 
 @media only screen and (max-width: 992px)
     .project_type h3
@@ -367,13 +211,6 @@
 
     .projects_desk_and_arrows p
         font-size: 18px !important
-
-    .slider_item
-        min-height: 220px
-        padding: 20px 25px 30px
-
-    .project_title h4
-        font-size: 16px
 
 @media only screen and (min-width: 768px)
     .arrows.disabled
@@ -422,9 +259,6 @@
         font-size: 16px !important
         max-width: 325px !important
 
-    .slider_item
-        padding: 20px
-
 @media only screen and (max-width: 576px)
     .project_info
         img
@@ -446,18 +280,25 @@
     .arrows
         display: none !important
 
-@media only screen and (max-height: 750px)
-    .project_type:before
-        display: none
     .project_type
         margin-top: 20px !important
+        &:before
+            display: none
+
+@media only screen and (max-height: 750px)
+    .project_type
+        margin-top: 20px !important
+        &:before
+            display: none
     .project_page_header button
         margin-top: 20px
-    .project_page_header
-        padding-bottom: 70px
 
 @media only screen and (max-height: 550px)
     .project_info > img
         display: none
-    .project_info p 
+    .project_info p
         font-size: 16px !important
+
+@media only screen and (max-height: 300px)
+    .project_page_header
+        padding-bottom: 70px

@@ -72,6 +72,10 @@ li
 
 .v_cont
   padding: 80px 0
+  &.border_top
+    border-top: 1px solid #FAAA4C
+  &.border_bottom
+    border-bottom: 1px solid #FAAA4C
 
 .divider
   height: 40px
@@ -132,48 +136,51 @@ li
   filter: brightness(1)
   transition: all 0.5s ease
 
-// Slides for projects passive slides
-.slick-slide .project_case_global::before
-  opacity: 0 !important
-  transition: all 0.5s ease
+@media only screen and (max-width: 576px)
+  // ! Project card start
+  // Slides for projects passive slides
+  .slick-slide .project_card_global::before
+    opacity: 0 !important
+    transition: all 0.5s ease
 
-// Styles for one active projects slide
-.slick-active .project_case_global::before, .slick-current .project_case_global::before
-  opacity: 0.6 !important
-  transition: all 0.5s ease
+  // Styles for one active projects slide
+  .slick-active .project_card_global::before, .slick-current .project_card_global::before
+    opacity: 0.8 !important
+    transition: all 0.5s ease
 
-// Slides for projects passive slides
-.slick-slide .project_case_wrap_global
-  opacity: 0 !important
-  transition: all 0.5s ease
+  // Slides for projects passive slides
+  .slick-slide .project_card_wrap_global
+    opacity: 0 !important
+    transition: all 0.5s ease
 
-// Styles for one active projects slide
-.slick-active .project_case_wrap_global, .slick-current .project_case_wrap_global
-  opacity: 1 !important
-  transition: all 0.5s ease
-  small::before
-    width: 100%
+  // Styles for one active projects slide
+  .slick-active .project_card_wrap_global, .slick-current .project_card_wrap_global
+    opacity: 1 !important
+    transition: all 0.5s ease
+    small::before
+      width: 100%
+  // ! Project card end
 
-// Slides for card passive slides  
-.slick-slide .icon_wrap_global
-  background: #000
-  animation: none
-  transition: all 0.5s ease
+@media only screen and (max-width: 576px)
+  // ! Info card start
+  // Slides for card passive slides  
+  .slick-slide .icon_wrap_global
+    background: #000
+    animation: none
+    transition: all 0.5s ease
 
-// Styles for one active card slide
-.slick-active .icon_wrap_global, .slick-current .icon_wrap_global
-  background: #fff
+  // Styles for one active card slide
+  .slick-active .icon_wrap_global, .slick-current .icon_wrap_global
+    background: #fff
+  // ! Info card end
 
 // Styles for track of all slides  
 .slick-track
   display: flex !important
 
 @media only screen and (max-width: 1200px)
-
 @media only screen and (max-width: 992px)
-
 @media only screen and (max-width: 768px)
-
 @media only screen and (max-width: 576px)
 
   // Slides for team members passive slides 

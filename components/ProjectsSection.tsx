@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
-import Link from 'next/link'
-// stylea
+// style
 import style from '../styles/components/common/ProjectsSection.module.css'
-// components
-import AnimLink from './common/AnimLink'
 // packages
 import cn from 'classnames'
 import CasesSlider from 'react-slick'
@@ -11,6 +8,7 @@ import CasesSlider from 'react-slick'
 import { ProjectType } from '../types'
 import Title from './common/Title'
 import { animated } from '../Data'
+import ProjectCard from './common/ProjectCard'
 
 type Props = {
   projects: Array<ProjectType>
@@ -48,9 +46,9 @@ const ProjectsSection = ({ projects }: Props): JSX.Element => {
 
   // Setting projects
   const casesItems = filteredProjects?.map(c => (
-    <ProjectCase
+    <ProjectCard
       key={c.id}
-      originalName={c.original_name}
+      url={`/project/${c.original_name}`}
       projectPhoto={c.project_photo}
       projectLogo={c.project_logo}
       caseDuration={c.term}
@@ -64,7 +62,7 @@ const ProjectsSection = ({ projects }: Props): JSX.Element => {
       <div className='container'>
         <div className={style.our_cases_wrap}>
           <Title label='Our portfolio' title='Our Latest Cases.' gap={true} />
-          <div {...animated} className={style.cases_tags}>
+          <div className={style.cases_tags}>
             <CaseTag
               typeTag='all'
               text='All projects'
@@ -121,6 +119,7 @@ type CaseTagType = {
 const CaseTag = ({ typeTag, typeState, text, filterProjects }: CaseTagType) => {
   return (
     <button
+      {...animated}
       type='button'
       onClick={(e: { currentTarget: { value: string } }) => {
         filterProjects(e)
@@ -132,43 +131,5 @@ const CaseTag = ({ typeTag, typeState, text, filterProjects }: CaseTagType) => {
     </button>
   )
 }
-
-type ProjectCaseType = {
-  originalName: string
-  projectPhoto: string
-  caseDuration: string
-  projectTitle: string
-  projectSubtitle: string
-  projectLogo: string
-}
-
-const ProjectCase = ({
-  originalName,
-  projectPhoto,
-  caseDuration,
-  projectTitle,
-  projectSubtitle,
-  projectLogo
-}: ProjectCaseType) => (
-  <Link href={`/project/${originalName}`}>
-    <a
-      style={{ backgroundImage: `url(${projectPhoto})` }}
-      className={`${style.project_case} project_case_global`}
-    >
-      <img src={projectLogo} alt='logo' />
-      <div className={`${style.project_case_wrap} project_case_wrap_global`}>
-        <div className={style.project_duration}>
-          <p>Creation Term: </p>
-          <span>{caseDuration}</span>
-        </div>
-        <div className={style.project_title}>
-          <h4>{projectTitle}</h4>
-          <p>{projectSubtitle}</p>
-        </div>
-        <AnimLink text='View full project' to={`/project/${originalName}`} />
-      </div>
-    </a>
-  </Link>
-)
 
 export default ProjectsSection

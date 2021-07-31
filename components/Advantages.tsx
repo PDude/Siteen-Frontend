@@ -4,7 +4,7 @@ import { advantages } from '../Data'
 // styles
 import style from '../styles/components/common/Advantages.module.scss'
 // components
-import CardItem from './common/CardItem'
+import InfoCard from './common/InfoCard'
 import Title from './common/Title'
 // packages
 import ServicesSlider from 'react-slick'
@@ -22,7 +22,7 @@ const Advantages = () => {
   }
 
   const advantagesItems = advantages.map(a => (
-    <CardItem
+    <InfoCard
       key={a.advTitle}
       title={a.advTitle}
       text={a.advtext}

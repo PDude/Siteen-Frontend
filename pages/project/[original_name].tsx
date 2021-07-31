@@ -13,8 +13,6 @@ import arrowBack from '../../images/arrow_team_back.svg'
 import arrowNext from '../../images/arrow_team_next.svg'
 // Packages
 import cn from 'classnames'
-// Icons
-import { GoTriangleRight } from 'react-icons/go'
 // Components
 import Preloader from '../../components/common/Preloader'
 import AnimArrow from '../../components/common/AnimArrow'
@@ -22,10 +20,10 @@ import AnimArrow from '../../components/common/AnimArrow'
 import { ProjectType } from '../../types'
 import { GetServerSideProps } from 'next'
 import { InferGetServerSidePropsType } from 'next'
-import Link from 'next/link'
 import Title from '../../components/common/Title'
 import Head from 'next/head'
 import { animated } from '../../Data'
+import ProjectCard from '../../components/common/ProjectCard'
 
 const ProjectPage = ({
   project,
@@ -112,13 +110,16 @@ const ProjectPage = ({
             ) : null}
             <div className={style.project_reference}>
               <h1 {...animated}>{project.project_name}</h1>
-              <div
-                {...animated}
-                className={style.project_main_img_wrap}
-                style={{ backgroundImage: `url(${project.final_photo})` }}
-              >
-                <Button>View More On ...</Button>
-              </div>
+              <ProjectCard
+                url={project.result_link[0]}
+                projectPhoto={project.project_photo}
+                projectLogo={project.project_logo}
+                caseDuration={project.term}
+                projectTitle={project.project_name}
+                projectSubtitle={project.project_subtitle}
+                newTab={true}
+                large={true}
+              />
             </div>
           </div>
         </div>
@@ -233,13 +234,13 @@ class PreviousNextMethodsProjectsSection extends Component<SliderProps> {
                   {...sliderSettings}
                 >
                   {this.props.rec.map(p => (
-                    <ProjectsSliderItem
-                      project_name={p.project_name}
-                      project_subtitle={p.project_subtitle}
-                      term={p.term}
-                      project_logo={p.project_logo}
-                      project_photo={p.project_photo}
-                      original_name={p.original_name}
+                    <ProjectCard
+                      projectTitle={p.project_name}
+                      projectSubtitle={p.project_subtitle}
+                      caseDuration={p.term}
+                      projectLogo={p.project_logo}
+                      projectPhoto={p.project_photo}
+                      url={`/project/${p.original_name}`}
                       key={p.id}
                     />
                   ))}
@@ -251,48 +252,6 @@ class PreviousNextMethodsProjectsSection extends Component<SliderProps> {
       </section>
     )
   }
-}
-
-type SLiderItemType = {
-  project_name: string
-  project_subtitle: string
-  term: string
-  project_logo: string
-  original_name: string
-  project_photo: string
-}
-
-const ProjectsSliderItem = ({
-  project_name,
-  project_subtitle,
-  term,
-  project_logo,
-  project_photo,
-  original_name
-}: SLiderItemType): JSX.Element => {
-  return (
-    <Link href={`/project/${original_name}`}>
-      <a
-        className={`${style.slider_item} slider_item_global`}
-        style={{ backgroundImage: `url(${project_photo})` }}
-      >
-        <img src={project_logo} alt='logo' />
-        <div className={`${style.slider_item_wrap} slider_item_wrap_global`}>
-          <div className={style.project_duration}>
-            <p>Creation Term: </p>
-            <span>{term}</span>
-          </div>
-          <div className={style.project_title}>
-            <h4>{project_name}</h4>
-            <p>{project_subtitle}</p>
-          </div>
-          <p className={style.project_link}>
-            View full project <GoTriangleRight />
-          </p>
-        </div>
-      </a>
-    </Link>
-  )
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {

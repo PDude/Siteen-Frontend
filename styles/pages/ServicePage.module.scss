@@ -280,12 +280,9 @@
 }
 
 @media only screen and (max-height: 750px) {
-  .service_header {
-    padding-bottom: 70px;
-    h3 {
-      margin-top: 20px !important;
-      font-size: 20px !important;
-    }
+  .service_header h3 {
+    margin-top: 20px !important;
+    font-size: 20px !important;
   }
   .offer_wrap p {
     margin-bottom: 20px !important;
@@ -298,5 +295,10 @@
   }
   .logo_wrap {
     display: none !important;
+  }
+}
+@media only screen and (max-height: 300px) {
+  .service_header {
+    padding-bottom: 70px;
   }
 }

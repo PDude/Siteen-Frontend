@@ -30,7 +30,7 @@ const AccordionSection = (): JSX.Element => {
         <Accordion allowZeroExpanded={true} className={style.accordion}>
           {faq.map(item => (
             <AccordionItem key={item.title}>
-              <AccordionItemHeading>
+              <AccordionItemHeading {...animated}>
                 <AccordionItemButton>
                   <AccordionItemState>
                     {({ expanded }) => (
@@ -56,10 +56,7 @@ type AccHeadingType = {
 }
 
 const AccHeading = ({ title, expanded }: AccHeadingType): JSX.Element => (
-  <div
-    {...animated}
-    className={cn(style.acc_heading, { [style.opened]: expanded })}
-  >
+  <div className={cn(style.acc_heading, { [style.opened]: expanded })}>
     <img className={style.faq_sign} src={faqSign} alt='' />
     <h3 title={title}>{title}</h3>
     <img className={style.faq_arrow} src={faqArrow} alt='' />

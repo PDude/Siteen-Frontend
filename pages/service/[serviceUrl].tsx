@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 // styles
-import style from '../../styles/pages/ServiceName.module.scss'
+import style from '../../styles/pages/ServicePage.module.scss'
 // data
 import { animated, ServiceInfoType, servicesData } from '../../Data'
 // next
@@ -34,7 +34,7 @@ import { GetServerSideProps, InferGetServerSidePropsType } from 'next'
 import Title from '../../components/common/Title'
 import AnimLink from '../../components/common/AnimLink'
 
-const ServiceName = ({
+const ServicePage = ({
   projects
 }: InferGetServerSidePropsType<GetServerSideProps>): JSX.Element => {
   // scroll to
@@ -150,7 +150,7 @@ const ServiceName = ({
               >
                 {serviceInfo.services.map((item, index) => (
                   <AccordionItem uuid={index.toString()} key={item.title}>
-                    <AccordionItemHeading>
+                    <AccordionItemHeading {...animated}>
                       <AccordionItemButton>
                         <AccordionItemState>
                           {({ expanded }) => (
@@ -235,10 +235,7 @@ const ServiceItemAcc = ({
   title,
   expanded
 }: ServiceItemAccType): JSX.Element => (
-  <div
-    {...animated}
-    className={cn(style.service_item_acc, { [style.opened]: expanded })}
-  >
+  <div className={cn(style.service_item_acc, { [style.opened]: expanded })}>
     <span>{index < 10 ? `0${index}` : index}</span>
     <h4>{title}</h4>
     <img src={faqArrow} alt='' />
@@ -268,4 +265,4 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
 }
 
-export default ServiceName
+export default ServicePage
