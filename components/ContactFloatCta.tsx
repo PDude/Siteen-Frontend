@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import style from '../styles/components/ContactFloatCta.module.scss'
 import Pulse from './common/Pulse'
 import Button from './formElements/Button'
-
 import { FaPhoneAlt } from 'react-icons/fa'
 import Wiggle from './common/Wiggle'
 import ContactModal from './modals/ContactModal'
