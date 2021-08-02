@@ -5,13 +5,18 @@
 
 const withImages = require('next-images')
 
+const mode =
+  process.env.NODE_ENV === 'development'
+    ? 'http://localhost:8289/v1/'
+    : 'https://siteen.co/api/v1/'
+
 module.exports = withImages({
   fileExtensions: ['webp', 'svg'],
   webpack(config) {
     return config
   },
   env: {
-    NEXT_API_URL: 'https://siteen.co/api/v1/'
+    NEXT_API_URL: mode
   }
 })
 
@@ -35,7 +40,7 @@ module.exports = withImages({
 //         }
 //       })(),
 //       NEXT_API_URL: (() => {
-//         return 'https://siteen.co/api/v1/'
+//         return 'http://localhost:8289/v1/'
 //       })()
 //     }
 
