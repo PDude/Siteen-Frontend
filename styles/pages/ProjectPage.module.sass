@@ -65,19 +65,19 @@
             color: #EDEDED
 
 .project_data
+    .project_data_inner
+        display: flex
+        flex-direction: column
+        grid-gap: 50px
     h3
         margin-bottom: 15px
         font-size: 40px
-    .about
-        margin-bottom: 50px
-        p
-            font-size: 20px
-    .tasks
-        margin-bottom: 50px
-        ul li
-            font-size: 20px
-            line-height: 120%
-            color: #DBDBDB
+    .about p
+        font-size: 20px
+    .tasks ul li
+        font-size: 20px
+        line-height: 120%
+        color: #DBDBDB
     .results
         h3
             margin-bottom: 15px
@@ -102,7 +102,7 @@
 
 .project_reference
     h1
-        margin: 50px 0 40px
+        margin-bottom: 40px
         font-size: 30px
         font-weight: 500
         text-transform: capitalize
@@ -172,6 +172,8 @@
             font-size: 18px !important
 
     .project_data
+        .project_data_inner
+            grid-gap: 40px
         h3
             font-size: 35px
             margin-bottom: 10px !important
@@ -192,18 +194,16 @@
             font-size: 18px !important
 
     .project_data
+        .project_data_inner
+            grid-gap: 30px
         h3
             font-size: 30px
-        .about
-            margin-bottom: 40px
-        .tasks
-            margin-bottom: 40px
         .results li a
             font-size: 18px !important
 
     .project_reference h1
         font-size: 20px
-        margin: 40px 0 30px
+        margin-bottom: 30px
 
     .cta_section p
         font-size: 18px !important

@@ -68,22 +68,24 @@ const ProjectPage = ({
       <section ref={myRef} className={style.project_data}>
         <div className='container'>
           <div className='v_cont'>
-            <div className={style.about}>
-              <h3 {...animated}>About</h3>
-              <p {...animated}>{project.about_project}</p>
-            </div>
-            <div className={style.tasks}>
-              <h3 {...animated}>Tasks</h3>
-              <ul {...animated}>
-                {project.project_tasks?.map((t: Array<string>) => (
-                  <li key={Math.random()}>· {t}</li>
-                ))}
-              </ul>
-            </div>
-            {project.result_link_1 ||
-              (project.result_link_2 && (
+            <div className={style.project_data_inner}>
+              <div className={style.about}>
+                <h3 {...animated}>About</h3>
+                <p {...animated}>{project.about_project}</p>
+              </div>
+              <div className={style.tasks}>
+                <h3 {...animated}>Tasks</h3>
+                <ul {...animated}>
+                  {project.project_tasks?.map((t: Array<string>) => (
+                    <li key={Math.random()}>· {t}</li>
+                  ))}
+                </ul>
+              </div>
+              {(project.result_link_1 || project.result_link_2) && (
                 <div className={style.results}>
-                  <h3 {...animated}>Results</h3>
+                  <h3 {...animated}>
+                    {project.result_link_2 ? <>Results</> : <>Result</>}
+                  </h3>
                   <ul>
                     {project.result_link_1 && (
                       <li {...animated}>
@@ -110,19 +112,22 @@ const ProjectPage = ({
                     )}
                   </ul>
                 </div>
-              ))}
-            <div className={style.project_reference}>
-              <h1 {...animated}>{project.project_name}</h1>
-              <ProjectCard
-                url={project.result_link_1}
-                projectPhoto={project.project_photo}
-                projectLogo={project.project_logo}
-                caseDuration={project.term}
-                projectTitle={project.project_name}
-                projectSubtitle={project.project_subtitle}
-                newTab={true}
-                large={true}
-              />
+              )}
+              {project.result_link_1 && (
+                <div className={style.project_reference}>
+                  <h1 {...animated}>{project.project_name}</h1>
+                  <ProjectCard
+                    url={project.result_link_1}
+                    projectPhoto={project.project_photo}
+                    projectLogo={project.project_logo}
+                    caseDuration={project.term}
+                    projectTitle={project.project_name}
+                    projectSubtitle={project.project_subtitle}
+                    newTab={true}
+                    large={true}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
