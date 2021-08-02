@@ -55,7 +55,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
         {/* keyword and description */}
         <meta
           name='keywords'
-          content='Web-Application, CRM-System, iOS/Android App, Motion Design, Graphics, siteen, develop web-site, develop mobile app'
+          content='Web-Application, CRM-System, iOS/Android App, Motion Design, Graphics, siteen, develop web-site, develop mobile app, marketing'
         />
         <meta name='description' content='Solutions for Digital Business.' />
         {/* microsoft meta */}
