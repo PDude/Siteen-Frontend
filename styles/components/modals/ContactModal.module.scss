@@ -1,0 +1,58 @@
+.modal_wiew {
+  margin: 15px;
+  padding: 80px 20px;
+  background: #000;
+  max-width: 550px;
+  width: calc(100% - 30px);
+  height: auto;
+  max-height: 410px;
+  overflow: hidden;
+  background: url('../../../images/form_modal_bg_success.webp') no-repeat center /
+    cover;
+  border-radius: 10px;
+  position: relative;
+  z-index: 40;
+  * {
+    position: relative;
+    z-index: 10;
+  }
+  & > button {
+    display: none;
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    z-index: 5;
+    left: 1px;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: inherit;
+  }
+}
+
+.form {
+  max-width: 350px;
+  margin: 0 auto;
+  .fields_wrap {
+    display: flex;
+    flex-direction: column;
+    grid-gap: 30px;
+  }
+  button {
+    margin-top: 60px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+}
+@media only screen and (max-width: 992px) {
+  .form button {
+    margin-top: 40px;
+  }
+}
+@media only screen and (max-width: 768px) {
+}
+@media only screen and (max-width: 576px) {
+}

@@ -1,0 +1,40 @@
+.wiggle {
+  animation-duration: 5s;
+  animation-name: wiggle;
+  animation-play-state: running;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes wiggle {
+  2% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  4% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  6% {
+    transform: translateX(3px) rotate(2deg);
+  }
+  8% {
+    transform: translateX(-3px) rotate(-2deg);
+  }
+  10% {
+    transform: translateX(2px) rotate(1deg);
+  }
+  12% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  14% {
+    transform: translateX(2px) rotate(1deg);
+  }
+  16% {
+    transform: translateX(-2px) rotate(-1deg);
+  }
+  18% {
+    transform: translateX(1px) rotate(0deg);
+  }
+  20% {
+    transform: translateX(-1px) rotate(0deg);
+  }
+}

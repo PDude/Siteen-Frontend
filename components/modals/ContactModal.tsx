@@ -1,16 +1,22 @@
 import React from 'react'
+import 'react-responsive-modal/styles.css'
+import { Modal } from 'react-responsive-modal'
+import style from '../../styles/components/modals/ContactModal.module.scss'
 import { Formik } from 'formik'
-import { useState } from 'react'
+import InputField from '../formElements/inputField'
+import Button from '../formElements/Button'
 import { GoTriangleRight } from 'react-icons/go'
+import { animated } from '../../Data'
+import { validate } from '../formElements/validation'
 import { toast } from 'react-toastify'
-import style from '../styles/components/FormSection.module.sass'
-import Button from './formElements/Button'
-import InputField from './formElements/inputField'
-import SuccessModal from './modals/SuccessModal'
-import Title from './common/Title'
-import { animated } from '../Data'
-import { fetchFormData } from '../api'
-import { validate } from './formElements/validation'
+import { fetchFormData } from '../../api'
+
+type Props = {
+  onCloseContactModal: () => void
+  onOpenSuccessModal: () => void
+  onCloseSuccessModal: () => void
+  openContact: boolean
+}
 
 type FormValues = {
   name: string
@@ -18,20 +24,21 @@ type FormValues = {
   phone: string
 }
 
-const FormSection = (): JSX.Element => {
-  // success modal
-  const [openSuccessModal, setSuccessModalOpen] = useState<boolean>(false)
-
-  const onOpenSuccessModal = () => setSuccessModalOpen(true)
-  const onCloseSuccessModal = () => setSuccessModalOpen(false)
-
+const ContactModal = ({
+  onCloseContactModal,
+  onOpenSuccessModal,
+  onCloseSuccessModal,
+  openContact
+}: Props): JSX.Element => {
+  // fetching data
   const sendForm = async (values: FormValues, { resetForm }: any) => {
     try {
       return fetchFormData(values).then(res => {
         const { status } = res
         if (status === 200 || status === 201) {
-          resetForm({})
+          onCloseContactModal()
           onOpenSuccessModal()
+          resetForm({})
 
           setTimeout(() => {
             onCloseSuccessModal()
@@ -46,7 +53,15 @@ const FormSection = (): JSX.Element => {
   }
 
   return (
-    <>
+    <Modal
+      classNames={{
+        overlay: `${style.overlay}`,
+        modal: `${style.modal_wiew}`
+      }}
+      open={openContact}
+      onClose={onCloseContactModal}
+      center
+    >
       <Formik
         onSubmit={sendForm}
         validationSchema={validate}
@@ -54,16 +69,6 @@ const FormSection = (): JSX.Element => {
       >
         {({ handleSubmit }) => (
           <form {...animated} onSubmit={handleSubmit} className={style.form}>
-            <Title
-              className={style.heading}
-              label='LET’S GET STARTED'
-              margin={true}
-              title='Get A Free Consultation.'
-            />
-            <p {...animated}>
-              The best ideas start from the brif. Let us to know what you need
-              and we will realise it in successful product.
-            </p>
             <div className={style.form_items}>
               <div className={style.fields_wrap}>
                 <InputField name='name' placeholder='Name' type='text' />
@@ -79,12 +84,8 @@ const FormSection = (): JSX.Element => {
           </form>
         )}
       </Formik>
-      <SuccessModal
-        onCloseSuccessModal={onCloseSuccessModal}
-        openSuccessModal={openSuccessModal}
-      />
-    </>
+    </Modal>
   )
 }
 
-export default FormSection
+export default ContactModal

@@ -1,0 +1,31 @@
+.btn_wrap {
+  position: fixed;
+  z-index: 500;
+  right: 60px;
+  bottom: 80px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .btn_wrap {
+    right: 50px;
+    bottom: 70px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .btn_wrap {
+    right: 40px;
+    bottom: 60px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .btn_wrap {
+    right: 30px;
+    bottom: 50px;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .btn_wrap {
+    right: 20px;
+    bottom: 40px;
+  }
+}

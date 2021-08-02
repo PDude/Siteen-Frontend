@@ -1,7 +1,8 @@
 import React from 'react'
-import classnames from 'classnames'
+import cn from 'classnames'
 import style from '../../styles/components/formElements/Button.module.sass'
 import { animated } from '../../Data'
+import Wiggle from '../common/Wiggle'
 
 type Props = {
   max?: string
@@ -10,6 +11,7 @@ type Props = {
   children?: React.ReactNode
   onClick?: () => void
   animate?: boolean
+  wiggleIcon?: boolean
 }
 
 const Button = ({
@@ -18,9 +20,19 @@ const Button = ({
   className,
   children = null,
   animate = true,
+  wiggleIcon = false,
   ...props
 }: Props) => {
-  const classNames = classnames(style.btn, className)
+  const classNames = cn(
+    style.btn,
+    { [style.hasText]: children },
+    { [style.iconInly]: !children && Icon },
+    className
+  )
+
+  if (!Icon && !children) {
+    throw new Error(`Must receive one of two variables: 'Icon' or 'children'`)
+  }
 
   return (
     <button
@@ -30,7 +42,7 @@ const Button = ({
       {...props}
     >
       {children && <span>{children}</span>}
-      {Icon && Icon}
+      {Icon && <Wiggle wiggle={wiggleIcon}>{Icon}</Wiggle>}
     </button>
   )
 }

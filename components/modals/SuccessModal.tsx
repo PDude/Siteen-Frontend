@@ -1,23 +1,26 @@
 import React from 'react'
 import 'react-responsive-modal/styles.css'
 import { Modal } from 'react-responsive-modal'
-import style from '../../styles/components/modals/FormModal.module.sass'
+import style from '../../styles/components/modals/SuccessModal.module.sass'
 import checkModal from '../../images/check_modal_form.svg'
 
 type Props = {
-  onCloseFormModal: () => void
-  openFormModal: boolean
+  onCloseSuccessModal: () => void
+  openSuccessModal: boolean
 }
 
-const FormModal = ({ onCloseFormModal, openFormModal }: Props): JSX.Element => {
+const SuccessModal = ({
+  onCloseSuccessModal,
+  openSuccessModal
+}: Props): JSX.Element => {
   return (
     <Modal
       classNames={{
         overlay: `${style.overlay}`,
         modal: `${style.modal_wiew}`
       }}
-      open={openFormModal}
-      onClose={onCloseFormModal}
+      open={openSuccessModal}
+      onClose={onCloseSuccessModal}
       center
     >
       <div className={style.modal_form_content}>
@@ -32,4 +35,4 @@ const FormModal = ({ onCloseFormModal, openFormModal }: Props): JSX.Element => {
   )
 }
 
-export default FormModal
+export default SuccessModal

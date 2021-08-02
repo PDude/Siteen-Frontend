@@ -8,6 +8,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import Head from 'next/head'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
+import ContactFloatCta from '../components/ContactFloatCta'
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
@@ -78,6 +79,7 @@ const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
         height={3}
       />
 
+      <ContactFloatCta />
       <Layout>
         <Component {...pageProps} />
       </Layout>

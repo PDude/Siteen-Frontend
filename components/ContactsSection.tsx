@@ -9,7 +9,7 @@ import youTubeIcon from '../images/youtube_icon.svg'
 import Title from './common/Title'
 import { animated } from '../Data'
 
-const ContactsSection = () => (
+const ContactsSection = (): JSX.Element => (
   <div className={style.contact_section_wrap}>
     <div {...animated} className={style.contact_block}>
       <Title
