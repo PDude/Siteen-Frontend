@@ -80,38 +80,41 @@ const ProjectPage = ({
                 ))}
               </ul>
             </div>
-            {project.result_link.length > 0 ? (
-              <div className={style.results}>
-                <h3 {...animated}>Results</h3>
-                <ul>
-                  <li {...animated}>
-                    <a
-                      href={project.result_link[0]}
-                      target='_blank'
-                      rel='noreferrer'
-                    >
-                      {new URL(project.result_link[0]).hostname}
-                    </a>
-                  </li>
-                  {project.result_link.length > 1 ? (
-                    <li {...animated}>
-                      <a
-                        href={project.result_link[1]}
-                        target='_blank'
-                        rel='noreferrer'
-                      >{`@${new URL(project.result_link[1]).pathname.replace(
-                        /\//g,
-                        ''
-                      )}`}</a>
-                    </li>
-                  ) : null}
-                </ul>
-              </div>
-            ) : null}
+            {project.result_link_1 ||
+              (project.result_link_2 && (
+                <div className={style.results}>
+                  <h3 {...animated}>Results</h3>
+                  <ul>
+                    {project.result_link_1 && (
+                      <li {...animated}>
+                        <a
+                          href={project.result_link_1}
+                          target='_blank'
+                          rel='noreferrer'
+                        >
+                          {new URL(project.result_link_1).hostname}
+                        </a>
+                      </li>
+                    )}
+                    {project.result_link_2 && (
+                      <li {...animated}>
+                        <a
+                          href={project.result_link_2}
+                          target='_blank'
+                          rel='noreferrer'
+                        >{`@${new URL(project.result_link_2).pathname.replace(
+                          /\//g,
+                          ''
+                        )}`}</a>
+                      </li>
+                    )}
+                  </ul>
+                </div>
+              ))}
             <div className={style.project_reference}>
               <h1 {...animated}>{project.project_name}</h1>
               <ProjectCard
-                url={project.result_link[0]}
+                url={project.result_link_1}
                 projectPhoto={project.project_photo}
                 projectLogo={project.project_logo}
                 caseDuration={project.term}
