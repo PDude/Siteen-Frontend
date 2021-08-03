@@ -52,17 +52,17 @@ const Layout = ({ children }: Props): JSX.Element => {
             </Link>
             <ul className={style.nav_menu}>
               <li>
-                <Link href='/#our_services'>
+                <Link href='/#services'>
                   <a>Services</a>
                 </Link>
               </li>
               <li>
-                <Link href='/#cases_section'>
+                <Link href='/#cases'>
                   <a>Cases</a>
                 </Link>
               </li>
               <li>
-                <Link href='/#contact_us'>
+                <Link href='/#contact-us'>
                   <a>Contact us</a>
                 </Link>
               </li>
@@ -70,7 +70,7 @@ const Layout = ({ children }: Props): JSX.Element => {
             <a className={style.nav_tel} href='tel:0971630202'>
               +38 (097) 163 02 02
             </a>
-            <Link href='/#contact_us'>
+            <Link href='/#contact-us'>
               <a>
                 <Button animate={false} className={style.get_brif}>
                   Get a Brif
@@ -147,7 +147,7 @@ const Layout = ({ children }: Props): JSX.Element => {
               <a className={style.nav_tel} href='tel:0971630202'>
                 +38 (097) 163 02 02
               </a>
-              <Link href='/#contact_us'>
+              <Link href='/#contact-us'>
                 <a>
                   <Button
                     animate={false}
@@ -171,7 +171,7 @@ const Layout = ({ children }: Props): JSX.Element => {
               <div className={style.nav_menus_opened}>
                 <ul>
                   <li>
-                    <Link href='/#our_services'>
+                    <Link href='/#services'>
                       <a
                         onClick={() => {
                           setHamburgerOpen(false)
@@ -193,7 +193,7 @@ const Layout = ({ children }: Props): JSX.Element => {
                     </Link>
                   </li>
                   <li>
-                    <Link href='/#contacts_section'>
+                    <Link href='/#contacts'>
                       <a
                         onClick={() => {
                           setHamburgerOpen(false)
@@ -204,7 +204,7 @@ const Layout = ({ children }: Props): JSX.Element => {
                     </Link>
                   </li>
                   <li>
-                    <Link href='/#cases_section'>
+                    <Link href='/#cases'>
                       <a
                         onClick={() => {
                           setHamburgerOpen(false)
@@ -217,7 +217,7 @@ const Layout = ({ children }: Props): JSX.Element => {
                 </ul>
               </div>
             </div>
-            <Link href='/#contact_us'>
+            <Link href='/#contact-us'>
               <a className={style.get_brif_hamburger_link}>
                 <Button
                   animate={false}

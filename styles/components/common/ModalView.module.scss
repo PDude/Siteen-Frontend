@@ -1,6 +1,6 @@
 .modal_wiew {
   margin: 15px !important;
-  padding: 80px 20px !important;
+  padding: 70px 20px !important;
   max-width: 550px !important;
   width: calc(100% - 30px) !important;
   height: auto !important;
@@ -20,14 +20,16 @@
     background-image: url('../../../images/bg_dark_modal.webp') !important;
   }
   .icon {
-    display: none;
+    // display: none;
+    color: #fff;
+    font-size: 20px;
   }
 }
 
 @media only screen and (max-width: 1200px) {
   .modal_wiew {
-    padding-top: 70px !important;
-    padding-bottom: 70px !important;
+    padding-top: 65px !important;
+    padding-bottom: 65px !important;
   }
 }
 @media only screen and (max-width: 992px) {
@@ -38,15 +40,12 @@
 }
 @media only screen and (max-width: 768px) {
   .modal_wiew {
-    padding-top: 50px !important;
-    padding-bottom: 50px !important;
+    padding-top: 55px !important;
+    padding-bottom: 55px !important;
   }
 }
 @media only screen and (max-width: 576px) {
   .modal_wiew {
-    padding-top: 40px !important;
-    padding-bottom: 40px !important;
-    padding-right: 15px !important;
-    padding-left: 15px !important;
+    padding: 50px 15px !important;
   }
 }

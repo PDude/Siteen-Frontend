@@ -17,17 +17,17 @@ const Footer = (): JSX.Element => {
           </Link>
           <ul>
             <li>
-              <Link href='/#our_services'>
+              <Link href='/#services'>
                 <a>Services</a>
               </Link>
             </li>
             <li>
-              <Link href='/#cases_section'>
+              <Link href='/#cases'>
                 <a>Cases</a>
               </Link>
             </li>
             <li>
-              <Link href='/#contact_us'>
+              <Link href='/#contact-us'>
                 <a>Get a Brif</a>
               </Link>
             </li>

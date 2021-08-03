@@ -143,7 +143,7 @@ const About = () => (
       </div>
     </section>
     <PreviousNextMethodsTeamSection />
-    <section id={'contact_us'} className={style.form_section}>
+    <section id='contact-us' className={style.form_section}>
       <div className='container'>
         <div className={style.form_wrap_outter}>
           <div className={style.form_wrap_inner}>

@@ -2,6 +2,7 @@
   "proxy": "http://localhost:8289/",
   "name": "siteen-next",
   "version": "0.1.0",
+  "author": "Paul Dudich <dudich.pasha@gmail.com> (https://www.linkedin.com/in/shalldon/)",
   "private": true,
   "scripts": {
     "dev": "next dev",

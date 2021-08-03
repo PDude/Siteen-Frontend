@@ -24,6 +24,7 @@ import Title from '../../components/common/Title'
 import Head from 'next/head'
 import { animated } from '../../Data'
 import ProjectCard from '../../components/common/ProjectCard'
+import Link from 'next/link'
 
 const ProjectPage = ({
   project,
@@ -142,7 +143,9 @@ const ProjectPage = ({
                 Fill out the application and we will contact you to discuss
                 cooperation
               </p>
-              <Button>Consultation</Button>
+              <Link href='/#contact-us'>
+                <Button>Consultation</Button>
+              </Link>
             </div>
           </div>
         </div>

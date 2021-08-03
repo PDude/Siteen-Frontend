@@ -12,6 +12,7 @@ type Props = {
   onClick?: () => void
   animate?: boolean
   wiggleIcon?: boolean
+  wiggleBtn?: boolean
 }
 
 const Button = ({
@@ -21,6 +22,7 @@ const Button = ({
   children = null,
   animate = true,
   wiggleIcon = false,
+  wiggleBtn = false,
   ...props
 }: Props) => {
   const classNames = cn(
@@ -35,15 +37,17 @@ const Button = ({
   }
 
   return (
-    <button
-      {...(animate && { ...animated })}
-      style={{ maxWidth: max }}
-      className={classNames}
-      {...props}
-    >
-      {children && <span>{children}</span>}
-      {Icon && <Wiggle wiggle={wiggleIcon}>{Icon}</Wiggle>}
-    </button>
+    <Wiggle wiggle={wiggleBtn}>
+      <button
+        {...(animate && { ...animated })}
+        style={{ maxWidth: max }}
+        className={classNames}
+        {...props}
+      >
+        {children && <span>{children}</span>}
+        {Icon && <Wiggle wiggle={wiggleIcon}>{Icon}</Wiggle>}
+      </button>
+    </Wiggle>
   )
 }
 

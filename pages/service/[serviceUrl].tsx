@@ -123,7 +123,7 @@ const ServicePage = ({
               <AnimLink
                 className={style.write_link}
                 max='300px'
-                to='/#contact_us'
+                to='/#contact-us'
                 text='Write to us'
               />
             </div>

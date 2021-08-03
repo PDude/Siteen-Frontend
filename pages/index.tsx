@@ -87,7 +87,7 @@ const HomePage = ({
           </div>
         </div>
       </header>
-      <section id='our_services' className={style.our_services}>
+      <section id='services' className={style.our_services}>
         <div className='container'>
           <div className='v_cont'>
             <Title label='Our Services' title='We Do Everything.' gap={true} />
@@ -102,12 +102,12 @@ const HomePage = ({
           </div>
         </div>
       </section>
-      <section id='cases_section' className={style.our_cases_outer}>
+      <section id='cases' className={style.our_cases_outer}>
         <div className='v_cont'>
           <ProjectsSection projects={projects} />
         </div>
       </section>
-      <section id={'contact_us'} className={style.form_section}>
+      <section id='contact-us' className={style.form_section}>
         <div className='container'>
           <div className={style.form_section_wrap}>
             <div {...animated} className={style.globe_wrap}>
@@ -183,7 +183,7 @@ const HomePage = ({
           </div>
         </div>
       </section>
-      <section id='contacts_section' className={style.contacts_section}>
+      <section id='contacts' className={style.contacts_section}>
         <div className='container'>
           <div className='v_cont'>
             <div className={style.contacts_block}>

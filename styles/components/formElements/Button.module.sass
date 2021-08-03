@@ -28,28 +28,20 @@
   svg
     color: #fff
     font-size: 18px
-  &:after
+  &:after, &::before
     content: ''
     position: absolute
-    background: linear-gradient(90deg, #fa446e 4%, #fabe44 100%)
     border-radius: inherit
+    transition: all 0.3s ease
+  &:after
+    background: linear-gradient(90deg, #fa446e 4%, #fabe44 100%)
     left: 0
     top: 0
     right: 0
     bottom: 0
     z-index: 5
   &::before
-    content: ''
-    position: absolute
-    background: linear-gradient(90deg, #fa446e 4%, #fabe44 100%)
-    border-radius: inherit
-    left: 0
-    top: 0
-    right: 0
-    bottom: 0
-    z-index: 5
-    background: #00000090
-    transition: all 0.3s ease
+    background: rgba(0, 0, 0, .55)
     top: 2px
     right: 2px
     bottom: 2px
@@ -57,6 +49,10 @@
     z-index: 10
     opacity: 0
   &:hover::before
+    opacity: 1
+  &:focus::before
+    opacity: .6
+  &:focus:hover::before
     opacity: 1
 
 @media only screen and (max-width: 1200px)

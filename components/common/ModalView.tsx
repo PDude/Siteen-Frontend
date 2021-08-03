@@ -3,6 +3,7 @@ import 'react-responsive-modal/styles.css'
 import { Modal } from 'react-responsive-modal'
 import style from '../../styles/components/common/ModalView.module.scss'
 import cn from 'classnames'
+import { IoCloseOutline } from 'react-icons/io5'
 
 type Props = {
   children: any
@@ -12,7 +13,11 @@ type Props = {
   dark?: boolean
 }
 
-const closeIcon = <div className={style.icon}></div>
+const closeIcon = (
+  <div className={style.icon}>
+    <IoCloseOutline />
+  </div>
+)
 
 const ModalView = ({
   className,
