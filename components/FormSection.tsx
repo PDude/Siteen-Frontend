@@ -20,7 +20,7 @@ type FormValues = {
 
 const FormSection = (): JSX.Element => {
   // success modal
-  const [openSuccessModal, setSuccessModalOpen] = useState<boolean>(true)
+  const [openSuccessModal, setSuccessModalOpen] = useState<boolean>(false)
 
   const onOpenSuccessModal = () => setSuccessModalOpen(true)
   const onCloseSuccessModal = () => setSuccessModalOpen(false)
