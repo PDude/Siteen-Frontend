@@ -7,7 +7,7 @@ import linkedIcon from '../images/linked_icon.svg'
 import tIcon from '../images/t_icon.svg'
 import youTubeIcon from '../images/youtube_icon.svg'
 import Title from './common/Title'
-import { animated } from '../Data'
+import { animated } from '../data'
 
 const ContactsSection = (): JSX.Element => (
   <div className={style.contact_section_wrap}>

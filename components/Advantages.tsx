@@ -1,6 +1,6 @@
 import React from 'react'
 // data
-import { advantages } from '../Data'
+import { advantages } from '../data'
 // styles
 import style from '../styles/components/common/Advantages.module.scss'
 // components

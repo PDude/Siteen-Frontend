@@ -1,7 +1,7 @@
 import React from 'react'
 import cn from 'classnames'
 import style from '../../styles/components/formElements/Button.module.sass'
-import { animated } from '../../Data'
+import { animated } from '../../data'
 import Wiggle from '../common/Wiggle'
 
 type Props = {

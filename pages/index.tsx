@@ -31,7 +31,7 @@ import { ProjectType } from '../types'
 import { GetStaticProps } from 'next'
 import { InferGetStaticPropsType } from 'next'
 // Data
-import { animated, services } from '../Data'
+import { animated, services } from '../data'
 import InfoCard from '../components/common/InfoCard'
 // next
 import Head from 'next/head'

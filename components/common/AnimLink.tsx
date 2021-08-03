@@ -6,7 +6,7 @@ import { GoTriangleRight } from 'react-icons/go'
 import style from '../../styles/components/common/AnimLink.module.css'
 // packages
 import cn from 'classnames'
-import { animated } from '../../Data'
+import { animated } from '../../data'
 
 type Props = {
   text: string

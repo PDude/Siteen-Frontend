@@ -1,26 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="1147.5 -20 400 400" style="enable-background:new 1147.5 -20 400 400;" xml:space="preserve">
-<style type="text/css">
-	.st0{fill:#353535;}
-	.st1{fill:#0ACF83;}
-	.st2{fill:#A259FF;}
-	.st3{fill:#F24E1E;}
-	.st4{fill:#FF7262;}
-	.st5{fill:#1ABCFE;}
-</style>
-<path class="st0" d="M1487,371.5h-279c-28.6,0-52-23.4-52-52v-279c0-28.6,23.4-52,52-52h279c28.6,0,52,23.4,52,52v279
-	C1539,348.1,1515.6,371.5,1487,371.5z"/>
-<title>Figma.logo</title>
-<desc>Created using Figma</desc>
-<g>
-	<path id="path0_fill" class="st1" d="M1307.5,300c22.1,0,40-17.9,40-40v-40h-40c-22.1,0-40,17.9-40,40
-		C1267.5,282.1,1285.4,300,1307.5,300z"/>
-	<path id="path1_fill" class="st2" d="M1267.5,180c0-22.1,17.9-40,40-40h40v80h-40C1285.4,220,1267.5,202.1,1267.5,180z"/>
-	<path id="path1_fill_1_" class="st3" d="M1267.5,100c0-22.1,17.9-40,40-40h40v80h-40C1285.4,140,1267.5,122.1,1267.5,100z"/>
-	<path id="path2_fill" class="st4" d="M1347.5,60h40c22.1,0,40,17.9,40,40s-17.9,40-40,40h-40V60z"/>
-	<path id="path3_fill" class="st5" d="M1427.5,180c0,22.1-17.9,40-40,40s-40-17.9-40-40c0-22.1,17.9-40,40-40
-		S1427.5,157.9,1427.5,180z"/>
-</g>
+<svg width="400" height="400" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="9" y="9" width="383" height="383" rx="191.5" fill="#353535"/>
+<path d="M160 320C182.1 320 200 302.1 200 280V240H160C137.9 240 120 257.9 120 280C120 302.1 137.9 320 160 320Z" fill="#0ACF83"/>
+<path d="M120 200C120 177.9 137.9 160 160 160H200V240H160C137.9 240 120 222.1 120 200Z" fill="#A259FF"/>
+<path d="M120 120C120 97.9 137.9 80 160 80H200V160H160C137.9 160 120 142.1 120 120Z" fill="#F24E1E"/>
+<path d="M200 80H240C262.1 80 280 97.9 280 120C280 142.1 262.1 160 240 160H200V80Z" fill="#FF7262"/>
+<path d="M280 200C280 222.1 262.1 240 240 240C217.9 240 200 222.1 200 200C200 177.9 217.9 160 240 160C262.1 160 280 177.9 280 200Z" fill="#1ABCFE"/>
 </svg>

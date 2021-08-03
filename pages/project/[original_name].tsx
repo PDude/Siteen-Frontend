@@ -22,7 +22,7 @@ import { GetServerSideProps } from 'next'
 import { InferGetServerSidePropsType } from 'next'
 import Title from '../../components/common/Title'
 import Head from 'next/head'
-import { animated } from '../../Data'
+import { animated } from '../../data'
 import ProjectCard from '../../components/common/ProjectCard'
 import Link from 'next/link'
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import style from '../../styles/components/common/Title.module.sass'
 import cn from 'classnames'
-import { animated } from '../../Data'
+import { animated } from '../../data'
 
 type Props = {
   label?: string

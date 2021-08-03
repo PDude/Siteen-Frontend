@@ -25,7 +25,11 @@ const ContactFloatCta = () => {
       <div className={style.btn_wrap}>
         <Wiggle wiggle={!openContact}>
           <Pulse>
-            <Button onClick={onOpenContactModal} Icon={<FaPhoneAlt />} />
+            <Button
+              animate={false}
+              onClick={onOpenContactModal}
+              Icon={<FaPhoneAlt />}
+            />
           </Pulse>
         </Wiggle>
       </div>

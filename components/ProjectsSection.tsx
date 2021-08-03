@@ -7,7 +7,7 @@ import CasesSlider from 'react-slick'
 // types
 import { ProjectType } from '../types'
 import Title from './common/Title'
-import { animated } from '../Data'
+import { animated } from '../data'
 import ProjectCard from './common/ProjectCard'
 
 type Props = {

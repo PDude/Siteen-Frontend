@@ -2,7 +2,7 @@ import React, { useRef } from 'react'
 // styles
 import style from '../../styles/pages/ServicePage.module.scss'
 // data
-import { animated, ServiceInfoType, servicesData } from '../../Data'
+import { animated, ServiceInfoType, servicesData } from '../../data'
 // next
 import { useRouter } from 'next/router'
 import Head from 'next/head'

@@ -16,7 +16,9 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@types/aos": "^3.0.4",
     "@types/react-slick": "^0.23.4",
+    "aos": "^2.3.4",
     "classnames": "^2.2.6",
     "formik": "^2.2.6",
     "hamburger-react": "^2.4.0",

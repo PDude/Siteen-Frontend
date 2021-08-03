@@ -5,7 +5,7 @@ import Link from 'next/link'
 import AnimLink from './AnimLink'
 // styles
 import style from '../../styles/components/common/ProjectCard.module.css'
-import { animated } from '../../Data'
+import { animated } from '../../data'
 // packages
 import cn from 'classnames'
 

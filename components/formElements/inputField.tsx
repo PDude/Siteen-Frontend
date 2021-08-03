@@ -2,7 +2,7 @@ import cn from 'classnames'
 import style from '../../styles/components/formElements/Input.module.sass'
 import React from 'react'
 import { useField } from 'formik'
-import { animated } from '../../Data'
+import { animated } from '../../data'
 
 type Props = {
   [x: string]: any

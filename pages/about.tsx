@@ -27,7 +27,7 @@ import aeIcon from '../images/brands/after_effects.svg'
 import cinema4d from '../images/brands/cinema_4d.svg'
 import davinci from '../images/brands/davinci.svg'
 import photoshop from '../images/brands/photoshop.svg'
-import xd from '../images/brands/xd.svg'
+import premiere from '../images/brands/premiere.svg'
 import illustrator from '../images/brands/illustrator.svg'
 import redshift from '../images/brands/redshift.svg'
 // Slider
@@ -42,7 +42,7 @@ import FormSection from '../components/FormSection'
 import ContactsSection from '../components/ContactsSection'
 import Footer from '../components/Footer'
 // Data
-import { animated, team } from '../Data'
+import { animated, team } from '../data'
 // Packages
 import cn from 'classnames'
 import Title from '../components/common/Title'
@@ -135,7 +135,7 @@ const About = () => (
                 <TechIcon src={cinema4d} />
                 <TechIcon src={davinci} />
                 <TechIcon src={photoshop} />
-                <TechIcon src={xd} />
+                <TechIcon src={premiere} />
                 <TechIcon src={illustrator} />
                 <TechIcon src={redshift} />
               </div>

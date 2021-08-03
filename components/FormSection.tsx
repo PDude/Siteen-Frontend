@@ -8,7 +8,7 @@ import Button from './formElements/Button'
 import InputField from './formElements/inputField'
 import SuccessModal from './modals/SuccessModal'
 import Title from './common/Title'
-import { animated } from '../Data'
+import { animated } from '../data'
 import { fetchFormData } from '../api'
 import { validate } from './formElements/validation'
 

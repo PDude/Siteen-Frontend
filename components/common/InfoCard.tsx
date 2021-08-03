@@ -1,5 +1,5 @@
 import React from 'react'
-import { animated } from '../../Data'
+import { animated } from '../../data'
 import style from '../../styles/components/common/InfoCard.module.css'
 
 type InfoCardType = {

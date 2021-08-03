@@ -3,7 +3,7 @@ import React from 'react'
 import faqSign from '../images/faq_sign.svg'
 import faqArrow from '../images/faq_arrow.svg'
 // data
-import { animated, faq } from '../Data/index'
+import { animated, faq } from '../data/index'
 // packages
 import cn from 'classnames'
 import {
