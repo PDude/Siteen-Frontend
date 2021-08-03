@@ -3,7 +3,7 @@ import webIcon from '../images/services_web.svg'
 import uiIcon from '../images/services_ui.svg'
 import marketingIcon from '../images/services_marketing.svg'
 import animIcon from '../images/services_animation.svg'
-// Team
+// Teams
 import member1 from '../images/member_1.webp'
 import member2 from '../images/member_2.webp'
 import member3 from '../images/member_3.webp'
