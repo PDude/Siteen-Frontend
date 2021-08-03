@@ -1,6 +1,4 @@
 import React from 'react'
-import 'react-responsive-modal/styles.css'
-import { Modal } from 'react-responsive-modal'
 import style from '../../styles/components/modals/ContactModal.module.scss'
 import { Formik } from 'formik'
 import InputField from '../formElements/inputField'
@@ -10,6 +8,7 @@ import { animated } from '../../Data'
 import { validate } from '../formElements/validation'
 import { toast } from 'react-toastify'
 import { fetchFormData } from '../../api'
+import ModalView from '../common/ModalView'
 
 type Props = {
   onCloseContactModal: () => void
@@ -53,15 +52,7 @@ const ContactModal = ({
   }
 
   return (
-    <Modal
-      classNames={{
-        overlay: `${style.overlay}`,
-        modal: `${style.modal_wiew}`
-      }}
-      open={openContact}
-      onClose={onCloseContactModal}
-      center
-    >
+    <ModalView dark={true} isOpen={openContact} onClose={onCloseContactModal}>
       <Formik
         onSubmit={sendForm}
         validationSchema={validate}
@@ -69,6 +60,7 @@ const ContactModal = ({
       >
         {({ handleSubmit }) => (
           <form {...animated} onSubmit={handleSubmit} className={style.form}>
+            <h2>Callback by Siteen</h2>
             <div className={style.form_items}>
               <div className={style.fields_wrap}>
                 <InputField name='name' placeholder='Name' type='text' />
@@ -84,7 +76,7 @@ const ContactModal = ({
           </form>
         )}
       </Formik>
-    </Modal>
+    </ModalView>
   )
 }
 

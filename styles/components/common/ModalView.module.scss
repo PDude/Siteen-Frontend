@@ -1,0 +1,52 @@
+.modal_wiew {
+  margin: 15px !important;
+  padding: 80px 20px !important;
+  max-width: 550px !important;
+  width: calc(100% - 30px) !important;
+  height: auto !important;
+  overflow: hidden !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-color: #000 !important;
+  background-repeat: no-repeat !important;
+  border: 1px solid #734e23 !important;
+  border-radius: 10px !important;
+  position: relative !important;
+  z-index: 40 !important;
+  &.light {
+    background-image: url('../../../images/form_modal_bg_success.webp') !important;
+  }
+  &.dark {
+    background-image: url('../../../images/bg_dark_modal.webp') !important;
+  }
+  .icon {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .modal_wiew {
+    padding-top: 70px !important;
+    padding-bottom: 70px !important;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .modal_wiew {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .modal_wiew {
+    padding-top: 50px !important;
+    padding-bottom: 50px !important;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .modal_wiew {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    padding-right: 15px !important;
+    padding-left: 15px !important;
+  }
+}

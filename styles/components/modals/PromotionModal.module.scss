@@ -1,0 +1,26 @@
+.modal_wiew {
+  margin: 0;
+  padding: 0;
+  background: #000;
+  max-width: 1000px;
+  width: calc(100% - 30px);
+  height: calc(100vw / 2);
+  max-height: 562px;
+  overflow: hidden;
+  position: relative;
+  z-index: 5;
+  & > button {
+    display: none;
+  }
+  .loading {
+    left: 50%;
+    top: 50%;
+    transform: translate(translate(-50%, -50%));
+    position: absolute;
+    z-index: 10;
+  }
+  iframe {
+    position: relative;
+    z-index: 15;
+  }
+}
