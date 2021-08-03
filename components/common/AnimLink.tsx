@@ -14,6 +14,8 @@ type Props = {
   max?: string
   className?: string
   animate?: boolean
+  newTab?: boolean
+  isLink?: boolean
 }
 
 const AnimLink = ({
@@ -22,21 +24,34 @@ const AnimLink = ({
   max = 'auto',
   className,
   animate = true,
+  newTab = false,
+  isLink = true,
   ...props
 }: Props): JSX.Element => {
   const classNames = cn(style.link, className)
+  const body = (
+    <small
+      {...(animate && { ...animated })}
+      style={{ maxWidth: max }}
+      className={classNames}
+      {...props}
+    >
+      {text} <GoTriangleRight />
+    </small>
+  )
 
   return (
-    <Link href={to}>
-      <small
-        {...(animate && { ...animated })}
-        style={{ maxWidth: max }}
-        className={classNames}
-        {...props}
-      >
-        {text} <GoTriangleRight />
-      </small>
-    </Link>
+    <>
+      {isLink ? (
+        <Link href={to}>
+          <a rel='noreferrer' target={newTab ? '_blank' : '_self'}>
+            {body}
+          </a>
+        </Link>
+      ) : (
+        <>{body}</>
+      )}
+    </>
   )
 }
 

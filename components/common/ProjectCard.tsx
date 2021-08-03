@@ -60,7 +60,7 @@ const ProjectCard = ({
           <h4 {...animated}>{projectTitle}</h4>
           <p {...animated}>{projectSubtitle}</p>
         </div>
-        <AnimLink text='View full project' to={url} />
+        <AnimLink isLink={false} text='View full project' to={url} />
       </div>
     </a>
   </Link>

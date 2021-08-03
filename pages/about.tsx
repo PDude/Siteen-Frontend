@@ -24,11 +24,12 @@ import sequelizeIcon from '../images/brands/sequelize.svg'
 // Art icons
 import figmaIcon from '../images/brands/figma.svg'
 import aeIcon from '../images/brands/after_effects.svg'
-import blenderIcon from '../images/brands/blender.svg'
 import cinema4d from '../images/brands/cinema_4d.svg'
 import davinci from '../images/brands/davinci.svg'
 import photoshop from '../images/brands/photoshop.svg'
 import xd from '../images/brands/xd.svg'
+import illustrator from '../images/brands/illustrator.svg'
+import redshift from '../images/brands/redshift.svg'
 // Slider
 import TeamSlider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
@@ -131,11 +132,12 @@ const About = () => (
               <div {...animated} className={style.art_icons}>
                 <TechIcon src={figmaIcon} className={figmaIcon} />
                 <TechIcon src={aeIcon} />
-                <TechIcon src={blenderIcon} />
                 <TechIcon src={cinema4d} />
                 <TechIcon src={davinci} />
                 <TechIcon src={photoshop} />
                 <TechIcon src={xd} />
+                <TechIcon src={illustrator} />
+                <TechIcon src={redshift} />
               </div>
             </div>
           </div>
