@@ -195,10 +195,9 @@ const HomePage = ({
                     <a
                       target='_blank'
                       rel='noreferrer'
-                      href='https://goo.gl/maps/vBCF7NXjkLS8G8nQA'
+                      href='https://goo.gl/maps/jU1Pi4Vig4JsekTX9'
                     >
-                      230, Kulparkivska str.
-                      <br /> Lviv, Ukraine, 79031
+                      BC Gulliver, 29th floor, 1a Sportyvna sq, Kyiv, Ukraine
                     </a>
                   </li>
                   <li {...animated}>

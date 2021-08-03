@@ -144,7 +144,9 @@ const ProjectPage = ({
                 cooperation
               </p>
               <Link href='/#contact-us'>
-                <Button>Consultation</Button>
+                <a>
+                  <Button>Consultation</Button>
+                </a>
               </Link>
             </div>
           </div>

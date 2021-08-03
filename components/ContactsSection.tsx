@@ -24,9 +24,9 @@ const ContactsSection = (): JSX.Element => (
           <a
             target='_blank'
             rel='noreferrer'
-            href='https://goo.gl/maps/hWmJTqarWp6eNwxs6'
+            href='https://goo.gl/maps/jU1Pi4Vig4JsekTX9'
           >
-            230, Kulparkivska str. Lviv, Ukraine, 79031
+            BC Gulliver, 29th floor, 1a Sportyvna sq, Kyiv, Ukraine
           </a>
         </div>
         <div {...animated} className={style.phone}>

@@ -6,18 +6,18 @@ import '../styles/globals.sass'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Head from 'next/head'
-import AOS from 'aos'
+// import AOS from 'aos'
 import 'aos/dist/aos.css'
 import ContactFloatCta from '../components/ContactFloatCta'
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
     window.history.scrollRestoration = 'manual'
-    AOS.init({
-      duration: 800,
-      once: true,
-      delay: 50
-    })
+    // AOS.init({
+    //   duration: 800,
+    //   once: true,
+    //   delay: 50
+    // })
   }, [])
 
   return (
