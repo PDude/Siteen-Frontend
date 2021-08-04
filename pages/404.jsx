@@ -5,7 +5,7 @@ import cowLight from '../images/cow_light.svg'
 import cowElement from '../images/cow_element.svg'
 import Link from 'next/link'
 import Head from 'next/head'
-import { animated } from '../Data'
+import { animated } from '../data'
 
 const NotFoundPage = () => (
   <>
