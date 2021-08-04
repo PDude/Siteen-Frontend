@@ -1,6 +1,6 @@
 import React from 'react'
-import style from '../styles/components/Footer.module.css'
-import logoNav from '../images/logo_nav.svg'
+import style from '../../styles/components/Footer.module.css'
+import logoNav from '../../images/logo_nav.svg'
 import Link from 'next/link'
 
 const Footer = (): JSX.Element => {

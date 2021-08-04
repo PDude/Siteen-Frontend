@@ -10,7 +10,7 @@ import SuccessModal from './modals/SuccessModal'
 import Title from './common/Title'
 import { animated } from '../data'
 import { fetchFormData } from '../api'
-import { validate } from './formElements/validation'
+import { validate } from '../utils/validation'
 
 type FormValues = {
   name: string

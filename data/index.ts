@@ -372,6 +372,6 @@ export const advantages: Array<AdvantagesType> = [
 
 // Animation settings
 export const animated = {
-  'data-aos': 'fade-up',
-  'data-aos-anchor-placement': 'top-bottom'
+  // 'data-aos': 'fade-up',
+  // 'data-aos-anchor-placement': 'top-bottom'
 }

@@ -40,7 +40,7 @@ import arrowNext from '../images/arrow_team_next.svg'
 // Components
 import FormSection from '../components/FormSection'
 import ContactsSection from '../components/ContactsSection'
-import Footer from '../components/Footer'
+import Footer from '../components/common/Footer'
 // Data
 import { animated, team } from '../data'
 // Packages

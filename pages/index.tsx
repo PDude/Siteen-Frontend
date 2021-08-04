@@ -14,7 +14,7 @@ import linkedIcon from '../images/linked_icon.svg'
 import tIcon from '../images/t_icon.svg'
 import youTubeIcon from '../images/youtube_icon.svg'
 // Components
-import Footer from '../components/Footer'
+import Footer from '../components/common/Footer'
 import AboutVideo from '../components/AboutVideo'
 import FormSection from '../components/FormSection'
 import Preloader from '../components/common/Preloader'

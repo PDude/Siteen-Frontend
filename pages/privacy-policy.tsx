@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import React from 'react'
 import Title from '../components/common/Title'
-import Footer from '../components/Footer'
+import Footer from '../components/common/Footer'
 import style from '../styles/pages/PrivacyPolicy.module.sass'
 
 const PrivacyPolicy = () => (

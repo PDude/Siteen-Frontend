@@ -3,7 +3,7 @@ import Button from '../../components/formElements/Button'
 import style from '../../styles/pages/ProjectPage.module.sass'
 // temp project bg
 import { Component, useRef } from 'react'
-import Footer from '../../components/Footer'
+import Footer from '../../components/common/Footer'
 // Slider
 import ProjectsSlider from 'react-slick'
 import 'slick-carousel/slick/slick.css'

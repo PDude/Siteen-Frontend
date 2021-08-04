@@ -569,6 +569,12 @@
   }
 }
 
+@media only screen and (max-height: 700px) {
+  .main_header {
+    height: 100%;
+  }
+}
+
 @media only screen and (max-height: 550px) {
   .about_us_video_wrap {
     display: none;
@@ -580,18 +586,15 @@
   .main_offer p {
     font-size: 16px;
   }
-}
-
-@media only screen and (max-height: 700px) {
-  .main_header {
-    height: 100%;
-  }
-}
-
-@media only screen and (max-height: 300px) {
   .main_header {
     padding-bottom: 70px;
   }
+}
+
+@media only screen and (max-height: 320px) {
+  /* .main_header {
+    padding-bottom: 70px;
+  } */
   .main_header p {
     height: 100%;
     display: none;

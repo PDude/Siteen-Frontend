@@ -211,18 +211,19 @@
   .content {
     background-size: contain;
   }
+  .content_title_wrap {
+    flex-direction: column;
+    grid-gap: 0;
+    align-items: end;
+  }
+  .write_link {
+    margin-bottom: 30px;
+  }
 }
 
 @media only screen and (max-width: 576px) {
   .content {
     background-position: center top;
-  }
-  .content_title_wrap {
-    flex-direction: column;
-    grid-gap: 0;
-  }
-  .write_link {
-    margin: 0 auto 30px 0;
   }
   .services_items_wrap {
     display: none;
@@ -296,8 +297,6 @@
   .logo_wrap {
     display: none !important;
   }
-}
-@media only screen and (max-height: 300px) {
   .service_header {
     padding-bottom: 70px;
   }

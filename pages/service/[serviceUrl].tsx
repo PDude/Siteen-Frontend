@@ -25,7 +25,7 @@ import AccordionSection from '../../components/AccordionSection'
 import Advantages from '../../components/Advantages'
 import AnimArrow from '../../components/common/AnimArrow'
 import ProjectsSection from '../../components/ProjectsSection'
-import Footer from '../../components/Footer'
+import Footer from '../../components/common/Footer'
 import FormSection from '../../components/FormSection'
 import ContactsSection from '../../components/ContactsSection'
 // types
@@ -118,7 +118,7 @@ const ServicePage = ({
                 label={serviceInfo.content.label}
                 title={serviceInfo.content.title}
                 gap={true}
-                max='600px'
+                max='580px'
               />
               <AnimLink
                 className={style.write_link}

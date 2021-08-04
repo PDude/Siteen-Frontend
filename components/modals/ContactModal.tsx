@@ -5,7 +5,7 @@ import InputField from '../formElements/inputField'
 import Button from '../formElements/Button'
 import { GoTriangleRight } from 'react-icons/go'
 import { animated } from '../../data'
-import { validate } from '../formElements/validation'
+import { validate } from '../../utils/validation'
 import { toast } from 'react-toastify'
 import { fetchFormData } from '../../api'
 import ModalView from '../common/ModalView'
@@ -71,7 +71,9 @@ const ContactModal = ({
                   type='tel'
                 />
               </div>
-              <Button Icon={<GoTriangleRight />}>Submit</Button>
+              <Button animate={false} Icon={<GoTriangleRight />}>
+                Submit
+              </Button>
             </div>
           </form>
         )}
