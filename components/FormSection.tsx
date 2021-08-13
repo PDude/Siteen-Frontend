@@ -62,7 +62,7 @@ const FormSection = (): JSX.Element => {
             />
             <p {...animated}>
               The best ideas start from the brif. Let us to know what you need
-              and we will realise it in successful product.
+              and we will realise it in a successful product.
             </p>
             <div className={style.form_items}>
               <div className={style.fields_wrap}>

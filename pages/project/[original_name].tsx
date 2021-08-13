@@ -219,7 +219,7 @@ class PreviousNextMethodsProjectsSection extends Component<SliderProps> {
               <div className={style.projects_desk_and_arrows}>
                 <p {...animated}>
                   Our digital company develops projects and has been on the
-                  market for 15 years.
+                  market for 3 years.
                 </p>
                 <div
                   {...animated}

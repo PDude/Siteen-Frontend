@@ -153,7 +153,7 @@ export const servicesData: ServiceDataType = {
       },
       {
         title: 'turnkey website',
-        text: 'The collection of visual elements (from color to fonts) that create the face of the company make it individual.'
+        text: 'The collection of visual elements (from color to fonts) that create the face of the company makes it individual.'
       },
       {
         title: 'Support',
@@ -164,7 +164,7 @@ export const servicesData: ServiceDataType = {
       label: 'design',
       title: 'Design solutions for your business problem.',
       text: [
-        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping to develop the business of our clients. With us you keep up with the times!',
+        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping our clients to develop their business. With us you keep up with the times!',
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita sit error tenetur distinctio consequuntur ipsam suscipit. Suscipit, repudiandae! Exercitationem aut aliquam harum pariatur saepe, voluptates officiis quos repudiandae culpa debitis sed quod, asperiores impedit, incidunt dolorum dolorem tenetur laboriosam.'
       ],
       bg: webContentBg
@@ -200,7 +200,7 @@ export const servicesData: ServiceDataType = {
       },
       {
         title: 'turnkey website',
-        text: 'The collection of visual elements (from color to fonts) that create the face of the company make it individual.'
+        text: 'The collection of visual elements (from color to fonts) that create the face of the company makes it individual.'
       },
       {
         title: 'Support',
@@ -211,7 +211,7 @@ export const servicesData: ServiceDataType = {
       label: 'web-development',
       title: 'Web development and support from professionals.',
       text: [
-        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping to develop the business of our clients. With us you keep up with the times!',
+        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping our clients to develop their business. With us you keep up with the times!',
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita sit error tenetur distinctio consequuntur ipsam suscipit. Suscipit, repudiandae! Exercitationem aut aliquam harum pariatur saepe, voluptates officiis quos repudiandae culpa debitis sed quod, asperiores impedit, incidunt dolorum dolorem tenetur laboriosam.'
       ],
       bg: designContentBg
@@ -247,7 +247,7 @@ export const servicesData: ServiceDataType = {
       },
       {
         title: 'turnkey website',
-        text: 'The collection of visual elements (from color to fonts) that create the face of the company make it individual.'
+        text: 'The collection of visual elements (from color to fonts) that create the face of the company makes it individual.'
       },
       {
         title: 'Support',
@@ -259,7 +259,7 @@ export const servicesData: ServiceDataType = {
       title:
         'We will create a flow of customers via the Internet, increase your profit.',
       text: [
-        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping to develop the business of our clients. With us you keep up with the times!',
+        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping our clients to develop their business. With us you keep up with the times!',
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita sit error tenetur distinctio consequuntur ipsam suscipit. Suscipit, repudiandae! Exercitationem aut aliquam harum pariatur saepe, voluptates officiis quos repudiandae culpa debitis sed quod, asperiores impedit, incidunt dolorum dolorem tenetur laboriosam.'
       ],
       bg: marketingContentBg
@@ -295,7 +295,7 @@ export const servicesData: ServiceDataType = {
       },
       {
         title: 'turnkey website',
-        text: 'The collection of visual elements (from color to fonts) that create the face of the company make it individual.'
+        text: 'The collection of visual elements (from color to fonts) that create the face of the company makes it individual.'
       },
       {
         title: 'Support',
@@ -306,7 +306,7 @@ export const servicesData: ServiceDataType = {
       label: 'animation',
       title: 'we make stylish fashionable youth animation.',
       text: [
-        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping to develop the business of our clients. With us you keep up with the times!',
+        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping our clients to develop their business. With us you keep up with the times!',
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita sit error tenetur distinctio consequuntur ipsam suscipit. Suscipit, repudiandae! Exercitationem aut aliquam harum pariatur saepe, voluptates officiis quos repudiandae culpa debitis sed quod, asperiores impedit, incidunt dolorum dolorem tenetur laboriosam.'
       ],
       bg: webContentBg
@@ -356,16 +356,16 @@ export const advantages: Array<AdvantagesType> = [
   },
   {
     advLogo: adv2,
-    advTitle: 'Product quality',
+    advTitle: 'Product Quality',
     advtext: [
-      'You get fast, high-quality hosting from the CityHost hosting provider and a domain in any domain zone. Especially for you, we provide a free connection of corporate mail'
+      'You get fast, high-quality hosting from the CityHost hosting provider and a domain in any domain zone. Specially for you, we provide a free connection of corporate mail'
     ]
   },
   {
     advLogo: adv3,
     advTitle: 'Support',
     advtext: [
-      'Clients of our web studio receive full free support for 2 months. This function will make you forget about self-filling and cosmetic renewal of the final product, we will take care of each client'
+      'Clients of our web studio receive a full free support for 2 months. This function will make you forget about self-filling and cosmetic renewal of the final product, we will take care of each client'
     ]
   }
 ]

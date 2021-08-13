@@ -110,7 +110,7 @@ const About = () => (
               />
               <p {...animated}>
                 Our digital company develops projects and has been on the market
-                for 15 years.
+                for 3 years.
               </p>
             </div>
           </div>
@@ -227,7 +227,7 @@ class PreviousNextMethodsTeamSection extends Component {
               <div className={style.team_desk_and_arrows}>
                 <p {...animated}>
                   Our digital company develops projects and has been on the
-                  market for 15 years.
+                  market for 3 years.
                 </p>
                 <div
                   {...animated}
