@@ -149,7 +149,7 @@ export const servicesData: ServiceDataType = {
       },
       {
         title: 'domain and hosting',
-        text: 'A logo is the face of your business. A beautiful logo will help your company move in the right direction.'
+        text: 'A logo is an indispensable part of any brand. A properly designed logo will help your business grow much faster in the right direction.'
       },
       {
         title: 'turnkey website',
@@ -196,7 +196,7 @@ export const servicesData: ServiceDataType = {
       },
       {
         title: 'domain and hosting',
-        text: 'A logo is the face of your business. A beautiful logo will help your company move in the right direction.'
+        text: 'A logo is an indispensable part of any brand. A properly designed logo will help your business grow much faster in the right direction.'
       },
       {
         title: 'turnkey website',
@@ -243,7 +243,7 @@ export const servicesData: ServiceDataType = {
       },
       {
         title: 'domain and hosting',
-        text: 'A logo is the face of your business. A beautiful logo will help your company move in the right direction.'
+        text: 'A logo is an indispensable part of any brand. A properly designed logo will help your business grow much faster in the right direction.'
       },
       {
         title: 'turnkey website',
@@ -291,7 +291,7 @@ export const servicesData: ServiceDataType = {
       },
       {
         title: 'domain and hosting',
-        text: 'A logo is the face of your business. A beautiful logo will help your company move in the right direction.'
+        text: 'A logo is an indispensable part of any brand. A properly designed logo will help your business grow much faster in the right direction.'
       },
       {
         title: 'turnkey website',
@@ -323,19 +323,19 @@ type FaqType = {
 export const faq: Array<FaqType> = [
   {
     title: 'What is the price for design services?',
-    text: 'We give you to fill out a special brief, in which there will be leading questions, with the help of which we will reach mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
+    text: 'You will be asked to fill out a special brief with leading questions that helps us to reach a mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
   },
   {
     title: 'How long does it take to complete an order?',
-    text: 'We give you to fill out a special brief, in which there will be leading questions, with the help of which we will reach mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
+    text: 'You will be asked to fill out a special brief with leading questions that helps us to reach a mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
   },
   {
     title: 'What materials do you need to provide for design development?',
-    text: 'We give you to fill out a special brief, in which there will be leading questions, with the help of which we will reach mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
+    text: 'You will be asked to fill out a special brief with leading questions that helps us to reach a mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
   },
   {
     title: 'How does a designer know what exactly I need?',
-    text: 'We give you to fill out a special brief, in which there will be leading questions, with the help of which we will reach mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
+    text: 'You will be asked to fill out a special brief with leading questions that helps us to reach a mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
   }
 ]
 
