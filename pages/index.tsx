@@ -138,9 +138,8 @@ const HomePage = ({
                   courses our employees attend annually. Since 2018 we have
                   completed more than 20 projects that are currently developing
                   and expanding successfully in their areas of specialization.
-                  We do not chase the number of clients, as it is a way more
-                  exciting to accomplish the work for a full due and to your
-                  delight.
+                  We do not chase the number of clients since it’s more exciting
+                  to accomplish the work for a full due and to your delight.
                 </p>
                 <AnimLink to='/about' text='read more' />
               </div>

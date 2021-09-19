@@ -71,7 +71,7 @@ const About = () => (
                 our employees attend annually. Since 2018 we have completed more
                 than 20 projects that are currently developing and expanding
                 successfully in their areas of specialization. We do not chase
-                the number of clients, as it is a way more exciting to
+                the number of clients, as since it is more exciting to
                 accomplish the work for a full due and to your delight.
               </span>
             </div>
@@ -110,7 +110,7 @@ const About = () => (
               />
               <p {...animated}>
                 Our digital company develops projects and has been on the market
-                for 15 years.
+                for 3 years.
               </p>
             </div>
           </div>
@@ -227,7 +227,7 @@ class PreviousNextMethodsTeamSection extends Component {
               <div className={style.team_desk_and_arrows}>
                 <p {...animated}>
                   Our digital company develops projects and has been on the
-                  market for 15 years.
+                  market for 3 years.
                 </p>
                 <div
                   {...animated}

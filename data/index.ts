@@ -149,11 +149,11 @@ export const servicesData: ServiceDataType = {
       },
       {
         title: 'domain and hosting',
-        text: 'A logo is the face of your business. A beautiful logo will help your company move in the right direction.'
+        text: 'A logo is an indispensable part of any brand. A properly designed logo will help your business grow much faster in the right direction.'
       },
       {
         title: 'turnkey website',
-        text: 'The collection of visual elements (from color to fonts) that create the face of the company make it individual.'
+        text: 'The collection of visual elements (from color to fonts) that create the face of the company makes it individual.'
       },
       {
         title: 'Support',
@@ -164,7 +164,7 @@ export const servicesData: ServiceDataType = {
       label: 'design',
       title: 'Design solutions for your business problem.',
       text: [
-        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping to develop the business of our clients. With us you keep up with the times!',
+        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping our clients to develop their business. With us you keep up with the times!',
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita sit error tenetur distinctio consequuntur ipsam suscipit. Suscipit, repudiandae! Exercitationem aut aliquam harum pariatur saepe, voluptates officiis quos repudiandae culpa debitis sed quod, asperiores impedit, incidunt dolorum dolorem tenetur laboriosam.'
       ],
       bg: webContentBg
@@ -196,11 +196,11 @@ export const servicesData: ServiceDataType = {
       },
       {
         title: 'domain and hosting',
-        text: 'A logo is the face of your business. A beautiful logo will help your company move in the right direction.'
+        text: 'A logo is an indispensable part of any brand. A properly designed logo will help your business grow much faster in the right direction.'
       },
       {
         title: 'turnkey website',
-        text: 'The collection of visual elements (from color to fonts) that create the face of the company make it individual.'
+        text: 'The collection of visual elements (from color to fonts) that create the face of the company makes it individual.'
       },
       {
         title: 'Support',
@@ -211,7 +211,7 @@ export const servicesData: ServiceDataType = {
       label: 'web-development',
       title: 'Web development and support from professionals.',
       text: [
-        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping to develop the business of our clients. With us you keep up with the times!',
+        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping our clients to develop their business. With us you keep up with the times!',
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita sit error tenetur distinctio consequuntur ipsam suscipit. Suscipit, repudiandae! Exercitationem aut aliquam harum pariatur saepe, voluptates officiis quos repudiandae culpa debitis sed quod, asperiores impedit, incidunt dolorum dolorem tenetur laboriosam.'
       ],
       bg: designContentBg
@@ -243,11 +243,11 @@ export const servicesData: ServiceDataType = {
       },
       {
         title: 'domain and hosting',
-        text: 'A logo is the face of your business. A beautiful logo will help your company move in the right direction.'
+        text: 'A logo is an indispensable part of any brand. A properly designed logo will help your business grow much faster in the right direction.'
       },
       {
         title: 'turnkey website',
-        text: 'The collection of visual elements (from color to fonts) that create the face of the company make it individual.'
+        text: 'The collection of visual elements (from color to fonts) that create the face of the company makes it individual.'
       },
       {
         title: 'Support',
@@ -259,7 +259,7 @@ export const servicesData: ServiceDataType = {
       title:
         'We will create a flow of customers via the Internet, increase your profit.',
       text: [
-        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping to develop the business of our clients. With us you keep up with the times!',
+        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping our clients to develop their business. With us you keep up with the times!',
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita sit error tenetur distinctio consequuntur ipsam suscipit. Suscipit, repudiandae! Exercitationem aut aliquam harum pariatur saepe, voluptates officiis quos repudiandae culpa debitis sed quod, asperiores impedit, incidunt dolorum dolorem tenetur laboriosam.'
       ],
       bg: marketingContentBg
@@ -291,11 +291,11 @@ export const servicesData: ServiceDataType = {
       },
       {
         title: 'domain and hosting',
-        text: 'A logo is the face of your business. A beautiful logo will help your company move in the right direction.'
+        text: 'A logo is an indispensable part of any brand. A properly designed logo will help your business grow much faster in the right direction.'
       },
       {
         title: 'turnkey website',
-        text: 'The collection of visual elements (from color to fonts) that create the face of the company make it individual.'
+        text: 'The collection of visual elements (from color to fonts) that create the face of the company makes it individual.'
       },
       {
         title: 'Support',
@@ -306,7 +306,7 @@ export const servicesData: ServiceDataType = {
       label: 'animation',
       title: 'we make stylish fashionable youth animation.',
       text: [
-        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping to develop the business of our clients. With us you keep up with the times!',
+        'A beautiful design is for us. We attract users, increase attention to the product and use web design competently as a selling element. For several years in a row we have been helping our clients to develop their business. With us you keep up with the times!',
         'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint expedita sit error tenetur distinctio consequuntur ipsam suscipit. Suscipit, repudiandae! Exercitationem aut aliquam harum pariatur saepe, voluptates officiis quos repudiandae culpa debitis sed quod, asperiores impedit, incidunt dolorum dolorem tenetur laboriosam.'
       ],
       bg: webContentBg
@@ -323,19 +323,19 @@ type FaqType = {
 export const faq: Array<FaqType> = [
   {
     title: 'What is the price for design services?',
-    text: 'We give you to fill out a special brief, in which there will be leading questions, with the help of which we will reach mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
+    text: 'You will be asked to fill out a special brief with leading questions that helps us to reach a mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
   },
   {
     title: 'How long does it take to complete an order?',
-    text: 'We give you to fill out a special brief, in which there will be leading questions, with the help of which we will reach mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
+    text: 'You will be asked to fill out a special brief with leading questions that helps us to reach a mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
   },
   {
     title: 'What materials do you need to provide for design development?',
-    text: 'We give you to fill out a special brief, in which there will be leading questions, with the help of which we will reach mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
+    text: 'You will be asked to fill out a special brief with leading questions that helps us to reach a mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
   },
   {
     title: 'How does a designer know what exactly I need?',
-    text: 'We give you to fill out a special brief, in which there will be leading questions, with the help of which we will reach mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
+    text: 'You will be asked to fill out a special brief with leading questions that helps us to reach a mutual understanding in the task at hand. Our designers are professionals in working with clients, and in the process of work you will be able to control the desired result.'
   }
 ]
 
@@ -356,16 +356,16 @@ export const advantages: Array<AdvantagesType> = [
   },
   {
     advLogo: adv2,
-    advTitle: 'Product quality',
+    advTitle: 'Product Quality',
     advtext: [
-      'You get fast, high-quality hosting from the CityHost hosting provider and a domain in any domain zone. Especially for you, we provide a free connection of corporate mail'
+      'You get fast, high-quality hosting from the CityHost hosting provider and a domain in any domain zone. Specially for you, we provide a free connection of corporate mail'
     ]
   },
   {
     advLogo: adv3,
     advTitle: 'Support',
     advtext: [
-      'Clients of our web studio receive full free support for 2 months. This function will make you forget about self-filling and cosmetic renewal of the final product, we will take care of each client'
+      'Clients of our web studio receive a full free support for 2 months. This function will make you forget about self-filling and cosmetic renewal of the final product, we will take care of each client'
     ]
   }
 ]
