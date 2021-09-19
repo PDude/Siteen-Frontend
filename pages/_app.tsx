@@ -2,13 +2,13 @@ import React, { useEffect } from 'react'
 import { AppProps } from 'next/app'
 import NextNprogress from 'nextjs-progressbar'
 import Layout from '../components/Layout'
-import '../styles/globals.sass'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import Head from 'next/head'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
 import ContactFloatCta from '../components/ContactFloatCta'
+import '../styles/globals.sass'
 
 const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
